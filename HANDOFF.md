@@ -20,6 +20,27 @@
 
 Shared skill (Grok Bot): [Plasmoid X Grok handoff](sand-workflow:plasmoidx-grok-handoff)
 
+## Session hygiene (required)
+
+**After every ship or session end — before switching agents — do all of these:**
+
+1. **Update `HANDOFF.md`** in the same change when possible:
+   - Append a short **Session log** entry (date, what shipped, what’s still open)
+   - Refresh **What’s live** / Lighthouse notes if scores or routes changed
+   - Rewrite **Suggested next** (3–5 concrete options)
+   - Note anything **not in git** (credentials live only in Stellar welcome email, pending Derek login steps)
+2. **`npm run build`** exit 0; if you deployed, confirm `out/` (incl. `.htaccess`) is what SFTP’d
+3. **Commit + push `main`** so grok.com and PlasmoidX share one tree (no “live but uncommitted” gaps)
+4. If handing **out** to grok.com: fill `briefs/PASTE_TO_GROK.md` **Current task** and give Derek the paste
+5. If handing **in**: read `HANDOFF.md` + `git log -5` first — do not invent status from chat memory
+6. Present Derek **5 clickable** next actions after a completed step
+
+### Extra hygiene for Derek
+- Prefer tasking via **Current task** in the paste brief (one outcome per session)
+- After you do something outside the agents (DNS click, Facebook OG rescrape, password rotate), tell whichever agent is active so it lands in `HANDOFF.md`
+- Don’t keep the “real” plan only in iMessage/chat — if it matters, it goes in `HANDOFF.md`
+- SFTP/cPanel secrets stay in the Stellar welcome email / password manager — never paste into GitHub or the brief
+
 ---
 
 ## Stack & deploy (do not invent a new path)
@@ -116,6 +137,11 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 ---
 
 ## Session log (append, newest first)
+
+### 2026-09-21 — Standing handoff hygiene confirmed
+- Derek confirmed: **HANDOFF.md updates are required** after every Plasmoid X ship or session end.
+- Added explicit Session hygiene checklist (agent + Derek). Skill `plasmoidx-grok-handoff` updated to match.
+
 
 ### 2026-09-21 — Handoff process created
 - Added `HANDOFF.md`, `AGENTS.md`, `briefs/PASTE_TO_GROK.md`, shared skill `plasmoidx-grok-handoff`.

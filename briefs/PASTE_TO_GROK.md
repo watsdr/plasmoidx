@@ -18,6 +18,7 @@ Repo: https://github.com/watsdr/plasmoidx (private/public as configured; branch 
 <DEREK_OR_AGENT_FILLS_THIS — one concrete outcome>
 
 ## When finished
+- **Required:** update `HANDOFF.md` (session log + suggested next) before stopping or handing back.
 - Update `HANDOFF.md` (session log + suggested next).
 - List files changed, how to verify, whether `out/` was deployed.
 - Offer 3–5 clear next options for Derek.

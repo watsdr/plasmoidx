@@ -24,13 +24,17 @@ Operating rules for **any** coding agent (PlasmoidX Grok Bot, grok.com, Cursor, 
 - Never commit secrets (SFTP passwords, cPanel). Pull Stellar welcome email when needed; shred local cred files.
 - Prefer small, reviewable commits. Update `HANDOFF.md` in the same change when status moves.
 
+## Session hygiene (required)
+
+`HANDOFF.md` is not optional. After every ship or session end, update it (log + suggested next), commit/push when status moved, and only then hand off. See the checklist in `HANDOFF.md`.
+
 ## After you finish a chunk
 
 1. `npm run build` (exit 0).
 2. Deploy `out/` via SFTP if Derek wants it live (include `.htaccess`).
 3. Spot-check https://plasmoidx.com/ (and touched routes).
 4. Optional: mobile + desktop Lighthouse on `/`.
-5. Refresh **HANDOFF.md** session log + suggested next.
+5. **Required:** refresh **HANDOFF.md** session log + suggested next (same commit when possible).
 6. If handing to another Grok: fill `briefs/PASTE_TO_GROK.md` **Current task** and give Derek the paste.
 
 ## PlasmoidX Grok Bot extras
