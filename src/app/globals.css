@@ -1,0 +1,615 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ——— Theme tokens (channel RGB for Tailwind alpha; softly lifted dark palette) ——— */
+:root,
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #141c2c;
+  --foreground: #eef2f8;
+  --accent: #5eead4;
+  --ink-950: 20 28 44;
+  --ink-900: 28 38 58;
+  --ink-800: 34 46 68;
+  --ink-700: 42 56 82;
+  --ink-600: 52 68 98;
+  --mist-50: 244 247 251;
+  --mist-100: 230 236 245;
+  --mist-200: 200 212 230;
+  --mist-300: 154 173 200;
+  --mist-400: 107 132 168;
+  --aurora: 94 234 212;
+  --aurora-soft: 45 212 191;
+  --aurora-deep: 20 184 166;
+  --aurora-glow: 153 246 228;
+  --surface-overlay: rgba(20, 28, 44, 0.62);
+  --glossary-bg: #1c263a;
+  --study-sticky-top: rgba(20, 28, 44, 0.96);
+  --study-sticky-mid: rgba(20, 28, 44, 0.85);
+  --header-h: 3.5rem;
+  --study-chips-h: 2.75rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --btn-primary-fg: #141c2c;
+  --field-bg: rgba(20, 28, 44, 0.7);
+  --selection-bg: rgba(94, 234, 212, 0.28);
+  --selection-fg: #f4f7fb;
+  --ambient-wash: rgba(94, 234, 212, 0.07);
+  --chip-active-bg: rgba(94, 234, 212, 0.08);
+  --chip-active-border: rgba(94, 234, 212, 0.4);
+  --chip-active-fg: #99f6e4;
+  --zebra: rgba(34, 46, 68, 0.4);
+  --row-hover: rgba(94, 234, 212, 0.05);
+  --focus-ring: rgba(94, 234, 212, 0.65);
+}
+
+/* Light theme — AA contrast on mist text over ink surfaces */
+html[data-theme="light"] {
+  color-scheme: light;
+  --background: #f5f7fb;
+  --foreground: #121826;
+  --accent: #0f766e;
+  --ink-950: 245 247 251;
+  --ink-900: 238 242 248;
+  --ink-800: 226 232 242;
+  --ink-700: 208 218 232;
+  --ink-600: 184 198 218;
+  --mist-50: 7 9 15;
+  --mist-100: 18 24 38;
+  --mist-200: 26 35 54;
+  --mist-300: 58 74 102;
+  --mist-400: 90 111 143;
+  --aurora: 15 118 110;
+  --aurora-soft: 13 148 136;
+  --aurora-deep: 15 118 110;
+  --aurora-glow: 17 94 89;
+  --surface-overlay: rgba(245, 247, 251, 0.72);
+  --glossary-bg: #eef2f8;
+  --study-sticky-top: rgba(245, 247, 251, 0.96);
+  --study-sticky-mid: rgba(245, 247, 251, 0.85);
+  --btn-primary-fg: #f4f7fb;
+  --field-bg: #ffffff;
+  --selection-bg: rgba(15, 118, 110, 0.22);
+  --selection-fg: #121826;
+  --ambient-wash: rgba(15, 118, 110, 0.05);
+  --chip-active-bg: rgba(15, 118, 110, 0.1);
+  --chip-active-border: rgba(15, 118, 110, 0.45);
+  --chip-active-fg: #115e59;
+  --zebra: rgba(34, 46, 68, 0.05);
+  --row-hover: rgba(15, 118, 110, 0.06);
+  --focus-ring: rgba(15, 118, 110, 0.7);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 0.75rem);
+  max-width: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  min-height: 100vh;
+  max-width: 100%;
+  font-size: clamp(0.9375rem, 0.9rem + 0.2vw, 1rem);
+  letter-spacing: -0.011em;
+  line-height: 1.65;
+  isolation: isolate;
+}
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--selection-fg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ——— Single static ambient wash (no pointer tracking) ——— */
+.ambient-root {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-wash {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 0%,
+    var(--ambient-wash) 0%,
+    transparent 55%
+  );
+}
+
+/* z-index only — never force position (would override sticky/fixed) */
+body > *:not(.ambient-root) {
+  z-index: 1;
+}
+
+/* Stacking for in-flow chrome without breaking position:sticky on header */
+body > main,
+body > footer {
+  position: relative;
+}
+
+/* ——— Sticky study chips ——— */
+.study-nav-sticky {
+  position: sticky;
+  top: var(--header-h);
+  z-index: 30;
+  padding: 0.5rem 0;
+  max-width: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--study-sticky-top) 40%,
+    var(--study-sticky-mid) 85%,
+    transparent
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.chip-scroll {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  /* Allow vertical page scroll when gesture starts on chips */
+  overscroll-behavior-y: auto;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, rgb(var(--aurora)) 25%, transparent)
+    transparent;
+}
+
+.chip-scroll::-webkit-scrollbar {
+  height: 2px;
+}
+
+.chip-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, rgb(var(--aurora)) 30%, transparent);
+  border-radius: 999px;
+}
+
+.chip-scroll > .chip {
+  scroll-snap-align: start;
+}
+
+.study-anchor {
+  scroll-margin-top: calc(var(--header-h) + var(--study-chips-h) + 0.5rem);
+}
+
+/* Optional torus motif — static / very low opacity via parent */
+@keyframes torus-breathe {
+  0%,
+  100% {
+    opacity: 0.08;
+  }
+  50% {
+    opacity: 0.12;
+  }
+}
+
+.torus-breathe {
+  animation: torus-breathe 12s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Soft reveal — kept short; disabled under reduced-motion */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js-motion .reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s ease-out,
+    transform 0.35s ease-out;
+}
+
+html.js-motion .reveal.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .fluid-display {
+    font-size: clamp(1.875rem, 1.4rem + 2.2vw, 3rem);
+    letter-spacing: -0.03em;
+    line-height: 1.12;
+  }
+
+  .fluid-title {
+    font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+  }
+
+  .measure {
+    max-width: 40rem;
+  }
+
+  /* Wide tables / diagrams: scroll inside, never widen the page */
+  .overflow-x-safe {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+}
+
+@layer components {
+  .link-aurora {
+    @apply text-aurora underline-offset-4;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+
+  .link-aurora:hover {
+    @apply text-aurora-glow underline;
+  }
+
+  .link-aurora:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-aurora rounded-sm;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full bg-aurora px-5 py-2.5 text-sm font-medium;
+    color: var(--btn-primary-fg);
+    letter-spacing: -0.01em;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .btn-primary:hover {
+    @apply bg-aurora-glow;
+  }
+
+  .btn-primary:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-aurora;
+  }
+
+  .btn-ghost {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-ink-600/60 bg-transparent px-5 py-2.5 text-sm font-medium text-mist-100;
+    letter-spacing: -0.01em;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .btn-ghost:hover {
+    @apply border-aurora/45 text-aurora;
+    background-color: color-mix(in srgb, rgb(var(--aurora)) 6%, transparent);
+  }
+
+  .btn-ghost:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-aurora;
+  }
+
+  .field-input {
+    @apply w-full rounded-lg border border-ink-600/90 px-3.5 py-2.5 text-sm text-mist-50 placeholder:text-mist-400/70;
+    background: var(--field-bg);
+    letter-spacing: -0.01em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .field-input:hover {
+    border-color: color-mix(in srgb, rgb(var(--mist-300)) 55%, transparent);
+  }
+
+  .field-input:focus {
+    @apply outline-none;
+    border-color: color-mix(in srgb, rgb(var(--aurora)) 55%, transparent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, rgb(var(--aurora)) 14%, transparent);
+  }
+
+  .field-input[aria-invalid="true"] {
+    border-color: #dc2626;
+  }
+
+  .section-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-aurora;
+  }
+
+  .chip {
+    @apply rounded-full border border-ink-600/70 bg-ink-900/40 px-3 py-1.5 text-xs text-mist-300;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .chip:hover {
+    @apply border-ink-600 text-mist-100;
+  }
+
+  .chip:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-aurora;
+  }
+
+  .chip-active {
+    border-color: var(--chip-active-border);
+    background-color: var(--chip-active-bg);
+    color: var(--chip-active-fg);
+  }
+
+  .chip-active:hover {
+    border-color: var(--chip-active-border);
+    color: var(--chip-active-fg);
+  }
+
+  .locks-table {
+    @apply w-full text-left text-sm;
+  }
+
+  .locks-table thead {
+    @apply bg-ink-800/80 text-[11px] uppercase tracking-[0.12em] text-mist-400;
+  }
+
+  .locks-table tbody tr:nth-child(even) {
+    background-color: var(--zebra);
+  }
+
+  .locks-table tbody tr:hover {
+    background-color: var(--row-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .torus-breathe {
+    animation: none;
+    opacity: 0.1;
+  }
+
+  html.js-motion .reveal,
+  html.js-motion .reveal.reveal-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Interactive labs — calm transitions; none under reduced motion */
+.ix-panel {
+  transition: border-color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ix-panel,
+  .ix-panel * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Device teaching motion — calm, purposeful; frozen under reduced-motion above */
+@keyframes teach-flow-dot {
+  0% { transform: translateX(0); opacity: 0; }
+  15% { opacity: 0.8; }
+  85% { opacity: 0.8; }
+  100% { transform: translateX(22px); opacity: 0; }
+}
+
+@keyframes teach-spin-cw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes teach-spin-ccw {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes teach-soft-pulse {
+  0%, 100% { opacity: 0.35; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes teach-exhaust-in {
+  0% { opacity: 0; transform: translate(6px, -4px); }
+  35% { opacity: 0.75; }
+  100% { opacity: 0; transform: translate(-2px, 2px); }
+}
+
+@keyframes teach-arm-pulse {
+  0%, 100% { opacity: 0.45; }
+  40%, 60% { opacity: 1; }
+}
+
+.teach-flow-dot {
+  animation: teach-flow-dot 2.4s ease-in-out infinite;
+}
+
+.teach-spin-cw {
+  transform-origin: center;
+  animation: teach-spin-cw 18s linear infinite;
+}
+
+.teach-spin-ccw {
+  transform-origin: center;
+  animation: teach-spin-ccw 14s linear infinite;
+}
+
+.teach-soft-pulse {
+  animation: teach-soft-pulse 2.4s ease-in-out infinite;
+}
+
+.teach-exhaust-in {
+  animation: teach-exhaust-in 2.6s ease-in-out infinite;
+}
+
+.teach-arm-pulse {
+  animation: teach-arm-pulse 1.6s ease-in-out infinite;
+}
+
+.teach-arm-pulse-delay {
+  animation: teach-arm-pulse 1.6s ease-in-out 0.8s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teach-flow-dot,
+  .teach-spin-cw,
+  .teach-spin-ccw,
+  .teach-soft-pulse,
+  .teach-exhaust-in,
+  .teach-arm-pulse,
+  .teach-arm-pulse-delay {
+    animation: none !important;
+  }
+  .teach-spin-cw,
+  .teach-spin-ccw {
+    transform: none;
+  }
+  .teach-soft-pulse,
+  .teach-arm-pulse,
+  .teach-arm-pulse-delay {
+    opacity: 0.85;
+  }
+  .teach-exhaust-in {
+    opacity: 0.55;
+    transform: none;
+  }
+  .teach-flow-dot {
+    opacity: 0;
+  }
+}
+
+/* Glossary drawer — calm sheet, no glow */
+.glossary-root {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+}
+
+.glossary-overlay {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  background: var(--surface-overlay);
+  cursor: pointer;
+}
+
+.glossary-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(24rem, 100vw);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: var(--glossary-bg);
+  border-left: 1px solid color-mix(in srgb, rgb(var(--ink-600)) 85%, transparent);
+  padding: 1.25rem 1.25rem 2.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .glossary-overlay {
+    animation: glossary-fade 0.2s ease-out;
+  }
+  .glossary-panel {
+    animation: glossary-in 0.2s ease-out;
+  }
+}
+
+@keyframes glossary-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glossary-in {
+  from { transform: translateX(12px); opacity: 0.7; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+
+/* Mobile header safety — keep page ≤ viewport; do not rely only on utility order */
+@media (max-width: 767.98px) {
+  .header-desktop {
+    display: none !important;
+  }
+  .header-mobile {
+    display: flex !important;
+  }
+  .site-header {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+  .site-header-inner {
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-mobile-sheet {
+    display: none !important;
+  }
+}
+
+/* Study pack — screen calm; print one sheet */
+@media print {
+  .no-print,
+  .site-header,
+  footer,
+  .ambient-glow,
+  [data-ambient] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff !important;
+    color: #111 !important;
+  }
+
+  .study-pack-sheet,
+  .study-pack-sheet * {
+    color: #111 !important;
+    border-color: #ccc !important;
+  }
+
+  .study-pack-sheet .text-aurora,
+  .study-pack-sheet .font-mono {
+    color: #0d5c5c !important;
+  }
+
+  .study-pack {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .study-pack-sheet {
+    max-width: none !important;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+}
