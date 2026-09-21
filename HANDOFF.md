@@ -108,18 +108,14 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ## Repo hygiene (important)
 
-- Last pushed commit may lag the **live** site and the **local** tree.
-- As of handoff creation, local `main` had **many uncommitted** polish files vs `origin/main`. Next agent should:
-  1. `git status` / `git diff --stat`
-  2. Commit a clean “sync live polish + handoff docs” PR/commit (Derek’s OK to push)
-  3. Keep `HANDOFF.md` in that same change when possible
+- `main` was synced with live polish + handoff pack (commits through handoff hygiene). Always `git pull` before starting.
+- Still keep HANDOFF updates in the same change as the work when possible.
 
 ---
 
 ## Open gaps / risks
 
-1. **Git sync** — commit + push uncommitted work so grok.com and PlasmoidX share one tree.
-2. **Facebook/X OG rescrape** — meta is correct live; Facebook debugger needs Derek’s login to force rescrape.
+1. **Facebook/X OG rescrape** — meta is correct live; Facebook debugger needs Derek’s login to force rescrape.
 3. **Namecheap Sign in** — still unreliable for agents; stick to SFTP + email credentials.
 4. **README drift** — older README still mentions Cloudflare Pages as primary; treat **Namecheap SFTP** as live path (see Deploy section above).
 5. Optional next polish: image weight (large home PNG), sitemap/robots, privacy analytics, SW/offline shell hardening.
@@ -128,15 +124,20 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ## Suggested next (Derek picks)
 
-1. Commit & push all live polish + this handoff pack to `main`.
+1. **In progress / handed to Grok:** Image weight pass (WebP/AVIF) for large Home PNG — see `briefs/PASTE_TO_GROK.md`.
 2. Force OG rescrape in Facebook + X validators (Derek login).
-3. Image weight pass (WebP/AVIF) for large Home PNG.
-4. Sitemap + robots polish.
-5. Privacy-friendly analytics recommendation + optional install.
+3. Sitemap + robots polish.
+4. Privacy-friendly analytics recommendation + optional install.
+5. README cleanup: remove Cloudflare Pages as “primary” deploy path.
 
 ---
 
 ## Session log (append, newest first)
+
+### 2026-09-21 — Ready Grok paste (image weight)
+- Filled `briefs/PASTE_TO_GROK.md` **Current task** with Home image weight pass (WebP/AVIF + build + SFTP + HANDOFF update).
+- Git sync already on `main` (handoff hygiene commits); next code priority is image weight.
+
 
 ### 2026-09-21 — Standing handoff hygiene confirmed
 - Derek confirmed: **HANDOFF.md updates are required** after every Plasmoid X ship or session end.

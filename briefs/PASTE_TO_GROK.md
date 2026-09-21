@@ -1,7 +1,7 @@
 # Paste this into grok.com (or any fresh Grok)
 
 You are working on **Plasmoid X** — independent education site https://plasmoidx.com  
-Repo: https://github.com/watsdr/plasmoidx (private/public as configured; branch `main`)
+Repo: https://github.com/watsdr/plasmoidx (branch `main`)
 
 ## Mandatory first reads
 1. `HANDOFF.md` — living status, deploy truth, gaps, suggested next
@@ -13,12 +13,12 @@ Repo: https://github.com/watsdr/plasmoidx (private/public as configured; branch 
 - Next.js 14 static export (`output: 'export'`). `npm run build` must pass.
 - Brand: circle+X; Daylight Paper / Soft Lift; polished-not-ornamental; no glow spam; plain English; `prefers-reduced-motion`.
 - Never commit secrets. SFTP password comes from Namecheap Stellar welcome email.
+- After every ship/session end: update `HANDOFF.md` before handing back (Derek-required hygiene).
 
 ## Current task
-<DEREK_OR_AGENT_FILLS_THIS — one concrete outcome>
+Image weight pass on Home (and any other oversized above-fold PNGs): convert/serve WebP (and AVIF if easy) without changing the calm visual look; keep static export working; update next/image or <img> usages as needed; run `npm run build`; SFTP deploy `out/` (incl. `.htaccess`) to Namecheap `public_html`; verify https://plasmoidx.com/ still Lighthouse-strong (especially Perf); **required:** update HANDOFF.md session log + suggested next before stopping.
 
 ## When finished
-- **Required:** update `HANDOFF.md` (session log + suggested next) before stopping or handing back.
-- Update `HANDOFF.md` (session log + suggested next).
+- **Required:** update `HANDOFF.md` (session log + what’s live + suggested next) before stopping or handing back.
 - List files changed, how to verify, whether `out/` was deployed.
 - Offer 3–5 clear next options for Derek.
