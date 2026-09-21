@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PrintButton from "@/components/PrintButton";
+import ScrollyChapter from "@/components/ScrollyChapter";
 import { deviceBeats, msaartExpansion, siteSlogan } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -35,6 +36,78 @@ export default function StudyPackPage() {
           Print-optimized sheet — use Save as PDF in the print dialog.
         </p>
       </div>
+
+      {/* Teach → act (screen only; dense sheet below stays readable) */}
+      <section
+        className="no-print mb-12 max-w-3xl border-b border-ink-600/40 pb-12"
+        aria-labelledby="pack-story-heading"
+      >
+        <ScrollyChapter>
+          <h2
+            id="pack-story-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            One sheet you can hold
+          </h2>
+          <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
+            Calm chapters before the printable reference. Lists below stay
+            dense on purpose.
+          </p>
+        </ScrollyChapter>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <ScrollyChapter
+            delay={80}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 1 · Problem
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Too much to remember at once
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Locks, beats, and acronyms scatter across Study. Offline or at a
+              bench, you need a single calm page — not another long scroll.
+            </p>
+          </ScrollyChapter>
+
+          <ScrollyChapter
+            delay={140}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+              Chapter 2 · Solution
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Printable locks · beats · glossary
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              This pack is a one-pager: Time&apos;s mould locks, three device
+              beats, short expansions (MSAART and friends), and one honest-meter
+              line. Independent education — not Strike.
+            </p>
+          </ScrollyChapter>
+        </div>
+
+        <ScrollyChapter delay={180} className="mt-8">
+          <div className="rounded-xl border border-ink-600/35 bg-ink-900/25 px-5 py-5 sm:px-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 3 · Act
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Print or Save as PDF, then return to{" "}
+              <Link href="/study/#curriculum" className="link-aurora">
+                Lessons 1–6
+              </Link>{" "}
+              when you want the full path.
+            </p>
+            <div className="mt-4">
+              <PrintButton />
+            </div>
+          </div>
+        </ScrollyChapter>
+      </section>
 
       <article className="study-pack-sheet max-w-3xl">
         <header className="border-b border-ink-600/50 pb-4">

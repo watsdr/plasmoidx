@@ -106,7 +106,7 @@ export default function ThemeToggle({ compact = false }: Props) {
             type="button"
             aria-pressed={active}
             onClick={() => setPreference(opt.value)}
-            className={`min-h-9 rounded-full px-2.5 text-[11px] font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora sm:min-h-8 sm:px-2.5 ${
+            className={`min-h-11 rounded-full px-2.5 text-xs font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora sm:px-3 ${
               active
                 ? "bg-ink-800 text-mist-50"
                 : "text-mist-400 hover:text-mist-100"

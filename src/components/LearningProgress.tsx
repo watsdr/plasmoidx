@@ -48,9 +48,12 @@ export default function LearningProgress({ variant = "study" }: Props) {
       <div
         className={
           variant === "why"
-            ? "mt-10 max-w-xl"
+            ? "mt-10 max-w-xl rounded-xl border border-ink-600/45 px-4 py-4 sm:px-5"
             : "mt-8 max-w-xl border-t border-ink-600/40 pt-6"
         }
+        style={{
+          minHeight: variant === "why" ? "9.5rem" : "8rem",
+        }}
         aria-hidden
       />
     );

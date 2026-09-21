@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#f7f4ef"/>
+  <circle cx="980" cy="120" r="280" fill="#5eead4" fill-opacity="0.07"/>
+  <circle cx="180" cy="520" r="220" fill="#2dd4bf" fill-opacity="0.05"/>
+  <g transform="translate(600 248)">
+    <circle cx="0" cy="0" r="72" stroke="#0f766e" stroke-width="3.5" fill="none"/>
+    <path d="M-38 -38 L38 38 M38 -38 L-38 38" stroke="#14b8a6" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="380" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="42" font-weight="600" fill="#1c1917" letter-spacing="-0.02em">Plasmoid X</text>
+  <text x="600" y="430" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="26" font-weight="500" fill="#0f766e">New energy, explained simply.</text>
+  <text x="600" y="560" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="16" fill="#78716c">plasmoidx.com</text>
+</svg>

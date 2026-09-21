@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import VisualPanel from "@/components/VisualPanel";
 import ContactForm from "@/components/ContactForm";
+import ScrollyChapter from "@/components/ScrollyChapter";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -11,7 +12,23 @@ export const metadata: Metadata = {
     title: "Services · Plasmoid X",
     description:
       "Independent install / commissioning inquiry for kit owners. Kits not sold here. No performance guarantees. Written estimate before paid work.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    url: "https://plasmoidx.com/services/",
+    images: [
+      {
+        url: "https://plasmoidx.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Plasmoid X — New energy, explained simply.",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services · Plasmoid X",
+    description:
+      "Install help for kit owners — inquiry only. New energy, explained simply.",
+    images: ["https://plasmoidx.com/og.png"],
   },
 };
 
@@ -83,17 +100,92 @@ export default function ServicesPage() {
         </p>
       </header>
 
-      <VisualPanel
-        className="mt-10"
-        src="/visuals/services-install.png"
-        alt="Icons suggesting a customer-owned kit box, tools, and a written estimate — install labor inquiry"
-        width={1280}
-        height={720}
-        caption="Inquiry → written estimate → install labor for kits you already own (or buy yourself). Kits are not sold on this site."
-      />
+      <ScrollyChapter className="mt-10" delay={40}>
+        <VisualPanel
+          src="/visuals/services-install.png"
+          alt="Icons suggesting a customer-owned kit box, tools, and a written estimate — install labor inquiry"
+          width={1280}
+          height={720}
+          caption="Inquiry → written estimate → install labor for kits you already own (or buy yourself). Kits are not sold on this site."
+        />
+      </ScrollyChapter>
 
+      {/* Problem → solution chapters */}
       <section
+        className="mt-14 border-t border-ink-600/40 pt-14"
+        aria-labelledby="services-story-heading"
+      >
+        <ScrollyChapter>
+          <h2
+            id="services-story-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            Why this page exists
+          </h2>
+          <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
+            Short story: the gap kit owners hit, then a calm inquiry path —
+            without storefront noise.
+          </p>
+        </ScrollyChapter>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <ScrollyChapter
+            delay={80}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 1 · Problem
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Kit in hand, install unclear
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              You already own (or will buy) a compatible kit, but hose routing,
+              power-up checks, and “what did we just do?” notes are easy to get
+              wrong alone — and storefronts rarely offer independent labor.
+            </p>
+          </ScrollyChapter>
+
+          <ScrollyChapter
+            delay={140}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+              Chapter 2 · Solution
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Inquiry → written estimate → work
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Optional paid install / commissioning when both sides agree in
+              writing. No online checkout, no kit sales here, no invented
+              performance guarantees. Scope and price land in the estimate —
+              not in marketing copy.
+            </p>
+          </ScrollyChapter>
+        </div>
+
+        <ScrollyChapter delay={180} className="mt-8">
+          <div className="rounded-xl border border-ink-600/35 bg-ink-900/25 px-5 py-5 sm:px-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 3 · Act
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Read what’s included / not included, then start an inquiry below —
+              or ask education-only questions on{" "}
+              <Link href="/connect/" className="link-aurora">
+                Connect
+              </Link>
+              .
+            </p>
+          </div>
+        </ScrollyChapter>
+      </section>
+
+      <ScrollyChapter
+        as="section"
         className="mt-14"
+        delay={60}
         aria-labelledby="what-this-is-heading"
       >
         <h2
@@ -156,9 +248,14 @@ export default function ServicesPage() {
             </ul>
           </div>
         </div>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="who-for-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="who-for-heading"
+      >
         <h2
           id="who-for-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -193,9 +290,14 @@ export default function ServicesPage() {
             and do not expect a website to promise their personal result.
           </li>
         </ul>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="included-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="included-heading"
+      >
         <h2
           id="included-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -215,9 +317,14 @@ export default function ServicesPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="not-included-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="not-included-heading"
+      >
         <h2
           id="not-included-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -234,9 +341,14 @@ export default function ServicesPage() {
             </li>
           ))}
         </ul>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="numbers-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="numbers-heading"
+      >
         <h2
           id="numbers-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -273,9 +385,14 @@ export default function ServicesPage() {
           </Link>
           .
         </p>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="process-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="process-heading"
+      >
         <h2
           id="process-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -283,8 +400,8 @@ export default function ServicesPage() {
           Process
         </h2>
         <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {processSteps.map((step) => (
-            <li key={step.n}>
+          {processSteps.map((step, i) => (
+            <ScrollyChapter key={step.n} as="li" delay={40 + i * 40}>
               <p className="font-mono text-xs text-aurora">{step.n}</p>
               <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
                 {step.title}
@@ -292,12 +409,17 @@ export default function ServicesPage() {
               <p className="mt-2 text-sm leading-relaxed text-mist-300">
                 {step.body}
               </p>
-            </li>
+            </ScrollyChapter>
           ))}
         </ol>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="limits-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="limits-heading"
+      >
         <h2
           id="limits-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -346,9 +468,14 @@ export default function ServicesPage() {
             invented in marketing copy.
           </p>
         </div>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="not-legal-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="not-legal-heading"
+      >
         <h2
           id="not-legal-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -363,9 +490,14 @@ export default function ServicesPage() {
           attorney review before relying on this framing for real paid jobs,
           contracts, licensing, or emissions questions.
         </p>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-16" aria-labelledby="inquiry-heading">
+      <ScrollyChapter
+        as="section"
+        className="mt-16"
+        delay={60}
+        aria-labelledby="inquiry-heading"
+      >
         <h2
           id="inquiry-heading"
           className="fluid-title font-semibold text-mist-50"
@@ -411,7 +543,7 @@ export default function ServicesPage() {
             <ContactForm intent="install" />
           </div>
         </div>
-      </section>
+      </ScrollyChapter>
 
       <div className="mt-16 flex flex-wrap items-center gap-3 border-t border-ink-600/40 pt-10">
         <Link href="/connect/" className="btn-ghost">

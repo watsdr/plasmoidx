@@ -1,17 +1,26 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import dynamic from "next/dynamic";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import AmbientGlow from "@/components/AmbientGlow";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import OfflineReady from "@/components/OfflineReady";
 import { siteSlogan } from "@/lib/content";
+
+/** Idle-defer OfflineReady + StudyCommandPalette (or mount on first intent). */
+const DeferredSiteChrome = dynamic(
+  () => import("@/components/DeferredSiteChrome"),
+  { ssr: false }
+);
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: "Arial",
 });
 
 const defaultTitle = `Plasmoid X — ${siteSlogan}`;
@@ -44,18 +53,26 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og.png",
+        url: "https://plasmoidx.com/og.png",
         width: 1200,
         height: 630,
         alt: "Plasmoid X — New energy, explained simply.",
+        type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
-    description: siteSlogan,
-    images: ["/og.png"],
+    description: defaultDescription,
+    images: [
+      {
+        url: "https://plasmoidx.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Plasmoid X — New energy, explained simply.",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -78,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-ink-950" suppressHydrationWarning>
+    <html lang="en" className="bg-[var(--background)]" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
       </head>
@@ -129,7 +146,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <OfflineReady />
+          <DeferredSiteChrome />
         </ThemeProvider>
       </body>
     </html>

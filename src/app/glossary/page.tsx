@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ScrollyChapter from "@/components/ScrollyChapter";
 import { glossaryTerms } from "@/lib/glossary";
 
 export const metadata: Metadata = {
@@ -22,7 +23,75 @@ export default function GlossaryPage() {
         </p>
       </header>
 
-      <nav className="mt-8 max-w-2xl" aria-label="Glossary index">
+      <section
+        className="mt-12 max-w-2xl border-t border-ink-600/40 pt-12"
+        aria-labelledby="glossary-story-heading"
+      >
+        <ScrollyChapter>
+          <h2
+            id="glossary-story-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            Why a plain glossary
+          </h2>
+          <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
+            Teach → act before the dense list. Index chips and entries stay
+            unwrapped so scanning stays fast.
+          </p>
+        </ScrollyChapter>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <ScrollyChapter
+            delay={80}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 1 · Problem
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Acronym fog
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              MSAART, EVO, MOE, CTR, and PUM show up early. Without plain
+              expansions, beginners bounce instead of learning the picture.
+            </p>
+          </ScrollyChapter>
+
+          <ScrollyChapter
+            delay={140}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+              Chapter 2 · Solution
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Short definitions + deep links
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Each entry expands the short form once, then points into Study or
+              Device when a longer section exists. Same set as the header
+              drawer.
+            </p>
+          </ScrollyChapter>
+        </div>
+
+        <ScrollyChapter delay={180} className="mt-8">
+          <div className="rounded-xl border border-ink-600/35 bg-ink-900/25 px-5 py-5 sm:px-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 3 · Act
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Jump an index chip below, or open{" "}
+              <Link href="/study/#curriculum" className="link-aurora">
+                Lessons 1–6
+              </Link>{" "}
+              when you want the path, not just a word.
+            </p>
+          </div>
+        </ScrollyChapter>
+      </section>
+
+      <nav className="mt-12 max-w-2xl" aria-label="Glossary index">
         <ul className="flex flex-wrap gap-2">
           {glossaryTerms.map((term) => (
             <li key={term.abbr}>

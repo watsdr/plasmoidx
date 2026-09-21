@@ -3,6 +3,7 @@ import Link from "next/link";
 import VisualPanel from "@/components/VisualPanel";
 import Lock518400Card from "@/components/diagrams/Lock518400Card";
 import ExplainFigure from "@/components/ExplainFigure";
+import ScrollyChapter from "@/components/ScrollyChapter";
 import {
   DeviceWalkthrough,
   AtvLab,
@@ -26,7 +27,23 @@ export const metadata: Metadata = {
     title: "Device · Plasmoid X",
     description:
       "Three beats: ionizer → bubbler → resonator / nested CTR spheres. Ratios locked to 51.84° and the MOE lattice.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    url: "https://plasmoidx.com/device/",
+    images: [
+      {
+        url: "https://plasmoidx.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Plasmoid X — New energy, explained simply.",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Device · Plasmoid X",
+    description:
+      "Three beats: ionizer → bubbler → resonator. New energy, explained simply.",
+    images: ["https://plasmoidx.com/og.png"],
   },
 };
 
@@ -48,28 +65,104 @@ export default function DevicePage() {
         </p>
       </header>
 
-      <VisualPanel
-        className="mt-10"
-        src="/visuals/device-system-accurate.png"
-        alt="Inventor-model teaching sketch: air ionizer with violet interior cue, water-column bubbler with rising cavitation bubbles, and copper-toned resonator showing nested spheres with exhaust feedback"
-        width={1280}
-        height={720}
-        priority
-        caption="Inventor-model teaching sketch of the ionizer → bubbler → resonator path (Draft 518,400 anatomy) — original brochure art, not a product photo or patent reprint."
-      />
+      <ScrollyChapter className="mt-10" delay={40}>
+        <VisualPanel
+          src="/visuals/device-system-accurate.png"
+          alt="Inventor-model teaching sketch: air ionizer with violet interior cue, water-column bubbler with rising cavitation bubbles, and copper-toned resonator showing nested spheres with exhaust feedback"
+          width={1280}
+          height={720}
+          priority
+          caption="Inventor-model teaching sketch of the ionizer → bubbler → resonator path (Draft 518,400 anatomy) — original brochure art, not a product photo or patent reprint."
+        />
+      </ScrollyChapter>
 
-      <section className="mt-8">
-        <DeviceSystemFlowLab />
+      {/* Teach → act scrollytelling */}
+      <section
+        className="mt-14 border-t border-ink-600/40 pt-14"
+        aria-labelledby="device-story-heading"
+      >
+        <ScrollyChapter>
+          <h2
+            id="device-story-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            From problem to path
+          </h2>
+          <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
+            Short chapters: what ordinary engines miss, then how three hardware
+            beats organize the process. Motion stays calm and respects reduced
+            motion.
+          </p>
+        </ScrollyChapter>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <ScrollyChapter
+            delay={80}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 1 · Problem
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Kindling without a guide
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Hydrocarbons (fuel molecules of hydrogen and carbon) alone are
+              treated as the whole story — burn hard, lose heat, dirty the air.
+              Without a path that forms and guides plasmoids, most of the energy
+              story stays explosive “spend.”
+            </p>
+          </ScrollyChapter>
+
+          <ScrollyChapter
+            delay={140}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+              Chapter 2 · Solution
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Three beats that organize
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Ionizer prepares the air, bubbler grows plasmoids in water, and
+              the resonator / nested CTR spheres guide the flow toward the
+              engine. Fuel is kindling; the plasmoid–protium cycle is the work.
+            </p>
+          </ScrollyChapter>
+        </div>
+
+        <ScrollyChapter delay={180} className="mt-8">
+          <div className="rounded-xl border border-ink-600/35 bg-ink-900/25 px-5 py-5 sm:px-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 3 · Act
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Walk the interactive beats below, then check design ratios and
+              honest numbers on{" "}
+              <Link href="/study/#honest-numbers" className="link-aurora">
+                Study
+              </Link>
+              . Prefer the meter before marketing claims.
+            </p>
+          </div>
+        </ScrollyChapter>
       </section>
 
+      <ScrollyChapter as="section" className="mt-12" delay={60}>
+        <DeviceSystemFlowLab />
+      </ScrollyChapter>
+
       <section className="mt-12">
-        <DeviceWalkthrough />
-        <ExplainFigure title="three device beats" beats={explainDeviceBeats}>
-          <DeviceBeatsLab />
-        </ExplainFigure>
+        <ScrollyChapter delay={40}>
+          <DeviceWalkthrough />
+          <ExplainFigure title="three device beats" beats={explainDeviceBeats}>
+            <DeviceBeatsLab />
+          </ExplainFigure>
+        </ScrollyChapter>
         <ol className="grid gap-8 sm:grid-cols-3 sm:gap-6">
-          {deviceBeats.map((beat) => (
-            <li key={beat.n}>
+          {deviceBeats.map((beat, i) => (
+            <ScrollyChapter key={beat.n} as="li" delay={60 + i * 50}>
               <p className="font-mono text-xs text-aurora">{beat.n}</p>
               <h2 className="mt-2 text-lg font-medium tracking-tight text-mist-50">
                 {beat.title}
@@ -77,12 +170,12 @@ export default function DevicePage() {
               <p className="mt-2 text-sm leading-relaxed text-mist-300">
                 {beat.body}
               </p>
-            </li>
+            </ScrollyChapter>
           ))}
         </ol>
 
         <div className="mt-12 space-y-10">
-          <div>
+          <ScrollyChapter delay={80}>
             <h2 className="text-lg font-medium tracking-tight text-mist-50">
               Nested CTR spheres (resonator detail)
             </h2>
@@ -102,9 +195,9 @@ export default function DevicePage() {
               caption="Nested CTR spheres in the resonator — inventor-model teaching sketch summarizing outer / inner / core geometry."
             />
             <NestedSpheresLab />
-          </div>
+          </ScrollyChapter>
 
-          <div>
+          <ScrollyChapter delay={100}>
             <h2 className="text-lg font-medium tracking-tight text-mist-50">
               Optional: plasmoid gun / vajra quadrature
             </h2>
@@ -123,7 +216,7 @@ export default function DevicePage() {
               caption="Plasmoid gun / vajra quadrature — simplified teaching model from inventor notes (cone cross geometry), not a product photo."
             />
             <VajraLab />
-          </div>
+          </ScrollyChapter>
         </div>
 
         <p className="mt-8 text-sm leading-relaxed text-mist-400">
@@ -162,7 +255,12 @@ export default function DevicePage() {
         </p>
       </section>
 
-      <section id="ratios" className="mt-16 scroll-mt-20">
+      <ScrollyChapter
+        as="section"
+        id="ratios"
+        className="mt-16 scroll-mt-20"
+        delay={60}
+      >
         <h2 className="fluid-title font-semibold text-mist-50">
           Design ratios at a glance
         </h2>
@@ -191,9 +289,9 @@ export default function DevicePage() {
             </li>
           ))}
         </ul>
-      </section>
+      </ScrollyChapter>
 
-      <section className="mt-12">
+      <ScrollyChapter as="section" className="mt-12" delay={80}>
         <p className="text-sm leading-relaxed text-mist-300">
           Lead with the Embry-Riddle independent meter (~+9–10% fuel
           efficiency, ~−34% avg emissions). Inventor / marketing claims are
@@ -219,7 +317,7 @@ export default function DevicePage() {
           </Link>
           .
         </p>
-      </section>
+      </ScrollyChapter>
 
       <div className="mt-16 flex flex-wrap items-center gap-3 border-t border-ink-600/40 pt-10">
         <Link href="/study/" className="btn-ghost">

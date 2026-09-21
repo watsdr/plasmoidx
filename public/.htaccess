@@ -1,0 +1,49 @@
+# Plasmoid X — LiteSpeed / Apache cache headers for static `out/` export
+# Copied to out/ on `next build` (output: 'export'). Do not break directory
+# routing: trailingSlash: true → /study/ → study/index.html.
+
+DirectoryIndex index.html
+
+<IfModule mod_headers.c>
+  # HTML — always revalidate so content updates apply quickly
+  <FilesMatch "\.(?i:html)$">
+    Header set Cache-Control "max-age=0, must-revalidate, public"
+  </FilesMatch>
+
+  # Service worker — never long-cache
+  <FilesMatch "^(?i:sw\.js)$">
+    Header set Cache-Control "max-age=0, must-revalidate, public"
+  </FilesMatch>
+
+  # Fonts (including next/font under /_next/static/media)
+  <FilesMatch "\.(?i:woff2?|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Public images / icons (non-hashed) — 7 days
+  <FilesMatch "\.(?i:png|jpe?g|gif|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  # OG image — 1 day (after general image rule so this wins)
+  <FilesMatch "^(?i:og\.png)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+
+  # Hashed Next.js chunks under /_next/static/ — 1 year immutable
+  # (SetEnvIf URI match overrides FilesMatch when both apply)
+  <IfModule mod_setenvif.c>
+    SetEnvIf Request_URI "^/_next/static/" PX_NEXT_STATIC
+    Header set Cache-Control "public, max-age=31536000, immutable" env=PX_NEXT_STATIC
+  </IfModule>
+</IfModule>
+
+# MIME types for common static assets
+<IfModule mod_mime.c>
+  AddType text/html .html
+  AddType image/png .png
+  AddType image/svg+xml .svg
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType font/woff2 .woff2
+</IfModule>

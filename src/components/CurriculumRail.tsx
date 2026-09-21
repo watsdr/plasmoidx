@@ -23,7 +23,7 @@ function SoftMark({ lesson }: { lesson: CurriculumLesson }) {
   return (
     <button
       type="button"
-      className="btn-ghost mt-2 min-h-9 px-3 text-xs"
+      className="btn-ghost mt-2 min-h-11 px-3 text-xs"
       onClick={() => markProgress(lesson.softKey!)}
     >
       Mark lesson done
@@ -58,9 +58,12 @@ export default function CurriculumRail({ variant = "study" }: Props) {
       <div
         className={
           variant === "why"
-            ? "mt-8 max-w-xl"
+            ? "mt-8 max-w-xl rounded-xl border border-ink-600/45 px-4 py-4 sm:px-5"
             : "mt-8 max-w-2xl border-t border-ink-600/40 pt-6"
         }
+        style={{
+          minHeight: variant === "why" ? "11rem" : "14rem",
+        }}
         aria-hidden
       />
     );
@@ -126,7 +129,7 @@ export default function CurriculumRail({ variant = "study" }: Props) {
                   </span>
                   <Link
                     href={lesson.href}
-                    className="text-sm font-medium tracking-tight text-mist-50 underline-offset-4 hover:text-aurora hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+                    className="text-sm font-medium tracking-tight text-mist-50 underline underline-offset-[0.2em] hover:text-aurora focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
                   >
                     {lesson.title}
                   </Link>
@@ -163,7 +166,7 @@ export default function CurriculumRail({ variant = "study" }: Props) {
                 ) : null}
                 <Link
                   href={`/study/#lesson-${lesson.id}`}
-                  className="inline-flex min-h-11 items-center gap-1.5 rounded-md px-1 text-mist-100 underline-offset-4 hover:text-aurora hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+                  className="inline-flex min-h-11 items-center gap-1.5 rounded-md px-1 text-mist-100 underline underline-offset-[0.2em] hover:text-aurora focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
                 >
                   <span className="font-mono text-[11px] text-aurora">
                     {String(lesson.n).padStart(2, "0")}

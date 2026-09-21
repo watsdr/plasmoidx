@@ -80,7 +80,7 @@ export default function OfflineReady() {
       <button
         type="button"
         onClick={dismiss}
-        className="shrink-0 rounded-md px-2 py-1 text-xs text-mist-400 hover:text-mist-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+        className="inline-flex min-h-11 shrink-0 items-center rounded-md px-3 text-xs text-mist-400 hover:text-mist-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
         aria-label="Dismiss offline ready note"
       >
         Dismiss

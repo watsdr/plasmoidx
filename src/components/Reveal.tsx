@@ -15,11 +15,13 @@ type Props = {
   delay?: number;
   as?: "div" | "section" | "li" | "article";
   id?: string;
+  "aria-labelledby"?: string;
 };
 
 /**
  * Lightweight in-view fade/rise. Progressive: content stays visible without JS.
  * Animation only arms when html.js-motion is present.
+ * Honors prefers-reduced-motion (no hide/animate).
  */
 export default function Reveal({
   children,
@@ -27,6 +29,7 @@ export default function Reveal({
   delay = 0,
   as: Tag = "div",
   id,
+  "aria-labelledby": labelledBy,
 }: Props) {
   const ref = useRef<HTMLElement | null>(null);
   const [shown, setShown] = useState(true); // SSR / first paint visible
@@ -46,12 +49,10 @@ export default function Reveal({
     const rect = el.getBoundingClientRect();
     const inView = rect.top < window.innerHeight * 0.94 && rect.bottom > 0;
     if (inView) {
-      // Stay visible; optional soft re-trigger via delay class only
       setShown(true);
       return;
     }
 
-    // Below fold: hide then observe
     setShown(false);
   }, []);
 
@@ -83,6 +84,7 @@ export default function Reveal({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ref={ref as any}
       id={id}
+      aria-labelledby={labelledBy}
       className={`reveal ${shown ? "reveal-in" : ""} ${className}`}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
     >

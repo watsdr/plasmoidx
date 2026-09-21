@@ -55,7 +55,7 @@ export default function GuidedPath() {
                 onClick={() => {
                   requestAnimationFrame(() => focusTarget(id));
                 }}
-                className="inline-flex min-h-11 items-center gap-1.5 rounded-md px-1 text-mist-100 underline-offset-4 hover:text-aurora hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-md px-1 text-mist-100 underline underline-offset-[0.2em] hover:text-aurora focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
               >
                 <span className="font-mono text-[11px] text-aurora">
                   {String(i + 1).padStart(2, "0")}

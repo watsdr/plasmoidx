@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { externalLinks, msaartExpansion } from "@/lib/content";
 import { errataItems } from "@/lib/faq";
+import ScrollyChapter from "@/components/ScrollyChapter";
 
 export const metadata: Metadata = {
   title: "Sources & method",
@@ -29,12 +30,87 @@ export default function SourcesPage() {
         </p>
       </header>
 
-      <section className="mt-12 max-w-2xl">
-        <h2 className="fluid-title font-semibold text-mist-50">
-          Three lanes
-        </h2>
+      {/* Problem → solution scrollytelling */}
+      <section
+        className="mt-12 border-t border-ink-600/40 pt-12"
+        aria-labelledby="sources-story-heading"
+      >
+        <ScrollyChapter>
+          <h2
+            id="sources-story-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            Why method comes first
+          </h2>
+          <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
+            Calm chapters for how this site sorts evidence. Motion respects
+            reduced motion.
+          </p>
+        </ScrollyChapter>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <ScrollyChapter
+            delay={80}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 1 · Problem
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Claims in one pile
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Meter results, inventor marketing, and independent commentary
+              often arrive as one stream. Beginners cannot tell what was
+              measured from what was claimed.
+            </p>
+          </ScrollyChapter>
+
+          <ScrollyChapter
+            delay={140}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+              Chapter 2 · Solution
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Three labeled lanes
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Keep measured, inventor / marketing, and independent commentary
+              separate. Expand acronyms on first use. Link outbound; do not
+              republish Draft 518,400 PDFs.
+            </p>
+          </ScrollyChapter>
+        </div>
+
+        <ScrollyChapter delay={180} className="mt-8">
+          <div className="rounded-xl border border-ink-600/35 bg-ink-900/25 px-5 py-5 sm:px-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 3 · Act
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Read the lanes below, then return to{" "}
+              <Link href="/study/#honest-numbers" className="link-aurora">
+                Study · Honest numbers
+              </Link>{" "}
+              or the glossary when a short form needs a plain-English home.
+            </p>
+          </div>
+        </ScrollyChapter>
+      </section>
+
+      <section className="mt-16 max-w-2xl" aria-labelledby="three-lanes-heading">
+        <ScrollyChapter>
+          <h2
+            id="three-lanes-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            Three lanes
+          </h2>
+        </ScrollyChapter>
         <ol className="mt-6 space-y-6">
-          <li>
+          <ScrollyChapter as="li" delay={60}>
             <h3 className="text-base font-medium tracking-tight text-mist-50">
               Measured
             </h3>
@@ -44,8 +120,8 @@ export default function SourcesPage() {
               efficiency and about −34% average emissions (carbon monoxide
               clearest). Not a Plasmoid X credential; cited as used on the site.
             </p>
-          </li>
-          <li>
+          </ScrollyChapter>
+          <ScrollyChapter as="li" delay={100}>
             <h3 className="text-base font-medium tracking-tight text-mist-50">
               Inventor / marketing
             </h3>
@@ -55,8 +131,8 @@ export default function SourcesPage() {
               fuel figures (including ≥90%), near-zero exhaust language, and
               rollout promises stay labeled claims.
             </p>
-          </li>
-          <li>
+          </ScrollyChapter>
+          <ScrollyChapter as="li" delay={140}>
             <h3 className="text-base font-medium tracking-tight text-mist-50">
               Independent commentary
             </h3>
@@ -64,7 +140,7 @@ export default function SourcesPage() {
               Alchemical Science and similar educators — useful explainers and
               footage, not meters and not Strike. Credited outbound only.
             </p>
-          </li>
+          </ScrollyChapter>
         </ol>
       </section>
 
@@ -156,7 +232,7 @@ export default function SourcesPage() {
         </p>
       </section>
 
-      <section className="mt-16 max-w-2xl">
+      <ScrollyChapter as="section" className="mt-16 max-w-2xl" delay={40}>
         <h2 className="fluid-title font-semibold text-mist-50">
           Quality bar
         </h2>
@@ -168,7 +244,7 @@ export default function SourcesPage() {
           keeps key pages and the study pack available. We do not publish
           fabricated Lighthouse scores.
         </p>
-      </section>
+      </ScrollyChapter>
 
       <section id="errata" className="mt-16 max-w-2xl">
         <h2 className="fluid-title font-semibold text-mist-50">

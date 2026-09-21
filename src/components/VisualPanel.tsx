@@ -15,6 +15,7 @@ type Props = {
 /**
  * Quiet marketing visual: rounded border, overflow clip, optional caption.
  * Uses next/image with unoptimized static export.
+ * Aspect reserved via width/height to limit layout shift (Lighthouse CLS).
  */
 export default function VisualPanel({
   src,
@@ -30,18 +31,23 @@ export default function VisualPanel({
     ? `visual-caption-${src.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}`
     : undefined;
 
+  const aspect = `${width} / ${height}`;
+
   return (
     <figure
       className={`min-w-0 ${size === "compact" ? "max-w-md" : "w-full"} ${className}`}
     >
-      <div className="overflow-hidden rounded-xl border border-ink-600/45 bg-ink-900/30">
+      <div
+        className="overflow-hidden rounded-xl border border-ink-600/45 bg-ink-900/30"
+        style={{ aspectRatio: aspect }}
+      >
         <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
           priority={priority}
-          className="h-auto w-full object-cover"
+          className="h-full w-full object-cover"
           sizes={
             size === "compact"
               ? "(max-width: 640px) 100vw, 28rem"

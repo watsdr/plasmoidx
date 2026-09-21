@@ -8,6 +8,7 @@ import ClaimsCompare from "@/components/ClaimsCompare";
 import LectureCompanion from "@/components/LectureCompanion";
 import StudyIdlePrefetch from "@/components/StudyIdlePrefetch";
 import ExplainFigure from "@/components/ExplainFigure";
+import ScrollyChapter from "@/components/ScrollyChapter";
 import {
   Build518400,
   StoreSpendLab,
@@ -49,7 +50,23 @@ export const metadata: Metadata = {
     title: "Study · Plasmoid X",
     description:
       "Finishable beginner curriculum and interactive labs. Meter before marketing.",
-    images: [{ url: "/og.png", width: 1200, height: 630 }],
+    url: "https://plasmoidx.com/study/",
+    images: [
+      {
+        url: "https://plasmoidx.com/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Plasmoid X — New energy, explained simply.",
+        type: "image/png",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Study · Plasmoid X",
+    description:
+      "Finishable beginner curriculum and interactive labs. Meter before marketing.",
+    images: ["https://plasmoidx.com/og.png"],
   },
 };
 
@@ -70,14 +87,90 @@ export default function StudyPage() {
         </p>
       </header>
 
+      {/* Teach → act scrollytelling — calm chapters; dense labs stay below */}
+      <section
+        className="mt-12 border-t border-ink-600/40 pt-12"
+        aria-labelledby="study-story-heading"
+      >
+        <ScrollyChapter>
+          <h2
+            id="study-story-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            From confusion to a finishable path
+          </h2>
+          <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
+            Short chapters before the labs: what usually goes wrong when people
+            meet this model, then how Study keeps the picture honest and
+            finishable. Motion stays calm and respects reduced motion.
+          </p>
+        </ScrollyChapter>
+
+        <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
+          <ScrollyChapter
+            delay={80}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 1 · Problem
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Numbers without a map
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Inventor decks and big fuel claims arrive faster than a shared
+              picture. Beginners get lost in acronyms — MSAART (Molten Sea Ark
+              Atomic Reconstruction Technology), EVO (Exotic Vacuum Occurrence),
+              MOE (Model of the Elements) — before they can hold Time&apos;s
+              mould or direction = charge.
+            </p>
+          </ScrollyChapter>
+
+          <ScrollyChapter
+            delay={140}
+            className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
+          >
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+              Chapter 2 · Solution
+            </p>
+            <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
+              Locks, then labs, then the meter
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Lessons 1–6 build one picture: number locks, swirl-math laws,
+              store vs spend, plasmoid EVOs, and the protium path. Every large
+              marketing figure stays labeled; Embry-Riddle meter results lead.
+            </p>
+          </ScrollyChapter>
+        </div>
+
+        <ScrollyChapter delay={180} className="mt-8">
+          <div className="rounded-xl border border-ink-600/35 bg-ink-900/25 px-5 py-5 sm:px-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+              Chapter 3 · Act
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-mist-200">
+              Use the chips or guided path below, mark what you&apos;ve got,
+              and verify honest numbers before marketing claims. Prefer the
+              meter; open{" "}
+              <Link href="/sources/" className="link-aurora">
+                Sources
+              </Link>{" "}
+              when you want the method lanes spelled out.
+            </p>
+          </div>
+        </ScrollyChapter>
+      </section>
+
       <LearningProgress variant="study" />
       <GuidedPath />
       <CurriculumRail variant="study" />
 
       <StudyChips />
 
+      <ScrollyChapter className="mt-10" delay={60}>
       <aside
-        className="mt-10 max-w-2xl rounded-xl border border-ink-600/45 px-4 py-4 sm:px-5"
+        className="max-w-2xl rounded-xl border border-ink-600/45 px-4 py-4 sm:px-5"
         aria-labelledby="draft-518400-callout"
       >
         <p
@@ -122,15 +215,18 @@ export default function StudyPage() {
           </li>
         </ul>
       </aside>
+      </ScrollyChapter>
 
       <section id="honest-numbers" className="study-anchor mt-12">
-        <h2 className="fluid-title font-semibold text-mist-50">
-          Honest numbers
-        </h2>
-        <p className="mt-2 max-w-xl text-sm text-mist-300">
-          Bookmarkable compare: inventor claim → what the meter showed → what
-          it does not prove. Embry-Riddle leads; 90% figures stay labeled.
-        </p>
+        <ScrollyChapter>
+          <h2 className="fluid-title font-semibold text-mist-50">
+            Honest numbers
+          </h2>
+          <p className="mt-2 max-w-xl text-sm text-mist-300">
+            Bookmarkable compare: inventor claim → what the meter showed → what
+            it does not prove. Embry-Riddle leads; 90% figures stay labeled.
+          </p>
+        </ScrollyChapter>
         <div className="mt-6 grid gap-8 sm:grid-cols-2 sm:gap-12">
           <div>
             <h3 className="font-medium tracking-tight text-mist-50">

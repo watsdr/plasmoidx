@@ -7,6 +7,17 @@ Independent education & outreach site on the Bendall Thunderstorm Generator and 
 
 Stack: **Next.js App Router** · TypeScript · Tailwind CSS · **static export** (`output: 'export'`) for Cloudflare Pages.
 
+
+## Production hosting (current)
+
+**Live:** https://plasmoidx.com on **Namecheap Stellar** (static `out/` via **SFTP** → `public_html`).  
+DNS at Namecheap: A `@` / `www` → `162.213.253.56`. HTTPS via Let’s Encrypt / AutoSSL.
+
+> Derek’s rule: use Namecheap services already purchased for production — **not** Cloudflare Pages for the live site. Older Cloudflare notes below are historical/optional only.
+
+**Agent handoff:** see [`HANDOFF.md`](./HANDOFF.md), [`AGENTS.md`](./AGENTS.md), and [`briefs/PASTE_TO_GROK.md`](./briefs/PASTE_TO_GROK.md).
+
+
 ## Local development
 
 ```bash

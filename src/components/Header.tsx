@@ -1,11 +1,25 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { siteNav } from "@/lib/content";
-import GlossaryDrawer from "@/components/GlossaryDrawer";
 import ThemeToggle from "@/components/ThemeToggle";
+import { openStudyPalette } from "@/lib/studyPalette";
+
+/** Defer glossary sheet JS; reserve trigger size to avoid header CLS. */
+const GlossaryDrawer = dynamic(() => import("@/components/GlossaryDrawer"), {
+  ssr: false,
+  loading: () => (
+    <span
+      className="inline-flex min-h-11 items-center rounded-md px-2 text-sm tracking-tight text-transparent sm:px-3"
+      aria-hidden
+    >
+      Glossary
+    </span>
+  ),
+});
 
 export default function Header() {
   const pathname = usePathname();
@@ -62,6 +76,14 @@ export default function Header() {
     return pathname === href || pathname?.startsWith(href.replace(/\/$/, ""));
   };
 
+  function onSearchClick() {
+    setMenuOpen(false);
+    openStudyPalette();
+  }
+
+  const searchBtnClass =
+    "header-search inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-md px-2 text-sm tracking-tight text-mist-300 transition-colors hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora sm:min-w-0 sm:px-2.5";
+
   return (
     <header
       className={`site-header sticky top-0 z-50 max-w-full border-b transition-[background-color,border-color] duration-200 ${
@@ -73,7 +95,7 @@ export default function Header() {
       <div className="site-header-inner mx-auto flex min-h-14 w-full max-w-5xl min-w-0 items-center justify-between gap-2 px-4 sm:gap-3 sm:px-6">
         <Link
           href="/"
-          className="flex min-w-0 shrink items-center gap-2.5 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+          className="nav-brand flex min-h-11 min-w-0 shrink items-center gap-2.5 rounded-lg"
         >
           <picture>
             <source srcSet="/logo.avif" type="image/avif" />
@@ -85,6 +107,7 @@ export default function Header() {
               height={32}
               className="h-8 w-8 shrink-0 rounded-full object-cover"
               decoding="async"
+              fetchPriority="low"
             />
           </picture>
           <span className="truncate font-medium tracking-tight text-mist-50">
@@ -92,7 +115,7 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Desktop: full nav + theme + glossary */}
+        {/* Desktop: full nav + search + theme + glossary */}
         <div className="header-desktop hidden min-w-0 items-center gap-1.5 md:flex">
           <nav className="flex min-w-0 items-center gap-0" aria-label="Main">
             {siteNav.map((item) => {
@@ -102,29 +125,72 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`relative rounded-md px-2.5 py-2 text-sm tracking-tight transition-colors duration-200 lg:px-3.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora ${
-                    active
-                      ? "text-aurora"
-                      : "text-mist-300 hover:text-mist-50"
+                  className={`nav-link rounded-md px-2.5 py-2 text-sm tracking-tight lg:px-3.5 ${
+                    active ? "nav-link-active text-aurora" : "text-mist-300"
                   }`}
                 >
                   {item.label}
-                  {active && (
-                    <span
-                      aria-hidden
-                      className="absolute inset-x-3.5 -bottom-px h-px bg-aurora/80"
-                    />
-                  )}
                 </Link>
               );
             })}
           </nav>
+          <button
+            type="button"
+            className={searchBtnClass}
+            aria-label="Search Study"
+            title="Search Study (/ or ⌘K)"
+            onClick={onSearchClick}
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3.5-3.5" />
+            </svg>
+            <span className="hidden lg:inline">Search</span>
+            <kbd
+              className="header-search-kbd hidden rounded border border-ink-600/70 bg-ink-900/40 px-1 py-0.5 text-[10px] text-mist-400 xl:inline"
+              aria-hidden
+            >
+              /
+            </kbd>
+          </button>
           <ThemeToggle />
           <GlossaryDrawer />
         </div>
 
-        {/* Mobile: icon theme + hamburger */}
+        {/* Mobile: search + theme + hamburger */}
         <div className="header-mobile flex shrink-0 items-center gap-0.5 md:hidden">
+          <button
+            type="button"
+            className={searchBtnClass}
+            aria-label="Search Study"
+            title="Search Study"
+            onClick={onSearchClick}
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.75"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="M20 20l-3.5-3.5" />
+            </svg>
+          </button>
           <ThemeToggle compact />
           <button
             ref={menuButtonRef}
@@ -189,7 +255,7 @@ export default function Header() {
                 tabIndex={menuOpen ? undefined : -1}
                 className={`flex min-h-11 items-center rounded-lg px-3 text-base tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora ${
                   active
-                    ? "bg-ink-900/60 text-aurora"
+                    ? "nav-sheet-active bg-ink-900/60 text-aurora"
                     : "text-mist-200 hover:bg-ink-900/40 hover:text-mist-50"
                 }`}
                 onClick={() => setMenuOpen(false)}
@@ -199,6 +265,29 @@ export default function Header() {
             );
           })}
           <div className="mt-2 border-t border-ink-600/40 pt-2">
+            <button
+              type="button"
+              tabIndex={menuOpen ? undefined : -1}
+              className="flex w-full min-h-11 items-center gap-2 rounded-lg px-3 text-base tracking-tight text-mist-200 transition-colors hover:bg-ink-900/40 hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+              aria-label="Search Study"
+              onClick={onSearchClick}
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <circle cx="11" cy="11" r="7" />
+                <path d="M20 20l-3.5-3.5" />
+              </svg>
+              Search Study
+            </button>
             <GlossaryDrawer
               onOpen={() => setMenuOpen(false)}
               triggerClassName="flex w-full min-h-11 items-center rounded-lg px-3 text-base tracking-tight text-mist-200 transition-colors hover:bg-ink-900/40 hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"

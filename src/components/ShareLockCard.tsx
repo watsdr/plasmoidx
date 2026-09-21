@@ -228,13 +228,13 @@ export default function ShareLockCard() {
         it. Card is labeled independent — not Strike.
       </figcaption>
       <div className="mt-3 flex flex-wrap gap-2">
-        <button type="button" className="btn-ghost !min-h-10 !px-3 !text-xs" onClick={onDownloadSvg}>
+        <button type="button" className="btn-ghost !min-h-11 !px-3 !text-xs" onClick={onDownloadSvg}>
           Download SVG
         </button>
-        <button type="button" className="btn-ghost !min-h-10 !px-3 !text-xs" onClick={onDownloadPng}>
+        <button type="button" className="btn-ghost !min-h-11 !px-3 !text-xs" onClick={onDownloadPng}>
           Download PNG
         </button>
-        <button type="button" className="btn-ghost !min-h-10 !px-3 !text-xs" onClick={() => void onShare()}>
+        <button type="button" className="btn-ghost !min-h-11 !px-3 !text-xs" onClick={() => void onShare()}>
           Share
         </button>
       </div>
