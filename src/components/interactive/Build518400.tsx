@@ -86,7 +86,7 @@ export default function Build518400() {
               aria-pressed={skipped ? undefined : selected}
               aria-label={
                 skipped
-                  ? "Seven skipped — DC or zero-point slot"
+                  ? "7 skipped — DC (direct current) or zero-point slot"
                   : `Factor ${f}${selected ? ", selected" : ""}`
               }
               title={

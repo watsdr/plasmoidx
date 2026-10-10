@@ -46,7 +46,7 @@ export function pageMeta({
     url: absUrl(`/og/${section}.png`),
     width: 1200,
     height: 630,
-    alt: `Plasmoid X — ${title}`,
+    alt: title.startsWith("Plasmoid X") ? title : `Plasmoid X — ${title}`,
     type: "image/png",
   };
   return {

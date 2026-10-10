@@ -1,5 +1,5 @@
 /* PlasmoidX static-export service worker — shell + locks + key assets. */
-const CACHE = "plasmoidx-shell-v13";
+const CACHE = "plasmoidx-shell-v14";
 
 const PRECACHE = [
   "/",
@@ -19,7 +19,7 @@ const PRECACHE = [
   "/favicon.svg",
   "/favicon.png",
   "/og.png",
-  "/visuals/home-problem-solution.png",
+  "/visuals/home-problem-solution.webp",
   "/visuals/device-system-accurate.png",
   "/visuals/device-nested-spheres.png",
   "/visuals/device-vajra-gun.png",

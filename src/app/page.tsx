@@ -166,10 +166,10 @@ export default function WhyPage() {
 
           <ScrollyChapter delay={60} className="mt-8">
             <VisualPanel
-              src="/visuals/home-problem-solution.png"
+              src="/visuals/home-problem-solution.webp"
               alt="Side-by-side: ordinary engine exhaust and waste versus a cleaner, organized torus-style energy path"
-              width={1280}
-              height={720}
+              width={960}
+              height={540}
               caption="Ordinary engines waste fuel and dirty the air. This path aims at a cleaner, more organized process."
             />
           </ScrollyChapter>
