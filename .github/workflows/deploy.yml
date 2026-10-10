@@ -11,6 +11,8 @@ jobs:
         with: { node-version: 20, cache: npm }
       - run: npm ci
       - run: npm run build
+        env:
+          NEXT_PUBLIC_GSC_VERIFICATION: ${{ vars.NEXT_PUBLIC_GSC_VERIFICATION }}
       - run: pip install paramiko
       - run: python scripts/sftp-deploy.py
         env:
