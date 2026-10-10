@@ -11,6 +11,12 @@ export type StudyRoute = {
 
 export const STUDY_ROUTES: StudyRoute[] = [
   {
+    href: "/explainers/",
+    title: "Explainers",
+    hint: "Quick answers: plasmoid, Thunderstorm Generator, MSAART",
+    keywords: "what is plasmoid plasma msaart thunderstorm explained",
+  },
+  {
     href: "/study/",
     title: "Study home",
     hint: "Lessons, diagrams, and labs in plain English",

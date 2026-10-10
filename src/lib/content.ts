@@ -175,6 +175,7 @@ export const siteNav = [
 
 /** Secondary paths — footer / in-page, not primary nav. */
 export const secondaryNav = [
+  { href: "/explainers/", label: "Explainers" },
   { href: "/glossary/", label: "Glossary" },
   { href: "/faq/", label: "FAQ" },
   { href: "/updates/", label: "Errata" },

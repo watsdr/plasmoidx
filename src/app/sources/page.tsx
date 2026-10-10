@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { externalLinks, msaartExpansion } from "@/lib/content";
 import { errataItems } from "@/lib/faq";
 import ScrollyChapter from "@/components/ScrollyChapter";
 
 export const metadata: Metadata = {
-  title: "Sources & method",
-  description:
-    "How Plasmoid X separates measured results, inventor claims, and independent commentary. Acronym policy, outbound credits, quality bar.",
-  openGraph: {
-    title: "Sources & method · Plasmoid X",
-    description:
-      "Measured vs inventor vs commentary. MSAART expansion, Embry-Riddle citation, outbound credits.",
-  },
+  ...pageMeta({
+    path: "/sources/",
+    title: "Sources, method & privacy",
+    description: "How Plasmoid X separates measured results, inventor claims, and commentary. Outbound credits, acronym policy, and our cookieless analytics note.",
+    section: "sources",
+  }),
 };
 
 export default function SourcesPage() {
@@ -245,6 +244,19 @@ export default function SourcesPage() {
           fabricated Lighthouse scores.
         </p>
       </ScrollyChapter>
+
+      <section id="privacy" className="mt-16 max-w-2xl" aria-labelledby="privacy-heading">
+        <h2 id="privacy-heading" className="fluid-title font-semibold text-mist-50">
+          Privacy
+        </h2>
+        <p className="mt-3 text-sm leading-relaxed text-mist-300">
+          We count visits with GoatCounter, a small privacy-friendly counter.
+          It sets no cookies and stores no personal profile — just anonymous
+          totals like page views, referring sites, and screen size. Study
+          progress stays in your browser (localStorage) on this device only.
+          There are no accounts and no ad trackers.
+        </p>
+      </section>
 
       <section id="errata" className="mt-16 max-w-2xl">
         <h2 className="fluid-title font-semibold text-mist-50">

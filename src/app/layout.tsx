@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import AmbientGlow from "@/components/AmbientGlow";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { siteSlogan } from "@/lib/content";
+import Analytics from "@/components/Analytics";
 
 /** Idle-defer OfflineReady + StudyCommandPalette (or mount on first intent). */
 const DeferredSiteChrome = dynamic(
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://plasmoidx.com/og.png",
+        url: "https://plasmoidx.com/og/home.png",
         width: 1200,
         height: 630,
         alt: "Plasmoid X — New energy, explained simply.",
@@ -67,13 +68,16 @@ export const metadata: Metadata = {
     description: defaultDescription,
     images: [
       {
-        url: "https://plasmoidx.com/og.png",
+        url: "https://plasmoidx.com/og/home.png",
         width: 1200,
         height: 630,
         alt: "Plasmoid X — New energy, explained simply.",
       },
     ],
   },
+  ...(process.env.NEXT_PUBLIC_GSC_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GSC_VERIFICATION } }
+    : {}),
   robots: {
     index: true,
     follow: true,
@@ -102,37 +106,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@graph": [
-                {
-                  "@type": "WebSite",
-                  name: "Plasmoid X",
-                  url: "https://plasmoidx.com",
-                  description: defaultDescription,
-                  inLanguage: "en-US",
-                },
-                {
-                  "@type": "LearningResource",
-                  name: "Plasmoid X beginner curriculum",
-                  url: "https://plasmoidx.com/study/",
-                  description:
-                    "Lessons 1–6 on Time’s mould, direction = charge, plasmoid EVOs, three device beats, and honest Embry-Riddle numbers.",
-                  learningResourceType: "Educational guide",
-                  educationalLevel: "Beginner",
-                  isAccessibleForFree: true,
-                  creator: {
-                    "@type": "Person",
-                    name: "Derek Watson",
-                  },
-                },
-              ],
-            }),
-          }}
-        />
         <ThemeProvider>
           <AmbientGlow />
           <a
@@ -147,6 +120,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <DeferredSiteChrome />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

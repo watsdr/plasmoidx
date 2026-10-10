@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
 import StudyChips from "@/components/StudyChips";
 import GuidedPath from "@/components/GuidedPath";
 import LearningProgress from "@/components/LearningProgress";
@@ -43,36 +45,32 @@ import {
 } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Study",
-  description:
-    "Beginner Lessons 1–6 plus labs: number locks, direction = charge, plasmoid EVOs, protium path, MOE lattice, and honest Embry-Riddle numbers.",
-  openGraph: {
-    title: "Study · Plasmoid X",
-    description:
-      "Finishable beginner curriculum and interactive labs. Meter before marketing.",
-    url: "https://plasmoidx.com/study/",
-    images: [
-      {
-        url: "https://plasmoidx.com/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Plasmoid X — New energy, explained simply.",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Study · Plasmoid X",
-    description:
-      "Finishable beginner curriculum and interactive labs. Meter before marketing.",
-    images: ["https://plasmoidx.com/og.png"],
-  },
+  ...pageMeta({
+    path: "/study/",
+    title: "Study: plasmoid lessons in plain English",
+    description: "Beginner Lessons 1–6 plus labs: number locks, direction = charge, plasmoid EVOs, protium path, and honest Embry-Riddle numbers.",
+    section: "study",
+  }),
 };
 
 export default function StudyPage() {
   return (
     <div className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "LearningResource",
+          name: "Plasmoid X beginner curriculum",
+          url: "https://plasmoidx.com/study/",
+          description:
+            "Lessons 1–6 on Time’s mould, direction = charge, plasmoid EVOs, three device beats, and honest Embry-Riddle numbers.",
+          learningResourceType: "Educational guide",
+          educationalLevel: "Beginner",
+          isAccessibleForFree: true,
+          inLanguage: "en-US",
+          creator: { "@type": "Person", name: "Derek Watson" },
+        }}
+      />
       <StudyIdlePrefetch />
       <header className="max-w-2xl">
         <p className="section-label">Study</p>
@@ -84,6 +82,16 @@ export default function StudyPage() {
           <span className="font-medium text-aurora">51.84°</span> is the mouth
           of the mould. Clockwise stores. Anticlockwise spends. The torus
           (donut shape) is the womb.
+        </p>
+        <p className="mt-4 text-sm text-mist-300">
+          New here? Start with a quick answer:{" "}
+          <Link href="/explainers/what-is-a-plasmoid/" className="link-aurora">
+            What is a plasmoid?
+          </Link>{" "}
+          ·{" "}
+          <Link href="/explainers/thunderstorm-generator/" className="link-aurora">
+            Thunderstorm Generator explained
+          </Link>
         </p>
       </header>
 

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import ScrollyChapter from "@/components/ScrollyChapter";
 import { glossaryTerms } from "@/lib/glossary";
 
 export const metadata: Metadata = {
-  title: "Glossary",
-  description:
-    "Plain definitions for MSAART, PUM, EVO, MOE, CTR, Time’s mould, Embry-Riddle meter, and related Plasmoid X study terms.",
+  ...pageMeta({
+    path: "/glossary/",
+    title: "Glossary of plasmoid study terms",
+    description: "Plain definitions for MSAART, PUM, EVO, MOE, CTR, Time’s mould, the Embry-Riddle meter, and related Plasmoid X study terms.",
+    section: "glossary",
+  }),
 };
 
 export default function GlossaryPage() {

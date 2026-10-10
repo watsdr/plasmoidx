@@ -6,6 +6,44 @@ import SplashMark from "@/components/SplashMark";
 import ScrollyChapter from "@/components/ScrollyChapter";
 import KeyboardShortcutsTip from "@/components/KeyboardShortcutsTip";
 import { siteSlogan } from "@/lib/content";
+import type { Metadata } from "next";
+import { pageMeta, SITE_URL } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+
+const homeDescription =
+  "Independent, plain-English education on plasmoids and the Bendall Thunderstorm Generator retrofit idea — inventor claims labeled, independent meter results first.";
+
+export const metadata: Metadata = pageMeta({
+  path: "/",
+  title: "Plasmoid X — New energy, explained simply.",
+  description: homeDescription,
+  section: "home",
+  absoluteTitle: true,
+});
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#org`,
+      name: "Plasmoid X",
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/logo.png`,
+      slogan: "New energy, explained simply.",
+      founder: { "@type": "Person", name: "Derek Watson" },
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Plasmoid X",
+      url: `${SITE_URL}/`,
+      description: homeDescription,
+      inLanguage: "en-US",
+      publisher: { "@id": `${SITE_URL}/#org` },
+    },
+  ],
+};
 
 /** Below-fold client islands — keep above-fold JS light (desktop SI / TBT). */
 const CurriculumRail = dynamic(() => import("@/components/CurriculumRail"), {
@@ -61,6 +99,7 @@ const findCards = [
 export default function WhyPage() {
   return (
     <div>
+      <JsonLd data={homeJsonLd} />
       {/* Splash hero — motion mark + 5-second hook */}
       <section className="relative mx-auto w-full min-w-0 max-w-5xl overflow-hidden px-4 pb-10 pt-12 sm:px-6 sm:pb-12 sm:pt-16">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12">

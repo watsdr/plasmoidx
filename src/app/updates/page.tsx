@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { errataItems } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: "Errata & updates",
-  description:
-    "Dated corrections for Plasmoid X: MSAART Ark spelling, meter vs 90% lead, mobile header fix, and later notes.",
+  ...pageMeta({
+    path: "/updates/",
+    title: "Errata & updates",
+    description: "Dated corrections for Plasmoid X: MSAART Ark spelling, meter vs 90% lead, device visuals, and later notes.",
+    section: "sources",
+  }),
 };
 
 export default function UpdatesPage() {

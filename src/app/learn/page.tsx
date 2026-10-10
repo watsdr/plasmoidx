@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import ScrollyChapter from "@/components/ScrollyChapter";
 
 export const metadata: Metadata = {
-  title: "Learn → Study",
-  description:
-    "This path moved to Study. Number locks, vortex laws, plasmoids, and the learning path live at /study/.",
+  ...pageMeta({
+    path: "/learn/",
+    title: "Learn → Study",
+    description: "This path moved to Study. Lessons, labs, and the learning path live at /study/.",
+    section: "study",
+  }),
   robots: { index: false, follow: true },
 };
 

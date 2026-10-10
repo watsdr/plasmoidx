@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import VisualPanel from "@/components/VisualPanel";
 import ContactForm from "@/components/ContactForm";
 import { externalLinks } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Connect",
-  description:
-    "Reach Derek Watson at PlasmoidX — education and licensed pilot conversations in the US. contact@plasmoidx.com. Independent outbound links.",
+  ...pageMeta({
+    path: "/connect/",
+    title: "Connect",
+    description: "Email Derek Watson about Plasmoid X education or licensed pilot conversations in the US, plus labeled independent outbound links.",
+    section: "connect",
+  }),
 };
 
 export default function ConnectPage() {

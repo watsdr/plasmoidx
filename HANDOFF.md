@@ -118,21 +118,34 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 1. **Facebook/X OG rescrape** — meta is correct live; Facebook debugger needs Derek’s login to force rescrape.
 3. **Namecheap Sign in** — still unreliable for agents; stick to SFTP + email credentials.
 4. **README drift** — older README still mentions Cloudflare Pages as primary; treat **Namecheap SFTP** as live path (see Deploy section above).
-5. Optional next polish: image weight (large home PNG), sitemap/robots, privacy analytics, SW/offline shell hardening.
+5. Optional next polish: image weight (large home PNG), SW/offline shell hardening.
+6. **GoatCounter account (Derek):** create account at goatcounter.com with site code **`plasmoidx`** (counts post to `https://plasmoidx.goatcounter.com/count`). Until then the script loads but counts are dropped. Override via `NEXT_PUBLIC_GOATCOUNTER_CODE` at build time.
+7. **Search Console (Derek):** add property, verify via meta tag — set `NEXT_PUBLIC_GSC_VERIFICATION=<token>` and rebuild (or upload Google's HTML file into `public/`). Then submit `https://plasmoidx.com/sitemap.xml`.
+8. **Deploy pending:** 2026-10-10 SEO/analytics/explainers batch is on `main` but NOT yet SFTP'd (Derek handles deploy).
 
 ---
 
 ## Suggested next (Derek picks)
 
-1. **In progress / handed to Grok:** Image weight pass (WebP/AVIF) for large Home PNG — see `briefs/PASTE_TO_GROK.md`.
-2. Force OG rescrape in Facebook + X validators (Derek login).
-3. Sitemap + robots polish.
-4. Privacy-friendly analytics recommendation + optional install.
-5. README cleanup: remove Cloudflare Pages as “primary” deploy path.
+1. Deploy the 2026-10-10 batch (SFTP `out/` incl. `.htaccess`, `sitemap.xml`, `robots.txt`, `og/`).
+2. Create GoatCounter `plasmoidx` + verify Search Console (meta tag env) and submit sitemap.
+3. Force OG rescrape in Facebook + X validators (per-section images now at `/og/<section>.png`).
+4. Image weight pass (WebP/AVIF) for large Home PNG — see `briefs/PASTE_TO_GROK.md`.
+5. More explainers once Search Console shows real queries.
 
 ---
 
 ## Session log (append, newest first)
+
+### 2026-10-10 — SEO, analytics, explainers, OG cards, /stats/
+- **Analytics:** `src/components/Analytics.tsx` injects GoatCounter `count.js` after `load` + idle; only on plasmoidx.com hostnames (local/Lighthouse runs don't count). Code from `NEXT_PUBLIC_GOATCOUNTER_CODE` (default `plasmoidx`). Privacy note added on `/sources/#privacy`.
+- **SEO:** `src/app/sitemap.ts` + `src/app/robots.ts` (replaced static `public/sitemap.xml` / `robots.txt`); routes listed in `src/lib/seo.ts` `SITEMAP_ROUTES`. `/stats/` excluded + disallowed; `/learn/` `/contact/` aliases stay noindex and out of sitemap. `pageMeta()` helper gives every page a canonical, unique title/description, OG + Twitter card. Optional `NEXT_PUBLIC_GSC_VERIFICATION` → `<meta name="google-site-verification">`.
+- **JSON-LD:** Organization + WebSite on Home; LearningResource on Study; FAQPage on FAQ; Article on each explainer (removed old site-wide block from layout).
+- **Explainers (new):** `/explainers/`, `/explainers/what-is-a-plasmoid/`, `/explainers/plasmoid-vs-plasma/`, `/explainers/thunderstorm-generator/`, `/explainers/msaart/` — content in `src/lib/explainers.ts`, each block labeled Measured / Inventor claim / Plain definition. Linked from Study header, footer, and the command palette.
+- **OG images:** `npm run og` (`scripts/og-images.mjs`, headless Chrome) → `public/og/<section>.png` 1200×630, committed. Re-run after copy changes; not part of `npm run build`.
+- **/stats/:** private noindex page linking GoatCounter + Search Console with plain-English meanings of each number (links, not iframes — GoatCounter embeds need a public dashboard).
+- Lab Lighthouse (local `serve`, no prod headers): desktop 100/100/100/100; mobile Home 98–99, Study 95–96 Perf with A11y/BP/SEO 100 — same as pre-change baseline measured the same way, so it's a local-env gap, not a regression. Re-check on live after deploy.
+- Not deployed (Derek deploys).
 
 ### 2026-09-21 — Ready Grok paste (image weight)
 - Filled `briefs/PASTE_TO_GROK.md` **Current task** with Home image weight pass (WebP/AVIF + build + SFTP + HANDOFF update).

@@ -1,35 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import VisualPanel from "@/components/VisualPanel";
 import ContactForm from "@/components/ContactForm";
 import ScrollyChapter from "@/components/ScrollyChapter";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Optional install and commissioning help for people who already own a compatible Bendall / Thunderstorm Generator–style kit. Inquiry only. Independent labor — not a Strike store. Not legal advice.",
-  openGraph: {
-    title: "Services · Plasmoid X",
-    description:
-      "Independent install / commissioning inquiry for kit owners. Kits not sold here. No performance guarantees. Written estimate before paid work.",
-    url: "https://plasmoidx.com/services/",
-    images: [
-      {
-        url: "https://plasmoidx.com/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Plasmoid X — New energy, explained simply.",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Services · Plasmoid X",
-    description:
-      "Install help for kit owners — inquiry only. New energy, explained simply.",
-    images: ["https://plasmoidx.com/og.png"],
-  },
+  ...pageMeta({
+    path: "/services/",
+    title: "Install services by inquiry",
+    description: "Optional Thunderstorm Generator install and commissioning labor by inquiry, for kits you already own. Independent — not a dealer or licensee.",
+    section: "services",
+  }),
 };
 
 const included = [

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import VisualPanel from "@/components/VisualPanel";
 import Lock518400Card from "@/components/diagrams/Lock518400Card";
@@ -20,31 +21,12 @@ import {
 import { deviceBeats, ratios } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Device",
-  description:
-    "Bendall Thunderstorm Generator in three plain steps — air ionizer, bubbler / plasmoid generator, and catalytic tornado resonator with nested CTR spheres — plus hardware design ratios at a glance.",
-  openGraph: {
-    title: "Device · Plasmoid X",
-    description:
-      "Three beats: ionizer → bubbler → resonator / nested CTR spheres. Ratios locked to 51.84° and the MOE lattice.",
-    url: "https://plasmoidx.com/device/",
-    images: [
-      {
-        url: "https://plasmoidx.com/og.png",
-        width: 1200,
-        height: 630,
-        alt: "Plasmoid X — New energy, explained simply.",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Device · Plasmoid X",
-    description:
-      "Three beats: ionizer → bubbler → resonator. New energy, explained simply.",
-    images: ["https://plasmoidx.com/og.png"],
-  },
+  ...pageMeta({
+    path: "/device/",
+    title: "Thunderstorm Generator device walkthrough",
+    description: "The three beats of the Bendall Thunderstorm Generator retrofit — ionizer, bubbler, resonator — with labeled teaching art and honest meter numbers.",
+    section: "device",
+  }),
 };
 
 export default function DevicePage() {

@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact → Connect",
-  description:
-    "This path moved to Connect. Email, form stub, and independent outbound links live at /connect/.",
+  ...pageMeta({
+    path: "/contact/",
+    title: "Contact → Connect",
+    description: "This path moved to Connect. Email and independent outbound links live at /connect/.",
+    section: "connect",
+  }),
   robots: { index: false, follow: true },
 };
 

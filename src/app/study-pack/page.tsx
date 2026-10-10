@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import PrintButton from "@/components/PrintButton";
 import ScrollyChapter from "@/components/ScrollyChapter";
 import { deviceBeats, msaartExpansion, siteSlogan } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Study pack",
-  description:
-    "Printable one-page study sheet: Time’s mould locks, three device beats, and a short glossary. Print or Save as PDF.",
+  ...pageMeta({
+    path: "/study-pack/",
+    title: "Printable study pack",
+    description: "One-page printable study sheet: Time’s mould locks, three device beats, and a short glossary. Print or save as PDF.",
+    section: "study",
+  }),
 };
 
 const glossaryMini = [

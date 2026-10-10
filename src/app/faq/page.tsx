@@ -1,17 +1,33 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
+import JsonLd from "@/components/JsonLd";
 import ScrollyChapter from "@/components/ScrollyChapter";
 import { faqItems } from "@/lib/faq";
 
 export const metadata: Metadata = {
-  title: "FAQ",
-  description:
-    "Beginner questions about Plasmoid X: MSAART, Embry-Riddle meter vs 90% claims, Strike credit, kit installs, offline study, and where to start.",
+  ...pageMeta({
+    path: "/faq/",
+    title: "FAQ: plasmoids, MSAART & honest numbers",
+    description: "Short answers about Plasmoid X: MSAART, Embry-Riddle meter vs 90% claims, Strike credit, kit installs, offline study, and where to start.",
+    section: "faq",
+  }),
 };
 
 export default function FaqPage() {
   return (
     <div className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqItems.map((i) => ({
+            "@type": "Question",
+            name: i.q,
+            acceptedAnswer: { "@type": "Answer", text: i.a },
+          })),
+        }}
+      />
       <header className="max-w-2xl">
         <p className="section-label">FAQ</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
