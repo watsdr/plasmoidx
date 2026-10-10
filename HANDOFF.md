@@ -137,6 +137,13 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ## Session log (append, newest first)
 
+### 2026-10-10 (afternoon) — Explainer share cards, related links, host tuning, social drafts
+- **OG:** `npm run og` now also renders `public/og/explainers/<slug>.png` (title card per explainer, read from `src/lib/explainers.ts`). `pageMeta({ ogImage })` wires it; Article JSON-LD image matches. All 12 return 200 live.
+- **Related explainers:** `ExplainerArticle` adds a plain "Related explainers" list (3 others not already in Keep learning).
+- **.htaccess:** LiteSpeed `CacheLookup` + short HTML cache env, `FileETag MTime Size`, mod_deflate fallback, txt/json/xml revalidate. Brotli + ETag + 304 confirmed live. TTFB (curl, 6-run avg): before / 391 ms, /study/ 402, evo 381 (server wait ~166–190 ms after TLS) → after 362 / 352 / 355 (server wait ~141–156 ms). No `x-litespeed-cache` header: LSCache doesn't engage for plain static files, so the remaining time is host/TLS latency (~210 ms TLS handshake). Bigger wins need a CDN (Cloudflare proxy in front of Namecheap) — Derek's call.
+- **Social:** `docs/SOCIAL-POSTS.md` — 5 drafts, not posted.
+- Commit 26a9151 deployed; GSC tag still live. Next: Facebook Scrape Again for explainer URLs (new cards).
+
 ### 2026-10-10 — Live Lighthouse, OG check, explainer plan
 - **Live Lighthouse (before → after fix):** Home mobile Perf 81 → 92, desktop 94 → 95; Study mobile 86 (re-runs vary 78–86), desktop 100; What-is-a-plasmoid mobile 97, desktop 100. Accessibility / Best Practices / SEO 100 everywhere.
 - **Fixes (2bf2be6, deployed):** Home problem/solution visual is now WebP 960×540 (491 KB → 11 KB; sw cache v14); the "7" skipped button's accessible name now starts with "7"; Home og:image:alt no longer says "Plasmoid X" twice.
