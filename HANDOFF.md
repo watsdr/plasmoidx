@@ -176,3 +176,9 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 - Box can't reach SFTP port 21098 (outbound block). Added manual-only workflow `.github/workflows/deploy.yml` + `scripts/sftp-deploy.py`; SFTP password lives only in repo secret `SFTP_PASSWORD`.
 - Deploy: `gh workflow run deploy.yml -R watsdr/plasmoidx` (or Actions tab → Run workflow). First run uploaded 138 files; SEO/analytics/explainers/stats commit ddcd5fb is live.
 - Open: verify Google Search Console (meta tag via NEXT_PUBLIC_GSC_VERIFICATION or HTML file) and submit sitemap; re-run live Lighthouse; refresh share cards in Facebook/X debuggers.
+
+### 2026-10-10 — 8 explainers + perf/a11y
+- Shipped 8 explainers (see docs/EXPLAINER-PLAN.md) under /explainers/; inline CSS via scripts/inline-css.mjs; Study labs lazy-load near viewport; WOFF2 font; ARIA chip-list fix. Commits 6451f74, 9b68392 (deployed via Actions).
+- Live Lighthouse: Study mobile TBT ~230→~40 ms; scores vary 88–100 with host response time. A11y/BP/SEO 100.
+- Search Console verified (token in repo variable NEXT_PUBLIC_GSC_VERIFICATION); sitemap submitted. GoatCounter live; weekly summary routine Mondays 8:04 AM ET via box env GOATCOUNTER_API_KEY.
+- Open: per-explainer OG images (`npm run og`); Facebook Scrape Again for new pages.
