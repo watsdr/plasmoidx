@@ -163,3 +163,8 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ### 2026-09-21 — Motion splash + a11y/perf batches
 - Scrollytelling, palette, Search, OG, `.htaccess`, idle-defer, Soft Lift, contrast, nav cues; SFTP redeploys throughout.
+
+### 2026-10-10 — Deploy via GitHub Actions
+- Box can't reach SFTP port 21098 (outbound block). Added manual-only workflow `.github/workflows/deploy.yml` + `scripts/sftp-deploy.py`; SFTP password lives only in repo secret `SFTP_PASSWORD`.
+- Deploy: `gh workflow run deploy.yml -R watsdr/plasmoidx` (or Actions tab → Run workflow). First run uploaded 138 files; SEO/analytics/explainers/stats commit ddcd5fb is live.
+- Open: verify Google Search Console (meta tag via NEXT_PUBLIC_GSC_VERIFICATION or HTML file) and submit sitemap; re-run live Lighthouse; refresh share cards in Facebook/X debuggers.
