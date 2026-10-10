@@ -11,6 +11,7 @@ export const metadata: Metadata = pageMeta({
   description: e.description,
   section: "explainers",
   ogType: "article",
+  ogImage: `/og/explainers/${e.slug}.png`,
 });
 
 export default function Page() {

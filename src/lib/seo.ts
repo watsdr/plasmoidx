@@ -30,6 +30,8 @@ type PageMetaInput = {
   /** Use the exact title (no template), e.g. on Home */
   absoluteTitle?: boolean;
   ogType?: "website" | "article";
+  /** Override share image path, e.g. "/og/explainers/<slug>.png" */
+  ogImage?: string;
 };
 
 export function pageMeta({
@@ -40,10 +42,11 @@ export function pageMeta({
   noindex,
   absoluteTitle,
   ogType = "website",
+  ogImage,
 }: PageMetaInput): Metadata {
   const fullTitle = absoluteTitle ? title : `${title} · Plasmoid X`;
   const image = {
-    url: absUrl(`/og/${section}.png`),
+    url: absUrl(ogImage ?? `/og/${section}.png`),
     width: 1200,
     height: 630,
     alt: title.startsWith("Plasmoid X") ? title : `Plasmoid X — ${title}`,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
-import type { Explainer } from "@/lib/explainers";
+import { explainers, type Explainer } from "@/lib/explainers";
 import { absUrl } from "@/lib/seo";
 
 const kindLabel = {
@@ -11,6 +11,12 @@ const kindLabel = {
 
 export default function ExplainerArticle({ e }: { e: Explainer }) {
   const url = absUrl(`/explainers/${e.slug}/`);
+  // Related explainers: 3 others not already in "Keep learning", in list order after this one.
+  const linked = new Set(e.related.map((r) => r.href));
+  const i = explainers.findIndex((x) => x.slug === e.slug);
+  const related = [...explainers.slice(i + 1), ...explainers.slice(0, i)]
+    .filter((x) => !linked.has(`/explainers/${x.slug}/`))
+    .slice(0, 3);
   return (
     <article className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       <JsonLd
@@ -21,7 +27,7 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
           description: e.description,
           url,
           mainEntityOfPage: url,
-          image: absUrl("/og/explainers.png"),
+          image: absUrl(`/og/explainers/${e.slug}.png`),
           inLanguage: "en-US",
           author: { "@type": "Person", name: "Derek Watson" },
           publisher: { "@type": "Organization", name: "Plasmoid X", url: absUrl("/") },
@@ -62,6 +68,16 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
             <li key={r.href}>
               <Link href={r.href} className="link-aurora">
                 {r.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <h2 className="mt-8 text-sm font-medium text-mist-50">Related explainers</h2>
+        <ul className="mt-3 space-y-2 text-sm">
+          {related.map((x) => (
+            <li key={x.slug}>
+              <Link href={`/explainers/${x.slug}/`} className="link-aurora">
+                {x.title}
               </Link>
             </li>
           ))}
