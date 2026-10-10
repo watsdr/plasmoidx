@@ -137,6 +137,14 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ## Session log (append, newest first)
 
+### 2026-10-10 — Live Lighthouse, OG check, explainer plan
+- **Live Lighthouse (before → after fix):** Home mobile Perf 81 → 92, desktop 94 → 95; Study mobile 86 (re-runs vary 78–86), desktop 100; What-is-a-plasmoid mobile 97, desktop 100. Accessibility / Best Practices / SEO 100 everywhere.
+- **Fixes (2bf2be6, deployed):** Home problem/solution visual is now WebP 960×540 (491 KB → 11 KB; sw cache v14); the "7" skipped button's accessible name now starts with "7"; Home og:image:alt no longer says "Plasmoid X" twice.
+- **Still under 100:** Home mobile LCP (Largest Contentful Paint) ~3.2 s is the hero paragraph's render delay (reveal/hydration) plus ~9 KB render-blocking CSS; Study mobile is a heavy page. Not easy wins — needs a hero-reveal rethink.
+- **OG:** og/twitter tags present on /, /study/, /explainers/what-is-a-plasmoid/; `/og/home.png`, `/og/study.png`, `/og/explainers.png` return 200. Facebook scrape API needs an access token → Derek clicks **Scrape Again** at https://developers.facebook.com/tools/debug/.
+- **Plan:** `docs/EXPLAINER-PLAN.md` (8 proposed explainers, not built).
+- **GoatCounter:** JSON API at `https://plasmoidx.goatcounter.com/api/v0` (Bearer token, 4 req/s). Weekly summary needs Derek to create an API key (user menu → API) with stats read permission, stored as a secret.
+
 ### 2026-10-10 — SEO, analytics, explainers, OG cards, /stats/
 - **Analytics:** `src/components/Analytics.tsx` injects GoatCounter `count.js` after `load` + idle; only on plasmoidx.com hostnames (local/Lighthouse runs don't count). Code from `NEXT_PUBLIC_GOATCOUNTER_CODE` (default `plasmoidx`). Privacy note added on `/sources/#privacy`.
 - **SEO:** `src/app/sitemap.ts` + `src/app/robots.ts` (replaced static `public/sitemap.xml` / `robots.txt`); routes listed in `src/lib/seo.ts` `SITEMAP_ROUTES`. `/stats/` excluded + disallowed; `/learn/` `/contact/` aliases stay noindex and out of sitemap. `pageMeta()` helper gives every page a canonical, unique title/description, OG + Twitter card. Optional `NEXT_PUBLIC_GSC_VERIFICATION` → `<meta name="google-site-verification">`.
