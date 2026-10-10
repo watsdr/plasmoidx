@@ -137,6 +137,12 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ## Session log (append, newest first)
 
+### 2026-10-10 (evening) — GoatCounter counts client-side navigations
+- Bug: only the first page load was counted; Next.js link clicks don't reload the page, so count.js never saw them.
+- Fix (`src/components/Analytics.tsx`): count.js still injected after load + idle, now with `data-goatcounter-settings={"no_onload":true}`; a `usePathname` effect calls `goatcounter.count({ path })` on first load and every route change. Deduped (same path never double-counted), paths normalized without trailing slash (`/study/` → `/study`), queued until the script loads. Still prod-hostname only.
+- Verified live in headless Chrome (counter requests intercepted, nothing sent): Home → Study → Explainers produced `/`, `/study`, `/explainers`. Live layout chunk contains `no_onload`; GSC tag present. Commit 7b8e35d deployed.
+- Note: older GoatCounter rows use trailing-slash paths (e.g. `/services/`); new rows won't have the slash.
+
 ### 2026-10-10 (afternoon) — Explainer share cards, related links, host tuning, social drafts
 - **OG:** `npm run og` now also renders `public/og/explainers/<slug>.png` (title card per explainer, read from `src/lib/explainers.ts`). `pageMeta({ ogImage })` wires it; Article JSON-LD image matches. All 12 return 200 live.
 - **Related explainers:** `ExplainerArticle` adds a plain "Related explainers" list (3 others not already in Keep learning).
