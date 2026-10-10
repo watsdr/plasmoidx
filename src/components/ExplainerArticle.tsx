@@ -25,7 +25,8 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
           inLanguage: "en-US",
           author: { "@type": "Person", name: "Derek Watson" },
           publisher: { "@type": "Organization", name: "Plasmoid X", url: absUrl("/") },
-          datePublished: "2026-10-10",
+          datePublished: e.published ?? "2026-10-10",
+          about: e.question,
         }}
       />
       <header className="max-w-2xl">

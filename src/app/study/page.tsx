@@ -91,6 +91,10 @@ export default function StudyPage() {
           ·{" "}
           <Link href="/explainers/thunderstorm-generator/" className="link-aurora">
             Thunderstorm Generator explained
+          </Link>{" "}
+          ·{" "}
+          <Link href="/explainers/embry-riddle-thunderstorm-generator-test/" className="link-aurora">
+            What the Embry-Riddle test measured
           </Link>
         </p>
       </header>
@@ -499,7 +503,7 @@ export default function StudyPage() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-aurora text-sm font-medium"
+                className="link-aurora inline-flex min-h-6 items-center text-sm font-medium"
               >
                 {item.label}
                 <span className="sr-only"> (opens in a new tab)</span>
@@ -552,7 +556,7 @@ export default function StudyPage() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="link-aurora text-sm font-medium"
+                className="link-aurora inline-flex min-h-6 items-center text-sm font-medium"
               >
                 {item.label}
                 <span className="sr-only"> (opens in a new tab)</span>

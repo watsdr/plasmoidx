@@ -125,7 +125,20 @@ export default function DevicePage() {
               <Link href="/study/#honest-numbers" className="link-aurora">
                 Study
               </Link>
-              . Prefer the meter before marketing claims.
+              . Prefer the meter before marketing claims. Each beat has a
+              quick answer:{" "}
+              <Link href="/explainers/air-ionizer-pre-ionization/" className="link-aurora">
+                ionizer
+              </Link>
+              ,{" "}
+              <Link href="/explainers/plasmoid-water-bubbler/" className="link-aurora">
+                bubbler
+              </Link>
+              ,{" "}
+              <Link href="/explainers/catalytic-tornado-resonator/" className="link-aurora">
+                resonator
+              </Link>
+              .
             </p>
           </div>
         </ScrollyChapter>

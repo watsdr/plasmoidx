@@ -10,6 +10,7 @@ export default function InteractiveSkeleton({
   return (
     <div
       className="ix-panel my-6 rounded-xl border border-ink-600/40 px-4 py-5 sm:px-5"
+      role="status"
       aria-busy="true"
       aria-label={label}
     >

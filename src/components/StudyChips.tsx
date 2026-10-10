@@ -83,14 +83,13 @@ export default function StudyChips() {
 
   return (
     <nav className="study-nav-sticky mt-8 -mx-1 max-w-full" aria-label="Study sections">
-      <div className="chip-scroll flex max-w-full gap-2 px-1 pb-1" role="list">
+      <div className="chip-scroll flex max-w-full gap-2 px-1 pb-1">
         {sections.map(([id, label]) => {
           const isActive = active === id;
           return (
             <a
               key={id}
               href={`#${id}`}
-              role="listitem"
               ref={(el) => {
                 chipRefs.current[id] = el;
               }}

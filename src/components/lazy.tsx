@@ -1,9 +1,52 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import {
+  createElement,
+  useEffect,
+  useRef,
+  useState,
+  type ComponentType,
+  type ReactNode,
+} from "react";
+
+/**
+ * Render a lazy component only once its placeholder is near the viewport
+ * (600px), so its chunk isn't fetched or run during Study's first load.
+ */
+function whenVisible<P extends object>(
+  Inner: ComponentType<P>,
+  placeholder: () => ReactNode
+): ComponentType<P> {
+  function WhenVisible(props: P) {
+    const ref = useRef<HTMLDivElement>(null);
+    const [show, setShow] = useState(false);
+    useEffect(() => {
+      const el = ref.current;
+      if (!el || typeof IntersectionObserver === "undefined") {
+        setShow(true);
+        return;
+      }
+      const io = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            setShow(true);
+            io.disconnect();
+          }
+        },
+        { rootMargin: "600px 0px" }
+      );
+      io.observe(el);
+      return () => io.disconnect();
+    }, []);
+    if (show) return createElement(Inner, props);
+    return createElement("div", { ref }, placeholder());
+  }
+  return WhenVisible;
+}
 import InteractiveSkeleton from "@/components/interactive/InteractiveSkeleton";
 
-export const Build518400 = dynamic(
+const Build518400Lazy = dynamic(
   () => import("@/components/interactive/Build518400"),
   {
     ssr: false,
@@ -13,7 +56,7 @@ export const Build518400 = dynamic(
   }
 );
 
-export const LockFlashcards = dynamic(
+const LockFlashcardsLazy = dynamic(
   () => import("@/components/interactive/LockFlashcards"),
   {
     ssr: false,
@@ -21,7 +64,7 @@ export const LockFlashcards = dynamic(
   }
 );
 
-export const StoreSpendLab = dynamic(
+const StoreSpendLabLazy = dynamic(
   () => import("@/components/interactive/StoreSpendLab"),
   {
     ssr: false,
@@ -29,7 +72,7 @@ export const StoreSpendLab = dynamic(
   }
 );
 
-export const ImplosiveLab = dynamic(
+const ImplosiveLabLazy = dynamic(
   () => import("@/components/interactive/ImplosiveLab"),
   {
     ssr: false,
@@ -39,7 +82,7 @@ export const ImplosiveLab = dynamic(
   }
 );
 
-export const PlasmoidEvoLab = dynamic(
+const PlasmoidEvoLabLazy = dynamic(
   () => import("@/components/interactive/PlasmoidEvoLab"),
   {
     ssr: false,
@@ -47,7 +90,7 @@ export const PlasmoidEvoLab = dynamic(
   }
 );
 
-export const MoeLatticeLab = dynamic(
+const MoeLatticeLabLazy = dynamic(
   () => import("@/components/interactive/MoeLatticeLab"),
   {
     ssr: false,
@@ -55,7 +98,7 @@ export const MoeLatticeLab = dynamic(
   }
 );
 
-export const AtvLab = dynamic(
+const AtvLabLazy = dynamic(
   () => import("@/components/interactive/AtvLab"),
   {
     ssr: false,
@@ -63,7 +106,7 @@ export const AtvLab = dynamic(
   }
 );
 
-export const AlphaOmegaLab = dynamic(
+const AlphaOmegaLabLazy = dynamic(
   () => import("@/components/interactive/AlphaOmegaLab"),
   {
     ssr: false,
@@ -73,7 +116,7 @@ export const AlphaOmegaLab = dynamic(
   }
 );
 
-export const ProtiumPathLab = dynamic(
+const ProtiumPathLabLazy = dynamic(
   () => import("@/components/interactive/ProtiumPathLab"),
   {
     ssr: false,
@@ -81,7 +124,7 @@ export const ProtiumPathLab = dynamic(
   }
 );
 
-export const DeviceBeatsLab = dynamic(
+const DeviceBeatsLabLazy = dynamic(
   () => import("@/components/interactive/DeviceBeatsLab"),
   {
     ssr: false,
@@ -89,7 +132,7 @@ export const DeviceBeatsLab = dynamic(
   }
 );
 
-export const DeviceWalkthrough = dynamic(
+const DeviceWalkthroughLazy = dynamic(
   () => import("@/components/interactive/DeviceWalkthrough"),
   {
     ssr: false,
@@ -98,7 +141,7 @@ export const DeviceWalkthrough = dynamic(
 );
 
 
-export const NestedSpheresLab = dynamic(
+const NestedSpheresLabLazy = dynamic(
   () => import("@/components/interactive/NestedSpheresLab"),
   {
     ssr: false,
@@ -106,7 +149,7 @@ export const NestedSpheresLab = dynamic(
   }
 );
 
-export const DeviceSystemFlowLab = dynamic(
+const DeviceSystemFlowLabLazy = dynamic(
   () => import("@/components/interactive/DeviceSystemFlowLab"),
   {
     ssr: false,
@@ -114,7 +157,7 @@ export const DeviceSystemFlowLab = dynamic(
   }
 );
 
-export const VajraLab = dynamic(
+const VajraLabLazy = dynamic(
   () => import("@/components/interactive/VajraLab"),
   {
     ssr: false,
@@ -122,7 +165,7 @@ export const VajraLab = dynamic(
   }
 );
 
-export const LocksTable = dynamic(() => import("@/components/LocksTable"), {
+const LocksTableLazy = dynamic(() => import("@/components/LocksTable"), {
   ssr: false,
   loading: () => (
     <div
@@ -133,13 +176,13 @@ export const LocksTable = dynamic(() => import("@/components/LocksTable"), {
   ),
 });
 
-export const StudyQuiz = dynamic(() => import("@/components/StudyQuiz"), {
+const StudyQuizLazy = dynamic(() => import("@/components/StudyQuiz"), {
   ssr: false,
   loading: () => <InteractiveSkeleton label="Loading check-yourself questions" />,
 });
 
 /** Below-fold Study diagrams — code-split to keep initial Study paint light. */
-export const StoreSpendTorus = dynamic(
+const StoreSpendTorusLazy = dynamic(
   () => import("@/components/diagrams/StoreSpendTorus"),
   {
     ssr: true,
@@ -153,7 +196,7 @@ export const StoreSpendTorus = dynamic(
   }
 );
 
-export const AlphaOmegaLadder = dynamic(
+const AlphaOmegaLadderLazy = dynamic(
   () => import("@/components/diagrams/AlphaOmegaLadder"),
   {
     ssr: true,
@@ -167,7 +210,7 @@ export const AlphaOmegaLadder = dynamic(
   }
 );
 
-export const ShareLockCard = dynamic(
+const ShareLockCardLazy = dynamic(
   () => import("@/components/ShareLockCard"),
   {
     ssr: false,
@@ -180,3 +223,23 @@ export const ShareLockCard = dynamic(
     ),
   }
 );
+
+export const Build518400 = whenVisible(Build518400Lazy, () => <InteractiveSkeleton />);
+export const LockFlashcards = whenVisible(LockFlashcardsLazy, () => <InteractiveSkeleton />);
+export const StoreSpendLab = whenVisible(StoreSpendLabLazy, () => <InteractiveSkeleton />);
+export const ImplosiveLab = whenVisible(ImplosiveLabLazy, () => <InteractiveSkeleton />);
+export const PlasmoidEvoLab = whenVisible(PlasmoidEvoLabLazy, () => <InteractiveSkeleton />);
+export const MoeLatticeLab = whenVisible(MoeLatticeLabLazy, () => <InteractiveSkeleton />);
+export const AtvLab = whenVisible(AtvLabLazy, () => <InteractiveSkeleton />);
+export const AlphaOmegaLab = whenVisible(AlphaOmegaLabLazy, () => <InteractiveSkeleton />);
+export const ProtiumPathLab = whenVisible(ProtiumPathLabLazy, () => <InteractiveSkeleton />);
+export const DeviceBeatsLab = whenVisible(DeviceBeatsLabLazy, () => <InteractiveSkeleton />);
+export const DeviceWalkthrough = whenVisible(DeviceWalkthroughLazy, () => <InteractiveSkeleton />);
+export const NestedSpheresLab = whenVisible(NestedSpheresLabLazy, () => <InteractiveSkeleton />);
+export const DeviceSystemFlowLab = whenVisible(DeviceSystemFlowLabLazy, () => <InteractiveSkeleton />);
+export const VajraLab = whenVisible(VajraLabLazy, () => <InteractiveSkeleton />);
+export const LocksTable = whenVisible(LocksTableLazy, () => <InteractiveSkeleton />);
+export const StudyQuiz = whenVisible(StudyQuizLazy, () => <InteractiveSkeleton />);
+export const StoreSpendTorus = whenVisible(StoreSpendTorusLazy, () => <InteractiveSkeleton />);
+export const AlphaOmegaLadder = whenVisible(AlphaOmegaLadderLazy, () => <InteractiveSkeleton />);
+export const ShareLockCard = whenVisible(ShareLockCardLazy, () => <InteractiveSkeleton />);
