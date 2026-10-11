@@ -256,6 +256,12 @@ export default function SourcesPage() {
           progress stays in your browser (localStorage) on this device only.
           There are no accounts and no ad trackers.
         </p>
+        <p className="mt-3 text-sm leading-relaxed text-mist-300">
+          If you sign up for email updates, your address goes to Buttondown, the
+          newsletter service that sends them. It is used only for short notes when
+          a new explainer or correction goes up — never sold or shared. Every
+          email has an unsubscribe link, and the signup form sets no cookies.
+        </p>
       </section>
 
       <section id="errata" className="mt-16 max-w-2xl">

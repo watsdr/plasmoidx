@@ -147,6 +147,12 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-11 — Email signup (off by default) + social visuals (not deployed)
+- **Signup:** `src/components/NewsletterSignup.tsx` — plain HTML form POST (email field + Subscribe, privacy line), no JS, no cookies, no popup. Renders only when `NEXT_PUBLIC_NEWSLETTER_ACTION` is set at build. Placed after "Keep learning" on every explainer and on Home after Continue learning. Sources → Privacy now has a paragraph on email signup (Buttondown, unsubscribe anytime, no cookies). A11y/BP/SEO 100 locally with the env set.
+- **Provider:** Buttondown (free tier, accepts plain form POST to `https://buttondown.com/api/emails/embed-subscribe/<username>`, double opt-in). To go live: Derek creates a Buttondown account, then add repo variable/secret `NEXT_PUBLIC_NEWSLETTER_ACTION` and pass it in `deploy.yml` build env (same way as the GSC var), then deploy.
+- **Social visuals:** `node scripts/social-cards.mjs` → `/workspace/plasmoidx-social/<slug>/{square-1080x1080.png, vertical-1080x1920.png, vertical-1080x1920.mp4}` for the top 5 explainers + `contact-sheet.png`. MP4s ~12 s, 4 text frames with fades, no audio. Output is outside the repo.
+- Not deployed (awaiting Derek review).
+
 ### 2026-10-11 — Synced handoff docs with current state; Grok brief refreshed.
 - Rewrote Stack & deploy / Deploy checklist for GitHub Actions-only live deploys (`deploy.yml` + `sftp-deploy.py`, secrets/vars).
 - Refreshed What’s live (2026-10-11), Open gaps, Suggested next; moved misplaced 2026-10-10 session entries into newest-first order.

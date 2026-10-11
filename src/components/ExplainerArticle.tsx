@@ -1,5 +1,6 @@
 import Link from "next/link";
 import JsonLd from "@/components/JsonLd";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { explainers, type Explainer } from "@/lib/explainers";
 import { absUrl } from "@/lib/seo";
 
@@ -86,6 +87,7 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
           Independent education. Not Strike Foundation, Strike Energy, or a licensee.
         </p>
       </nav>
+      <NewsletterSignup className="mt-12" />
     </article>
   );
 }

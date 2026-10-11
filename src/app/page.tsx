@@ -9,6 +9,7 @@ import { siteSlogan } from "@/lib/content";
 import type { Metadata } from "next";
 import { pageMeta, SITE_URL } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const homeDescription =
   "Independent, plain-English education on plasmoids and the Bendall Thunderstorm Generator retrofit idea — inventor claims labeled, independent meter results first.";
@@ -359,6 +360,7 @@ export default function WhyPage() {
             <CurriculumRail variant="why" />
           </div>
           <LearningProgress variant="why" />
+          <NewsletterSignup className="mt-14" />
         </div>
       </section>
     </div>
