@@ -29,7 +29,7 @@ Shared skill (Grok Bot): [Plasmoid X Grok handoff](sand-workflow:plasmoidx-grok-
    - Refresh **What’s live** / Lighthouse notes if scores or routes changed
    - Rewrite **Suggested next** (3–5 concrete options)
    - Note anything **not in git** (credentials live only in Stellar welcome email, pending Derek login steps)
-2. **`npm run build`** exit 0; if you deployed, confirm `out/` (incl. `.htaccess`) is what SFTP’d
+2. **`npm run build`** exit 0; if you deployed, use GitHub Actions (`deploy.yml`) and confirm the workflow succeeded
 3. **Commit + push `main`** so grok.com and PlasmoidX share one tree (no “live but uncommitted” gaps)
 4. If handing **out** to grok.com: fill `briefs/PASTE_TO_GROK.md` **Current task** and give Derek the paste
 5. If handing **in**: read `HANDOFF.md` + `git log -5` first — do not invent status from chat memory
@@ -39,7 +39,7 @@ Shared skill (Grok Bot): [Plasmoid X Grok handoff](sand-workflow:plasmoidx-grok-
 - Prefer tasking via **Current task** in the paste brief (one outcome per session)
 - After you do something outside the agents (DNS click, Facebook OG rescrape, password rotate), tell whichever agent is active so it lands in `HANDOFF.md`
 - Don’t keep the “real” plan only in iMessage/chat — if it matters, it goes in `HANDOFF.md`
-- SFTP/cPanel secrets stay in the Stellar welcome email / password manager — never paste into GitHub or the brief
+- SFTP password lives only in repo secret `SFTP_PASSWORD` (and password manager); never paste into git or the brief
 
 ---
 
@@ -51,18 +51,26 @@ Shared skill (Grok Bot): [Plasmoid X Grok handoff](sand-workflow:plasmoidx-grok-
 | Export | `output: 'export'` → static **`out/`** (trailingSlash) |
 | Hosting | **Namecheap Stellar only** (Derek: no Cloudflare Pages for live) |
 | DNS | Namecheap Advanced DNS · A `@` and `www` → `162.213.253.56` |
-| Upload | **SFTP** → `public_html` (welcome email user/host/port; password from Stellar welcome mail — never commit) |
+| Live deploy | **GitHub Actions only** — `.github/workflows/deploy.yml` (manual `workflow_dispatch`). Builds on Actions, uploads with `scripts/sftp-deploy.py` using repo secret **`SFTP_PASSWORD`**. Build gets Search Console token from repo variable **`NEXT_PUBLIC_GSC_VERIFICATION`**. |
+| Fallback upload | Local SFTP from another machine still works (contents of `out/` → `public_html`). The **Grok Bot box cannot reach SFTP port 21098** — do not try deploy from the box. |
 | TLS | Let’s Encrypt / AutoSSL on cPanel (HTTPS verified) |
-| Cache | `public/.htaccess` → copied into `out/`: HTML revalidate; `/_next/static/*` 1y immutable; `og.png` ~1d |
-| Namecheap browser Sign in | Often **blocked** on agent browsers — prefer SFTP, not panel login |
+| Cache | `public/.htaccess` → copied into `out/`: HTML revalidate; `/_next/static/*` 1y immutable; brotli + ETag; `og.png` ~1d |
+| Namecheap browser Sign in | Often **blocked** on agent browsers — prefer Actions deploy, not panel login |
+| Secrets | **Never put secrets in git.** SFTP password = repo secret only; GSC token = repo variable. |
 
 ### Deploy checklist
 
 ```bash
+# Preferred (live path): GitHub Actions
+gh workflow run deploy.yml -R watsdr/plasmoidx
+# Or: GitHub → Actions → "Deploy to plasmoidx.com" → Run workflow
+
+# Fallback from a machine that can reach SFTP :21098 (not the Grok Bot box):
 cd /workspace/plasmoidx   # or your clone
 npm ci                    # if needed
-npm run build             # must exit 0; refreshes out/
+NEXT_PUBLIC_GSC_VERIFICATION=<token> npm run build   # must exit 0; refreshes out/
 # SFTP contents of out/ (including .htaccess) → public_html
+
 # Verify: curl -sSI https://plasmoidx.com/ | head
 # Optional: lighthouse mobile + desktop on /
 ```
@@ -82,27 +90,31 @@ npm run build             # must exit 0; refreshes out/
 
 ---
 
-## What’s live (as of 2026-09-21 ~16:00 ET)
+## What’s live (as of 2026-10-11)
 
-Shipped on https://plasmoidx.com (static SFTP):
+Shipped on https://plasmoidx.com (deploy via GitHub Actions → SFTP):
 
-- Motion splash mark + Soft Lift polish; playbook-safe motion
-- Home scrollytelling; Device / Services / Study / Sources / Learn / Study Pack / Glossary / FAQ chapters
-- Study command palette (`/` · ⌘K/Ctrl+K) + header Search + FAB; idle-deferred chrome for TBT
-- Quiet dismissible keyboard tip on Home
-- CTA/nav micro-interactions; active nav has non-color cue + `aria-current`
-- OG/Twitter: `https://plasmoidx.com/og.png` (1200×630)
-- Contrast / link-underline a11y passes
-- `.htaccess` cache rules active (HTML `max-age=0, must-revalidate`; hashed assets immutable)
+- Everything from the 2026-09-21 baseline: motion splash + Soft Lift; Home scrollytelling; Device / Services / Study / Sources / Learn / Study Pack / Glossary / FAQ; Study command palette (`/` · ⌘K/Ctrl+K) + header Search + FAB; idle-deferred chrome; CTA/nav micro-interactions; OG/Twitter cards; contrast / link-underline a11y
+- **GoatCounter** cookieless analytics (site code `plasmoidx`); counts client-side navigation (`no_onload` + `usePathname`, deduped, trailing slash stripped)
+- **SEO:** sitemap + robots (generated), per-page canonicals, Organization/WebSite/LearningResource/FAQPage/Article **JSON-LD**
+- **Search Console** verified (token via `NEXT_PUBLIC_GSC_VERIFICATION`); sitemap submitted
+- **12 explainers** under `/explainers/` with per-page OG images and Related explainers blocks
+- Private **`/stats/`** page (noindex) linking GoatCounter + Search Console
+- **`.htaccess` tuning:** brotli, ETag, LiteSpeed cache lookup, deflate fallback; HTML revalidate; hashed assets immutable
+- **Inline CSS** (`scripts/inline-css.mjs`); lazy Study labs; **WOFF2** font; **Home WebP** image (image weight pass **DONE**)
+- Section OG cards at `/og/<section>.png` + explainer cards at `/og/explainers/<slug>.png`
 
-### Lighthouse (post last deploy, lab)
+### Lighthouse (live, recent runs)
 
 | Form factor | Perf | A11y | BP | SEO |
 |-------------|------|------|----|-----|
-| Mobile | 100 | 100 | 100 | 100 |
-| Desktop | 100 | 100 | 100 | 100 |
+| Home mobile | 88–96 | 100 | 100 | 100 |
+| Home desktop | 94–100 | 100 | 100 | 100 |
+| Study mobile | ~78–100 (varies with host TTFB) | 100 | 100 | 100 |
+| Study desktop | ~100 | 100 | 100 | 100 |
+| Explainer (e.g. what-is-a-plasmoid) | mobile ~97 / desktop 100 | 100 | 100 | 100 |
 
-Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Prefer two runs if Perf looks wrong.
+Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs if Perf looks wrong. Remaining Home mobile LCP is mostly hero reveal/hydration, not image weight.
 
 ---
 
@@ -115,27 +127,30 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ## Open gaps / risks
 
-1. **Facebook/X OG rescrape** — meta is correct live; Facebook debugger needs Derek’s login to force rescrape.
-3. **Namecheap Sign in** — still unreliable for agents; stick to SFTP + email credentials.
-4. **README drift** — older README still mentions Cloudflare Pages as primary; treat **Namecheap SFTP** as live path (see Deploy section above).
-5. Optional next polish: image weight (large home PNG), SW/offline shell hardening.
-6. **GoatCounter account (Derek):** create account at goatcounter.com with site code **`plasmoidx`** (counts post to `https://plasmoidx.goatcounter.com/count`). Until then the script loads but counts are dropped. Override via `NEXT_PUBLIC_GOATCOUNTER_CODE` at build time.
-7. **Search Console (Derek):** add property, verify via meta tag — set `NEXT_PUBLIC_GSC_VERIFICATION=<token>` and rebuild (or upload Google's HTML file into `public/`). Then submit `https://plasmoidx.com/sitemap.xml`.
-8. **Deploy pending:** 2026-10-10 SEO/analytics/explainers batch is on `main` but NOT yet SFTP'd (Derek handles deploy).
+1. **Facebook Scrape Again for explainers** — per-explainer OG cards are live; Derek needs to force rescrape in the Facebook Sharing Debugger (and optionally X card validator).
+2. **Optional Cloudflare CDN** in front of Namecheap for TLS/TTFB — Derek’s decision (not Pages; proxy/CDN only if chosen).
+3. **Namecheap Sign in** — still unreliable for agents; prefer GitHub Actions deploy, not panel login.
+4. **README drift** — older README may still mention Cloudflare Pages as primary; treat **Actions → SFTP to Namecheap** as the live path (see Deploy section above).
+5. Optional: SW/offline shell hardening (image weight pass is done).
 
 ---
 
 ## Suggested next (Derek picks)
 
-1. Deploy the 2026-10-10 batch (SFTP `out/` incl. `.htaccess`, `sitemap.xml`, `robots.txt`, `og/`).
-2. Create GoatCounter `plasmoidx` + verify Search Console (meta tag env) and submit sitemap.
-3. Force OG rescrape in Facebook + X validators (per-section images now at `/og/<section>.png`).
-4. Image weight pass (WebP/AVIF) for large Home PNG — see `briefs/PASTE_TO_GROK.md`.
-5. More explainers once Search Console shows real queries.
+1. **Facebook Scrape Again** for explainer URLs (Derek) — new per-page OG cards at `/og/explainers/<slug>.png`.
+2. **Optional Cloudflare CDN** in front for TLS/TTFB (Derek’s decision).
+3. **`docs/SOCIAL-POSTS.md`** — 5 drafts ready; not posted yet.
+4. Weekly **GoatCounter** summary routine runs Mondays **8:04 AM ET** in PlasmoidX (Grok Bot); no action unless it fails.
+5. Home mobile Performance is **88–96** (host TTFB-bound); further wins need a hero-reveal rethink, not more image compression.
 
 ---
 
 ## Session log (append, newest first)
+
+### 2026-10-11 — Synced handoff docs with current state; Grok brief refreshed.
+- Rewrote Stack & deploy / Deploy checklist for GitHub Actions-only live deploys (`deploy.yml` + `sftp-deploy.py`, secrets/vars).
+- Refreshed What’s live (2026-10-11), Open gaps, Suggested next; moved misplaced 2026-10-10 session entries into newest-first order.
+- `briefs/PASTE_TO_GROK.md` + `AGENTS.md` deploy instructions aligned. No site code changes.
 
 ### 2026-10-10 (evening) — GoatCounter counts client-side navigations
 - Bug: only the first page load was counted; Next.js link clicks don't reload the page, so count.js never saw them.
@@ -158,6 +173,17 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 - **Plan:** `docs/EXPLAINER-PLAN.md` (8 proposed explainers, not built).
 - **GoatCounter:** JSON API at `https://plasmoidx.goatcounter.com/api/v0` (Bearer token, 4 req/s). Weekly summary needs Derek to create an API key (user menu → API) with stats read permission, stored as a secret.
 
+### 2026-10-10 — 8 explainers + perf/a11y
+- Shipped 8 explainers (see docs/EXPLAINER-PLAN.md) under /explainers/; inline CSS via scripts/inline-css.mjs; Study labs lazy-load near viewport; WOFF2 font; ARIA chip-list fix. Commits 6451f74, 9b68392 (deployed via Actions).
+- Live Lighthouse: Study mobile TBT ~230→~40 ms; scores vary 88–100 with host response time. A11y/BP/SEO 100.
+- Search Console verified (token in repo variable NEXT_PUBLIC_GSC_VERIFICATION); sitemap submitted. GoatCounter live; weekly summary routine Mondays 8:04 AM ET via box env GOATCOUNTER_API_KEY.
+- Open: per-explainer OG images (`npm run og`); Facebook Scrape Again for new pages.
+
+### 2026-10-10 — Deploy via GitHub Actions
+- Box can't reach SFTP port 21098 (outbound block). Added manual-only workflow `.github/workflows/deploy.yml` + `scripts/sftp-deploy.py`; SFTP password lives only in repo secret `SFTP_PASSWORD`.
+- Deploy: `gh workflow run deploy.yml -R watsdr/plasmoidx` (or Actions tab → Run workflow). First run uploaded 138 files; SEO/analytics/explainers/stats commit ddcd5fb is live.
+- Open: verify Google Search Console (meta tag via NEXT_PUBLIC_GSC_VERIFICATION or HTML file) and submit sitemap; re-run live Lighthouse; refresh share cards in Facebook/X debuggers.
+
 ### 2026-10-10 — SEO, analytics, explainers, OG cards, /stats/
 - **Analytics:** `src/components/Analytics.tsx` injects GoatCounter `count.js` after `load` + idle; only on plasmoidx.com hostnames (local/Lighthouse runs don't count). Code from `NEXT_PUBLIC_GOATCOUNTER_CODE` (default `plasmoidx`). Privacy note added on `/sources/#privacy`.
 - **SEO:** `src/app/sitemap.ts` + `src/app/robots.ts` (replaced static `public/sitemap.xml` / `robots.txt`); routes listed in `src/lib/seo.ts` `SITEMAP_ROUTES`. `/stats/` excluded + disallowed; `/learn/` `/contact/` aliases stay noindex and out of sitemap. `pageMeta()` helper gives every page a canonical, unique title/description, OG + Twitter card. Optional `NEXT_PUBLIC_GSC_VERIFICATION` → `<meta name="google-site-verification">`.
@@ -172,11 +198,9 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 - Filled `briefs/PASTE_TO_GROK.md` **Current task** with Home image weight pass (WebP/AVIF + build + SFTP + HANDOFF update).
 - Git sync already on `main` (handoff hygiene commits); next code priority is image weight.
 
-
 ### 2026-09-21 — Standing handoff hygiene confirmed
 - Derek confirmed: **HANDOFF.md updates are required** after every Plasmoid X ship or session end.
 - Added explicit Session hygiene checklist (agent + Derek). Skill `plasmoidx-grok-handoff` updated to match.
-
 
 ### 2026-09-21 — Handoff process created
 - Added `HANDOFF.md`, `AGENTS.md`, `briefs/PASTE_TO_GROK.md`, shared skill `plasmoidx-grok-handoff`.
@@ -184,14 +208,3 @@ Note: one earlier mobile run showed a flaky TBT spike; re-run confirmed 100. Pre
 
 ### 2026-09-21 — Motion splash + a11y/perf batches
 - Scrollytelling, palette, Search, OG, `.htaccess`, idle-defer, Soft Lift, contrast, nav cues; SFTP redeploys throughout.
-
-### 2026-10-10 — Deploy via GitHub Actions
-- Box can't reach SFTP port 21098 (outbound block). Added manual-only workflow `.github/workflows/deploy.yml` + `scripts/sftp-deploy.py`; SFTP password lives only in repo secret `SFTP_PASSWORD`.
-- Deploy: `gh workflow run deploy.yml -R watsdr/plasmoidx` (or Actions tab → Run workflow). First run uploaded 138 files; SEO/analytics/explainers/stats commit ddcd5fb is live.
-- Open: verify Google Search Console (meta tag via NEXT_PUBLIC_GSC_VERIFICATION or HTML file) and submit sitemap; re-run live Lighthouse; refresh share cards in Facebook/X debuggers.
-
-### 2026-10-10 — 8 explainers + perf/a11y
-- Shipped 8 explainers (see docs/EXPLAINER-PLAN.md) under /explainers/; inline CSS via scripts/inline-css.mjs; Study labs lazy-load near viewport; WOFF2 font; ARIA chip-list fix. Commits 6451f74, 9b68392 (deployed via Actions).
-- Live Lighthouse: Study mobile TBT ~230→~40 ms; scores vary 88–100 with host response time. A11y/BP/SEO 100.
-- Search Console verified (token in repo variable NEXT_PUBLIC_GSC_VERIFICATION); sitemap submitted. GoatCounter live; weekly summary routine Mondays 8:04 AM ET via box env GOATCOUNTER_API_KEY.
-- Open: per-explainer OG images (`npm run og`); Facebook Scrape Again for new pages.

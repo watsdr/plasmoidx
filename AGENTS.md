@@ -13,7 +13,7 @@ Operating rules for **any** coding agent (PlasmoidX Grok Bot, grok.com, Cursor, 
 
 1. Read `HANDOFF.md` (status) and this file (rules).
 2. Skim `docs/UI-UX-PLAYBOOK.md` for UI decisions.
-3. Confirm hosting path: **Namecheap Stellar + SFTP `out/` → `public_html`** (not Cloudflare Pages for production).
+3. Confirm hosting path: **Namecheap Stellar**; live deploy is **GitHub Actions** (`.github/workflows/deploy.yml` → `scripts/sftp-deploy.py`, secret `SFTP_PASSWORD`) — not Cloudflare Pages for production. Box cannot reach SFTP :21098.
 
 ## While you work
 
@@ -21,7 +21,7 @@ Operating rules for **any** coding agent (PlasmoidX Grok Bot, grok.com, Cursor, 
 - Daylight Paper default · Soft Lift dark · circle+X · calm motion only.
 - Respect `prefers-reduced-motion`.
 - Static export must stay green: `npm run build` → `out/`.
-- Never commit secrets (SFTP passwords, cPanel). Pull Stellar welcome email when needed; shred local cred files.
+- Never commit secrets (SFTP passwords, cPanel). Live SFTP password is repo secret `SFTP_PASSWORD` only.
 - Prefer small, reviewable commits. Update `HANDOFF.md` in the same change when status moves.
 
 ## Session hygiene (required)
@@ -31,7 +31,7 @@ Operating rules for **any** coding agent (PlasmoidX Grok Bot, grok.com, Cursor, 
 ## After you finish a chunk
 
 1. `npm run build` (exit 0).
-2. Deploy `out/` via SFTP if Derek wants it live (include `.htaccess`).
+2. Deploy if Derek wants it live: **`gh workflow run deploy.yml -R watsdr/plasmoidx`** (or Actions tab → Run workflow). Do not SFTP from the Grok Bot box (port 21098 blocked). Local SFTP from another machine is fallback only.
 3. Spot-check https://plasmoidx.com/ (and touched routes).
 4. Optional: mobile + desktop Lighthouse on `/`.
 5. **Required:** refresh **HANDOFF.md** session log + suggested next (same commit when possible).
@@ -44,6 +44,6 @@ Operating rules for **any** coding agent (PlasmoidX Grok Bot, grok.com, Cursor, 
 
 ## Forbidden shortcuts
 
-- Do not “fix” production by switching to Cloudflare Pages unless Derek reverses the Namecheap-only decision.
+- Do not “fix” production by switching to Cloudflare Pages unless Derek reverses the Namecheap-only decision. Optional Cloudflare CDN/proxy in front is Derek’s call only.
 - Do not invent DNS or hosting credentials.
 - Do not paste passwords into chat or into git.

@@ -9,14 +9,14 @@ Repo: https://github.com/watsdr/plasmoidx (branch `main`)
 3. `docs/UI-UX-PLAYBOOK.md` — calm UI standard
 
 ## Hard constraints
-- Namecheap Stellar hosting only for live; deploy static `out/` via SFTP to `public_html` (DNS A @/www → 162.213.253.56). Do not move live to Cloudflare Pages unless Derek says so.
+- Namecheap Stellar hosting only for live. **Deploy via GitHub Actions** (`.github/workflows/deploy.yml`): `gh workflow run deploy.yml -R watsdr/plasmoidx` or Actions tab → Run workflow. The workflow builds and uploads with `scripts/sftp-deploy.py` using repo secret `SFTP_PASSWORD`; build uses repo variable `NEXT_PUBLIC_GSC_VERIFICATION`. The Grok Bot box cannot reach SFTP port 21098 — do not SFTP from the box. Local SFTP from another machine is a fallback only. DNS A @/www → 162.213.253.56. Do not move live to Cloudflare Pages unless Derek says so.
 - Next.js 14 static export (`output: 'export'`). `npm run build` must pass.
 - Brand: circle+X; Daylight Paper / Soft Lift; polished-not-ornamental; no glow spam; plain English; `prefers-reduced-motion`.
-- Never commit secrets. SFTP password comes from Namecheap Stellar welcome email.
+- Never commit secrets. SFTP password = repo secret `SFTP_PASSWORD` only.
 - After every ship/session end: update `HANDOFF.md` before handing back (Derek-required hygiene).
 
 ## Current task
-Image weight pass on Home (and any other oversized above-fold PNGs): convert/serve WebP (and AVIF if easy) without changing the calm visual look; keep static export working; update next/image or <img> usages as needed; run `npm run build`; SFTP deploy `out/` (incl. `.htaccess`) to Namecheap `public_html`; verify https://plasmoidx.com/ still Lighthouse-strong (especially Perf); **required:** update HANDOFF.md session log + suggested next before stopping.
+No active build task. Read HANDOFF.md and confirm you're synced. Don't ship anything until Derek gives you a Current task.
 
 ## When finished
 - **Required:** update `HANDOFF.md` (session log + what’s live + suggested next) before stopping or handing back.
