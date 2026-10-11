@@ -13,6 +13,7 @@ jobs:
       - run: npm run build
         env:
           NEXT_PUBLIC_GSC_VERIFICATION: ${{ vars.NEXT_PUBLIC_GSC_VERIFICATION }}
+          NEXT_PUBLIC_NEWSLETTER_ACTION: ${{ vars.NEXT_PUBLIC_NEWSLETTER_ACTION }}
       - run: pip install paramiko
       - run: python scripts/sftp-deploy.py
         env:
