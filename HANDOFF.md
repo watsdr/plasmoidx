@@ -214,3 +214,6 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ### 2026-09-21 — Motion splash + a11y/perf batches
 - Scrollytelling, palette, Search, OG, `.htaccess`, idle-defer, Soft Lift, contrast, nav cues; SFTP redeploys throughout.
+
+### 2026-10-11 (evening) — Newsletter signup live
+- Buttondown username `plasmoidx`; repo variable NEXT_PUBLIC_NEWSLETTER_ACTION passed to build in deploy.yml. Signup block live on explainers + Home. Social cards/videos in /workspace/plasmoidx-social (not in repo; regenerate with scripts/social-cards.mjs). Cloudflare setup steps sent to Derek; awaiting "Active".
