@@ -16,9 +16,6 @@ export default function Footer() {
               Plasmoid<span className="text-aurora">X</span>
             </p>
             <p className="mt-2 text-sm text-mist-400">{siteSlogan}</p>
-            <p className="mt-4 text-[11px] tracking-[0.18em] text-mist-400 uppercase">
-              Metamorphosis
-            </p>
           </div>
 
           <div className="flex flex-wrap gap-10 sm:gap-16">

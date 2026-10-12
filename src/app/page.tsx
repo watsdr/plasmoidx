@@ -115,8 +115,8 @@ export default function WhyPage() {
             </p>
             <p className="measure mt-6 text-lg leading-relaxed text-mist-200">
               Everyday gas engines burn fuel in a blast — you feel it at the pump
-              and in the air. Malcolm Bendall’s Thunderstorm Generator uses water
-              to form and guide{" "}
+              and in the air. Malcolm Bendall’s Thunderstorm Generator is designed to
+              use water to form and guide{" "}
               <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
               (tiny, self-organized bits of plasma) so engines can run cleaner.
               This site explains that idea in plain English — measured results
@@ -294,13 +294,13 @@ export default function WhyPage() {
               <p className="mt-1 text-xs text-mist-400">Labeled as such</p>
               <p className="mt-4 text-sm leading-relaxed text-mist-200">
                 Large fuel cuts (often framed as 90% or more), near-zero carbon monoxide
-                (CO) / hydrocarbons (HC), and high chamber temps are{" "}
+                (CO) and hydrocarbons (HC), and high chamber temps are{" "}
                 <strong className="font-medium text-mist-100">
                   inventor claims
                 </strong>
                 . This site does not lead with those figures. Use the meter
                 first, then the model for why results might scale — and push for
-                fuller dyno / isotope work.
+                fuller dyno and isotope testing.
               </p>
             </ScrollyChapter>
           </div>
