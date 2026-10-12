@@ -16,7 +16,7 @@ const beats = [
   {
     title: "Bubbler",
     caption:
-      "Plasmoid generator / bubbler: air rises through a water column; bubble collapse (cavitation) forms energetic vacuum objects (EVOs).",
+      "Bubbler (plasmoid generator): air rises through a water column. Collapsing bubbles (cavitation) form plasmoids, called Exotic Vacuum Occurrences (EVOs) in the inventor’s model.",
   },
   {
     title: "Resonator",

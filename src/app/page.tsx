@@ -12,7 +12,7 @@ import JsonLd from "@/components/JsonLd";
 import NewsletterSignup from "@/components/NewsletterSignup";
 
 const homeDescription =
-  "Independent, plain-English education on plasmoids and the Bendall Thunderstorm Generator retrofit idea — inventor claims labeled, independent meter results first.";
+  "Independent, plain-English lessons on plasmoids and Malcolm Bendall’s Thunderstorm Generator engine retrofit — measured results first, inventor claims labeled.";
 
 export const metadata: Metadata = pageMeta({
   path: "/",
@@ -105,7 +105,7 @@ export default function WhyPage() {
       <section className="relative mx-auto w-full min-w-0 max-w-5xl overflow-hidden px-4 pb-10 pt-12 sm:px-6 sm:pb-12 sm:pt-16">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12">
           <div className="relative z-[1] min-w-0">
-            <p className="section-label">Why</p>
+            <p className="section-label">Home</p>
             <h1 className="fluid-display mt-4 max-w-3xl text-balance font-semibold text-mist-50">
               Engines waste fuel and dirty the air. This approach aims to run
               cleaner.
@@ -115,14 +115,15 @@ export default function WhyPage() {
             </p>
             <p className="measure mt-6 text-lg leading-relaxed text-mist-200">
               Everyday gas engines burn fuel in a blast — you feel it at the pump
-              and in the air. The Bendall Thunderstorm Generator idea uses water as
-              part of an atomic pathway that forms and guides{" "}
+              and in the air. Malcolm Bendall’s Thunderstorm Generator uses water
+              to form and guide{" "}
               <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
-              (tiny self-organized plasma structures) so engines can run cleaner.
-              This site teaches that inventor tech in plain English.
+              (tiny, self-organized bits of plasma) so engines can run cleaner.
+              This site explains that idea in plain English — measured results
+              first, inventor claims labeled.
             </p>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-mist-400">
-              Independent voice. Not Strike Foundation, Strike Energy, or a
+              Independent education. Not Strike Foundation, Strike Energy, or a
               licensee.
             </p>
 
@@ -131,7 +132,7 @@ export default function WhyPage() {
                 See how it works
               </Link>
               <Link href="/study/#curriculum" className="btn-ghost">
-                Learn the basics
+                Start Lesson 1
               </Link>
             </div>
             <KeyboardShortcutsTip />
@@ -271,7 +272,7 @@ export default function WhyPage() {
                 Embry-Riddle Aeronautical University
               </h3>
               <p className="mt-1 text-xs text-mist-400">
-                M.S. thesis · 2026 · independent meter
+                Master’s (M.S.) thesis · 2026 · independent meter
               </p>
               <p className="mt-4 text-sm leading-relaxed text-mist-200">
                 Roughly{" "}
@@ -288,11 +289,11 @@ export default function WhyPage() {
             </ScrollyChapter>
             <ScrollyChapter delay={140}>
               <h3 className="text-base font-medium tracking-tight text-mist-50">
-                Inventor / marketing claims
+                Inventor claims
               </h3>
               <p className="mt-1 text-xs text-mist-400">Labeled as such</p>
               <p className="mt-4 text-sm leading-relaxed text-mist-200">
-                Large fuel cuts (often framed as ≥90%), near-zero carbon monoxide
+                Large fuel cuts (often framed as 90% or more), near-zero carbon monoxide
                 (CO) / hydrocarbons (HC), and high chamber temps are{" "}
                 <strong className="font-medium text-mist-100">
                   inventor claims

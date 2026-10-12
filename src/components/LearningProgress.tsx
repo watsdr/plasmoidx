@@ -122,17 +122,17 @@ export default function LearningProgress({ variant = "study" }: Props) {
           </Link>
         ) : allDone ? (
           <Link href="/study/#locks" className="btn-ghost">
-            Back to Study locks
+            Back to number locks
           </Link>
         ) : null}
         {curriculumResume ? (
           <Link href={curriculumResume} className="btn-ghost">
-            Continue curriculum
+            Continue lessons
           </Link>
         ) : null}
         {variant === "why" ? (
           <Link href="/study/#curriculum" className="btn-ghost">
-            Lessons 1–6
+            Start Lesson 1
           </Link>
         ) : null}
       </div>

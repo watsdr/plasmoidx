@@ -47,12 +47,12 @@ export const deviceBeats = [
   {
     n: "01",
     title: "Ionizer (air pretreatment)",
-    body: "Air ionizer / pre-ionization chamber: ultraviolet (UV) light pretreats incoming air before it reaches the water column. Violet interior is a teaching cue for ionized air — not a product photo.",
+    body: "Air ionizer (pre-ionization chamber): ultraviolet (UV) light pretreats incoming air before it reaches the water column. Violet interior is a teaching cue for ionized air — not a product photo.",
   },
   {
     n: "02",
     title: "Bubbler (plasmoid generator)",
-    body: "Plasmoid generator / bubbler: air rises through a water column with a diffuser. Bubbles collapse (cavitation) and form energetic vacuum objects (EVOs) — self-built donut-shaped plasmas, also called plasmoids.",
+    body: "Bubbler (plasmoid generator): air rises through a water column with a diffuser. Bubbles collapse (cavitation) and form plasmoids — self-built, donut-shaped plasmas, also called Exotic Vacuum Occurrences (EVOs).",
   },
   {
     n: "03",
@@ -165,7 +165,7 @@ export const lectureLinks = [
 ];
 
 export const siteNav = [
-  { href: "/", label: "Why" },
+  { href: "/", label: "Home" },
   { href: "/study/", label: "Study" },
   { href: "/device/", label: "Device" },
   { href: "/sources/", label: "Sources" },
@@ -178,6 +178,6 @@ export const secondaryNav = [
   { href: "/explainers/", label: "Explainers" },
   { href: "/glossary/", label: "Glossary" },
   { href: "/faq/", label: "FAQ" },
-  { href: "/updates/", label: "Errata" },
+  { href: "/updates/", label: "Updates" },
   { href: "/study-pack/", label: "Study pack" },
 ] as const;

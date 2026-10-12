@@ -6,8 +6,8 @@ import { errataItems } from "@/lib/faq";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/updates/",
-    title: "Errata & updates",
-    description: "Dated corrections for Plasmoid X: MSAART Ark spelling, meter vs 90% lead, device visuals, and later notes.",
+    title: "Updates and corrections",
+    description: "Dated corrections and changes on Plasmoid X: the MSAART “Ark” spelling, leading with the measured numbers, device visuals, and later notes.",
     section: "sources",
   }),
 };
@@ -18,11 +18,12 @@ export default function UpdatesPage() {
       <header className="max-w-2xl">
         <p className="section-label">Updates</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Errata &amp; updates
+          Updates and corrections
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          Honest corrections as the education package settles. Also summarized
-          on{" "}
+          This page lists every correction and notable change, with dates. It
+          matters because a site that teaches honesty should show its own
+          fixes. A short version is also on{" "}
           <Link href="/sources/#errata" className="link-aurora">
             Sources
           </Link>

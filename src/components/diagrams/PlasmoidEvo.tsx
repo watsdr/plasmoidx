@@ -28,7 +28,7 @@ export default function PlasmoidEvo({
         viewBox="0 0 440 210"
         className="h-auto w-full max-w-full"
         role="img"
-        aria-label="Bubble collapse leading to a toroidal plasmoid energetic vacuum object"
+        aria-label="Bubble collapse leading to a donut-shaped plasmoid (Exotic Vacuum Occurrence)"
       >
         <defs>
           <marker
@@ -242,7 +242,7 @@ export default function PlasmoidEvo({
           id={captionId}
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
-          Plasmoid energetic vacuum object (EVO): born from bubble collapse
+          Plasmoid, or Exotic Vacuum Occurrence (EVO): born from bubble collapse
           (cavitation), held as a self-contained donut field.
         </figcaption>
       ) : null}

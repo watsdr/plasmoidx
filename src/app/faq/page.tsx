@@ -8,8 +8,8 @@ import { faqItems } from "@/lib/faq";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/faq/",
-    title: "FAQ: plasmoids, MSAART & honest numbers",
-    description: "Short answers about Plasmoid X: MSAART, Embry-Riddle meter vs 90% claims, Strike credit, kit installs, offline study, and where to start.",
+    title: "FAQ: beginner questions",
+    description: "Short answers about Plasmoid X: MSAART, the Embry-Riddle test vs 90% claims, Strike Foundation credit, kit installs, offline study, and where to start.",
     section: "faq",
   }),
 };
@@ -31,10 +31,12 @@ export default function FaqPage() {
       <header className="max-w-2xl">
         <p className="section-label">FAQ</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Beginner questions
+          FAQ: beginner questions
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          Short answers. For method and credits see{" "}
+          Short answers to the questions people ask first. They point you to
+          the right page, so you don’t have to read everything. For method and
+          credits, see{" "}
           <Link href="/sources/" className="link-aurora">
             Sources
           </Link>
@@ -128,13 +130,13 @@ export default function FaqPage() {
 
       <div className="mt-16 flex flex-wrap items-center gap-3 border-t border-ink-600/40 pt-10">
         <Link href="/study/#curriculum" className="btn-primary">
-          Lessons 1–6
+          Start Lesson 1
         </Link>
         <Link href="/sources/" className="btn-ghost">
           Sources
         </Link>
         <Link href="/updates/" className="btn-ghost">
-          Errata
+          Updates
         </Link>
       </div>
     </div>

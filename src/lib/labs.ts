@@ -13,7 +13,7 @@ export type LabItem = {
 export const LABS: LabItem[] = [
   {
     key: PROGRESS.build518400,
-    label: "Time's mould builder",
+    label: "Time’s mould builder",
     short: "Builder",
     href: "/study/#locks",
     page: "study",

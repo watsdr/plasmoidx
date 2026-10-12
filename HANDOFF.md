@@ -147,6 +147,16 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-12 — Copy cohesion pass (branch `copy-cohesion`, not merged, not deployed)
+- New `docs/STYLE-GUIDE.md`: voice, canonical names, labels, acronyms, number/dash/quote rules, CTA wording, nav = title rule.
+- Applied site-wide: page intros follow "what this page is → why it matters"; H1s and meta titles now match nav labels (e.g. "Sources: method and privacy", "Updates and corrections"); nav "Why" → "Home", footer "Errata" → "Updates", footer headings "Pages" / "Outside sources".
+- Terminology: EVO = Exotic Vacuum Occurrence everywhere (dropped "energetic vacuum object"); "Embry-Riddle test" (not "meter"); "Malcolm Bendall’s Thunderstorm Generator" (not "Bendall Thunderstorm Generator" / "Thunderstorm-style"); "about +9–10% fuel efficiency / about −34% average emissions"; "90% or more" (not ≥90%); explainer label "Inventor claim".
+- Acronyms defined on first use per page (checked with a script over `out/`): M.S., MeV, EVO, CTR, PUM, MOE, ATV, MSAART.
+- CTAs unified: Start Lesson 1, See how it works, Read the explainers, Email Derek, Ask about installs.
+- Added a plain 404 page (`src/app/not-found.tsx`) + `ErrorDocument 404 /404.html` in `.htaccess`.
+- Social cards: 518,400 card now "Plain fact" (arithmetic) + "Claim" (hardware ratios); regenerated `/workspace/plasmoidx-social/`.
+- Local Lighthouse A11y/SEO 100 on Home, Study, Device, Services, Glossary, an explainer. Build green.
+
 ### 2026-10-11 — Email signup (off by default) + social visuals (not deployed)
 - **Signup:** `src/components/NewsletterSignup.tsx` — plain HTML form POST (email field + Subscribe, privacy line), no JS, no cookies, no popup. Renders only when `NEXT_PUBLIC_NEWSLETTER_ACTION` is set at build. Placed after "Keep learning" on every explainer and on Home after Continue learning. Sources → Privacy now has a paragraph on email signup (Buttondown, unsubscribe anytime, no cookies). A11y/BP/SEO 100 locally with the env set.
 - **Provider:** Buttondown (free tier, accepts plain form POST to `https://buttondown.com/api/emails/embed-subscribe/<username>`, double opt-in). To go live: Derek creates a Buttondown account, then add repo variable/secret `NEXT_PUBLIC_NEWSLETTER_ACTION` and pass it in `deploy.yml` build env (same way as the GSC var), then deploy.

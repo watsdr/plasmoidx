@@ -9,7 +9,7 @@ export const explainLock518400 = [
 
 export const explainDeviceBeats = [
   "Air first meets the ionizer / pre-ionization chamber — ultraviolet (UV) light pretreats it.",
-  "The bubbler (plasmoid generator) sends that air through a water column. Bubbles collapse (cavitation) and form energetic vacuum objects (EVOs).",
+  "The bubbler (plasmoid generator) sends that air through a water column. Bubbles collapse (cavitation) and form plasmoids, called Exotic Vacuum Occurrences (EVOs).",
   "The catalytic tornado resonator holds nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core — with exhaust feedback.",
   "A calm zero-plane sits between the opposing spins so charge can separate and feed the swarm. Optional vajra / plasmoid-gun geometry is a separate teaching figure.",
 ];
@@ -37,7 +37,7 @@ export const explainImplosiveVsExplosive = [
 ];
 
 export const explainPlasmoidEvo = [
-  "An energetic vacuum object (EVO) is a self-contained donut (toroid) of plasma.",
+  "A plasmoid, or Exotic Vacuum Occurrence (EVO), is a self-contained donut (toroid) of plasma.",
   "Birth story in this model: a bubble collapses (cavitation) to a quiet zero-point.",
   "From that collapse the donut field organizes — a plasmoid EVO.",
   "It can grow while charging, then discharge when hit by a positive pulse.",
@@ -59,7 +59,7 @@ export const explainAtvTriangle = [
 
 export const explainProtiumPath = [
   "Start with water — the working fluid in the inventor narrative.",
-  "Cavitation (bubble collapse) births plasmoid energetic vacuum objects (EVOs).",
+  "Cavitation (bubble collapse) forms plasmoids, or Exotic Vacuum Occurrences (EVOs).",
   "Contra-rotating (CTR) charge builds the swarm.",
   "The swarm harvests protium (¹H); chamber discharge returns work.",
 ];

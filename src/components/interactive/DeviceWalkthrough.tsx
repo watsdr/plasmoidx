@@ -14,7 +14,7 @@ const steps = [
   },
   {
     title: "Bubbler",
-    body: "Plasmoid generator / bubbler: air rises through a water column and collapses (cavitation). That birth forms energetic vacuum objects (EVOs) — Exotic Vacuum Occurrence in Strike decks; in plain words, self-built donut-shaped plasmoids.",
+    body: "Bubbler (plasmoid generator): air rises through a water column and the bubbles collapse (cavitation). That collapse forms plasmoids — Exotic Vacuum Occurrences (EVOs) in Strike Foundation material; in plain words, self-built donut-shaped plasmoids.",
   },
   {
     title: "Resonator",

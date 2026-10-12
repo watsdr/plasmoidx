@@ -23,11 +23,11 @@ export default function LearnAliasPage() {
           Learn is now Study
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          The learning path lives under{" "}
+          Lessons and labs now live on{" "}
           <Link href="/study/" className="link-aurora">
             Study
           </Link>
-          . Hardware beats and ratios are on{" "}
+          . The hardware walkthrough is on{" "}
           <Link href="/device/" className="link-aurora">
             Device
           </Link>

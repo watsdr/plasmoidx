@@ -3,6 +3,7 @@
 # routing: trailingSlash: true → /study/ → study/index.html.
 
 DirectoryIndex index.html
+ErrorDocument 404 /404.html
 
 # LiteSpeed server cache: keep built HTML in memory so the host skips disk
 # lookups on every request (cuts time to first byte). Static export only, no

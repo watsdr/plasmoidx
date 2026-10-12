@@ -7,8 +7,8 @@ import { glossaryTerms } from "@/lib/glossary";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/glossary/",
-    title: "Glossary of plasmoid study terms",
-    description: "Plain definitions for MSAART, PUM, EVO, MOE, CTR, Time’s mould, the Embry-Riddle meter, and related Plasmoid X study terms.",
+    title: "Glossary: terms in plain English",
+    description: "Plain definitions for MSAART, PUM, EVO, MOE, CTR, Time’s mould, the Embry-Riddle test, and other Plasmoid X study terms.",
     section: "glossary",
   }),
 };
@@ -19,11 +19,12 @@ export default function GlossaryPage() {
       <header className="max-w-2xl">
         <p className="section-label">Glossary</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Terms in plain language
+          Glossary: terms in plain English
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          Short entries with links into Study and Device. The header Glossary
-          drawer shows the same set.
+          Short, plain definitions of every term on this site. The inventor’s
+          material uses many acronyms; this list keeps them straight. The
+          Glossary button in the header opens the same list.
         </p>
       </header>
 
@@ -39,8 +40,8 @@ export default function GlossaryPage() {
             Why a plain glossary
           </h2>
           <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
-            Teach → act before the dense list. Index chips and entries stay
-            unwrapped so scanning stays fast.
+            A short orientation first, then the full list. Tap a letter
+            chip to jump.
           </p>
         </ScrollyChapter>
 
@@ -56,8 +57,11 @@ export default function GlossaryPage() {
               Acronym fog
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
-              MSAART, EVO, MOE, CTR, and PUM show up early. Without plain
-              expansions, beginners bounce instead of learning the picture.
+              Acronyms like MSAART (Molten Sea Ark Atomic Reconstruction
+              Technology), EVO (Exotic Vacuum Occurrence), MOE (Model of the
+              Elements), CTR (contra-rotating), and PUM (Plasmoid Unification
+              Model) show up early. Without plain definitions, beginners give
+              up before the picture makes sense.
             </p>
           </ScrollyChapter>
 

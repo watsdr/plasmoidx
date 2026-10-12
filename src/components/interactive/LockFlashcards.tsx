@@ -35,7 +35,7 @@ const INITIAL: Card[] = [
   {
     id: "evo",
     q: "What is an EVO?",
-    a: "Exotic Vacuum Occurrence (Strike decks) — in plain words, an energetic vacuum object: a self-built donut-shaped plasmoid held in a magnetic bottle.",
+    a: "Exotic Vacuum Occurrence — Strike Foundation’s term for a plasmoid: a self-built, donut-shaped plasma held in its own magnetic bottle.",
   },
   {
     id: "moe",

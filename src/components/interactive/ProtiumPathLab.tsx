@@ -8,7 +8,7 @@ import { useProgress } from "@/lib/useProgress";
 
 const captions = [
   "Start with water — the working fluid in the inventor narrative.",
-  "Bubbles collapse (cavitation). That birth seeds plasmoid energetic vacuum objects (EVOs).",
+  "Bubbles collapse (cavitation). In the model, that collapse forms plasmoids, or Exotic Vacuum Occurrences (EVOs).",
   "Plasmoid EVOs organize as self-contained donut fields in the swarm.",
   "Contra-rotating (CTR) charge builds — hot outside, cold stream inside.",
   "The swarm harvests protium (¹H), the common form of hydrogen.",

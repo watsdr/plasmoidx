@@ -94,8 +94,8 @@ export default function ContactForm({ intent = "general" }: ContactFormProps) {
           aria-describedby="note-hint"
         />
         <p id="note-hint" className="mt-1.5 text-xs leading-relaxed text-mist-400">
-          This site is static — submit opens your mail app with the fields
-          filled in. Nothing is sent to a server from here.
+          The button opens your own email app with these fields filled in.
+          Nothing is sent from this page.
         </p>
       </div>
 
@@ -113,7 +113,7 @@ export default function ContactForm({ intent = "general" }: ContactFormProps) {
           role="status"
           className="rounded-lg border border-aurora/35 bg-aurora/5 px-3 py-2 text-sm text-mist-100"
         >
-          Mail app should open next. If nothing happened, email{" "}
+          Your email app should open now. If it didn’t, email{" "}
           <a href="mailto:contact@plasmoidx.com" className="link-aurora">
             contact@plasmoidx.com
           </a>{" "}
@@ -130,12 +130,12 @@ export default function ContactForm({ intent = "general" }: ContactFormProps) {
           <a href="mailto:contact@plasmoidx.com" className="link-aurora">
             contact@plasmoidx.com
           </a>{" "}
-          and send from your usual client.
+          and send from your usual email app.
         </p>
       ) : null}
 
       <button type="submit" className="btn-ghost w-full sm:w-auto">
-        Open mail client
+        Email Derek
       </button>
     </form>
   );

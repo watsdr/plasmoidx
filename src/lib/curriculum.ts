@@ -24,7 +24,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 1,
     title: "Why this matters",
     framing:
-      "This site is an independent education voice. Lead with what a university meter showed, then study the model as a picture — not as a substitute for the meter. MSAART means Molten Sea Ark Atomic Reconstruction Technology on first use; Embry-Riddle before inventor 90% claims.",
+      "This site is independent education. It leads with what an independent meter measured, then study the model as a picture — not as a substitute for the meter. MSAART means Molten Sea Ark Atomic Reconstruction Technology on first use; Embry-Riddle before inventor 90% claims.",
     doneWhen:
       "You can name the independent voice, the Embry-Riddle lead, and that inventor figures stay labeled.",
     href: "/#why-curriculum",
@@ -36,7 +36,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 2,
     title: "Time’s mould (518,400 / 51.84°)",
     framing:
-      "518,400 is Time’s mould in this model — the fixed shape used for Time. Divide by 10,000 and you get 51.84°, treated as the cone / pyramid mouth. Verify the builder and flashcards until the family feels automatic.",
+      "518,400 is Time’s mould in this model — the fixed shape used for Time. Divide by 10,000 and you get 51.84°, treated as the mouth angle of the cones and pyramids. Verify the builder and flashcards until the family feels automatic.",
     doneWhen:
       "You can rebuild 518,400 and recall that 51.84° is the mould mouth.",
     href: "/study/#locks",
@@ -58,7 +58,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 4,
     title: "Plasmoid / EVO",
     framing:
-      "An energetic vacuum object / Exotic Vacuum Occurrence (EVO) is a self-built donut-shaped plasma held in a magnetic bottle. Born in bubble collapse (cavitation), grows while charging, discharges on a positive pulse.",
+      "An Exotic Vacuum Occurrence (EVO) is a plasmoid: a self-built, donut-shaped plasma held in a magnetic bottle. Born in bubble collapse (cavitation), grows while charging, discharges on a positive pulse.",
     doneWhen:
       "You can say what an EVO is in one plain sentence and where it is born.",
     href: "/study/#plasmoid",
@@ -69,7 +69,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 5,
     title: "Three device beats",
     framing:
-      "Hardware story in three beats: ionizer / air pretreatment → bubbler / plasmoid generator (cavitation) → resonator / nested CTR spheres. Walk the Device page; clear the beats lab when the sequence sticks.",
+      "The hardware in three parts: ionizer (air pretreatment) → bubbler (plasmoid generator, cavitation) → resonator (nested CTR spheres). Walk the Device page; clear the beats lab when the sequence sticks.",
     doneWhen:
       "You can list ionizer → bubbler → Vajra/CTR in order.",
     href: "/device/",
@@ -80,7 +80,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 6,
     title: "Honest numbers",
     framing:
-      "Inventor claim → what the meter showed → what it does not prove. Embry-Riddle (~+9–10% fuel efficiency, ~−34% avg emissions) leads; ≥90% marketing figures stay labeled claims. Finish with the Study quiz when ready.",
+      "Inventor claim → what the meter showed → what it does not prove. The Embry-Riddle test (about +9–10% fuel efficiency, about −34% average emissions) leads; marketing figures of 90% or more stay labeled claims. Finish with the Study quiz when ready.",
     doneWhen:
       "You can state the meter figures and name one thing they do not prove.",
     href: "/study/#honest-numbers",

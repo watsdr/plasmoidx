@@ -8,8 +8,8 @@ import ScrollyChapter from "@/components/ScrollyChapter";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/sources/",
-    title: "Sources, method & privacy",
-    description: "How Plasmoid X separates measured results, inventor claims, and commentary. Outbound credits, acronym policy, and our cookieless analytics note.",
+    title: "Sources: method and privacy",
+    description: "How Plasmoid X separates measured results, inventor claims, and commentary. Credits for outside sources, our acronym rule, and our cookieless privacy note.",
     section: "sources",
   }),
 };
@@ -20,12 +20,13 @@ export default function SourcesPage() {
       <header className="max-w-2xl">
         <p className="section-label">Sources</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Method before mystique
+          Sources: method and privacy
         </h1>
         <p className="measure mt-5 text-lg leading-relaxed text-mist-200">
-          Independent education voice. We separate what was measured, what
-          inventors claim, and what independent educators say — then teach the
-          model calmly.
+          This page shows where the site’s facts come from and how we sort
+          them: what was measured, what the inventor claims, and what outside
+          educators say. It matters because the claims around this technology
+          vary widely, and you deserve to know which is which.
         </p>
       </header>
 
@@ -76,7 +77,7 @@ export default function SourcesPage() {
               Three labeled lanes
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
-              Keep measured, inventor / marketing, and independent commentary
+              Keep measured results, inventor and marketing claims, and independent commentary
               separate. Expand acronyms on first use. Link outbound; do not
               republish Draft 518,400 PDFs.
             </p>
@@ -114,7 +115,7 @@ export default function SourcesPage() {
               Measured
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-mist-300">
-              Embry-Riddle Aeronautical University M.S. thesis (2026) —
+              Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) —
               independent meter this site leads with: roughly +9–10% fuel
               efficiency and about −34% average emissions (carbon monoxide
               clearest). Not a Plasmoid X credential; cited as used on the site.
@@ -122,12 +123,12 @@ export default function SourcesPage() {
           </ScrollyChapter>
           <ScrollyChapter as="li" delay={100}>
             <h3 className="text-base font-medium tracking-tight text-mist-50">
-              Inventor / marketing
+              Inventor claims
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-mist-300">
-              Bendall Thunderstorm Generator decks, HowTube /
+              Thunderstorm Generator decks, HowTube /
               StrikeFoundationEarth lectures, Perry narrative pieces. Large
-              fuel figures (including ≥90%), near-zero exhaust language, and
+              fuel figures (including 90% or more), near-zero exhaust language, and
               rollout promises stay labeled claims.
             </p>
           </ScrollyChapter>
@@ -151,12 +152,13 @@ export default function SourcesPage() {
           <li>
             <strong className="font-medium text-mist-100">MSAART</strong> —
             Molten Sea Ark Atomic Reconstruction Technology on first use.{" "}
-            <em>Ark</em>, not Arc (PUM / Draft 518400 titles).
+            <em>Ark</em>, not Arc (matching the Plasmoid Unification Model, or PUM, and Draft 518,400 titles).
           </li>
           <li>
-            <strong className="font-medium text-mist-100">PUM · EVO · MOE · CTR · ATV</strong>{" "}
-            — expanded once per page section where a beginner lands; glossary
-            holds the short forms.
+            <strong className="font-medium text-mist-100">Every acronym</strong>{" "}
+            — for example EVO (Exotic Vacuum Occurrence), MOE (Model of the
+            Elements), CTR (contra-rotating), and ATV (Area–Time–Volume) — is
+            spelled out on first use on each page. The glossary holds them all.
           </li>
           <li>
             Full list:{" "}
@@ -266,7 +268,7 @@ export default function SourcesPage() {
 
       <section id="errata" className="mt-16 max-w-2xl">
         <h2 className="fluid-title font-semibold text-mist-50">
-          Errata &amp; updates
+          Updates and corrections
         </h2>
         <p className="mt-2 text-sm text-mist-300">
           Dated corrections. Full list also on{" "}

@@ -8,8 +8,8 @@ import ScrollyChapter from "@/components/ScrollyChapter";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/services/",
-    title: "Install services by inquiry",
-    description: "Optional Thunderstorm Generator install and commissioning labor by inquiry, for kits you already own. Independent — not a dealer or licensee.",
+    title: "Services: install help for kit owners",
+    description: "Install and setup labor, by inquiry, for Thunderstorm Generator kits you already own. Independent — not a dealer or licensee.",
     section: "services",
   }),
 };
@@ -24,7 +24,7 @@ const included = [
 const notIncluded = [
   "Selling kits or acting as a kit storefront on this page.",
   "Manufacturer warranty administration (any kit warranty is between you and the seller/maker).",
-  "Guaranteeing inventor marketing figures (including ≥90% fuel claims) or that any study result will repeat on your vehicle.",
+  "Guaranteeing inventor marketing figures (including fuel claims of 90% or more) or that any study result will repeat on your vehicle.",
   "Defeating required emissions equipment or doing illegal modifications.",
   "Unlimited remote support or open-ended troubleshooting outside the agreed scope.",
 ] as const;
@@ -52,7 +52,7 @@ const processSteps = [
   },
   {
     n: "5",
-    title: "Install / commission",
+    title: "Install and set up",
     body: "Hands-on fitment and basic commissioning within the agreed scope.",
   },
   {
@@ -68,17 +68,18 @@ export default function ServicesPage() {
       <header className="max-w-2xl">
         <p className="section-label">Services</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Install help for kit owners
+          Services: install help for kit owners
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          Independent labor and commissioning by inquiry — for people who
-          already own (or will buy themselves) a compatible Bendall /
-          Thunderstorm Generator–style kit. This is not a Strike store, not an
-          authorized dealer page, and not online checkout.
+          This page offers install and setup (commissioning) labor, by
+          inquiry, for people who already own a compatible Thunderstorm
+          Generator kit or will buy one themselves. It matters because a
+          careful install is part of a fair test. This is not a Strike
+          Foundation store, an authorized dealer, or an online checkout.
         </p>
         <p className="mt-5 inline-flex max-w-xl rounded-lg border border-aurora/30 bg-aurora/5 px-3 py-2 text-sm leading-relaxed text-mist-100">
-          Offer in formation — inquiry welcome; terms finalized in a written
-          estimate after review.
+          This offer is still taking shape. Ask anytime; terms come in a
+          written estimate after review.
         </p>
       </header>
 
@@ -139,7 +140,7 @@ export default function ServicesPage() {
               Inquiry → written estimate → work
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
-              Optional paid install / commissioning when both sides agree in
+              Optional paid install and setup when both sides agree in
               writing. No online checkout, no kit sales here, no invented
               performance guarantees. Scope and price land in the estimate —
               not in marketing copy.
@@ -153,7 +154,7 @@ export default function ServicesPage() {
               Chapter 3 · Act
             </p>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
-              Read what’s included / not included, then start an inquiry below —
+              Read what’s included and what isn’t, then start an inquiry below —
               or ask education-only questions on{" "}
               <Link href="/connect/" className="link-aurora">
                 Connect
@@ -174,7 +175,7 @@ export default function ServicesPage() {
           id="what-this-is-heading"
           className="fluid-title font-semibold text-mist-50"
         >
-          What this is / isn’t
+          What this is and isn’t
         </h2>
         <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">
           <div className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6">
@@ -185,7 +186,7 @@ export default function ServicesPage() {
               <li>
                 An education site with{" "}
                 <strong className="font-medium text-mist-100">
-                  optional paid installation / commissioning labor
+                  optional paid install and setup (commissioning) labor
                 </strong>{" "}
                 when both sides agree in writing.
               </li>
@@ -214,7 +215,7 @@ export default function ServicesPage() {
             <ul className="mt-3 space-y-2.5 text-sm leading-relaxed text-mist-200">
               <li>
                 Strike Foundation, Strike Energy, Thunderstorm.tech, or an
-                authorized dealer / licensee / partner.
+                authorized dealer, licensee, or partner.
               </li>
               <li>
                 A page that sells kits, books installs online, or promises
@@ -338,7 +339,7 @@ export default function ServicesPage() {
           Honest numbers reminder
         </h2>
         <p className="measure mt-4 text-sm leading-relaxed text-mist-200">
-          Independent Embry-Riddle Aeronautical University M.S. thesis (2026)
+          Independent Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026)
           meter context on this site is about{" "}
           <strong className="font-medium text-mist-100">
             +9–10% fuel efficiency
@@ -351,7 +352,7 @@ export default function ServicesPage() {
           <strong className="font-medium text-mist-100">
             study context, not a promise for your install
           </strong>
-          . Inventor / marketing figures (often framed as ≥90% fuel cuts or
+          . Inventor and marketing figures (often framed as fuel cuts of 90% or more, or
           near-zero emissions) stay labeled claims and are{" "}
           <strong className="font-medium text-mist-100">not guaranteed</strong>
           .
@@ -507,10 +508,10 @@ export default function ServicesPage() {
               href="mailto:contact@plasmoidx.com?subject=Plasmoid%20X%20install%20inquiry"
               className="btn-primary mt-5"
             >
-              Email install inquiry
+              Ask about installs
             </a>
             <p className="mt-4 text-xs leading-relaxed text-mist-400">
-              contact@plasmoidx.com · Independent voice. Not Strike Foundation,
+              contact@plasmoidx.com · Independent education. Not Strike Foundation,
               Strike Energy, or a licensee.
             </p>
           </div>

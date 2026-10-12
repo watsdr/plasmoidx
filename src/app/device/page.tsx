@@ -23,8 +23,8 @@ import { deviceBeats, ratios } from "@/lib/content";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/device/",
-    title: "Thunderstorm Generator device walkthrough",
-    description: "The three beats of the Bendall Thunderstorm Generator retrofit — ionizer, bubbler, resonator — with labeled teaching art and honest meter numbers.",
+    title: "Device: how the Thunderstorm Generator works",
+    description: "Malcolm Bendall’s Thunderstorm Generator retrofit in three parts — ionizer, bubbler, resonator — with labeled teaching art and the measured Embry-Riddle numbers.",
     section: "device",
   }),
 };
@@ -35,15 +35,16 @@ export default function DevicePage() {
       <header className="max-w-2xl">
         <p className="section-label">Device</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Three beats in the metal
+          How the Thunderstorm Generator works
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          Inventor teaching model (Draft 518,400 / Thunderstorm Generator
-          overview): an air ionizer / pre-ionization chamber, a bubbler /
-          plasmoid generator (water column + cavitation), then a catalytic
-          tornado resonator with nested contra-rotating (CTR) spheres. Fuel
-          hydrocarbons are just kindling; the plasmoid–protium cycle does the
-          real work. Ratios below are what the hardware is tuned to.
+          This page walks through Malcolm Bendall’s Thunderstorm Generator, an
+          engine retrofit with three parts: an air ionizer, a water bubbler
+          (plasmoid generator), and a resonator with nested contra-rotating
+          (CTR) spheres. It matters because this is the hardware the
+          Embry-Riddle test measured. In the inventor’s model, fuel is only
+          kindling and a plasmoid–protium cycle does the real work — that part
+          is a claim, not a measurement.
         </p>
       </header>
 
@@ -288,8 +289,8 @@ export default function DevicePage() {
 
       <ScrollyChapter as="section" className="mt-12" delay={80}>
         <p className="text-sm leading-relaxed text-mist-300">
-          Lead with the Embry-Riddle independent meter (~+9–10% fuel
-          efficiency, ~−34% avg emissions). Inventor / marketing claims are
+          Lead with the Embry-Riddle test, an independent meter (about +9–10%
+          fuel efficiency, about −34% average emissions). Inventor claims are
           labeled as such. See{" "}
           <Link href="/study/#honest-numbers" className="link-aurora">
             Study · Honest numbers

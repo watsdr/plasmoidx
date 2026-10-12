@@ -24,7 +24,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-10 sm:gap-16">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
-                Nav
+                Pages
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 {siteNav.map((item) => (
@@ -46,7 +46,7 @@ export default function Footer() {
 
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
-                Outbound
+                Outside sources
               </p>
               <ul className="mt-3 space-y-2 text-sm">
                 {externalLinks.map((item) => (
@@ -74,15 +74,14 @@ export default function Footer() {
             </a>
           </p>
           <p className="mt-2.5 max-w-2xl leading-relaxed">
-            Independent education voice. Not Strike Foundation, Strike Energy,
-            or a licensee. Inventor / marketing claims are labeled as such.
-            Measured results are attributed to independent study where noted.
+            Independent education. Not Strike Foundation, Strike Energy, or a
+            licensee. Inventor claims are labeled as claims, and measured
+            results name the independent study behind them.
           </p>
           <p className="mt-2.5 max-w-2xl leading-relaxed">
-            Built for calm study: keyboard-reachable labs,{" "}
-            <code className="text-mist-300">prefers-reduced-motion</code>{" "}
-            respected, offline shell after first visit. No fabricated
-            Lighthouse scores.
+            Built for calm study: every lab works by keyboard, motion stays
+            low if your device asks for reduced motion, and the site works
+            offline after your first visit.
           </p>
         </div>
       </div>

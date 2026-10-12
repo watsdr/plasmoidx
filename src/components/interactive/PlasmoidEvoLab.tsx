@@ -17,7 +17,7 @@ const steps = [
   },
   {
     title: "Donut EVO",
-    body: "A self-contained toroid field organizes — a plasmoid energetic vacuum object (EVO).",
+    body: "A self-contained donut-shaped (toroidal) field forms — a plasmoid, or Exotic Vacuum Occurrence (EVO).",
   },
   {
     title: "Charged field",

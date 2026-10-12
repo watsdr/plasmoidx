@@ -70,7 +70,7 @@ export const lectureCompanions: CompanionNote[] = [
     ],
     teach: [
       "Walk Device: ionizer → bubbler → Vajra/CTR before or after.",
-      "Compare every big number to the Embry-Riddle meter block.",
+      "Compare every big number to the Embry-Riddle test result.",
       "Protium path lab keeps the six-step picture plain.",
       "We do not speak as Strike, Bendall, or HowTube.",
       "Study pack one-pager holds the three beats for offline review.",

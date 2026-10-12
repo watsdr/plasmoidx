@@ -21,7 +21,7 @@ export type Explainer = {
 };
 
 const meterLine =
-  "Embry-Riddle Aeronautical University M.S. thesis (2026), an independent meter: about +9–10% fuel efficiency and about −34% average emissions under the conditions tested, with carbon monoxide (CO) the clearest drop.";
+  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) using an independent meter — found about +9–10% fuel efficiency and about −34% average emissions under the conditions tested, with carbon monoxide (CO) the clearest drop.";
 
 export const explainers: Explainer[] = [
   {
@@ -29,19 +29,19 @@ export const explainers: Explainer[] = [
     title: "What is a plasmoid?",
     question: "What is a plasmoid, in plain English?",
     description:
-      "A plasmoid explained simply: a self-built, donut-shaped bit of plasma. How it forms in the Bendall picture, what EVO means, and what is measured vs claimed.",
-    lede: "A plasmoid is a small, self-built, donut-shaped plasma that holds its own shape. In Malcolm Bendall’s study material it is also called an EVO.",
+      "A plasmoid explained simply: a self-built, donut-shaped bit of plasma. How it forms in Bendall’s model, what EVO (Exotic Vacuum Occurrence) means, and what is measured vs claimed.",
+    lede: "A plasmoid is a small, self-built, donut-shaped plasma that holds its own shape. In Malcolm Bendall’s study material it is also called an EVO (Exotic Vacuum Occurrence). It matters because the whole Thunderstorm Generator story is built around it.",
     blocks: [
       {
         heading: "The short answer",
         kind: "plain",
         body: [
           "Think of a smoke ring that holds itself together. A plasmoid is a donut-shaped (toroidal) plasma held in its own magnetic bottle.",
-          "Strike decks use the phrase Exotic Vacuum Occurrence (EVO). The plainer reading this site uses is energetic vacuum object.",
+          "Strike Foundation material calls it an Exotic Vacuum Occurrence (EVO). On this site, plasmoid and EVO mean the same thing."
         ],
       },
       {
-        heading: "How it forms, in the inventor picture",
+        heading: "How it forms, in the inventor’s model",
         kind: "claim",
         body: [
           "In the bubbler, air rises through a water column. Bubbles collapse (cavitation) and form EVOs at a quiet zero-point on the equatorial plane — the birth step.",
@@ -70,7 +70,7 @@ export const explainers: Explainer[] = [
     question: "Plasmoid vs plasma — what’s the difference?",
     description:
       "Plasma vs plasmoid in plain English: plasma is the state; a plasmoid is a self-contained, donut-shaped piece of it. Plus how this site uses the word.",
-    lede: "Plasma is the material. A plasmoid is a shape that material can take — a self-contained, donut-shaped piece that holds itself together.",
+    lede: "Plasma is the material. A plasmoid is a shape that material can take — a self-contained, donut-shaped piece that holds itself together. Knowing the difference makes the rest of the inventor’s material easier to follow.",
     blocks: [
       {
         heading: "Plasma",
@@ -107,7 +107,7 @@ export const explainers: Explainer[] = [
     title: "Thunderstorm Generator explained",
     question: "What is the Thunderstorm Generator and does it work?",
     description:
-      "The Bendall Thunderstorm Generator explained simply: three beats (ionizer, bubbler, resonator), what inventors claim, and what an independent meter measured.",
+      "Malcolm Bendall’s Thunderstorm Generator explained simply: three parts (ionizer, bubbler, resonator), what the inventor claims, and what the Embry-Riddle test measured.",
     lede: "The Thunderstorm Generator is Malcolm Bendall’s name for an engine retrofit with three parts. Here is what each does, what is claimed, and what was measured.",
     blocks: [
       {
@@ -123,7 +123,7 @@ export const explainers: Explainer[] = [
         heading: "What inventors claim",
         kind: "claim",
         body: [
-          "Large fuel-efficiency gains, often framed as 90% or more, and near-zero carbon monoxide (CO) and hydrocarbons (HC). Water / protium is framed as the real fuel, with petrol as kindling.",
+          "Large fuel-efficiency gains, often framed as 90% or more, and near-zero carbon monoxide (CO) and hydrocarbons (HC). Water (protium) is framed as the real fuel, with petrol as kindling.",
           "These stay labeled inventor claims on this site. They are not guaranteed.",
         ],
       },
@@ -149,7 +149,7 @@ export const explainers: Explainer[] = [
     question: "What is Bendall’s MSAART?",
     description:
       "MSAART (Molten Sea Ark Atomic Reconstruction Technology) explained in plain English: what the name means, how it links to plasmoids, and what is model vs measured.",
-    lede: "MSAART stands for Molten Sea Ark Atomic Reconstruction Technology — Malcolm Bendall’s research framework behind the plasmoid and atom picture.",
+    lede: "MSAART stands for Molten Sea Ark Atomic Reconstruction Technology — Malcolm Bendall’s research framework behind the plasmoid and atom picture. You will see the name often, so it helps to know what it covers and what it does not prove.",
     blocks: [
       {
         heading: "The name",
@@ -190,7 +190,7 @@ export const explainers: Explainer[] = [
     description:
       "The Embry-Riddle thesis on the Thunderstorm Generator in plain English: about +9–10% fuel efficiency and −34% average emissions, and what that does not prove.",
     published: "2026-10-10",
-    lede: "An Embry-Riddle Aeronautical University master’s (M.S.) thesis put a meter on Thunderstorm-style retrofit hardware. Here is what it found, in plain numbers, and where its reach stops.",
+    lede: "An Embry-Riddle Aeronautical University master’s (M.S.) thesis put an independent meter on Thunderstorm Generator retrofit hardware. Here is what it found, in plain numbers, and where its reach stops.",
     blocks: [
       {
         heading: "The headline numbers",
@@ -234,7 +234,7 @@ export const explainers: Explainer[] = [
     title: "Does the Thunderstorm Generator work? Claims vs meter",
     question: "Does the Thunderstorm Generator actually work?",
     description:
-      "Does the Bendall Thunderstorm Generator work? Inventor claims side by side with an independent meter result, claim by claim, in plain English.",
+      "Does Malcolm Bendall’s Thunderstorm Generator work? Each inventor claim side by side with what the Embry-Riddle test measured, in plain English.",
     published: "2026-10-10",
     lede: "Short answer: an independent meter saw a real but modest effect. The big claims are a different matter. Here is each claim next to what was measured.",
     blocks: [
@@ -243,7 +243,7 @@ export const explainers: Explainer[] = [
         kind: "claim",
         body: [
           "Claim: large fuel-efficiency gains, often framed as 90% or more.",
-          "Measured: roughly +9–10% fuel efficiency in the Embry-Riddle Aeronautical University M.S. thesis (2026), under the conditions tested.",
+          "Measured: roughly +9–10% fuel efficiency in the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026), under the conditions tested.",
         ],
       },
       {
@@ -258,7 +258,7 @@ export const explainers: Explainer[] = [
         heading: "Water as fuel",
         kind: "claim",
         body: [
-          "Claim: water / protium (ordinary hydrogen) is the real fuel and petrol is kindling.",
+          "Claim: water — specifically protium, ordinary hydrogen — is the real fuel and petrol is kindling.",
           "Measured: nothing yet. The meter looked at fuel use and exhaust, not a closed water or isotope cycle.",
         ],
       },
@@ -281,20 +281,20 @@ export const explainers: Explainer[] = [
     title: "What is an EVO? Plasmoids by another name",
     question: "What is an EVO in plasmoid research?",
     description:
-      "EVO explained simply: the term Strike decks use for a self-built, donut-shaped plasmoid. Where the name comes from, how it is said to form, and what is measured.",
+      "EVO explained simply: the term Strike Foundation uses for a self-built, donut-shaped plasmoid. Where the name comes from, how it is said to form, and what is measured.",
     published: "2026-10-10",
-    lede: "EVO is another name for a plasmoid in Malcolm Bendall’s study material: a small, self-built, donut-shaped plasma that holds its own shape.",
+    lede: "EVO, short for Exotic Vacuum Occurrence, is another name for a plasmoid in Malcolm Bendall’s study material: a small, self-built, donut-shaped plasma that holds its own shape. The term shows up often in Strike Foundation material, so it helps to know it.",
     blocks: [
       {
         heading: "What the letters mean",
         kind: "plain",
         body: [
-          "Strike decks spell EVO as Exotic Vacuum Occurrence. The plainer reading this site uses is energetic vacuum object.",
-          "Either way, it means one thing here: a self-contained, donut-shaped (toroidal) plasma held in its own magnetic bottle.",
+          "EVO stands for Exotic Vacuum Occurrence, the term used in Strike Foundation material.",
+          "On this site, an EVO and a plasmoid are the same thing: a self-contained, donut-shaped (toroidal) plasma held in its own magnetic bottle.",
         ],
       },
       {
-        heading: "Life of an EVO, in the inventor model",
+        heading: "Life of an EVO, in the inventor’s model",
         kind: "claim",
         body: [
           "Birth: bubbles collapse in water (cavitation) and form EVOs at a quiet zero-point on the equatorial plane.",
@@ -323,7 +323,7 @@ export const explainers: Explainer[] = [
     description:
       "The water bubbler, or plasmoid generator, explained in plain English: air through a water column, collapsing bubbles (cavitation), and what is claimed vs measured.",
     published: "2026-10-10",
-    lede: "The bubbler is the middle of the Thunderstorm Generator’s three parts. Air rises through water, bubbles collapse, and — in the inventor picture — plasmoids are born.",
+    lede: "The bubbler is the middle of the Thunderstorm Generator’s three parts. Air rises through water, bubbles collapse, and — in the inventor’s model — plasmoids are born.",
     blocks: [
       {
         heading: "What it is",
@@ -337,7 +337,7 @@ export const explainers: Explainer[] = [
         heading: "What the inventor says happens",
         kind: "claim",
         body: [
-          "Collapsing bubbles form energetic vacuum objects (EVOs) — self-built, donut-shaped plasmas, also called plasmoids — which then flow on to the resonator.",
+          "Collapsing bubbles form plasmoids — self-built, donut-shaped plasmas, also called Exotic Vacuum Occurrences (EVOs) — which then flow on to the resonator.",
           "This is the Bendall / Strike model, taught here as a study picture.",
         ],
       },
@@ -363,7 +363,7 @@ export const explainers: Explainer[] = [
     description:
       "The Thunderstorm Generator air ionizer explained: ultraviolet (UV) light pretreats incoming air before the water bubbler. What it does, what is claimed, what is measured.",
     published: "2026-10-10",
-    lede: "The ionizer is the first of the Thunderstorm Generator’s three parts. It pretreats incoming air with ultraviolet light before that air reaches the water.",
+    lede: "The ionizer is the first of the Thunderstorm Generator’s three parts. It pretreats incoming air with ultraviolet light before that air reaches the water. It matters because, in the inventor’s model, it sets up the next step.",
     blocks: [
       {
         heading: "What it is",
@@ -377,7 +377,7 @@ export const explainers: Explainer[] = [
         heading: "Why the inventor includes it",
         kind: "claim",
         body: [
-          "In the Bendall picture, charged air sets up the bubbler so collapsing bubbles form plasmoids more readily. That is part of the inventor model, not something measured on its own.",
+          "In Bendall’s model, charged air sets up the bubbler so collapsing bubbles form plasmoids more readily. That is part of the inventor model, not something measured on its own.",
         ],
       },
       {
@@ -402,7 +402,7 @@ export const explainers: Explainer[] = [
     description:
       "The catalytic tornado resonator explained: nested contra-rotating (CTR) spheres, opposing spins, and the calm zero-plane between them — model vs measured.",
     published: "2026-10-10",
-    lede: "The resonator is the last of the Thunderstorm Generator’s three parts: a chamber of nested spheres where two flows spin opposite ways.",
+    lede: "The resonator is the last of the Thunderstorm Generator’s three parts: a chamber of nested spheres where two flows spin opposite ways. In the inventor’s model, this is where the energy is harvested.",
     blocks: [
       {
         heading: "What it is",
@@ -455,7 +455,7 @@ export const explainers: Explainer[] = [
         heading: "The study path",
         kind: "claim",
         body: [
-          "Water → cavitation → plasmoids → CTR (contra-rotating) spheres → harvest ¹H → work. In this picture, water / protium is the real fuel and petrol is kindling.",
+          "Water → cavitation → plasmoids → CTR (contra-rotating) spheres → harvest ¹H → work. In this picture, water (protium) is the real fuel and petrol is kindling.",
           "The model also ties protium’s melting point, −259.2 °C, into the 518,400 number family. That link is inventor-model, not site-verified.",
         ],
       },

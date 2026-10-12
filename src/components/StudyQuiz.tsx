@@ -25,7 +25,7 @@ const QUESTIONS: Question[] = [
     correct: "mould",
     choices: [
       { id: "mould", label: "Time’s mould — the fixed product 1×2×3×4×5×6×8×9×10 (7 left out)" },
-      { id: "meter", label: "The Embry-Riddle meter reading" },
+      { id: "meter", label: "The Embry-Riddle test result" },
       { id: "claim", label: "An inventor fuel-cut figure" },
     ],
     explain:
@@ -63,17 +63,17 @@ const QUESTIONS: Question[] = [
       {
         id: "plasmoid",
         label:
-          "Energetic vacuum object / Exotic Vacuum Occurrence — a self-built donut-shaped plasmoid",
+          "Exotic Vacuum Occurrence — a self-built, donut-shaped plasmoid",
       },
       { id: "battery", label: "A battery chemistry used in the ionizer" },
       { id: "thesis", label: "The title of the Embry-Riddle thesis" },
     ],
     explain:
-      "EVO is the Strike-deck phrase (Exotic Vacuum Occurrence) and, in plain words, an energetic vacuum object: a self-built toroidal plasmoid. Strike Foundation is an external source.",
+      "EVO stands for Exotic Vacuum Occurrence, Strike Foundation’s term for a self-built, donut-shaped plasmoid. Strike Foundation is an outside source."
   },
   {
     id: "meter",
-    prompt: "What did the independent Embry-Riddle meter show, versus inventor ads?",
+    prompt: "What did the Embry-Riddle test show, versus the inventor’s ads?",
     correct: "modest",
     choices: [
       {
@@ -84,7 +84,7 @@ const QUESTIONS: Question[] = [
       { id: "zero", label: "No measured change; only marketing claims exist" },
     ],
     explain:
-      "Lead with the university meter. Large fuel cuts and near-zero carbon monoxide (CO) / hydrocarbons (HC) are inventor / marketing claims, labeled as such.",
+      "Lead with the measured result. Large fuel cuts and near-zero carbon monoxide (CO) and hydrocarbons (HC) are inventor claims, labeled as such.",
   },
   {
     id: "beats",
@@ -96,7 +96,7 @@ const QUESTIONS: Question[] = [
       { id: "quiz", label: "Store → spend → dump, with no hardware order" },
     ],
     explain:
-      "Ultraviolet (UV) pretreats air in the ionizer chamber, cavitation in the bubbler births energetic vacuum objects (EVOs), then nested CTR spheres in the resonator separate charge.",
+      "Ultraviolet (UV) pretreats air in the ionizer chamber, cavitation in the bubbler forms plasmoids (EVOs), then nested CTR spheres in the resonator separate charge.",
   },
 ];
 

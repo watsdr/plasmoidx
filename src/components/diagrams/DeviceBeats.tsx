@@ -244,7 +244,7 @@ export default function DeviceBeats({
           id={captionId}
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
-          Linear flow through the Bendall Thunderstorm Generator retrofit
+          Linear flow through the Thunderstorm Generator retrofit
           (inventor teaching model): air ionizer / pre-ionization chamber →
           bubbler / plasmoid generator (cavitation) → catalytic tornado
           resonator with nested contra-rotating spheres.

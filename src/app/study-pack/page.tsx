@@ -8,7 +8,7 @@ import { deviceBeats, msaartExpansion, siteSlogan } from "@/lib/content";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/study-pack/",
-    title: "Printable study pack",
+    title: "Study pack: printable summary",
     description: "One-page printable study sheet: Time’s mould locks, three device beats, and a short glossary. Print or save as PDF.",
     section: "study",
   }),
@@ -19,12 +19,12 @@ const glossaryMini = [
     abbr: "MSAART",
     body: "Molten Sea Ark Atomic Reconstruction Technology",
   },
-  { abbr: "EVO", body: "Self-built donut plasmoid (energetic vacuum object)" },
+  { abbr: "EVO", body: "Exotic Vacuum Occurrence — a self-built, donut-shaped plasmoid" },
   { abbr: "CTR", body: "Contra-rotating nested spheres" },
   { abbr: "MOE", body: "Model of the Elements — 16 × 8 lattice" },
   {
     abbr: "Meter",
-    body: "Embry-Riddle ~+9–10% fuel · ~−34% avg emissions (lead with this)",
+    body: "Embry-Riddle test: ~+9–10% fuel efficiency · ~−34% average emissions (lead with this)",
   },
 ];
 
@@ -88,7 +88,7 @@ export default function StudyPackPage() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
               This pack is a one-pager: Time&apos;s mould locks, three device
-              beats, short expansions (MSAART and friends), and one honest-meter
+              beats, plain acronym definitions, and one measured-results
               line. Independent education — not Strike.
             </p>
           </ScrollyChapter>
@@ -123,9 +123,9 @@ export default function StudyPackPage() {
             Locks · three beats · short glossary
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-mist-300">
-            Independent education. Not Strike Foundation. MSAART ={" "}
-            {msaartExpansion}. Lead with Embry-Riddle before inventor 90%
-            claims.
+            Independent education, not Strike Foundation. MSAART means{" "}
+            {msaartExpansion}. Measured Embry-Riddle numbers come before the
+            inventor’s 90% claims.
           </p>
         </header>
 
@@ -202,7 +202,7 @@ export default function StudyPackPage() {
             Honest numbers (one line)
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-mist-200">
-            Meter: ~+9–10% fuel efficiency · ~−34% avg emissions. Inventor ≥90%
+            Measured: ~+9–10% fuel efficiency · ~−34% average emissions. Inventor 90%+
             / near-zero claims stay labeled — they are not proven by that meter.
           </p>
         </section>

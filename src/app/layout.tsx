@@ -25,7 +25,7 @@ const geistSans = localFont({
 });
 
 const defaultTitle = `Plasmoid X — ${siteSlogan}`;
-const defaultDescription = `${siteSlogan} Independent education site: why ordinary engines waste fuel and dirty the air, and how the Bendall Thunderstorm Generator idea aims to run cleaner using water and plasmoids — with measured results and plain-English lessons.`;
+const defaultDescription = `${siteSlogan} Independent education site: why ordinary engines waste fuel and dirty the air, and how Malcolm Bendall’s Thunderstorm Generator idea aims to run cleaner using water and plasmoids — with measured results and plain-English lessons.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://plasmoidx.com"),

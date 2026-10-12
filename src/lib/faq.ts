@@ -20,7 +20,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "meter",
     q: "Should I believe the 90% fuel claims?",
-    a: "This site does not lead with them. Lead with the Embry-Riddle Aeronautical University M.S. thesis (2026) independent meter: about +9–10% fuel efficiency and about −34% average emissions. Large marketing figures stay labeled inventor claims.",
+    a: "This site does not lead with them. Lead with the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) independent meter: about +9–10% fuel efficiency and about −34% average emissions. Large marketing figures stay labeled inventor claims.",
   },
   {
     id: "official",
@@ -30,7 +30,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "start",
     q: "Where should a beginner start?",
-    a: "Follow Lessons 1–6 on Study (curriculum rail): why it matters → Time’s mould → direction = charge → plasmoid / EVO → three device beats → honest numbers. Progressive disclosure — labs unlock the checks.",
+    a: "Follow Lessons 1–6 on Study (curriculum rail): why it matters → Time’s mould → direction = charge → plasmoids (Exotic Vacuum Occurrences, or EVOs) → three device beats → honest numbers. Progressive disclosure — labs unlock the checks.",
   },
   {
     id: "offline",
@@ -50,7 +50,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "mev-ladder",
     q: "Are the Alpha–Omega MeV ladder totals measured here?",
-    a: "No. Omega 157.18 MeV, Alpha 117.17 MeV, and total 274.35 MeV (base 26.7 MeV) are inventor-model figures from Draft 518,400 graphics. This site teaches the layout; it does not independently verify those MeV numbers.",
+    a: "No. The totals — in MeV (million electron volts) — are Omega 157.18 MeV, Alpha 117.17 MeV, and total 274.35 MeV (base 26.7 MeV) are inventor-model figures from Draft 518,400 graphics. This site teaches the layout; it does not independently verify those MeV numbers.",
   },
   {
     id: "sell-kits",
@@ -60,12 +60,12 @@ export const faqItems: FaqItem[] = [
   {
     id: "install-strike",
     q: "Are you Strike or an authorized Thunderstorm dealer?",
-    a: "No. Derek Watson / Plasmoid X is an independent education voice offering optional install labor by inquiry. Not Strike Foundation, Strike Energy, Thunderstorm.tech, or a licensee / authorized dealer / partner.",
+    a: "No. Derek Watson and Plasmoid X are an independent education site offering optional install labor by inquiry. Not Strike Foundation, Strike Energy, Thunderstorm.tech, or a licensee / authorized dealer / partner.",
   },
   {
     id: "guarantee-90",
     q: "Do you guarantee 90% fuel savings on an install?",
-    a: "No. Inventor marketing figures (often ≥90%) stay labeled claims and are not guaranteed. Embry-Riddle-style meter numbers on this site are study context (~+9–10% fuel / ~−34% avg emissions), not a promise that your vehicle will match them.",
+    a: "No. Inventor marketing figures (often 90% or more) stay labeled claims and are not guaranteed. The Embry-Riddle test numbers on this site (about +9–10% fuel efficiency, about −34% average emissions) are study context, not a promise that your vehicle will match them.",
   },
 ];
 
@@ -79,12 +79,12 @@ export const errataItems: ErrataItem[] = [
   {
     date: "2026-09-20",
     title: "Device visuals match inventor anatomy (teaching art)",
-    body: "Device page now leads with original brochure art for air ionizer / pre-ionization, bubbler / plasmoid generator (water column + cavitation), and catalytic tornado resonator with nested CTR spheres, plus optional vajra quadrature teaching figure. Captions label inventor-model sketches — not product photos or patent reprints.",
+    body: "Device page now leads with original brochure art for the air ionizer (pre-ionization), the bubbler (plasmoid generator: water column and cavitation), and catalytic tornado resonator with nested contra-rotating (CTR) spheres, plus optional vajra quadrature teaching figure. Captions label inventor-model sketches — not product photos or patent reprints.",
   },
   {
     date: "2026-09-15",
     title: "Alpha–Omega MeV ladder is inventor-model",
-    body: "Study Alpha–Omega totals (Omega 157.18 MeV, Alpha 117.17 MeV, total 274.35 MeV; base 26.7 MeV) come from Draft 518,400 graphics. They are inventor-model figures, not independently verified on Plasmoid X.",
+    body: "Study Alpha–Omega totals in MeV (million electron volts) (Omega 157.18 MeV, Alpha 117.17 MeV, total 274.35 MeV; base 26.7 MeV) come from Draft 518,400 graphics. They are inventor-model figures, not independently verified on Plasmoid X.",
   },
   {
     date: "2026-09-15",
@@ -94,7 +94,7 @@ export const errataItems: ErrataItem[] = [
   {
     date: "2026-09-15",
     title: "Meter vs 90% lead",
-    body: "Honest-numbers / claims-compare modules lead with Embry-Riddle (~+9–10% fuel, ~−34% avg emissions). Inventor ≥90% figures remain labeled and are not the headline.",
+    body: "The Honest numbers and claims-compare sections lead with the Embry-Riddle test (about +9–10% fuel efficiency, about −34% average emissions). Inventor figures of 90% or more stay labeled and are not the headline.",
   },
   {
     date: "2026-09-14",

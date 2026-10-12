@@ -21,8 +21,7 @@ export default function ContactAliasPage() {
         Contact is now Connect
       </h1>
       <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-        Reach out, education &amp; licensed-pilot notes, and outbound independent
-        links are on{" "}
+        Email and outside links now live on{" "}
         <Link href="/connect/" className="link-aurora">
           Connect
         </Link>

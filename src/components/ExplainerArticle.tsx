@@ -6,7 +6,7 @@ import { absUrl } from "@/lib/seo";
 
 const kindLabel = {
   measured: "Measured",
-  claim: "Inventor claim / model",
+  claim: "Inventor claim",
   plain: "Plain definition",
 } as const;
 

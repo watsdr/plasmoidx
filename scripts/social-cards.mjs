@@ -55,8 +55,8 @@ const cards = [
     slug: "518400-number-lock",
     hook: "Why does 518,400 keep showing up?",
     facts: [
-      ["Claim", "1 × 2 × 3 × 4 × 5 × 6 × 8 × 9 × 10 = 518,400, and hardware ratios sit on that number family."],
-      ["Measured", "No test shows a number lock is needed for the measured result."],
+      ["Plain fact", "1 × 2 × 3 × 4 × 5 × 6 × 8 × 9 × 10 = 518,400 (7 is skipped)."],
+      ["Claim", "In the inventor’s model, the hardware ratios sit on this number family. No test shows that is needed."],
     ],
   },
 ];
@@ -82,7 +82,7 @@ function shot(html, w, h, out) {
   writeFileSync(f, html);
   execFileSync(chrome, ["--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=1", `--window-size=${w},${h}`, `--screenshot=${out}`, `file://${f}`], { stdio: "ignore" });
 }
-const factHtml = ([label, text]) => `<div class="fact ${label === "Claim" ? "claim" : ""}"><div class="label">${label}</div><div class="text">${esc(text)}</div></div>`;
+const factHtml = ([label, text]) => `<div class="fact ${label === "Measured" ? "" : "claim"}"><div class="label">${label}</div><div class="text">${esc(text)}</div></div>`;
 const brand = `<div class="brand">${logo(64)}Plasmoid X</div>`;
 const foot = (slug) => `<div><div class="foot">plasmoidx.com</div><div class="sub">/explainers/${slug}/</div></div>`;
 
@@ -102,7 +102,7 @@ for (const c of cards) {
     `${brand}<div class="main"><div class="hook">${esc(c.hook)}</div></div>${foot(c.slug)}`,
     `${brand}<div class="main">${factHtml(c.facts[0])}</div>${foot(c.slug)}`,
     `${brand}<div class="main">${factHtml(c.facts[1])}</div>${foot(c.slug)}`,
-    `${brand}<div class="main"><div class="hook">Measured first.<br>Claims labeled.</div><div class="text">Read the plain-English explainer at plasmoidx.com</div></div>${foot(c.slug)}`,
+    `${brand}<div class="main"><div class="hook">Measured first.<br>Claims labeled.</div><div class="text">Read the explainer at plasmoidx.com</div></div>${foot(c.slug)}`,
   ].map((inner, i) => {
     const p = join(tmp, `${c.slug}-f${i}.png`);
     shot(page(1080, 1920, inner, V), 1080, 1920, p);

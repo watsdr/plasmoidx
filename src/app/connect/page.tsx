@@ -8,8 +8,8 @@ import { externalLinks } from "@/lib/content";
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/connect/",
-    title: "Connect",
-    description: "Email Derek Watson about Plasmoid X education or licensed pilot conversations in the US, plus labeled independent outbound links.",
+    title: "Connect: email Derek",
+    description: "Email Derek Watson about Plasmoid X lessons, study questions, or licensed pilot projects in the US. Plus labeled links to outside sources.",
     section: "connect",
   }),
 };
@@ -20,19 +20,20 @@ export default function ConnectPage() {
       <header className="max-w-2xl">
         <p className="section-label">Connect</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Say hello
+          Connect: email Derek
         </h1>
         <p className="measure mt-4 text-lg leading-relaxed text-mist-200">
-          Education, study questions, and licensed pilot conversations in the
-          US are welcome. Keep it clear and human — I read my own mail.
+          This page is how to reach me. I read my own mail, so a short, clear
+          note about lessons, study questions, or licensed pilot projects in
+          the US gets a real answer.
         </p>
         <p className="measure mt-4 text-sm leading-relaxed text-mist-300">
-          Looking for hands-on install or commissioning help for a kit you
-          already own (or will buy yourself)? See{" "}
+          Need hands-on install help for a kit you already own or will buy
+          yourself? See{" "}
           <Link href="/services/" className="link-aurora">
             Services
           </Link>{" "}
-          — inquiry only; kits are not sold here.
+          . This site does not sell kits.
         </p>
       </header>
 
@@ -89,7 +90,7 @@ export default function ConnectPage() {
             Seeking education &amp; licensed pilot conversations in the US.
           </p>
           <p className="mt-4 text-xs leading-relaxed text-mist-400">
-            Derek Watson. Independent education voice. Not Strike Foundation,
+            Derek Watson. Independent education. Not Strike Foundation,
             Strike Energy, HowTube / StrikeFoundationEarth, Alchemical Science,
             or a licensee. External sources below are independent — HowTube is
             outbound inventor lecture material, not us.
@@ -138,7 +139,7 @@ export default function ConnectPage() {
 
       <div className="mt-16 flex flex-wrap items-center gap-3 border-t border-ink-600/40 pt-10">
         <Link href="/" className="btn-ghost">
-          Why
+          Home
         </Link>
         <Link href="/study/" className="btn-ghost">
           Study

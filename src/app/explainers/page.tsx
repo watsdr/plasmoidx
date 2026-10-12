@@ -16,10 +16,11 @@ export default function ExplainersIndex() {
     <div className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
       <header className="max-w-2xl">
         <p className="section-label">Explainers</p>
-        <h1 className="fluid-display mt-3 font-semibold text-mist-50">Quick answers</h1>
+        <h1 className="fluid-display mt-3 font-semibold text-mist-50">Explainers: quick answers</h1>
         <p className="measure mt-5 text-lg leading-relaxed text-mist-200">
-          One question per page. Each one labels what is measured and what is an
-          inventor claim. For the full path, open{" "}
+          Each page answers one common question in a few minutes. Every block
+          is labeled Measured, Inventor claim, or Plain definition, so you can
+          see what is proven and what is not. For the full course, open{" "}
           <Link href="/study/" className="link-aurora">
             Study
           </Link>

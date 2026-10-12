@@ -18,7 +18,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "MSAART",
     title: "Molten Sea Ark Atomic Reconstruction Technology",
-    body: "Bendall’s research framework behind the plasmoid / atom picture. Ark (not Arc) matches the PUM / Draft 518400 titles. Published materials via Strike Foundation (strikefoundation.earth — external independent org).",
+    body: "Bendall’s research framework behind the plasmoid-and-atom picture. Ark (not Arc) matches the PUM and Draft 518,400 titles. Published materials via Strike Foundation (strikefoundation.earth — external independent org).",
     href: "/study/#plasmoid",
   },
   {
@@ -47,14 +47,14 @@ export const glossaryTerms: GlossaryTerm[] = [
   },
   {
     abbr: "Alpha–Omega",
-    title: "MeV ladder (inventor model)",
-    body: "Two-column climb: odd Z = Omega (+), even Z = Alpha (−). Draft 518,400 graphic header totals: Omega 157.18 MeV, Alpha 117.17 MeV, total 274.35 MeV; base 26.7 MeV at H/He. Inventor-model numbers — not site-verified.",
+    title: "MeV ladder (inventor’s model)",
+    body: "Two-column climb: odd Z = Omega (+), even Z = Alpha (−). Draft 518,400 graphic totals, in MeV (million electron volts): Omega 157.18 MeV, Alpha 117.17 MeV, total 274.35 MeV; base 26.7 MeV at H/He. Inventor-model numbers — not site-verified.",
     href: "/study/#moe",
   },
   {
     abbr: "EVO",
-    title: "Energetic vacuum object / Exotic Vacuum Occurrence",
-    body: "A self-built donut-shaped plasmoid held in a magnetic bottle. “Exotic Vacuum Occurrence” is the phrase used in Strike decks; “energetic vacuum object” is the plain reading. Born in cavitation; grows while charging; discharges on a positive pulse.",
+    title: "Exotic Vacuum Occurrence",
+    body: "A self-built donut-shaped plasmoid held in a magnetic bottle. It is Strike Foundation’s term for a plasmoid. Born in cavitation; grows while charging; discharges on a positive pulse.",
     href: "/study/#plasmoid",
   },
   {
@@ -90,7 +90,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "51.84°",
     title: "Mould mouth angle",
-    body: "518,400 ÷ 10,000. Treated as the cone / pyramid mouth angle in hardware ratios. Pair with Time’s mould on Device and Study.",
+    body: "518,400 ÷ 10,000. Treated as the mouth angle of the cones and pyramids in the hardware ratios. Pair with Time’s mould on Device and Study.",
     href: "/study/#locks",
   },
   {
@@ -102,7 +102,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "CO",
     title: "Carbon monoxide",
-    body: "A combustion exhaust gas. The independent Embry-Riddle meter showed carbon monoxide dropping most clearly among the emission cuts.",
+    body: "A combustion exhaust gas. The Embry-Riddle test showed carbon monoxide dropping most clearly among the emission cuts.",
     href: "/study/#honest-numbers",
   },
   {
@@ -114,7 +114,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "TG",
     title: "Thunderstorm Generator",
-    body: "Bendall’s engine-retrofit name for the three-beat hardware (ionizer / air pretreatment → bubbler / plasmoid generator → resonator / nested CTR spheres). Hear the inventor describe it on HowTube Section 5 — outbound, labeled claims.",
+    body: "Bendall’s engine-retrofit name for the three-part hardware (ionizer for air pretreatment → bubbler, the plasmoid generator → resonator with nested CTR spheres). Hear the inventor describe it on HowTube Section 5 — outbound, labeled claims.",
     href: "/device/",
   },
   {
@@ -126,7 +126,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "Cavitation",
     title: "Bubble collapse",
-    body: "Bubbles in the bubbler collapse and form energetic vacuum objects (EVOs) at a quiet zero-point on the equatorial plane — the birth step in the plasmoid picture.",
+    body: "Bubbles in the bubbler collapse and form plasmoids (EVOs) at a quiet zero-point on the equatorial plane — the birth step in the plasmoid picture.",
     href: "/study/#plasmoid",
   },
   {
@@ -137,8 +137,8 @@ export const glossaryTerms: GlossaryTerm[] = [
   },
   {
     abbr: "ERA",
-    title: "Embry-Riddle meter",
-    body: "Embry-Riddle Aeronautical University M.S. thesis (2026) — independent meter this site leads with: ~+9–10% fuel efficiency, ~−34% average emissions. Not a Plasmoid X credential.",
+    title: "Embry-Riddle test",
+    body: "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — the independent meter this site leads with: about +9–10% fuel efficiency and about −34% average emissions. Not a Plasmoid X credential.",
     href: "/study/#honest-numbers",
   },
 ];

@@ -47,8 +47,8 @@ import {
 export const metadata: Metadata = {
   ...pageMeta({
     path: "/study/",
-    title: "Study: plasmoid lessons in plain English",
-    description: "Beginner Lessons 1–6 plus labs: number locks, direction = charge, plasmoid EVOs, protium path, and honest Embry-Riddle numbers.",
+    title: "Study: lessons and labs",
+    description: "Beginner Lessons 1–6 plus hands-on labs: number locks, direction = charge, plasmoids (EVOs), the protium path, and the measured Embry-Riddle numbers.",
     section: "study",
   }),
 };
@@ -75,16 +75,18 @@ export default function StudyPage() {
       <header className="max-w-2xl">
         <p className="section-label">Study</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
-          Hold the picture, then verify the locks
+          Study: lessons and labs
         </h1>
         <p className="measure mt-5 text-lg leading-relaxed text-mist-200">
-          Time moulds. Protium (simple hydrogen) is the cast.{" "}
+          This is the full course: six short lessons and hands-on labs on the
+          inventor’s model. It matters because the model is easier to judge
+          once you can hold the whole picture. In the inventor’s words: time
+          moulds, protium (simple hydrogen) is the cast, and{" "}
           <span className="font-medium text-aurora">51.84°</span> is the mouth
-          of the mould. Clockwise stores. Anticlockwise spends. The torus
-          (donut shape) is the womb.
+          of the mould. Clockwise stores; anticlockwise spends.
         </p>
         <p className="mt-4 text-sm text-mist-300">
-          New here? Start with a quick answer:{" "}
+          New here? Read a quick explainer first:{" "}
           <Link href="/explainers/what-is-a-plasmoid/" className="link-aurora">
             What is a plasmoid?
           </Link>{" "}
@@ -151,7 +153,7 @@ export default function StudyPage() {
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
               Lessons 1–6 build one picture: number locks, swirl-math laws,
               store vs spend, plasmoid EVOs, and the protium path. Every large
-              marketing figure stays labeled; Embry-Riddle meter results lead.
+              marketing figure stays labeled; the Embry-Riddle test results lead.
             </p>
           </ScrollyChapter>
         </div>
@@ -211,7 +213,7 @@ export default function StudyPage() {
             <a href="#moe" className="link-aurora">
               Alpha–Omega
             </a>{" "}
-            — toroidal element map and MeV ladder sketch
+            — toroidal element map and MeV (million electron volt) ladder sketch
           </li>
           <li>
             <a href="#protium" className="link-aurora">
@@ -245,7 +247,7 @@ export default function StudyPage() {
               Embry-Riddle Aeronautical University
             </h3>
             <p className="mt-1 text-xs text-mist-400">
-              M.S. thesis · 2026 · independent meter
+              Master’s (M.S.) thesis · 2026 · independent meter
             </p>
             <ul className="mt-3 space-y-2 text-sm text-mist-200">
               <li>
@@ -262,7 +264,7 @@ export default function StudyPage() {
           </div>
           <div>
             <h3 className="font-medium tracking-tight text-mist-50">
-              Inventor / marketing claims
+              Inventor claims
             </h3>
             <p className="mt-1 text-xs text-mist-400">Labeled as such</p>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
@@ -383,7 +385,7 @@ export default function StudyPage() {
           Plasmoid EVO (MSAART)
         </h2>
         <p className="mt-2 max-w-xl text-sm text-mist-300">
-          Energetic vacuum object / Exotic Vacuum Occurrence (EVO) — a
+          Exotic Vacuum Occurrence (EVO) — a
           self-built donut-shaped plasma. MSAART means{" "}
           <strong className="font-medium text-mist-100">{msaartExpansion}</strong>{" "}
           — Bendall&apos;s research framework behind this picture (published
@@ -528,7 +530,7 @@ export default function StudyPage() {
           Check yourself
         </h2>
         <p className="mt-2 max-w-xl text-sm text-mist-300">
-          Six plain questions on the locks, charge, energetic vacuum objects
+          Six plain questions on the locks, charge, plasmoids (EVOs)
           (EVOs), the university meter, and the device beats.
         </p>
         <StudyQuiz />
@@ -588,7 +590,7 @@ export default function StudyPage() {
 
       <div className="mt-8 flex flex-wrap items-center gap-3 border-t border-ink-600/40 pt-10">
         <Link href="/device/" className="btn-primary">
-          Device next
+          See how it works
         </Link>
         <Link href="/study-pack/" className="btn-ghost">
           Study pack
