@@ -147,6 +147,12 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-12 — Shipped: copy cohesion (passes 1–3 + Home)
+- Fast-forward merged `copy-cohesion` → `main` at 63deb0a; deployed via `deploy.yml` (run 38317489385, success).
+- Home: nav keeps “Home”; hero now says Malcolm Bendall’s Thunderstorm Generator “is designed to use water to form and guide plasmoids … so engines can run cleaner”; Home slash pairs rewritten (the “Press /” keyboard hint is kept). Meta and Open Graph (OG) descriptions already said “aims to”, so unchanged.
+- Footer: removed the “Metamorphosis” label (text only, no link).
+- Live verified: hero text present, no Metamorphosis; /, /study/, /device/, /faq/, /services/, /glossary/, /connect/, /explainers/, /explainers/what-is-a-plasmoid/ all 200; bad URL returns 404 with the new “We couldn’t find that page” page.
+
 ### 2026-10-12 — Copy cohesion pass (branch `copy-cohesion`, not merged, not deployed)
 - New `docs/STYLE-GUIDE.md`: voice, canonical names, labels, acronyms, number/dash/quote rules, CTA wording, nav = title rule.
 - Applied site-wide: page intros follow "what this page is → why it matters"; H1s and meta titles now match nav labels (e.g. "Sources: method and privacy", "Updates and corrections"); nav "Why" → "Home", footer "Errata" → "Updates", footer headings "Pages" / "Outside sources".
