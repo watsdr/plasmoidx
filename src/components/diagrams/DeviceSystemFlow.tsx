@@ -262,7 +262,7 @@ export default function DeviceSystemFlow({
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
           System flow matching the accurate teaching sketch: air → ionizer →
-          bubbler / plasmoid generator → nested CTR resonator, with exhaust
+          bubbler (plasmoid generator) → nested CTR resonator, with exhaust
           feedback into the resonator base.
         </figcaption>
       ) : null}

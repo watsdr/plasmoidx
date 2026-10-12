@@ -66,7 +66,7 @@ export default function Build518400() {
       </div>
       <p className="mt-1 max-w-xl text-xs leading-relaxed text-mist-400">
         Tap the factors to multiply them. Seven is skipped on purpose — in this
-        picture it stands for the quiet “DC” (direct current) / zero-point slot,
+        picture it stands for the quiet “DC” (direct current), or zero-point, slot,
         not a number you multiply in.
       </p>
 
@@ -91,7 +91,7 @@ export default function Build518400() {
               }
               title={
                 skipped
-                  ? "Skipped: DC / zero-point slot (not multiplied)"
+                  ? "Skipped: DC (zero-point) slot, not multiplied"
                   : undefined
               }
               onClick={() => toggle(f)}
@@ -144,7 +144,7 @@ export default function Build518400() {
             ÷ 10,000 = 51.84°
           </p>
           <p className="mt-1.5 text-xs leading-relaxed text-mist-400">
-            That angle is the cone / pyramid “mouth” used in the hardware.
+            That angle is the “mouth” of the cones and pyramids used in the hardware.
           </p>
         </div>
       ) : (

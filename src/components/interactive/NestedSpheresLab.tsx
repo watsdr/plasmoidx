@@ -22,7 +22,7 @@ const layers = [
   },
   {
     title: "Exhaust in",
-    body: "Angled inlet feeds the cavity (exhaust feedback / carburetor-in stub).",
+    body: "Angled inlet feeds the cavity (exhaust feedback through the carburetor-in stub).",
   },
 ] as const;
 

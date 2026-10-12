@@ -27,15 +27,15 @@ export const LABS: LabItem[] = [
   },
   {
     key: PROGRESS.implosive,
-    label: "Implosive / explosive lab",
+    label: "Implosive vs explosive lab",
     short: "Implosive",
     href: "/study/#charge",
     page: "study",
   },
   {
     key: PROGRESS.storespend,
-    label: "Store / spend lab",
-    short: "Store / spend",
+    label: "Store and spend lab",
+    short: "Store and spend",
     href: "/study/#charge",
     page: "study",
   },

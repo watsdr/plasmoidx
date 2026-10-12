@@ -10,11 +10,11 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
 const stages = [
   {
     title: "Ionizer",
-    body: "Air ionizer / pre-ionization chamber pretreats incoming air (UV cue in teaching art).",
+    body: "The air ionizer (pre-ionization chamber) pretreats incoming air. The teaching art shows this with an ultraviolet (UV) cue.",
   },
   {
     title: "Bubbler",
-    body: "Plasmoid generator / bubbler: water column + cavitation births EVOs.",
+    body: "Bubbler (plasmoid generator): a water column and cavitation form Exotic Vacuum Occurrences (EVOs).",
   },
   {
     title: "Resonator",

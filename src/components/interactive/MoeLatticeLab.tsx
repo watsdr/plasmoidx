@@ -31,9 +31,9 @@ const spots: {
   },
   {
     id: "heavy",
-    label: "Heavy / end",
+    label: "Heavy end",
     caption:
-      "Upper-right cells hint at the heavy / omega side of the same ladder. Full charts stay on Strike Foundation.",
+      "Upper-right cells hint at the heavy, omega side of the same ladder. Full charts stay on Strike Foundation.",
   },
 ];
 

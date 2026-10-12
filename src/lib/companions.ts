@@ -11,7 +11,7 @@ export const lectureCompanions: CompanionNote[] = [
   {
     match: "HowTube channel",
     hear: [
-      "A hub of Malcolm Bendall lectures on StrikeFoundationEarth / HowTube.",
+      "A hub of Malcolm Bendall lectures on StrikeFoundationEarth and HowTube.",
       "Inventor voice throughout — applications, geometry, and rollout framing.",
       "Series order starts around MSAART intro and builds toward hardware.",
       "Claims about engines and emissions appear without independent metering.",
@@ -22,15 +22,15 @@ export const lectureCompanions: CompanionNote[] = [
       "Lead with Embry-Riddle before any 90% fuel figures you may hear.",
       "Pair lectures with Study labs so the model stays checkable.",
       "MSAART expands to Molten Sea Ark Atomic Reconstruction Technology here.",
-      "Strike Foundation remains an external independent org for IP / notes.",
+      "Strike Foundation remains an external independent org for intellectual property (IP) and notes.",
     ],
   },
   {
     match: "Section 1 · MSAART intro",
     hear: [
       "Introduction to MSAART plasmoid technology and suggested applications.",
-      "Implosive vs explosive framing tied to store / spend.",
-      "Inventor narrative for why water / protium matters.",
+      "Implosive versus explosive framing, tied to storing and spending energy.",
+      "Inventor narrative for why water and protium matter.",
       "High-level claims about engines and cleaner exhaust.",
       "Geometry and “living” vortex language mixed with hardware intent.",
     ],
@@ -64,8 +64,8 @@ export const lectureCompanions: CompanionNote[] = [
     hear: [
       "How the Thunderstorm Generator is said to work end-to-end.",
       "Phase-1 retrofit framing for conventional engines.",
-      "Three-unit / three-beat hardware story in inventor words.",
-      "Water / plasmoid / protium harvest narrative.",
+      "Three-unit (three-beat) hardware story in inventor words.",
+      "The story of harvesting protium from water through plasmoids.",
       "Marketing-scale performance language may appear.",
     ],
     teach: [
@@ -82,7 +82,7 @@ export const lectureCompanions: CompanionNote[] = [
       "Full Bendall lecture series entry point (often starts at Section 1).",
       "Multiple sections covering geometry, engines, and plant ideas.",
       "Inventor rollout strategy mixed with model teaching.",
-      "Occasional lighter aether / matter / time framing.",
+      "Occasional lighter framing about aether, matter, and time.",
       "Long-form listening — claims accumulate across episodes.",
     ],
     teach: [
@@ -96,17 +96,17 @@ export const lectureCompanions: CompanionNote[] = [
   {
     match: "Section 6 · Engine retrofits",
     hear: [
-      "Phase-1 rollout: engines first (gas / diesel / kerosene framing).",
+      "Phase-1 rollout: engines first (gas, diesel, and kerosene).",
       "Retrofit narrative for existing internal-combustion hardware.",
       "Inventor claims about efficiency and emissions at scale.",
       "Strategy talk beyond a single demo unit.",
       "Forward-looking commercial language.",
     ],
     teach: [
-      "Lead with measured +9–10% / −34% — not inventor rollout promises.",
+      "Lead with the measured numbers (about +9–10% fuel efficiency and about −34% average emissions), not inventor rollout promises.",
       "Education only: no licensee or partnership claims here.",
       "Device page stays hardware beats, not a sales funnel.",
-      "Push for fuller dyno / isotope work in your own reading.",
+      "Push for fuller dyno and isotope testing in your own reading.",
       "Connect page is for study questions, not investment pitches.",
     ],
   },
@@ -133,7 +133,7 @@ export const watchCompanions: CompanionNote[] = [
   {
     match: "Intro overview",
     hear: [
-      "MSAART / three-unit overview on the Alchemical Science site.",
+      "MSAART and three-unit overview on the Alchemical Science site.",
       "Embedded video walkthrough of the beginner picture.",
       "Inventor tech framed for newcomers.",
       "Acronyms and device units introduced together.",
@@ -153,7 +153,7 @@ export const watchCompanions: CompanionNote[] = [
       "Plain walkthrough aimed at first-time readers.",
       "Trial footage context from US tests (educator framing).",
       "Stepwise hardware description.",
-      "Encouragement to experiment / observe (their voice).",
+      "Encouragement to experiment and observe (their voice).",
       "Performance anecdotes that are not Embry-Riddle.",
     ],
     teach: [
@@ -169,7 +169,7 @@ export const watchCompanions: CompanionNote[] = [
     hear: [
       "Workshop footage of a Thunderstorm plasmoid generator in action.",
       "Visual sense of chambers, plumbing, and demo energy.",
-      "Inventor / builder environment, not a controlled thesis lab.",
+      "Inventor and builder environment, not a controlled thesis lab.",
       "Sensory detail that text alone cannot give.",
       "Implicit performance claims via demonstration.",
     ],

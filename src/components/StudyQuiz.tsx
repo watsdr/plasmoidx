@@ -91,7 +91,7 @@ const QUESTIONS: Question[] = [
     prompt: "What are the three device beats?",
     correct: "ibv",
     choices: [
-      { id: "ibv", label: "Ionizer → bubbler → resonator / nested CTR spheres" },
+      { id: "ibv", label: "Ionizer → bubbler → resonator (nested CTR spheres)" },
       { id: "pump", label: "Pump → filter → exhaust turbine" },
       { id: "quiz", label: "Store → spend → dump, with no hardware order" },
     ],

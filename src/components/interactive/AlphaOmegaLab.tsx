@@ -23,18 +23,18 @@ const spots: Spot[] = [
     label: "Omega column",
     focus: "omega",
     caption:
-      "Odd atomic number (Z) side — warm / plus in the inventor graphic. Sample rungs climb from hydrogen toward gallium. Column total shown: 157.18 MeV (inventor model).",
+      "Odd atomic number (Z) side — shown warm and plus in the inventor graphic. Sample rungs climb from hydrogen toward gallium. Column total shown: 157.18 MeV (inventor model).",
   },
   {
     id: "alpha",
     label: "Alpha column",
     focus: "alpha",
     caption:
-      "Even Z side — cool / minus. Sample rungs from helium toward germanium. Column total shown: 117.17 MeV (inventor model).",
+      "Even atomic number (Z) side — shown cool and minus. Sample rungs from helium toward germanium. Column total shown: 117.17 MeV (inventor model).",
   },
   {
     id: "base",
-    label: "H / He base",
+    label: "H and He base",
     focus: "base",
     caption: `Shared base rung: hydrogen (H, Z=1) and helium (He, Z=2) at ${LADDER_TOTALS.base} MeV in the Draft 518,400 graphic — the seed step of the ladder.`,
   },
@@ -47,7 +47,7 @@ const spots: Spot[] = [
   },
   {
     id: "tip",
-    label: "Tip Ga / Ge",
+    label: "Tip: Ga and Ge",
     focus: "tip",
     caption:
       "Toward the tip: gallium (odd) and germanium (even). MeV on the sample may be partial — treat every figure as inventor-model, not site-verified.",

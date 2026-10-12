@@ -8,10 +8,10 @@ export const explainLock518400 = [
 ];
 
 export const explainDeviceBeats = [
-  "Air first meets the ionizer / pre-ionization chamber — ultraviolet (UV) light pretreats it.",
+  "Air first meets the ionizer (pre-ionization chamber) — ultraviolet (UV) light pretreats it.",
   "The bubbler (plasmoid generator) sends that air through a water column. Bubbles collapse (cavitation) and form plasmoids, called Exotic Vacuum Occurrences (EVOs).",
   "The catalytic tornado resonator holds nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core — with exhaust feedback.",
-  "A calm zero-plane sits between the opposing spins so charge can separate and feed the swarm. Optional vajra / plasmoid-gun geometry is a separate teaching figure.",
+  "A calm zero-plane sits between the opposing spins so charge can separate and feed the swarm. Optional vajra (plasmoid gun) geometry is a separate teaching figure.",
 ];
 
 export const explainStoreSpend = [
@@ -30,7 +30,7 @@ export const explainAlphaOmega = [
 ];
 
 export const explainImplosiveVsExplosive = [
-  "Inventor lectures frame two families of tech: implosive (store / inward) and explosive (spend / outward).",
+  "Inventor lectures frame two families of tech: implosive tech, which stores energy and pulls inward, and explosive tech, which spends energy and pushes outward.",
   "Implosive path: clockwise, tightening, negative — structure and storage.",
   "Explosive path: anticlockwise, opening, positive — discharge and burn.",
   "This site teaches the pair as a model picture — not a marketing slogan. Claims stay labeled.",

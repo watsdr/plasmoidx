@@ -102,7 +102,7 @@ export const STUDY_ROUTES: StudyRoute[] = [
   },
   {
     href: "/study/#plasmoid",
-    title: "Plasmoid / EVO",
+    title: "Plasmoid (EVO)",
     hint: "Self-built donut-shaped plasma (Exotic Vacuum Occurrence)",
     keywords: "evo exotic vacuum cavitation",
   },

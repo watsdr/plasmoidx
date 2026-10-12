@@ -10,7 +10,7 @@ import DeviceBeats from "@/components/diagrams/DeviceBeats";
 const steps = [
   {
     title: "Ionizer",
-    body: "Air ionizer / pre-ionization chamber: ultraviolet (UV) light pretreats the incoming air so it is ready for the bubbler. UV means light just beyond violet — energetic enough to prepare the gas; the violet interior cue in teaching art is a model hint, not a marketing glow.",
+    body: "Air ionizer (pre-ionization chamber): ultraviolet (UV) light pretreats the incoming air so it is ready for the bubbler. UV means light just beyond violet — energetic enough to prepare the gas; the violet interior cue in teaching art is a model hint, not a marketing glow.",
   },
   {
     title: "Bubbler",

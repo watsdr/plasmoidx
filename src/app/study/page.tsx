@@ -201,7 +201,7 @@ export default function StudyPage() {
         <ul className="mt-3 space-y-1.5 text-sm leading-relaxed text-mist-200">
           <li>
             <a href="#charge" className="link-aurora">
-              Store / Spend
+              Store and spend
             </a>{" "}
             — implode (store) vs explode (spend)
           </li>
@@ -268,8 +268,8 @@ export default function StudyPage() {
             </h3>
             <p className="mt-1 text-xs text-mist-400">Labeled as such</p>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
-              Large fuel cuts, near-zero carbon monoxide (CO) / hydrocarbons
-              (HC), high chamber temps — labeled as inventor claims. This site
+              Large fuel cuts, near-zero carbon monoxide (CO) and
+              hydrocarbons (HC), high chamber temps — labeled as inventor claims. This site
               does not oversell 90% fuel figures.
             </p>
           </div>
@@ -358,7 +358,7 @@ export default function StudyPage() {
               Negative — store
             </p>
             <p className="mt-2 text-sm text-mist-300">
-              Structure, life, storage. Inward / implosive side of the pair.
+              Structure, life, storage. The inward, implosive side of the pair.
             </p>
           </div>
           <div>
@@ -369,7 +369,7 @@ export default function StudyPage() {
               Positive — spend
             </p>
             <p className="mt-2 text-sm text-mist-300">
-              Discharge, burn, release. Outward / explosive side of the pair.
+              Discharge, burn, release. The outward, explosive side of the pair.
             </p>
           </div>
         </div>
@@ -461,7 +461,7 @@ export default function StudyPage() {
           Bendall lectures (inventor source)
         </h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist-300">
-          Malcolm Bendall speaking on HowTube / the StrikeFoundationEarth
+          Malcolm Bendall speaking on HowTube and the StrikeFoundationEarth
           channel. <strong className="font-medium text-mist-100">Plasmoid X</strong>{" "}
           is independent education — we do not speak as Strike, Bendall, or
           HowTube. Lecture themes below are inventor framing; claims stay
@@ -481,14 +481,14 @@ export default function StudyPage() {
             <strong className="font-medium text-mist-100">
               Implosive vs explosive
             </strong>{" "}
-            — store / inward vs spend / outward (pairs with Direction = charge
-            above).
+            — storing energy and pulling inward versus spending energy and
+            pushing outward (pairs with Direction = charge above).
           </li>
           <li>
             <strong className="font-medium text-mist-100">
               Phase-1 retrofit
             </strong>{" "}
-            — inventor rollout framing: engines first (gas / diesel / kerosene),
+            — inventor rollout framing: engines first (gas, diesel, and kerosene),
             then other hardware.
           </li>
           <li>
@@ -520,7 +520,7 @@ export default function StudyPage() {
         <p className="mt-4 max-w-xl text-xs leading-relaxed text-mist-400">
           No embeds required — follow the links when you want the inventor&apos;s
           own voice. Series themes also cover Planetary Power Plant, chimney
-          retrofits, schematics, and lighter aether / matter / time framing;
+          retrofits, schematics, and lighter framing about aether, matter, and time;
           keep mystical notes light on this site.
         </p>
       </section>
@@ -582,8 +582,8 @@ export default function StudyPage() {
         >
           strikefoundation.earth
         </a>{" "}
-        (Strike Foundation — external independent org). HowTube /
-        StrikeFoundationEarth is outbound inventor lecture material, not
+        (Strike Foundation — external independent org). HowTube and
+        StrikeFoundationEarth are outbound inventor lecture material, not
         Plasmoid X. This site is Derek Watson&apos;s education voice only, not
         an official Strike channel.
       </p>

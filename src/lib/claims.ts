@@ -20,7 +20,7 @@ export const claimRows: ClaimRow[] = [
   {
     id: "emissions",
     inventor:
-      "Near-zero carbon monoxide (CO) / hydrocarbons (HC); “carbon killer” framing and high O₂ in exhaust in some narrative pieces.",
+      "Near-zero carbon monoxide (CO) and hydrocarbons (HC); “carbon killer” framing and high O₂ in exhaust in some narrative pieces.",
     meter:
       "Same thesis: about −34% average emissions, with carbon monoxide (CO) the clearest drop among the cuts reported.",
     doesNotProve:
@@ -29,11 +29,11 @@ export const claimRows: ClaimRow[] = [
   {
     id: "water",
     inventor:
-      "Water / protium as atomic fuel with closed recirculation; hydrocarbons mainly as kindling (heat + vacuum).",
+      "Water (protium) as atomic fuel with closed recirculation; hydrocarbons mainly as kindling (heat + vacuum).",
     meter:
-      "The meter speaks to fuel use and exhaust gases on a retrofit test path — not a full isotope / closed-loop verification.",
+      "The meter speaks to fuel use and exhaust gases on a retrofit test path — not a full isotope or closed-loop verification.",
     doesNotProve:
-      "Does not prove water-as-fuel at scale or a verified closed protium cycle. That framing stays study material until fuller dyno / isotope work lands.",
+      "Does not prove water-as-fuel at scale or a verified closed protium cycle. That framing stays study material until fuller dyno and isotope testing is done.",
   },
   {
     id: "hardware",

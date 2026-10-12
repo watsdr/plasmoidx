@@ -52,7 +52,7 @@ export default function ProtiumPathLab() {
         <GotItCheck show={finished || persisted} />
       </div>
       <p className="mt-1 text-xs text-mist-400">
-        Tap a step (or Prev / Next). You drive the path — no auto-advance.
+        Tap a step, or use Prev and Next. You drive the path — no auto-advance.
       </p>
 
       <div

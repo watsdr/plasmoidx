@@ -13,7 +13,7 @@ export const msaartShort = "MSAART";
 export const ratios = [
   { label: "Spheres", value: "4∶3∶2 and 8∶6∶4" },
   { label: "Pipes", value: "Octave 1∶2" },
-  { label: "Cones / pyramids", value: "51.84°" },
+  { label: "Cones and pyramids", value: "51.84°" },
   {
     label: "Lattice",
     value: "16 × 8 Model of the Elements (MOE)",
@@ -38,7 +38,7 @@ export const vortexLaws = [
     body: "Multiply by the mirror-digit product — called the “square.”",
   },
   {
-    title: "Planes = MOE / PUM lattice",
+    title: "Planes = the MOE lattice",
     body: "Octaves of those keys become rungs on the Model of the Elements (MOE) lattice inside the Plasmoid Unification Model (PUM).",
   },
 ];
@@ -57,7 +57,7 @@ export const deviceBeats = [
   {
     n: "03",
     title: "Resonator (nested CTR spheres)",
-    body: "Catalytic tornado resonator / reaction path: copper-ish chamber with nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core. Hot exhaust feedback and a carburetor-in stub feed opposing spins; a calm “zero-plane” sits between them. Not a vague gyroscope.",
+    body: "Catalytic tornado resonator (the reaction path): copper-ish chamber with nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core. Hot exhaust feedback and a carburetor-in stub feed opposing spins; a calm “zero-plane” sits between them. Not a vague gyroscope.",
   },
 ];
 
@@ -113,7 +113,7 @@ export const watchLinks = [
   {
     href: "https://alchemicalscience.org/introduction-to-malcolm-bendalls-thunderstorm-generator-plasmoid-msaart-technology/",
     label: "Intro overview",
-    note: "MSAART / three-unit overview on their site (embeds their video).",
+    note: "MSAART and three-unit overview on their site (embeds their video).",
   },
   {
     href: "https://alchemicalscience.org/malcolm-bendalls-thunderstorm-generator-beginners-guide-new-trial-footage-from-the-us/",
@@ -145,7 +145,7 @@ export const lectureLinks = [
   {
     href: "https://www.howtube.com/2TNqP0r3ZcH9",
     label: "Section 2 · Model of the Elements",
-    note: "MOE / sacred geometry teaching from the inventor lectures.",
+    note: "MOE and sacred geometry teaching from the inventor lectures.",
   },
   {
     href: "https://www.howtube.com/Nu5fCbOLJg8Y",

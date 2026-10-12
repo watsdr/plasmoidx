@@ -151,7 +151,7 @@ export default function VajraQuadrature({
           className="fill-mist-50"
           style={{ fontSize: 13, fontWeight: 600 }}
         >
-          Vajra / plasmoid-gun
+          Vajra (plasmoid gun)
         </text>
         <text
           x="200"
@@ -175,7 +175,7 @@ export default function VajraQuadrature({
           className="fill-mist-400"
           style={{ fontSize: 10 }}
         >
-          Opposing / interlocking cone arms
+          Opposing, interlocking cone arms
         </text>
       </svg>
       {!hideCaption ? (

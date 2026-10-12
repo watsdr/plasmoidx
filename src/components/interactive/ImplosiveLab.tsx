@@ -15,13 +15,13 @@ const copy: Record<
   implosive: {
     label: "Implosive · store",
     caption:
-      "Inward / clockwise: energy tightens, structure builds, charge stores (negative).",
+      "Inward and clockwise: energy tightens, structure builds, and charge is stored (negative).",
     tip: "Same idea as Clockwise · store in the torus lab below — different picture, same pair.",
   },
   explosive: {
     label: "Explosive · spend",
     caption:
-      "Outward / anticlockwise: energy opens, discharge releases, charge spends (positive).",
+      "Outward and anticlockwise: energy opens, discharge releases, and charge is spent (positive).",
     tip: "Same idea as Anticlockwise · spend in the torus lab — inventor framing for the spend side.",
   },
 };

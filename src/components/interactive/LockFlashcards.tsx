@@ -20,7 +20,7 @@ const INITIAL: Card[] = [
   {
     id: "5184",
     q: "Where does 51.84° come from?",
-    a: "518,400 ÷ 10,000. It is the cone / pyramid mouth angle in the hardware.",
+    a: "518,400 ÷ 10,000. It is the mouth angle of the cones and pyramids in the hardware.",
   },
   {
     id: "rfeu",

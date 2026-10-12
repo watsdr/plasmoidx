@@ -182,7 +182,7 @@ export default function NestedSpheres({
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
           Catalytic tornado resonator cutaway: outer shell, inner sphere, and
-          tiny core with opposing spins and an exhaust / carburetor-in stub.
+          tiny core with opposing spins, plus a stub that feeds exhaust into the carburetor inlet.
           Inventor teaching model — not a product shot.
         </figcaption>
       ) : null}

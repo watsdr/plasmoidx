@@ -47,7 +47,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 3,
     title: "Direction = charge",
     framing:
-      "Clockwise / tightening / implosion stores (negative). Anticlockwise / opening / explosion spends (positive). Contra-rotating (CTR) nested spheres force both. Use the store/spend and implosive labs — calm model picture, not hype.",
+      "Clockwise, tightening motion (implosion) stores charge (negative). Anticlockwise, opening motion (explosion) spends it (positive). Nested contra-rotating (CTR) spheres force both at once. Try the store and spend lab and the implosive lab. This is a calm model picture, not hype.",
     doneWhen:
       "You can pair store vs spend with clockwise vs anticlockwise without looking it up.",
     href: "/study/#charge",
@@ -56,7 +56,7 @@ export const CURRICULUM: CurriculumLesson[] = [
   {
     id: "evo",
     n: 4,
-    title: "Plasmoid / EVO",
+    title: "Plasmoid (EVO)",
     framing:
       "An Exotic Vacuum Occurrence (EVO) is a plasmoid: a self-built, donut-shaped plasma held in a magnetic bottle. Born in bubble collapse (cavitation), grows while charging, discharges on a positive pulse.",
     doneWhen:

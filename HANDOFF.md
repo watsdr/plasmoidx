@@ -156,6 +156,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 - Added a plain 404 page (`src/app/not-found.tsx`) + `ErrorDocument 404 /404.html` in `.htaccess`.
 - Social cards: 518,400 card now "Plain fact" (arithmetic) + "Claim" (hardware ratios); regenerated `/workspace/plasmoidx-social/`.
 - Local Lighthouse A11y/SEO 100 on Home, Study, Device, Services, Glossary, an explainer. Build green.
+- Second pass (Study + labs/diagrams): rewrote slash pairs into plain English (e.g. “store / inward” → “stores energy and pulls inward”) in Study page, interactive labs, diagram captions/labels, and their data (`curriculum`, `explain`, `labs`, `content`, `claims`, `companions`, `studyRoutes`). Acronyms (EVO, CTR, UV, Z, IP) expanded on first use where missing. Home hero/nav untouched. Build green; Study has no prose slash pairs left (ad-hoc check over `out/study/index.html`); Study Lighthouse A11y 100.
 
 ### 2026-10-11 — Email signup (off by default) + social visuals (not deployed)
 - **Signup:** `src/components/NewsletterSignup.tsx` — plain HTML form POST (email field + Subscribe, privacy line), no JS, no cookies, no popup. Renders only when `NEXT_PUBLIC_NEWSLETTER_ACTION` is set at build. Placed after "Keep learning" on every explainer and on Home after Continue learning. Sources → Privacy now has a paragraph on email signup (Buttondown, unsubscribe anytime, no cookies). A11y/BP/SEO 100 locally with the env set.

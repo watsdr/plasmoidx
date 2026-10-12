@@ -245,8 +245,8 @@ export default function DeviceBeats({
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
           Linear flow through the Thunderstorm Generator retrofit
-          (inventor teaching model): air ionizer / pre-ionization chamber →
-          bubbler / plasmoid generator (cavitation) → catalytic tornado
+          (inventor teaching model): air ionizer (pre-ionization chamber) →
+          bubbler (plasmoid generator, using cavitation) → catalytic tornado
           resonator with nested contra-rotating spheres.
         </figcaption>
       ) : null}

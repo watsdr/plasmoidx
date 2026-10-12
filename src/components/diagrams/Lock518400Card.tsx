@@ -86,7 +86,7 @@ export default function Lock518400Card({
           className="fill-mist-400"
           style={{ fontSize: 11 }}
         >
-          518,400 ÷ 10,000 — cone / pyramid mouth
+          518,400 ÷ 10,000 — cone and pyramid mouth
         </text>
       </svg>
       <figcaption

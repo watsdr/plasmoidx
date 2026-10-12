@@ -59,7 +59,7 @@ export const explainers: Explainer[] = [
     ],
     related: [
       { href: "/explainers/what-is-an-evo/", label: "What is an EVO?" },
-      { href: "/study/#plasmoid", label: "Study: Plasmoid / EVO lab" },
+      { href: "/study/#plasmoid", label: "Study: Plasmoid (EVO) lab" },
       { href: "/explainers/plasmoid-vs-plasma/", label: "Plasmoid vs plasma" },
       { href: "/glossary/", label: "Glossary" },
     ],
@@ -98,7 +98,7 @@ export const explainers: Explainer[] = [
     related: [
       { href: "/explainers/plasmoid-water-bubbler/", label: "How the bubbler makes plasmoids" },
       { href: "/explainers/what-is-a-plasmoid/", label: "What is a plasmoid?" },
-      { href: "/study/#plasmoid", label: "Study: Plasmoid / EVO" },
+      { href: "/study/#plasmoid", label: "Study: Plasmoid (EVO)" },
       { href: "/faq/", label: "FAQ" },
     ],
   },

@@ -11,7 +11,7 @@ const beats = [
   {
     title: "Ionizer",
     caption:
-      "Air ionizer / pre-ionization chamber: ultraviolet (UV) light pretreats incoming air before the water column.",
+      "Air ionizer (pre-ionization chamber): ultraviolet (UV) light pretreats incoming air before the water column.",
   },
   {
     title: "Bubbler",
@@ -21,7 +21,7 @@ const beats = [
   {
     title: "Resonator",
     caption:
-      "Catalytic tornado resonator: nested CTR spheres (outer / inner / tiny core) with exhaust feedback — not a vague gyroscope.",
+      "Catalytic tornado resonator: nested contra-rotating (CTR) spheres — an outer sphere, an inner sphere, and a tiny core — with exhaust feedback. It is not a vague gyroscope.",
   },
 ] as const;
 
