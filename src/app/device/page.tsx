@@ -109,7 +109,7 @@ export default function DevicePage() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
               Ionizer prepares the air, bubbler grows plasmoids in water, and
-              the resonator / nested CTR spheres guide the flow toward the
+              the resonator, with its nested CTR spheres, guides the flow toward the
               engine. Fuel is kindling; the plasmoid–protium cycle is the work.
             </p>
           </ScrollyChapter>
@@ -178,7 +178,7 @@ export default function DevicePage() {
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist-300">
               Cutaway of the catalytic tornado resonator: outer sphere, inner
               sphere, and tiny central core, with opposing tornadoes in the
-              cavity and an exhaust / carburetor-in stub. Inventor-model
+              cavity and a stub that feeds exhaust into the carburetor inlet. Inventor-model
               teaching sketch — not a product shot. The interactive companion
               below shows gentle contra-rotation when motion is allowed.
             </p>
@@ -188,20 +188,20 @@ export default function DevicePage() {
               alt="Cutaway teaching sketch of nested contra-rotating spheres: outer, inner, and tiny central core with opposing flow arrows and exhaust inlet"
               width={1280}
               height={720}
-              caption="Nested CTR spheres in the resonator — inventor-model teaching sketch summarizing outer / inner / core geometry."
+              caption="Nested CTR spheres in the resonator — inventor-model teaching sketch summarizing the outer sphere, inner sphere, and core."
             />
             <NestedSpheresLab />
           </ScrollyChapter>
 
           <ScrollyChapter delay={100}>
             <h2 className="text-lg font-medium tracking-tight text-mist-50">
-              Optional: plasmoid gun / vajra quadrature
+              Optional: plasmoid gun (vajra quadrature)
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist-300">
               From Part 4 notes: interlocking cone cross geometry (base tier +
               upper tier). Shown here as optional assembly-geometry teaching —
-              a simplified model from inventor notes, not a product shot. Soft
-              pulse / step-through below highlights opposing tiers.
+              a simplified model from inventor notes, not a product shot. The soft
+              pulse and step-through below highlights opposing tiers.
             </p>
             <VisualPanel
               className="mt-5"
@@ -209,7 +209,7 @@ export default function DevicePage() {
               alt="Simplified teaching model of plasmoid gun or vajra quadrature: interlocking cone tiers in a cross-plus geometry on a square base"
               width={1280}
               height={720}
-              caption="Plasmoid gun / vajra quadrature — simplified teaching model from inventor notes (cone cross geometry), not a product photo."
+              caption="Plasmoid gun (vajra quadrature) — simplified teaching model from inventor notes (cone cross geometry), not a product photo."
             />
             <VajraLab />
           </ScrollyChapter>
@@ -223,7 +223,7 @@ export default function DevicePage() {
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-mist-400">
           <span className="font-medium text-mist-300">Speculative scale-up:</span>{" "}
           some Draft 518,400 sketches imagine a large “planetary receiving”
-          plant (ionosphere / site concepts). Concept art only — not a build
+          plant (ionosphere and site concepts). Concept art only — not a build
           plan on this site.
         </p>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-mist-300">
@@ -298,7 +298,7 @@ export default function DevicePage() {
           .
         </p>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-mist-400">
-          For independent workshop / DIY footage of prototypes, see{" "}
+          For independent workshop and DIY footage of prototypes, see{" "}
           <a
             href="https://www.youtube.com/@AlchemicalScience"
             target="_blank"

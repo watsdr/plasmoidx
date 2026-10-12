@@ -45,7 +45,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "physics",
     q: "Is the model mainstream physics?",
-    a: "No. Number locks, direction = charge, and MSAART framing are taught as a coherent study picture inside Bendall / Strike materials — not as consensus textbook physics.",
+    a: "No. Number locks, direction = charge, and MSAART framing are taught as a coherent study picture inside Bendall and Strike Foundation materials — not as consensus textbook physics.",
   },
   {
     id: "mev-ladder",
@@ -55,12 +55,12 @@ export const faqItems: FaqItem[] = [
   {
     id: "sell-kits",
     q: "Do you sell Thunderstorm Generator kits?",
-    a: "No. Plasmoid X does not sell kits on this site. If you already own a compatible kit — or buy one yourself from a third-party seller — you can inquire about optional install / commissioning labor on Services. Outbound kit/demo links (for example thunderstorm.tech) are third-party, not us.",
+    a: "No. Plasmoid X does not sell kits on this site. If you already own a compatible kit — or buy one yourself from a third-party seller — you can inquire about optional install and commissioning labor on Services. Outbound kit and demo links (for example thunderstorm.tech) are third-party, not us.",
   },
   {
     id: "install-strike",
     q: "Are you Strike or an authorized Thunderstorm dealer?",
-    a: "No. Derek Watson and Plasmoid X are an independent education site offering optional install labor by inquiry. Not Strike Foundation, Strike Energy, Thunderstorm.tech, or a licensee / authorized dealer / partner.",
+    a: "No. Derek Watson and Plasmoid X are an independent education site offering optional install labor by inquiry. Not Strike Foundation, Strike Energy, Thunderstorm.tech, or a licensee, authorized dealer, or partner.",
   },
   {
     id: "guarantee-90",
@@ -89,7 +89,7 @@ export const errataItems: ErrataItem[] = [
   {
     date: "2026-09-15",
     title: "MSAART expansion: Ark, not Arc",
-    body: "Site copy and glossary standardize on Molten Sea Ark Atomic Reconstruction Technology to match the Plasmoid Unification Model (PUM) / Draft 518400 titles. Roland Perry’s intro essay once types “Arc”; we use Ark.",
+    body: "Site copy and glossary standardize on Molten Sea Ark Atomic Reconstruction Technology to match the Plasmoid Unification Model (PUM) and Draft 518400 titles. Roland Perry’s intro essay once types “Arc”; we use Ark.",
   },
   {
     date: "2026-09-15",

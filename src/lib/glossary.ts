@@ -24,19 +24,19 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "LEAT",
     title: "Low Energy Atomic Transmutation",
-    body: "Inventor language for elemental change via resonance / plasmoid conditions at comparatively low energy. Taught as a model claim — not settled mainstream science. Pair with Claims Compare.",
+    body: "Inventor language for elemental change via resonance and plasmoid conditions at comparatively low energy. Taught as a model claim — not settled mainstream science. Pair with Claims Compare.",
     href: "/study/#honest-numbers",
   },
   {
     abbr: "LEAR",
     title: "Low Energy Atomic Reconstruction",
-    body: "Companion phrase to LEAT (Low Energy Atomic Transmutation): rebuilding or rearranging matter under plasmoid / resonance conditions in the inventor picture. Model language, not a verified lab result here.",
+    body: "Companion phrase to LEAT (Low Energy Atomic Transmutation): rebuilding or rearranging matter under plasmoid and resonance conditions in the inventor picture. Model language, not a verified lab result here.",
     href: "/study/#honest-numbers",
   },
   {
     abbr: "PMOE",
     title: "Plasmoid Model of the Elements",
-    body: "Inventor framing of the element map through plasmoid / toroidal partners (related to the Model of the Elements lattice on Study). Teaching sketch only — full charts stay outbound.",
+    body: "Inventor framing of the element map through plasmoid and toroidal partners (related to the Model of the Elements lattice on Study). Teaching sketch only — full charts stay outbound.",
     href: "/study/#moe",
   },
   {
@@ -48,7 +48,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "Alpha–Omega",
     title: "MeV ladder (inventor’s model)",
-    body: "Two-column climb: odd Z = Omega (+), even Z = Alpha (−). Draft 518,400 graphic totals, in MeV (million electron volts): Omega 157.18 MeV, Alpha 117.17 MeV, total 274.35 MeV; base 26.7 MeV at H/He. Inventor-model numbers — not site-verified.",
+    body: "Two-column climb: odd atomic number (Z) = Omega (+), even Z = Alpha (−). Draft 518,400 graphic totals, in MeV (million electron volts): Omega 157.18 MeV, Alpha 117.17 MeV, total 274.35 MeV; base 26.7 MeV at hydrogen and helium (H and He). Inventor-model numbers — not site-verified.",
     href: "/study/#moe",
   },
   {
@@ -84,7 +84,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "518400",
     title: "Time’s mould",
-    body: "Product 1×2×3×4×5×6×8×9×10 (7 omitted as a “DC” / zero-point slot). Digit-mirror products return 518,400. Great Year 25,920 × 20 = 518,400. Core lock on Study.",
+    body: "Product 1×2×3×4×5×6×8×9×10 (7 is left out as the “DC” (direct current), or zero-point, slot). Digit-mirror products return 518,400. Great Year 25,920 × 20 = 518,400. Core lock on Study.",
     href: "/study/#locks",
   },
   {
@@ -131,8 +131,8 @@ export const glossaryTerms: GlossaryTerm[] = [
   },
   {
     abbr: "Implosive",
-    title: "Inward / store side",
-    body: "Tightening, clockwise, negative — the store side of direction = charge. Paired with explosive / spend. Model teaching, not a hype slogan.",
+    title: "Inward (store) side",
+    body: "Tightening, clockwise, negative — the store side of direction = charge. Paired with the explosive (spend) side. Model teaching, not a hype slogan.",
     href: "/study/#charge",
   },
   {

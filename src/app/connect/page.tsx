@@ -91,7 +91,7 @@ export default function ConnectPage() {
           </p>
           <p className="mt-4 text-xs leading-relaxed text-mist-400">
             Derek Watson. Independent education. Not Strike Foundation,
-            Strike Energy, HowTube / StrikeFoundationEarth, Alchemical Science,
+            Strike Energy, HowTube and StrikeFoundationEarth, Alchemical Science,
             or a licensee. External sources below are independent — HowTube is
             outbound inventor lecture material, not us.
           </p>
@@ -103,7 +103,7 @@ export default function ConnectPage() {
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-mist-300">
             Optional fields. Submit opens your mail client with the text
-            filled in — or shows a clear empty-state / fallback if mail
+            filled in — or shows a clear fallback message if mail
             can&apos;t open.
           </p>
           <ContactForm />

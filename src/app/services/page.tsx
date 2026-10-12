@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 
 const included = [
   "Mechanical and electrical fitment within the skill and tools available for that job (details in the written estimate).",
-  "Basic commissioning: power-up checks, leak/connection review, and a calm walkthrough of what was done.",
+  "Basic commissioning: power-up checks, leak and connection review, and a calm walkthrough of what was done.",
   "Documentation of the work performed for your records.",
-  "Optional before/after notes only if you provide a baseline (for example fuel logs) or agree a simple check protocol in writing — not a fabricated dyno promise.",
+  "Optional before-and-after notes only if you provide a baseline (for example fuel logs) or agree a simple check protocol in writing — not a fabricated dyno promise.",
 ] as const;
 
 const notIncluded = [
   "Selling kits or acting as a kit storefront on this page.",
-  "Manufacturer warranty administration (any kit warranty is between you and the seller/maker).",
+  "Manufacturer warranty administration (any kit warranty is between you and the seller or maker).",
   "Guaranteeing inventor marketing figures (including fuel claims of 90% or more) or that any study result will repeat on your vehicle.",
   "Defeating required emissions equipment or doing illegal modifications.",
   "Unlimited remote support or open-ended troubleshooting outside the agreed scope.",
@@ -58,7 +58,7 @@ const processSteps = [
   {
     n: "6",
     title: "Handoff notes",
-    body: "You leave with notes on what was done. Ongoing kit issues go to the seller/maker unless the written estimate says otherwise.",
+    body: "You leave with notes on what was done. Ongoing kit issues go to the seller or maker unless the written estimate says otherwise.",
   },
 ] as const;
 
@@ -219,7 +219,8 @@ export default function ServicesPage() {
               </li>
               <li>
                 A page that sells kits, books installs online, or promises
-                street-legal / CARB / EPA certification.
+                street-legal, California Air Resources Board (CARB), or
+                Environmental Protection Agency (EPA) certification.
               </li>
               <li>
                 A guarantee that Embry-Riddle-style study numbers or inventor
@@ -248,7 +249,7 @@ export default function ServicesPage() {
         <ul className="measure mt-4 space-y-2.5 text-sm leading-relaxed text-mist-200">
           <li>
             People who already have a compatible kit, or will buy one
-            themselves from a third-party seller (for kit demos / purchase
+            themselves from a third-party seller (for kit demos and purchase
             context, see{" "}
             <a
               href="https://thunderstorm.tech"
@@ -426,7 +427,7 @@ export default function ServicesPage() {
           <p>
             <strong className="font-medium text-mist-100">Warranties.</strong>{" "}
             Kit manufacturer warranties (if any) are between you and the
-            seller/maker. Any install-labor warranty is narrow and{" "}
+            seller or maker. Any install-labor warranty is narrow and{" "}
             <strong className="font-medium text-mist-100">
               specified only in the written estimate
             </strong>{" "}

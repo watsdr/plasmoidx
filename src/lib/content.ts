@@ -84,7 +84,7 @@ export const externalLinks = [
   {
     href: "https://thunderstorm.tech",
     label: "Thunderstorm.tech",
-    note: "Kits / demos",
+    note: "Kits and demos",
   },
   {
     href: "https://alpha-prospects.com",
