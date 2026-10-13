@@ -147,6 +147,13 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-13 — Resonator outlet pipe + last “exhaust feedback” wording + PNG cleanup (deployed)
+- cc0b614: all remaining “exhaust feedback” copy is rewritten (`DeviceSystemFlow` aria-label, label, and caption; `DeviceSystemFlowLab`; `DeviceBeatsLab`; `explain.ts`; Device hero alt text). The system-flow arc label now reads “hot exhaust in”.
+- `NestedSpheres.tsx`: added an outlet pipe leaving the inner sphere at the lower left (opposite “Exhaust in”), labeled “To intake (after carburetor)”. It is static, so it is reduced-motion safe, and uses theme-aware text classes. The aria-label is updated, and `NestedSpheresLab` has a new “To intake” step. Checked in light and dark themes (`/workspace/nested-spheres.png`).
+- Deleted the unused `public/visuals/*.png` (device-nested-spheres, device-system-accurate, device-three-beats, device-vajra-gun, home-problem-solution, services-install). `public/sw.js` still precached 4 of them, so it now precaches the WebP files instead and the cache is bumped to v15. `og/` and social assets are untouched.
+- The deploy (run 38373420484) does not delete remote files, so the old PNGs still answer 200 on the server until someone removes them over SFTP. Harmless.
+- Live: pages 200, new alt text in the Device HTML, diagram strings in the lazy lab chunk, sw v15. Device mobile Lighthouse 95 / 100 / 100 / 100 (LCP 2.7 s).
+
 ### 2026-10-12 (night) — Resonator wording fix + Device/Services/Connect image perf (deployed)
 - Wording (6fb618a): fixed the exhaust/carburetor misreading on the Device caption, `NestedSpheres.tsx`, `NestedSpheresLab.tsx`, `content.ts`, `DeviceWalkthrough.tsx` and the resonator explainer. Now: hot exhaust enters one end of the resonator; the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. Sources: thunderstorm.tech Assembly Instructions (2026-02-18), TSG press release (10/24), Bendall DIY build guide video (2025). The nested-spheres art labels only “Exhaust in” and does not show the outlet pipe; no contradiction, not redrawn.
 - Perf (4d4c7e1): Device/Services/Connect visuals swapped from 1280×720 PNGs (up to 1.4 MB) to 960×540 WebP (20–56 KB), matching Home; `priority` on the above-fold Services and Connect image. The PNGs are still in `public/visuals/` but unused.
