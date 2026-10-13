@@ -10,7 +10,7 @@ export const explainLock518400 = [
 export const explainDeviceBeats = [
   "Air first meets the ionizer (pre-ionization chamber) — ultraviolet (UV) light pretreats it.",
   "The bubbler (plasmoid generator) sends that air through a water column. Bubbles collapse (cavitation) and form plasmoids, called Exotic Vacuum Occurrences (EVOs).",
-  "The catalytic tornado resonator holds nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core — with exhaust feedback.",
+  "The catalytic tornado resonator holds nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core. Hot exhaust enters one end; the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
   "A calm zero-plane sits between the opposing spins so charge can separate and feed the swarm. Optional vajra (plasmoid gun) geometry is a separate teaching figure.",
 ];
 

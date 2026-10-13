@@ -1,4 +1,4 @@
-/** Nested CTR spheres: outer / inner / core with gentle contra-rotation teaching cues. */
+/** Nested CTR spheres (outer, inner, core) with exhaust inlet, intake outlet pipe, and gentle contra-rotation cues. */
 
 type Props = {
   idPrefix?: string;
@@ -28,7 +28,7 @@ export default function NestedSpheres({
         viewBox="0 0 360 300"
         className="h-auto w-full max-w-full"
         role="img"
-        aria-label="Nested contra-rotating spheres: large outer, smaller inner, tiny core, with opposing flow and exhaust inlet"
+        aria-label="Nested contra-rotating spheres: large outer, smaller inner, and tiny core with opposing spins. Hot exhaust comes in at one end. At the opposite end, a pipe carries the cool plasmoid stream from the inner sphere to the engine’s intake, just after the carburetor."
       >
         {/* Outer sphere shell */}
         <circle
@@ -136,6 +136,35 @@ export default function NestedSpheres({
           </text>
         </g>
 
+        {/* Outlet pipe: cool plasmoid stream leaves the inner sphere at the end opposite the exhaust inlet, to the engine intake just after the carburetor */}
+        <g aria-hidden="true">
+          <line
+            x1="112"
+            y1="197"
+            x2="24"
+            y2="240"
+            stroke="rgb(196 140 92 / 0.75)"
+            strokeWidth="7"
+            strokeLinecap="round"
+          />
+          <line
+            x1="108"
+            y1="199"
+            x2="30"
+            y2="237"
+            stroke="rgb(45 212 191 / 0.85)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            markerEnd={`url(#${idPrefix}-out)`}
+          />
+          <text x="4" y="256" className="fill-mist-300" style={{ fontSize: 10 }}>
+            To intake
+          </text>
+          <text x="4" y="267" className="fill-mist-400" style={{ fontSize: 9 }}>
+            (after carburetor)
+          </text>
+        </g>
+
         {/* Labels */}
         <text x="170" y="42" textAnchor="middle" className="fill-mist-300" style={{ fontSize: 11 }}>
           Outer
@@ -173,6 +202,16 @@ export default function NestedSpheres({
             orient="auto"
           >
             <path d="M0,0 L6,3 L0,6 Z" fill="rgb(45 212 191 / 0.85)" />
+          </marker>
+          <marker
+            id={`${idPrefix}-out`}
+            markerWidth="7"
+            markerHeight="7"
+            refX="5"
+            refY="3"
+            orient="auto"
+          >
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(45 212 191 / 0.9)" />
           </marker>
         </defs>
       </svg>

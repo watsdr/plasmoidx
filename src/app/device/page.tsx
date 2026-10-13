@@ -51,7 +51,7 @@ export default function DevicePage() {
       <ScrollyChapter className="mt-10" delay={40}>
         <VisualPanel
           src="/visuals/device-system-accurate.webp"
-          alt="Inventor-model teaching sketch: air ionizer with violet interior cue, water-column bubbler with rising cavitation bubbles, and copper-toned resonator showing nested spheres with exhaust feedback"
+          alt="Inventor-model teaching sketch: air ionizer with violet interior cue, water-column bubbler with rising cavitation bubbles, and copper-toned resonator showing nested spheres, where hot exhaust enters one end"
           width={960}
           height={540}
           priority

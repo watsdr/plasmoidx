@@ -34,7 +34,7 @@ export default function DeviceSystemFlow({
         viewBox="0 0 520 200"
         className="h-auto w-full max-w-full"
         role="img"
-        aria-label="System flow: air into ionizer, then bubbler plasmoid generator, then nested-sphere resonator with exhaust feedback"
+        aria-label="System flow: air into ionizer, then bubbler plasmoid generator, then nested-sphere resonator. Hot exhaust enters one end of the resonator; the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor."
       >
         <defs>
           <marker
@@ -218,7 +218,7 @@ export default function DeviceSystemFlow({
           );
         })}
 
-        {/* Exhaust feedback arc under bubbler → resonator */}
+        {/* Hot exhaust arc into one end of the resonator */}
         <path
           d="M 250 148 Q 300 178 360 148"
           fill="none"
@@ -233,7 +233,7 @@ export default function DeviceSystemFlow({
           className="fill-mist-400"
           style={{ fontSize: 10 }}
         >
-          exhaust feedback
+          hot exhaust in
         </text>
         {showFlow ? (
           <circle
@@ -262,8 +262,9 @@ export default function DeviceSystemFlow({
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
           System flow matching the accurate teaching sketch: air → ionizer →
-          bubbler (plasmoid generator) → nested CTR resonator, with exhaust
-          feedback into the resonator base.
+          bubbler (plasmoid generator) → nested CTR resonator. Hot exhaust
+          enters one end of the resonator; the cool plasmoid stream leaves the
+          inner sphere by pipe to the engine’s intake, just after the carburetor.
         </figcaption>
       ) : null}
     </figure>

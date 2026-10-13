@@ -1,5 +1,5 @@
 /* PlasmoidX static-export service worker — shell + locks + key assets. */
-const CACHE = "plasmoidx-shell-v14";
+const CACHE = "plasmoidx-shell-v15";
 
 const PRECACHE = [
   "/",
@@ -20,10 +20,10 @@ const PRECACHE = [
   "/favicon.png",
   "/og.png",
   "/visuals/home-problem-solution.webp",
-  "/visuals/device-system-accurate.png",
-  "/visuals/device-nested-spheres.png",
-  "/visuals/device-vajra-gun.png",
-  "/visuals/services-install.png",
+  "/visuals/device-system-accurate.webp",
+  "/visuals/device-nested-spheres.webp",
+  "/visuals/device-vajra-gun.webp",
+  "/visuals/services-install.webp",
 ];
 
 self.addEventListener("install", (event) => {

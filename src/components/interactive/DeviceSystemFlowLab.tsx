@@ -18,7 +18,7 @@ const stages = [
   },
   {
     title: "Resonator",
-    body: "Catalytic tornado resonator with nested CTR spheres; exhaust feedback returns from the path.",
+    body: "Catalytic tornado resonator with nested CTR spheres. Hot exhaust enters one end. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
   },
 ] as const;
 

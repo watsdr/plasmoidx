@@ -21,7 +21,7 @@ const beats = [
   {
     title: "Resonator",
     caption:
-      "Catalytic tornado resonator: nested contra-rotating (CTR) spheres — an outer sphere, an inner sphere, and a tiny core — with exhaust feedback. It is not a vague gyroscope.",
+      "Catalytic tornado resonator: nested contra-rotating (CTR) spheres — an outer sphere, an inner sphere, and a tiny core. Hot exhaust enters one end, and the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. It is not a vague gyroscope.",
   },
 ] as const;
 

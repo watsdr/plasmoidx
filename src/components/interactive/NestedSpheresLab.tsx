@@ -22,7 +22,11 @@ const layers = [
   },
   {
     title: "Exhaust in",
-    body: "Hot engine exhaust enters the outer cavity through an angled inlet at one end. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
+    body: "Hot engine exhaust enters the outer cavity through an angled inlet at one end of the resonator.",
+  },
+  {
+    title: "To intake",
+    body: "At the opposite end, the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
   },
 ] as const;
 
@@ -60,7 +64,7 @@ export default function NestedSpheresLab() {
       </div>
       <p className="mt-1 text-xs text-mist-400">
         Tap a layer. When motion is allowed, outer and inner rings turn opposite
-        ways; exhaust-in soft-cues. Reduced motion freezes to the final frame —
+        ways and the exhaust inlet glows softly. Reduced motion freezes to the final frame —
         steps still work.
       </p>
 
