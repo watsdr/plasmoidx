@@ -40,10 +40,11 @@ export default function ConnectPage() {
       <VisualPanel
         className="mt-8"
         size="compact"
-        src="/visuals/services-install.png"
+        src="/visuals/services-install.webp"
+          priority
         alt="Quiet reminder of kit, tools, and estimate — install help is on Services"
-        width={1280}
-        height={720}
+        width={960}
+        height={540}
         caption="Install labor inquiries live on Services — written estimate before any paid work."
       />
 

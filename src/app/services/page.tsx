@@ -85,10 +85,11 @@ export default function ServicesPage() {
 
       <ScrollyChapter className="mt-10" delay={40}>
         <VisualPanel
-          src="/visuals/services-install.png"
+          src="/visuals/services-install.webp"
+          priority
           alt="Icons suggesting a customer-owned kit box, tools, and a written estimate — install labor inquiry"
-          width={1280}
-          height={720}
+          width={960}
+          height={540}
           caption="Inquiry → written estimate → install labor for kits you already own (or buy yourself). Kits are not sold on this site."
         />
       </ScrollyChapter>
