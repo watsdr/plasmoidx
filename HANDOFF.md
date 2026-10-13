@@ -147,6 +147,11 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-12 (night) — Resonator wording fix + Device/Services/Connect image perf (deployed)
+- Wording (6fb618a): fixed the exhaust/carburetor misreading on the Device caption, `NestedSpheres.tsx`, `NestedSpheresLab.tsx`, `content.ts`, `DeviceWalkthrough.tsx` and the resonator explainer. Now: hot exhaust enters one end of the resonator; the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. Sources: thunderstorm.tech Assembly Instructions (2026-02-18), TSG press release (10/24), Bendall DIY build guide video (2025). The nested-spheres art labels only “Exhaust in” and does not show the outlet pipe; no contradiction, not redrawn.
+- Perf (4d4c7e1): Device/Services/Connect visuals swapped from 1280×720 PNGs (up to 1.4 MB) to 960×540 WebP (20–56 KB), matching Home; `priority` on the above-fold Services and Connect image. The PNGs are still in `public/visuals/` but unused.
+- Deploy run 38335256628 green. Live Lighthouse medians (3 runs), before → after: mobile Device 71→87, Services 74→87, Connect 77→93; desktop Device 87→91, Services 96→91 (likely run-to-run noise), Connect 96→100. A11y/BP/SEO 100 throughout.
+
 ### 2026-10-12 — Shipped: copy cohesion (passes 1–3 + Home)
 - Fast-forward merged `copy-cohesion` → `main` at 63deb0a; deployed via `deploy.yml` (run 38317489385, success).
 - Home: nav keeps “Home”; hero now says Malcolm Bendall’s Thunderstorm Generator “is designed to use water to form and guide plasmoids … so engines can run cleaner”; Home slash pairs rewritten (the “Press /” keyboard hint is kept). Meta and Open Graph (OG) descriptions already said “aims to”, so unchanged.
