@@ -111,7 +111,7 @@ export default function NestedSpheres({
           className="text-mist-400/50"
         />
 
-        {/* Exhaust / carburetor-in stub */}
+        {/* Exhaust inlet (one end of the resonator) */}
         <g aria-hidden="true">
           <path
             d="M 288 118 L 248 138 L 252 148 L 292 128 Z"
@@ -182,7 +182,7 @@ export default function NestedSpheres({
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
           Catalytic tornado resonator cutaway: outer shell, inner sphere, and
-          tiny core with opposing spins, plus a stub that feeds exhaust into the carburetor inlet.
+          tiny core with opposing spins. Hot exhaust comes in at one end; the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.
           Inventor teaching model — not a product shot.
         </figcaption>
       ) : null}

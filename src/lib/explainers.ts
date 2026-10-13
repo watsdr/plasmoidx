@@ -409,7 +409,7 @@ export const explainers: Explainer[] = [
         kind: "plain",
         body: [
           "A copper-toned chamber with nested spheres — outer, inner, and a tiny central core. CTR means contra-rotating: turning in opposite directions.",
-          "Hot exhaust feedback and a stub from the carburetor feed the two opposing spins. A calm “zero-plane” sits between them.",
+          "Hot exhaust enters one end of the resonator. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. The two streams spin opposite ways, and a calm “zero-plane” sits between them.",
         ],
       },
       {

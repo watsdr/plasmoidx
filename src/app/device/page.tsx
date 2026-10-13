@@ -50,10 +50,10 @@ export default function DevicePage() {
 
       <ScrollyChapter className="mt-10" delay={40}>
         <VisualPanel
-          src="/visuals/device-system-accurate.png"
+          src="/visuals/device-system-accurate.webp"
           alt="Inventor-model teaching sketch: air ionizer with violet interior cue, water-column bubbler with rising cavitation bubbles, and copper-toned resonator showing nested spheres with exhaust feedback"
-          width={1280}
-          height={720}
+          width={960}
+          height={540}
           priority
           caption="Inventor-model teaching sketch of the ionizer → bubbler → resonator path (Draft 518,400 anatomy) — original brochure art, not a product photo or patent reprint."
         />
@@ -178,16 +178,18 @@ export default function DevicePage() {
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist-300">
               Cutaway of the catalytic tornado resonator: outer sphere, inner
               sphere, and tiny central core, with opposing tornadoes in the
-              cavity and a stub that feeds exhaust into the carburetor inlet. Inventor-model
+              cavity. Hot exhaust comes in at one end. At the other end, a pipe
+              carries the cool plasmoid stream to the engine’s intake, just after
+              the carburetor. Inventor-model
               teaching sketch — not a product shot. The interactive companion
               below shows gentle contra-rotation when motion is allowed.
             </p>
             <VisualPanel
               className="mt-5"
-              src="/visuals/device-nested-spheres.png"
+              src="/visuals/device-nested-spheres.webp"
               alt="Cutaway teaching sketch of nested contra-rotating spheres: outer, inner, and tiny central core with opposing flow arrows and exhaust inlet"
-              width={1280}
-              height={720}
+              width={960}
+              height={540}
               caption="Nested CTR spheres in the resonator — inventor-model teaching sketch summarizing the outer sphere, inner sphere, and core."
             />
             <NestedSpheresLab />
@@ -205,10 +207,10 @@ export default function DevicePage() {
             </p>
             <VisualPanel
               className="mt-5"
-              src="/visuals/device-vajra-gun.png"
+              src="/visuals/device-vajra-gun.webp"
               alt="Simplified teaching model of plasmoid gun or vajra quadrature: interlocking cone tiers in a cross-plus geometry on a square base"
-              width={1280}
-              height={720}
+              width={960}
+              height={540}
               caption="Plasmoid gun (vajra quadrature) — simplified teaching model from inventor notes (cone cross geometry), not a product photo."
             />
             <VajraLab />

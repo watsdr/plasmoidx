@@ -22,7 +22,7 @@ const layers = [
   },
   {
     title: "Exhaust in",
-    body: "Angled inlet feeds the cavity (exhaust feedback through the carburetor-in stub).",
+    body: "Hot engine exhaust enters the outer cavity through an angled inlet at one end. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
   },
 ] as const;
 

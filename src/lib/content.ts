@@ -57,7 +57,7 @@ export const deviceBeats = [
   {
     n: "03",
     title: "Resonator (nested CTR spheres)",
-    body: "Catalytic tornado resonator (the reaction path): copper-ish chamber with nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core. Hot exhaust feedback and a carburetor-in stub feed opposing spins; a calm “zero-plane” sits between them. Not a vague gyroscope.",
+    body: "Catalytic tornado resonator (the reaction path): copper-ish chamber with nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core. Hot exhaust enters one end, and the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. The two streams spin opposite ways; a calm “zero-plane” sits between them. Not a vague gyroscope.",
   },
 ];
 
