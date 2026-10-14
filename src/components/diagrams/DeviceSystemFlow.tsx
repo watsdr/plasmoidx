@@ -31,10 +31,10 @@ export default function DeviceSystemFlow({
       aria-labelledby={hideCaption ? undefined : captionId}
     >
       <svg
-        viewBox="0 0 520 200"
+        viewBox="0 0 520 250"
         className="h-auto w-full max-w-full"
         role="img"
-        aria-label="System flow: air into ionizer, then bubbler plasmoid generator, then nested-sphere resonator. Hot exhaust enters one end of the resonator; the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor."
+        aria-label="System flow: air into the ionizer, then the bubbler (plasmoid generator), then the nested-sphere resonator. Hot exhaust from the engine enters one end of the resonator. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor."
       >
         <defs>
           <marker
@@ -218,29 +218,56 @@ export default function DeviceSystemFlow({
           );
         })}
 
-        {/* Hot exhaust arc into one end of the resonator */}
-        <path
-          d="M 250 148 Q 300 178 360 148"
-          fill="none"
-          stroke="rgb(248 113 113 / 0.55)"
-          strokeWidth="1.35"
-          markerEnd={`url(#${arrowId})`}
-        />
-        <text
-          x="300"
-          y="176"
-          textAnchor="middle"
-          className="fill-mist-400"
-          style={{ fontSize: 10 }}
-        >
-          hot exhaust in
-        </text>
+        {/* Engine: exhaust out to one end of the resonator; cool plasmoid stream back to the intake just after the carburetor */}
+        <g aria-hidden="true">
+          <rect
+            x={200}
+            y={164}
+            width={100}
+            height={40}
+            rx={8}
+            fill="rgb(var(--ink-800) / 0.25)"
+            stroke="currentColor"
+            strokeWidth={1.25}
+            className="text-ink-600"
+          />
+          <text x={250} y={182} textAnchor="middle" className="fill-mist-50" style={{ fontSize: 12, fontWeight: 600 }}>
+            Engine
+          </text>
+          <text x={250} y={196} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 9 }}>
+            intake after carburetor
+          </text>
+
+          {/* Hot exhaust: engine → resonator (outer cavity) */}
+          <path
+            d="M 302 194 Q 432 214 436 142"
+            fill="none"
+            stroke="rgb(248 113 113 / 0.7)"
+            strokeWidth="1.5"
+            markerEnd={`url(#${arrowId})`}
+          />
+          <text x={474} y={200} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 10 }}>
+            hot exhaust in
+          </text>
+
+          {/* Cool plasmoid stream: resonator inner sphere → engine intake */}
+          <path
+            d="M 384 140 Q 372 174 304 174"
+            fill="none"
+            stroke="rgb(45 212 191 / 0.85)"
+            strokeWidth="1.5"
+            markerEnd={`url(#${arrowId})`}
+          />
+          <text x={342} y={160} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 9 }}>
+            to intake
+          </text>
+        </g>
         {showFlow ? (
           <circle
-            cx="260"
-            cy="152"
+            cx="306"
+            cy="195"
             r="2"
-            fill="rgb(248 113 113 / 0.7)"
+            fill="rgb(248 113 113 / 0.75)"
             className="teach-flow-dot"
             style={{ animationDelay: "1.1s", animationDuration: "3.2s" }}
           />
@@ -248,7 +275,7 @@ export default function DeviceSystemFlow({
 
         <text
           x="260"
-          y="194"
+          y="238"
           textAnchor="middle"
           className="fill-mist-400"
           style={{ fontSize: 11 }}
