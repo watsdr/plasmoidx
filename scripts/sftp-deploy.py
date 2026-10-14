@@ -8,11 +8,12 @@ Prune rules (safety first):
   verification files like google*.html, yandex_*.html, BingSiteAuth.xml).
 - Every planned deletion is logged first. More than MAX_DELETES aborts
   before anything is uploaded or deleted. PRUNE_DRY_RUN=1 logs only.
+PRUNE_MAX_DELETES raises the cap for a one-time, Derek-approved cleanup only.
 """
 import os, posixpath, stat, sys, fnmatch, paramiko
 
 ROOT = "public_html"
-MAX_DELETES = 50
+MAX_DELETES = int(os.environ.get("PRUNE_MAX_DELETES") or 50)
 DRY = os.environ.get("PRUNE_DRY_RUN", "").lower() in ("1", "true", "yes")
 PROTECTED_TOP = {".htaccess", ".well-known", "cgi-bin"}
 OUTPUT_DIRS = ("_next/", "visuals/", "og/", "explainers/", "fonts/", "data/")

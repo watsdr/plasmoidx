@@ -7,6 +7,10 @@ on:
         description: "Log stale-file deletions without deleting"
         type: boolean
         default: false
+      prune_max_deletes:
+        description: "Deletion cap (default 50). Raise only for a one-time approved cleanup."
+        type: string
+        default: "50"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,3 +28,4 @@ jobs:
         env:
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
           PRUNE_DRY_RUN: ${{ inputs.prune_dry_run }}
+          PRUNE_MAX_DELETES: ${{ inputs.prune_max_deletes }}

@@ -31,7 +31,7 @@ Operating rules for **any** coding agent (PlasmoidX Grok Bot, grok.com, Cursor, 
 ## After you finish a chunk
 
 1. `npm run build` (exit 0).
-2. Deploy if Derek wants it live: **`gh workflow run deploy.yml -R watsdr/plasmoidx`** (or Actions tab → Run workflow). Do not SFTP from the Grok Bot box (port 21098 blocked). Local SFTP from another machine is fallback only.
+2. Deploy if Derek wants it live: **`gh workflow run deploy.yml -R watsdr/plasmoidx`** (or Actions tab → Run workflow). Do not SFTP from the Grok Bot box (port 21098 blocked). Local SFTP from another machine is fallback only. The deploy now **prunes**: after upload it deletes remote files that are not in `out/`, but only site-output paths (`_next/`, `visuals/`, `og/`, `explainers/`, `fonts/`, `data/`, root `*.html`/`*.txt` except search-engine verification files). It never touches `.htaccess`, `.well-known/`, `cgi-bin/`, dotfiles, or anything else (e.g. `ncsitebuilder/`, `nc_assets/`). Every planned deletion is logged; more than 50 aborts the whole deploy before upload. Use `-f prune_dry_run=true` to preview. `-f prune_max_deletes=N` is for a one-time cleanup Derek has approved.
 3. Spot-check https://plasmoidx.com/ (and touched routes).
 4. Optional: mobile + desktop Lighthouse on `/`.
 5. **Required:** refresh **HANDOFF.md** session log + suggested next (same commit when possible).

@@ -147,6 +147,12 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-14 — System-flow redraw + deploy pruning (deploy BLOCKED by cap, nothing live yet)
+- `DeviceSystemFlow.tsx`: added an Engine box (“intake after carburetor”) under the bubbler. A red “hot exhaust in” arc runs from the engine into the resonator, and a teal “to intake” arc runs from the resonator back to the engine. The viewBox is now 520×250 and the aria-label is updated. Arcs are static and only the existing flow dot animates, so reduced motion is still respected. Render in both themes: `/workspace/system-flow.png`.
+- `scripts/sftp-deploy.py` now prunes stale site-output files (see AGENTS.md), with a dry-run log and a 50-deletion cap. Workflow inputs: `prune_dry_run`, `prune_max_deletes`.
+- Dry run (run 38561838772): **455** stale files, all old `_next/` build chunks/CSS/manifests, plus 13 `visuals/` files (6 PNG + 6 AVIF + home-problem-solution-800.webp). The cap aborted it, so nothing was uploaded or deleted and the site is unchanged. 109 non-site files were correctly left alone (Namecheap `ncsitebuilder/`, `nc_assets/`, `parking-page.shtml`, `web.config`, `index.php.namecheap-bak`, old `privacy/`).
+- **Pending Derek:** approve a one-time cleanup, `gh workflow run deploy.yml -R watsdr/plasmoidx -f prune_max_deletes=500`. After that, normal deploys stay under 50. Until then every deploy aborts, because the 455 backlog exceeds the cap.
+
 ### 2026-10-13 — Resonator outlet pipe + last “exhaust feedback” wording + PNG cleanup (deployed)
 - cc0b614: all remaining “exhaust feedback” copy is rewritten (`DeviceSystemFlow` aria-label, label, and caption; `DeviceSystemFlowLab`; `DeviceBeatsLab`; `explain.ts`; Device hero alt text). The system-flow arc label now reads “hot exhaust in”.
 - `NestedSpheres.tsx`: added an outlet pipe leaving the inner sphere at the lower left (opposite “Exhaust in”), labeled “To intake (after carburetor)”. It is static, so it is reduced-motion safe, and uses theme-aware text classes. The aria-label is updated, and `NestedSpheresLab` has a new “To intake” step. Checked in light and dark themes (`/workspace/nested-spheres.png`).
