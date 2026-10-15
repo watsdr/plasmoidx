@@ -62,8 +62,10 @@ Exceptions that need no expansion: FAQ, PDF, US, DIY.
 ## Numbers
 
 - The two measured numbers, always together and in this form:
-  **about +9–10% fuel efficiency** and **about −34% average emissions**.
-- Use "~" only in tight spaces (chips, tables, social cards): "~+9–10%", "~−34%".
+  **about 9–10% lower fuel use** (small generator; 9.67%) and **about 34% less carbon monoxide (CO) in an idle test**.
+  Where room allows, add: carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly; the one-vehicle road test was about 8.7%.
+- Never write "average emissions" or "−34% emissions" without saying carbon monoxide. The −34% is CO only.
+- Use "~" only in tight spaces (chips, tables, social cards): "~9–10% fuel", "~−34% CO".
 - Inventor figures: "90% or more" in prose (not "≥90%").
 - Use a true minus sign (−) for negative percentages; en dash (–) for ranges (9–10%, Lessons 1–6).
 - Commas in big numbers: 518,400; 129,600; 25,920. Degrees: 51.84°.

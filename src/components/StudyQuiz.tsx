@@ -78,7 +78,7 @@ const QUESTIONS: Question[] = [
     choices: [
       {
         id: "modest",
-        label: "About +9–10% fuel efficiency and −34% average emissions (lead with this)",
+        label: "About 9–10% lower fuel use and 34% less carbon monoxide at idle (lead with this)",
       },
       { id: "ninety", label: "90% fuel cuts — the figure this site should lead with" },
       { id: "zero", label: "No measured change; only marketing claims exist" },

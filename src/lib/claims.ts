@@ -13,7 +13,7 @@ export const claimRows: ClaimRow[] = [
     inventor:
       "Large fuel-efficiency gains — often framed as 90% or more in inventor and marketing material (Thunderstorm decks, Perry narrative).",
     meter:
-      "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026, independent meter): roughly +9–10% fuel efficiency under the conditions tested.",
+      "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026, independent meter): a 9.67% lower fuel-use rate on a small generator and about 8.7% better economy on a one-vehicle road test, under the conditions tested.",
     doesNotProve:
       "Does not prove inventor-scale fuel cuts, commercial fleet performance, or that 90% figures are realistic for everyday engines.",
   },
@@ -22,9 +22,9 @@ export const claimRows: ClaimRow[] = [
     inventor:
       "Near-zero carbon monoxide (CO) and hydrocarbons (HC); “carbon killer” framing and high O₂ in exhaust in some narrative pieces.",
     meter:
-      "Same thesis: about −34% average emissions, with carbon monoxide (CO) the clearest drop among the cuts reported.",
+      "Same thesis, idle test: carbon monoxide (CO) down by about 34%. Carbon dioxide, oxygen and hydrocarbons did not change significantly.",
     doesNotProve:
-      "Does not prove near-zero exhaust, full regulatory compliance claims, or that every pollutant fell equally.",
+      "Does not prove near-zero exhaust, full regulatory compliance claims, or that any pollutant other than CO fell.",
   },
   {
     id: "water",

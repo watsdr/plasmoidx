@@ -17,7 +17,7 @@ Article JSON-LD, added to `SITEMAP_ROUTES`). Re-rank once Google Search Console 
 
 Notes
 - Pages 1–2 are the highest-intent searches and should lead with measured numbers
-  (Embry-Riddle ~+9–10% fuel efficiency, ~−34% average emissions); inventor ≥90% figures stay labeled claims.
+  (Embry-Riddle: 9.67% lower fuel-use rate on a small generator; CO down about 34% at idle); inventor ≥90% figures stay labeled claims.
 - Pages 7–8 are model/teaching content: label as the inventor's model, not established physics.
 - No affiliation claims with Strike Foundation / Strike Energy; no local filler.
 - Each new page needs an OG image: rerun `npm run og` (they share `/og/explainers.png` today).

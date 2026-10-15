@@ -291,8 +291,9 @@ export default function DevicePage() {
 
       <ScrollyChapter as="section" className="mt-12" delay={80}>
         <p className="text-sm leading-relaxed text-mist-300">
-          Lead with the Embry-Riddle test, an independent meter (about +9–10%
-          fuel efficiency, about −34% average emissions). Inventor claims are
+          Lead with the Embry-Riddle test, an independent meter (about 9–10%
+          lower fuel use on a small generator; carbon monoxide down about 34%
+          in an idle test). Inventor claims are
           labeled as such. See{" "}
           <Link href="/study/#honest-numbers" className="link-aurora">
             Study · Honest numbers

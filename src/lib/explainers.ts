@@ -25,7 +25,7 @@ export type Explainer = {
 };
 
 const meterLine =
-  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) using an independent meter — found about +9–10% fuel efficiency and about −34% average emissions under the conditions tested, with carbon monoxide (CO) the clearest drop.";
+  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) using an independent meter — found, under the conditions tested, a 9.67% lower fuel-use rate on a small generator and about 8.7% better fuel economy on a one-vehicle road test. In an idle test, carbon monoxide (CO) fell by about 34%, while carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly.";
 
 export const explainers: Explainer[] = [
   {
@@ -195,7 +195,7 @@ export const explainers: Explainer[] = [
     title: "What the Embry-Riddle test actually measured",
     question: "What did the Embry-Riddle Thunderstorm Generator test find?",
     description:
-      "The Embry-Riddle thesis on the Thunderstorm Generator in plain English: about +9–10% fuel efficiency and −34% average emissions, and what that does not prove.",
+      "The Embry-Riddle thesis on the Thunderstorm Generator in plain English: a 9.67% lower fuel-use rate on a small generator, about 34% less carbon monoxide at idle, and what that does not prove.",
     published: "2026-10-10",
     lede: "An Embry-Riddle Aeronautical University master’s (M.S.) thesis put an independent meter on Thunderstorm Generator retrofit hardware. Here is what it found, in plain numbers, and where its reach stops.",
     blocks: [
@@ -212,7 +212,7 @@ export const explainers: Explainer[] = [
         kind: "plain",
         body: [
           "“Under the conditions tested” matters. A thesis tests a specific setup; your vehicle, fuel, and driving may not match it.",
-          "A 9–10% fuel gain and a one-third cut in average emissions are meaningful results. They are also far smaller than the marketing figures you may have seen.",
+          "A fuel gain of about 9–10% on a small generator and a one-third cut in carbon monoxide at idle are meaningful results. They are also far smaller than the marketing figures you may have seen. The one-third figure is for carbon monoxide only, not for all emissions.",
         ],
       },
       {
@@ -251,7 +251,7 @@ export const explainers: Explainer[] = [
         kind: "claim",
         body: [
           "Claim: large fuel-efficiency gains, often framed as 90% or more.",
-          "Measured: roughly +9–10% fuel efficiency in the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026), under the conditions tested.",
+          "Measured: a 9.67% lower fuel-use rate on a small generator and about 8.7% better economy on a one-vehicle road test, in the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026), under the conditions tested.",
         ],
       },
       {
@@ -259,7 +259,7 @@ export const explainers: Explainer[] = [
         kind: "measured",
         body: [
           "Claim: near-zero carbon monoxide (CO) and hydrocarbons (HC).",
-          "Measured: about −34% average emissions, with CO the clearest drop. That is a real cut, not near-zero.",
+          "Measured: in an idle test, CO fell by about 34%, while carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly. That is a real cut in CO, not near-zero, and not a cut in everything.",
         ],
       },
       {
@@ -574,7 +574,6 @@ export const explainers: Explainer[] = [
         kind: "commentary",
         body: [
           "Brian Dunning, writing for the Skeptoid podcast on December 16, 2025, argues that the Thunderstorm Generator is an exhaust-heat riser plus water injection, and that its explanations are not physics. Our page on the critics sets out his technical points beside the supporters’ view.",
-          "Some outside writers also comment on Bendall’s earlier business history. This site does not repeat those statements. We have not checked them, and they do not change what a meter shows about a device.",
         ],
       },
       {
@@ -623,7 +622,7 @@ export const explainers: Explainer[] = [
           "A 2026 master’s (M.S.) thesis at Embry-Riddle Aeronautical University built a Thunderstorm Generator retrofit and tested it. Fuel was weighed and timed. Exhaust was read with a five-gas analyzer.",
           "On a small generator under load, with the water-vapor (cold-gas) system on, fuel use fell from 35.27 to 31.86 milliliters per minute, a 9.67% drop. On a 1989 Chevrolet Blazer road loop, fuel economy was about 8.7% better, but the retrofit covered only four of eight cylinders and the retrofit runs had high winds.",
           "In an idle test of the small generator, carbon monoxide (CO) fell by an average of 34%. Carbon dioxide (CO₂) and oxygen showed no significant change, which the thesis says contradicts the inventor’s claims. Hydrocarbons showed no significant correlation.",
-          "The thesis says it “did not conclusively validate” the inventor’s fuel and emissions claims, that its results fit “a modest positive effect,” and that the system “should not be entirely dismissed.” This site shortens the two headline results to about +9–10% fuel efficiency and about −34% average emissions. The precise version above is the one to quote.",
+          "The thesis says it “did not conclusively validate” the inventor’s fuel and emissions claims, that its results fit “a modest positive effect,” and that the system “should not be entirely dismissed.”",
         ],
       },
       {
@@ -914,7 +913,7 @@ export const explainers: Explainer[] = [
         heading: "What the one university test says about them",
         kind: "measured",
         body: [
-          "The Embry-Riddle thesis is the one measured anchor this site uses. It was run by a master’s student, and its hardware was partly supplied by Plasmoid Power. It found about +9–10% fuel efficiency (a 9.67% lower fuel-use rate on a small generator) and a 34% average drop in carbon monoxide in an idle test.",
+          "The Embry-Riddle thesis is the one measured anchor this site uses. It was run by a master’s student, and its hardware was partly supplied by Plasmoid Power. It found a 9.67% lower fuel-use rate on a small generator and about a 34% drop in carbon monoxide in an idle test.",
           "Those results do not depend on who sells the kit. They also do not confirm the larger claims on the sellers’ sites.",
         ],
       },

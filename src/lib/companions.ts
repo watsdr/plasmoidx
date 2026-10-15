@@ -103,7 +103,7 @@ export const lectureCompanions: CompanionNote[] = [
       "Forward-looking commercial language.",
     ],
     teach: [
-      "Lead with the measured numbers (about +9–10% fuel efficiency and about −34% average emissions), not inventor rollout promises.",
+      "Lead with the measured numbers (about 9–10% lower fuel use on a small generator and about 34% less carbon monoxide in an idle test), not inventor rollout promises.",
       "Education only: no licensee or partnership claims here.",
       "Device page stays hardware beats, not a sales funnel.",
       "Push for fuller dyno and isotope testing in your own reading.",

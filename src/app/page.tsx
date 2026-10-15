@@ -207,8 +207,10 @@ export default function WhyPage() {
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-mist-200">
                 This device path forms and guides plasmoids so more of the energy
-                story is organized — closer to a “store” than a pure blast. Lead
-                result visitors care about: cleaner exhaust and better fuel use.
+                story is organized — closer to a “store” than a pure blast. The
+                result people care about is lower fuel use and cleaner exhaust;
+                the measured test found a modest fuel gain and lower carbon
+                monoxide at idle.
                 The deeper model lives on Study; the hardware path is on Device.
               </p>
             </ScrollyChapter>
@@ -275,16 +277,14 @@ export default function WhyPage() {
                 Master’s (M.S.) thesis · 2026 · independent meter
               </p>
               <p className="mt-4 text-sm leading-relaxed text-mist-200">
-                Roughly{" "}
+                About{" "}
                 <strong className="font-medium text-aurora">
-                  +9–10% fuel efficiency
+                  9–10% lower fuel use
                 </strong>{" "}
-                and about{" "}
-                <strong className="font-medium text-aurora">
-                  −34% average emissions
-                </strong>{" "}
-                (carbon monoxide (CO) clearest). Measured effect — lead with
-                this.
+                on a small generator, and carbon monoxide (CO) down about{" "}
+                <strong className="font-medium text-aurora">34%</strong> in an
+                idle test (carbon dioxide, oxygen and hydrocarbons did not
+                change significantly). Measured — lead with this.
               </p>
             </ScrollyChapter>
             <ScrollyChapter delay={140}>

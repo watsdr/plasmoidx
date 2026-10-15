@@ -15,8 +15,8 @@ rmSync(tmp, { recursive: true, force: true });
 mkdirSync(tmp, { recursive: true });
 mkdirSync(OUT, { recursive: true });
 
-const meterFuel = "About +9–10% fuel efficiency in an independent Embry-Riddle university thesis (2026).";
-const meterEmis = "About −34% average emissions, with carbon monoxide the clearest drop.";
+const meterFuel = "About 9–10% lower fuel use on a small generator in an Embry-Riddle university thesis (2026).";
+const meterEmis = "Carbon monoxide down about 34% in an idle test. Carbon dioxide, oxygen and hydrocarbons: no significant change.";
 
 const cards = [
   {
@@ -32,7 +32,7 @@ const cards = [
     hook: "Does the Thunderstorm Generator work?",
     facts: [
       ["Claim", "Inventor material: fuel gains of 90% or more and near-zero exhaust."],
-      ["Measured", "Independent meter: about +9–10% fuel efficiency and −34% average emissions."],
+      ["Measured", "Thesis meter: about 9–10% lower fuel use and about 34% less carbon monoxide at idle."],
     ],
   },
   {
@@ -48,7 +48,7 @@ const cards = [
     hook: "Why bubble air through water?",
     facts: [
       ["Claim", "Collapsing bubbles (cavitation) form plasmoids — the inventor’s model."],
-      ["Measured", "The whole retrofit: about +9–10% fuel efficiency. The bubbler alone was not isolated."],
+      ["Measured", "The whole retrofit: about 9–10% lower fuel use (small generator). The bubbler alone was not isolated."],
     ],
   },
   {

@@ -110,7 +110,7 @@ Replace `<your-project>.pages.dev` with your actual Pages hostname (e.g. `plasmo
 
 ## Honest numbers (editorial)
 
-Lead with Embry-Riddle Aeronautical University M.S. thesis (2026): ~+9–10% fuel efficiency, ~−34% avg emissions (CO clearest). Inventor/marketing claims are labeled as such; do not oversell 90% fuel claims.
+Lead with Embry-Riddle Aeronautical University M.S. thesis (2026): about 9–10% lower fuel use on a small generator (9.67%; about 8.7% on a one-vehicle road test) and about 34% less carbon monoxide (CO) in an idle test, with CO₂, oxygen and hydrocarbons not significantly changed. Inventor/marketing claims are labeled as such; do not oversell 90% fuel claims.
 
 ## License / voice
 

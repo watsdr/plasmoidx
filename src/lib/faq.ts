@@ -20,7 +20,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "meter",
     q: "Should I believe the 90% fuel claims?",
-    a: "This site does not lead with them. Lead with the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) independent meter: about +9–10% fuel efficiency and about −34% average emissions. Large marketing figures stay labeled inventor claims.",
+    a: "This site does not lead with them. Lead with the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) independent meter: about 9–10% lower fuel use on a small generator, and about 34% less carbon monoxide (CO) in an idle test. Large marketing figures stay labeled inventor claims.",
   },
   {
     id: "official",
@@ -65,7 +65,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "guarantee-90",
     q: "Do you guarantee 90% fuel savings on an install?",
-    a: "No. Inventor marketing figures (often 90% or more) stay labeled claims and are not guaranteed. The Embry-Riddle test numbers on this site (about +9–10% fuel efficiency, about −34% average emissions) are study context, not a promise that your vehicle will match them.",
+    a: "No. Inventor marketing figures (often 90% or more) stay labeled claims and are not guaranteed. The Embry-Riddle test numbers on this site (about 9–10% lower fuel use on a small generator, about 34% less carbon monoxide in an idle test) are study context, not a promise that your vehicle will match them.",
   },
 ];
 
@@ -76,6 +76,11 @@ export type ErrataItem = {
 };
 
 export const errataItems: ErrataItem[] = [
+  {
+    date: "2026-10-15",
+    title: "Emissions figure corrected: carbon monoxide only",
+    body: "Earlier copy said the Embry-Riddle test found “about −34% average emissions.” The thesis actually reports that carbon monoxide (CO) fell by an average of 34% in an idle test of a small generator, while carbon dioxide, oxygen and hydrocarbons did not change significantly. Fuel figures now follow the thesis: a 9.67% lower fuel-use rate on a small generator and about 8.7% better economy on a one-vehicle road test that covered only some cylinders and had high winds. All pages, the FAQ, the glossary and share images were updated.",
+  },
   {
     date: "2026-09-20",
     title: "Device visuals match inventor anatomy (teaching art)",
@@ -94,7 +99,7 @@ export const errataItems: ErrataItem[] = [
   {
     date: "2026-09-15",
     title: "Meter vs 90% lead",
-    body: "The Honest numbers and claims-compare sections lead with the Embry-Riddle test (about +9–10% fuel efficiency, about −34% average emissions). Inventor figures of 90% or more stay labeled and are not the headline.",
+    body: "The Honest numbers and claims-compare sections lead with the Embry-Riddle test (about 9–10% lower fuel use on a small generator, about 34% less carbon monoxide in an idle test). Inventor figures of 90% or more stay labeled and are not the headline.",
   },
   {
     date: "2026-09-14",

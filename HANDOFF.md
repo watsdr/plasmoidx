@@ -182,7 +182,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 ### 2026-10-12 — Copy cohesion pass (branch `copy-cohesion`, not merged, not deployed)
 - New `docs/STYLE-GUIDE.md`: voice, canonical names, labels, acronyms, number/dash/quote rules, CTA wording, nav = title rule.
 - Applied site-wide: page intros follow "what this page is → why it matters"; H1s and meta titles now match nav labels (e.g. "Sources: method and privacy", "Updates and corrections"); nav "Why" → "Home", footer "Errata" → "Updates", footer headings "Pages" / "Outside sources".
-- Terminology: EVO = Exotic Vacuum Occurrence everywhere (dropped "energetic vacuum object"); "Embry-Riddle test" (not "meter"); "Malcolm Bendall’s Thunderstorm Generator" (not "Bendall Thunderstorm Generator" / "Thunderstorm-style"); "about +9–10% fuel efficiency / about −34% average emissions"; "90% or more" (not ≥90%); explainer label "Inventor claim".
+- Terminology: EVO = Exotic Vacuum Occurrence everywhere (dropped "energetic vacuum object"); "Embry-Riddle test" (not "meter"); "Malcolm Bendall’s Thunderstorm Generator" (not "Bendall Thunderstorm Generator" / "Thunderstorm-style"); "about 9–10% lower fuel use on a small generator" and "about 34% less carbon monoxide in an idle test" (never “average emissions”); "90% or more" (not ≥90%); explainer label "Inventor claim".
 - Acronyms defined on first use per page (checked with a script over `out/`): M.S., MeV, EVO, CTR, PUM, MOE, ATV, MSAART.
 - CTAs unified: Start Lesson 1, See how it works, Read the explainers, Email Derek, Ask about installs.
 - Added a plain 404 page (`src/app/not-found.tsx`) + `ErrorDocument 404 /404.html` in `.htaccess`.

@@ -344,13 +344,13 @@ export default function ServicesPage() {
           Independent Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026)
           meter context on this site is about{" "}
           <strong className="font-medium text-mist-100">
-            +9–10% fuel efficiency
+            9–10% lower fuel use
           </strong>{" "}
-          and about{" "}
+          on a small generator and about{" "}
           <strong className="font-medium text-mist-100">
-            −34% average emissions
-          </strong>
-          . That is{" "}
+            34% less carbon monoxide (CO)
+          </strong>{" "}
+          in an idle test. That is{" "}
           <strong className="font-medium text-mist-100">
             study context, not a promise for your install
           </strong>
