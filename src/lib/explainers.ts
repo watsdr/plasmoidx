@@ -2,9 +2,11 @@
 
 export type ExplainerBlock = {
   heading: string;
-  /** "measured" = independent meter; "claim" = inventor / model; "plain" = definition or site note */
-  kind: "measured" | "claim" | "plain";
+  /** "measured" = a measurement; "claim" = inventor / seller / model; "commentary" = outside commentary; "plain" = definition or site note */
+  kind: "measured" | "claim" | "commentary" | "plain";
   body: string[];
+  /** Optional data table shown after the paragraphs */
+  table?: { caption: string; head: string[]; rows: string[][] };
 };
 
 export type Explainer = {
@@ -17,11 +19,13 @@ export type Explainer = {
   published?: string;
   lede: string;
   blocks: ExplainerBlock[];
+  /** Optional cited sources, shown as a Sources block */
+  sources?: { label: string; href: string }[];
   related: { href: string; label: string }[];
 };
 
 const meterLine =
-  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) using an independent meter — found about +9–10% fuel efficiency and about −34% average emissions under the conditions tested, with carbon monoxide (CO) the clearest drop.";
+  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) using an independent meter — found, under the conditions tested, a 9.67% lower fuel-use rate on a small generator and about 8.7% better fuel economy on a one-vehicle road test. In an idle test, carbon monoxide (CO) fell by about 34%, while carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly.";
 
 export const explainers: Explainer[] = [
   {
@@ -141,6 +145,8 @@ export const explainers: Explainer[] = [
       { href: "/device/", label: "Device walkthrough" },
       { href: "/study/#honest-numbers", label: "Study: Honest numbers" },
       { href: "/services/", label: "Install by inquiry" },
+      { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
+      { href: "/explainers/strike-foundation-and-thunderstorm-tech/", label: "Strike Foundation, Thunderstorm.tech and this site" },
     ],
   },
   {
@@ -181,6 +187,7 @@ export const explainers: Explainer[] = [
       { href: "/study/#curriculum", label: "Study: Lessons 1–6" },
       { href: "/study/#locks", label: "Study: Number locks" },
       { href: "/sources/", label: "Sources & method" },
+      { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
     ],
   },
   {
@@ -188,7 +195,7 @@ export const explainers: Explainer[] = [
     title: "What the Embry-Riddle test actually measured",
     question: "What did the Embry-Riddle Thunderstorm Generator test find?",
     description:
-      "The Embry-Riddle thesis on the Thunderstorm Generator in plain English: about +9–10% fuel efficiency and −34% average emissions, and what that does not prove.",
+      "The Embry-Riddle thesis on the Thunderstorm Generator in plain English: a 9.67% lower fuel-use rate on a small generator, about 34% less carbon monoxide at idle, and what that does not prove.",
     published: "2026-10-10",
     lede: "An Embry-Riddle Aeronautical University master’s (M.S.) thesis put an independent meter on Thunderstorm Generator retrofit hardware. Here is what it found, in plain numbers, and where its reach stops.",
     blocks: [
@@ -205,7 +212,7 @@ export const explainers: Explainer[] = [
         kind: "plain",
         body: [
           "“Under the conditions tested” matters. A thesis tests a specific setup; your vehicle, fuel, and driving may not match it.",
-          "A 9–10% fuel gain and a one-third cut in average emissions are meaningful results. They are also far smaller than the marketing figures you may have seen.",
+          "A fuel gain of about 9–10% on a small generator and a one-third cut in carbon monoxide at idle are meaningful results. They are also far smaller than the marketing figures you may have seen. The one-third figure is for carbon monoxide only, not for all emissions.",
         ],
       },
       {
@@ -227,6 +234,7 @@ export const explainers: Explainer[] = [
       { href: "/study/#honest-numbers", label: "Study: Honest numbers" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
       { href: "/sources/", label: "Sources & method" },
+      { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
     ],
   },
   {
@@ -243,7 +251,7 @@ export const explainers: Explainer[] = [
         kind: "claim",
         body: [
           "Claim: large fuel-efficiency gains, often framed as 90% or more.",
-          "Measured: roughly +9–10% fuel efficiency in the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026), under the conditions tested.",
+          "Measured: a 9.67% lower fuel-use rate on a small generator and about 8.7% better economy on a one-vehicle road test, in the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026), under the conditions tested.",
         ],
       },
       {
@@ -251,7 +259,7 @@ export const explainers: Explainer[] = [
         kind: "measured",
         body: [
           "Claim: near-zero carbon monoxide (CO) and hydrocarbons (HC).",
-          "Measured: about −34% average emissions, with CO the clearest drop. That is a real cut, not near-zero.",
+          "Measured: in an idle test, CO fell by about 34%, while carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly. That is a real cut in CO, not near-zero, and not a cut in everything.",
         ],
       },
       {
@@ -274,6 +282,9 @@ export const explainers: Explainer[] = [
       { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
       { href: "/explainers/thunderstorm-generator/", label: "Thunderstorm Generator explained" },
       { href: "/faq/", label: "FAQ" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
+      { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
     ],
   },
   {
@@ -354,6 +365,7 @@ export const explainers: Explainer[] = [
       { href: "/device/", label: "Device walkthrough" },
       { href: "/explainers/air-ionizer-pre-ionization/", label: "Before it: the air ionizer" },
       { href: "/explainers/catalytic-tornado-resonator/", label: "After it: the resonator" },
+      { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
     ],
   },
   {
@@ -472,6 +484,7 @@ export const explainers: Explainer[] = [
       { href: "/study/#protium", label: "Study: Protium path lab" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Claims vs meter" },
       { href: "/glossary/", label: "Glossary" },
+      { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
     ],
   },
   {
@@ -512,6 +525,420 @@ export const explainers: Explainer[] = [
       { href: "/study/#locks", label: "Study: Build 518,400 lab" },
       { href: "/study/#moe", label: "Study: MOE lattice" },
       { href: "/explainers/msaart/", label: "Bendall MSAART explained" },
+    ],
+  },
+  {
+    slug: "who-is-malcolm-bendall",
+    title: "Who is Malcolm Bendall?",
+    question: "Who is Malcolm Bendall, and why does his name come up?",
+    description:
+      "Who Malcolm Bendall is, using only his foundation’s own words and published records: Australian inventor, geochemist, and the name behind the Thunderstorm Generator. Claims labeled.",
+    published: "2026-10-15",
+    lede: "Malcolm Bendall is an Australian inventor and geochemist. His name is attached to the Thunderstorm Generator and to a body of study material called MSAART. This page sticks to what his own foundation says and what published records show, and it keeps every claim labeled.",
+    blocks: [
+      {
+        heading: "The short version",
+        kind: "plain",
+        body: [
+          "Strike Foundation, the group that publishes his notes, describes him as an “Australian inventor, geochemist and ‘prophet of nature’.” This site uses “Malcolm Bendall” or “the inventor” for him.",
+          "He is the person behind the Thunderstorm Generator, a three-part add-on for small engines, and behind a larger theory about plasmoids and atoms called the Plasmoid Unification Model. Both are covered in the explainers linked below.",
+        ],
+      },
+      {
+        heading: "How his foundation describes him and his work",
+        kind: "claim",
+        body: [
+          "Strike Foundation Guarantee Limited says it is a not-for-profit entity formed to hold, manage and commercialize the intellectual property (IP) rights of Bendall. It adds that he has instructed it to publish his IP openly, so his notes and diagrams are posted on its site.",
+          "The foundation says Bendall released years of research after his work was introduced to a wide audience on the Joe Rogan Experience by Randall Carlson on November 11, 2022. It says the release includes 20 parts of draft notes: diagrams of his inventions, possible uses, initial test results and analysis of the Thunderstorm Generator, his Planetary Octave Sequences, his model of the elements, and more.",
+          "These are the foundation’s statements about its own founder’s work. They are not independent findings.",
+        ],
+      },
+      {
+        heading: "His published oil-and-gas geology paper",
+        kind: "plain",
+        body: [
+          "Strike Foundation points to a 2015 paper in The APPEA Journal, “Seeing through the dolerite — seismic imaging of petroleum systems, Tasmania, Australia.” It says Bendall led the paper and wrote it with four other geologists (Paul Heath, Clive Burrett, Andrew Stacey and Enzo Zappaterra).",
+          "APPEA is Australia’s national oil and gas industry body. The paper is about underground rock layers and oil prospects. It is a different field from engine heat, water vapor or plasmoids, so it says nothing either way about the Thunderstorm Generator.",
+        ],
+      },
+      {
+        heading: "What has been measured",
+        kind: "measured",
+        body: [
+          "No measurement tests the person. Measurements test devices. The main university test is an Embry-Riddle Aeronautical University master’s (M.S.) thesis from 2026 that built and tested a Thunderstorm Generator retrofit.",
+          "It found a lower fuel-use rate in a small-generator test and a smaller carbon monoxide (CO) reading in an idle test. Its author wrote that the work “did not conclusively validate” the inventor’s own numbers. It did not test the plasmoid theory itself.",
+        ],
+      },
+      {
+        heading: "What outside writers say",
+        kind: "commentary",
+        body: [
+          "Brian Dunning, writing for the Skeptoid podcast on December 16, 2025, argues that the Thunderstorm Generator is an exhaust-heat riser plus water injection, and that its explanations are not physics. Our page on the critics sets out his technical points beside the supporters’ view.",
+        ],
+      },
+      {
+        heading: "How to read anything written about him",
+        kind: "plain",
+        body: [
+          "Sort each source into one of four groups. Strike Foundation and the sellers’ sites are the inventor’s side. Skeptoid and similar pieces are outside commentary. A thesis or lab report with its method shown is a measurement. And this site’s own pages are explanation.",
+          "Judge each group for what it can show. A foundation can tell you what the inventor claims. A critic can tell you where the explanation looks weak. Only a measurement can tell you what an engine did.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Strike Foundation — home page (inventor’s side)", href: "https://strikefoundation.earth/" },
+      { label: "Strike Foundation — Introduction, including the 2015 APPEA paper summary (inventor’s side)", href: "https://www.strikefoundation.earth/introduction" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
+    ],
+    related: [
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/strike-foundation-and-thunderstorm-tech/", label: "Strike Foundation, Thunderstorm.tech and this site" },
+      { href: "/explainers/msaart/", label: "Bendall MSAART explained" },
+      { href: "/sources/", label: "Sources" },
+    ],
+  },
+  {
+    slug: "thunderstorm-generator-critics",
+    title: "Is the Thunderstorm Generator a hoax?",
+    question: "Is the Thunderstorm Generator a hoax? What do critics and supporters say?",
+    description:
+      "Critics and supporters of the Thunderstorm Generator, side by side and labeled. The Embry-Riddle thesis is the measured anchor; the Skeptoid critique and the inventor’s claims are shown as such.",
+    published: "2026-10-15",
+    lede: "People ask whether the Thunderstorm Generator is a hoax. This page lays out what the critics say, what the supporters say, and what a university test measured. Each part is labeled so you can weigh it yourself.",
+    blocks: [
+      {
+        heading: "What “hoax” would mean",
+        kind: "plain",
+        body: [
+          "A hoax is deliberate fakery. This site has no evidence about anyone’s intent and does not judge people.",
+          "What can be checked is narrower and more useful: what a meter read, and whether the stated explanation fits what is known about engines. That is the test this page uses.",
+        ],
+      },
+      {
+        heading: "The measured anchor: the Embry-Riddle thesis",
+        kind: "measured",
+        body: [
+          "A 2026 master’s (M.S.) thesis at Embry-Riddle Aeronautical University built a Thunderstorm Generator retrofit and tested it. Fuel was weighed and timed. Exhaust was read with a five-gas analyzer.",
+          "On a small generator under load, with the water-vapor (cold-gas) system on, fuel use fell from 35.27 to 31.86 milliliters per minute, a 9.67% drop. On a 1989 Chevrolet Blazer road loop, fuel economy was about 8.7% better, but the retrofit covered only four of eight cylinders and the retrofit runs had high winds.",
+          "In an idle test of the small generator, carbon monoxide (CO) fell by an average of 34%. Carbon dioxide (CO₂) and oxygen showed no significant change, which the thesis says contradicts the inventor’s claims. Hydrocarbons showed no significant correlation.",
+          "The thesis says it “did not conclusively validate” the inventor’s fuel and emissions claims, that its results fit “a modest positive effect,” and that the system “should not be entirely dismissed.”",
+        ],
+      },
+      {
+        heading: "The supporters’ view",
+        kind: "claim",
+        body: [
+          "In the inventor’s model, bubbles collapsing in the bubbler form tiny plasmoids. In the final unit, exhaust heat and these plasmoids interact, and carbon in the exhaust is converted into oxygen and other elements. The device is designed to use more of the fuel instead of sending heat and carbon out the tailpipe.",
+          "Thunderstorm.tech, the seller’s site, reports much larger numbers than the thesis: for example, carbon dioxide down by up to 99.9% and oxygen up sharply in tests on three continents. The thesis author notes that the original creators reported fuel gains of about 20%.",
+          "These are claims by the inventor’s side. Our page on other tests shows who ran each one.",
+        ],
+      },
+      {
+        heading: "The Skeptoid critique",
+        kind: "commentary",
+        body: [
+          "Brian Dunning (Skeptoid, December 16, 2025) makes several technical points. First, he says an ordinary ultraviolet (UV) bulb gives off light that is too weak to ionize air, so the first chamber does not ionize anything. Second, he says the cavitation behind plasmoid formation needs about 80–100 pounds per square inch (psi) of suction, while an engine’s vacuum is only about 4–10 psi.",
+          "Third, he says the last chamber is a plain heat exchanger that warms the intake air. He concludes the whole device is an exhaust heat riser plus water injection, which engineers have known about for over 100 years, and that it only suits simple carbureted engines.",
+          "He also writes that small gains in fuel efficiency or exhaust cleanliness are “probably true,” as long as they are small, and that the device works best with the engine at light load, when engine vacuum is highest. He adds that CO₂ is not reduced.",
+        ],
+      },
+      {
+        heading: "Where the two sides overlap",
+        kind: "plain",
+        body: [
+          "The thesis and the critic agree on several things. Both describe heat recovery from the exhaust and added water vapor as the working parts. Both treat any fuel gain as modest. Both say CO₂ does not fall.",
+          "They differ on what the heat-and-vapor effect is called. The inventor’s side says plasmoids. The critic says it is ordinary physics. The thesis did not test for plasmoids, so it cannot settle that point. They also differ on load: the thesis says the bubbler works only when the engine is loaded and is ineffective at idle, while the critic says engine suction is highest at idle and the device fades under load. Tests across several loads would help.",
+        ],
+      },
+      {
+        heading: "What would settle it",
+        kind: "plain",
+        body: [
+          "The thesis author recommends more testing with a corrected design, all cylinders covered, calm weather, and better instruments, plus third-party validation by a nationally recognized testing laboratory.",
+          "A strong test would also switch each part on and off one at a time. That would show whether the water vapor, the heat exchange, or something else accounts for the change. This site will add such results if they are published.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Hall, W. (2026), “Plasmoid Vortex System Retrofit…,” Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
+      { label: "Thunderstorm.tech — Test Results (inventor’s side)", href: "https://thunderstorm.tech/technology/test-results" },
+      { label: "Strike Foundation — Introduction (inventor’s side)", href: "https://www.strikefoundation.earth/introduction" },
+    ],
+    related: [
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "The Embry-Riddle test explained" },
+      { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
+      { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
+      { href: "/sources/", label: "Sources" },
+    ],
+  },
+  {
+    slug: "other-thunderstorm-generator-tests",
+    title: "Other Thunderstorm Generator tests: who ran each one",
+    question: "What other tests of the Thunderstorm Generator exist, and who ran and paid for them?",
+    description:
+      "The Thunderstorm Generator tests we could find, in two labeled tables: the university thesis (measured) and four tests reported by the inventor’s side, with who ran each, what was measured, and what we could not verify.",
+    published: "2026-10-15",
+    lede: "Several tests of the Thunderstorm Generator have been published. This page lists each one with who ran it, who paid, what was measured, and what the result was. The university thesis is shown first. The seller-side tests come second and are labeled as reported by the inventor’s side.",
+    blocks: [
+      {
+        heading: "Measured: the university thesis",
+        kind: "measured",
+        body: [
+          "These three tests are from one master’s (M.S.) thesis at Embry-Riddle Aeronautical University (2026). For the road test, the main vortex unit, piping and bubbler were supplied by Plasmoid Power, the seller.",
+        ],
+        table: {
+          caption: "Embry-Riddle thesis tests",
+          head: ["Test", "Who ran it", "Who paid", "What was measured", "Result"],
+          rows: [
+            [
+              "Idle exhaust test, small generator, 10 runs each way",
+              "Walker Hall, M.S. student, with faculty advisers named in the thesis",
+              "Not stated in the thesis text we read",
+              "Exhaust gases from a Troy-Bilt 5550 generator at idle inside a trailer, read with a five-gas analyzer",
+              "Carbon monoxide (CO) down by an average of 34%. Carbon dioxide (CO₂) and oxygen: no significant change.",
+            ],
+            [
+              "Fuel test, small generator under load (about 2,760 W)",
+              "Same",
+              "Not stated in the thesis text we read",
+              "Gasoline weighed and timed on each run, baseline versus retrofit with the water-vapor (cold-gas) system on",
+              "Fuel-use rate 35.27 mL/min down to 31.86 mL/min, 9.67% lower",
+            ],
+            [
+              "Road test, 1989 Chevrolet Blazer, 10 runs each way",
+              "Same",
+              "Not stated in the thesis text we read",
+              "Fuel tank weighed before and after a 32.2 km (about 20 mile) loop",
+              "About 8.7% better kilometers per liter. Only 4 of 8 cylinders were covered, and retrofit runs had high winds.",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Reported by the inventor’s side: four tests",
+        kind: "claim",
+        body: [
+          "These four tests are published on Thunderstorm.tech, the seller’s site. We have not seen the full original reports. We list them as reported by the inventor’s side, not as measurements we can vouch for. The site describes them as independent and certified. We could not check who paid for any of them.",
+        ],
+        table: {
+          caption: "Tests reported on Thunderstorm.tech",
+          head: ["Test", "Who ran it", "Who paid", "What was measured", "Result as reported"],
+          rows: [
+            [
+              "Dartford, UK, June 28, 2024",
+              "Element, a testing company, per Thunderstorm.tech",
+              "Not stated on the page",
+              "Exhaust gases from a Thunderstorm Generator-fitted engine, with and without the device. Engine type not given.",
+              "Carbon monoxide (CO) −97.1%, volatile organic compounds (VOCs) −99.9%, sulfur dioxide −84.8%, nitrogen oxides −6.5%. Oxygen 0.15% to 10.40%. CO₂ is not in the table.",
+            ],
+            [
+              "Clearwater, Florida, June 24, 2024",
+              "Not named on the page",
+              "Not stated on the page",
+              "Exhaust gases and fuel run time, base-load generator at 60 Hz under a 2,400 W load",
+              "CO₂ −99.56%, CO −98.00%, nitrogen oxides −95.14%, hydrocarbons −77.47%, fuel run time +19.45%. Units are unclear in the page’s table.",
+            ],
+            [
+              "Star Cement, United Arab Emirates (UAE), December 5–6, 2024",
+              "Described as run in partnership with Strike Foundation (UK)",
+              "Not stated on the page",
+              "Ambient air, plain exhaust and treated exhaust on a Honda 5 kW gasoline engine",
+              "CO₂ −83.33%, hydrocarbons −77.30%, nitrogen oxides −79.66%. CO unchanged at 0.10%. Oxygen 9.12% to 20.43%.",
+            ],
+            [
+              "Plasmoid Power’s own test program (Test 13)",
+              "Plasmoid Power, signed by its chief executive; the page calls it self-certified",
+              "Not stated on the page",
+              "Five-gas analyzer on a 5,500 W generator under a 2,200 W load, five runs over four hours",
+              "CO₂, CO and nitrogen oxides “almost eliminated,” oxygen near air level. Hydrocarbons rose. The first run was left out of the averages.",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "How the results compare",
+        kind: "plain",
+        body: [
+          "The numbers differ a lot from test to test. CO fell by 34% in the thesis, by 97–98% in two seller-side tests, and not at all in the UAE test. CO₂ and oxygen did not change in the thesis, but moved sharply in the seller-side tests.",
+          "Different engines, loads, analyzers and test methods can explain differences. They also mean no single number tells the whole story. A gas analyzer reports concentration, which is how much of a gas is in each sample. It does not by itself show how much gas the engine made.",
+        ],
+      },
+      {
+        heading: "What we could not verify",
+        kind: "plain",
+        body: [
+          "We could not open the full Element report, and we do not know who paid for it. The Clearwater page does not name who ran the test. We did not find the original data behind the UAE trial beyond the summary table.",
+          "If you hold a full report, send it to us and we will read it and update this page.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Thunderstorm.tech — Test Results (inventor’s side)", href: "https://thunderstorm.tech/technology/test-results" },
+      { label: "Plasmoid Power — Test Results (inventor’s side)", href: "https://plasmoid-power.com/test-results" },
+    ],
+    related: [
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "The Embry-Riddle test explained" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
+      { href: "/sources/", label: "Sources" },
+    ],
+  },
+  {
+    slug: "can-water-be-a-fuel",
+    title: "Can water be a fuel?",
+    question: "Can water be used as a fuel? What did the Thunderstorm Generator test show?",
+    description:
+      "Why water is not a fuel in ordinary physics, how electrolysis fits, what water can do inside an engine, and where the inventor’s “water as atomic fuel” claim stands. Labeled; the test did not show it.",
+    published: "2026-10-15",
+    lede: "Water cannot be burned for energy. That is ordinary physics, and it is where this page starts. It then shows what water can do in an engine, what the inventor claims about “water as an atomic fuel,” and what the test measured.",
+    blocks: [
+      {
+        heading: "The plain answer: water is what is left after hydrogen burns",
+        kind: "plain",
+        body: [
+          "When hydrogen burns, it combines with oxygen and makes water. Water is the ash. Its chemical bonds are strong, so energy is needed to break them, and no further chemical energy is left to release.",
+          "This is the law of conservation of energy: energy is not created from nothing. A reference summary puts it this way: there is no way to extract chemical energy from water alone that agrees with the laws of physics.",
+        ],
+      },
+      {
+        heading: "Electrolysis: you can split water, but it costs energy",
+        kind: "plain",
+        body: [
+          "Electrolysis uses electricity to split water into hydrogen and oxygen. The US Department of Energy describes it this way. The hydrogen can then be burned or used in a fuel cell to give back energy.",
+          "But splitting water takes at least as much energy as you get back, and in practice more. As of 2022, commercial electrolysis used about 53 kilowatt-hours of electricity to make one kilogram of hydrogen that holds about 39.4 kilowatt-hours of energy. So hydrogen from water is a way to store energy, not a way to make it.",
+        ],
+      },
+      {
+        heading: "What water can do in an engine",
+        kind: "plain",
+        body: [
+          "Water can help an engine without being the fuel. Water injection cools the combustion chamber and can reduce knock. A steam engine uses water as the fluid that carries heat, not as a fuel.",
+          "The Embry-Riddle thesis points to this kind of effect. It says a steam thermal regeneration cycle (using exhaust heat to make steam) is a well-established way to recover waste heat, and that water injection has shown benefits in independent research.",
+        ],
+      },
+      {
+        heading: "The inventor’s claim: water as an atomic fuel",
+        kind: "claim",
+        body: [
+          "Malcolm Bendall describes his device as “a proprietary plasmoid-induced and controlled atomic energy release process which allows water to be used as an atomic fuel.” This is his own summary, as quoted by Skeptoid.",
+          "In his model, plasmoids are designed to release energy from the hydrogen in water. A 2023 Strike Foundation document by Bendall, as cited in the thesis, is titled “The ‘Thunderstorm Generator’ — Atomic Energy From Water Plasmoid Protium Power.” Protium is ordinary hydrogen. A fuller explanation is in our protium page.",
+          "This is a claim from the inventor’s model. It is not accepted physics, and this site does not present it as fact.",
+        ],
+      },
+      {
+        heading: "What the test measured",
+        kind: "measured",
+        body: [
+          "The Embry-Riddle thesis did not show water acting as a fuel. The engines in its tests ran on gasoline, and the fuel measured was the gasoline weighed or timed on each run. The thesis did not test the plasmoid or atomic-energy explanation and says those claims are outside its scope.",
+          "What it did find was a modest fuel gain: a 9.67% lower fuel-use rate on a small generator. The thesis ties that gain to heat recovery and water vapor, not to water burning as fuel. It also says the results did not conclusively validate the inventor’s own numbers.",
+        ],
+      },
+      {
+        heading: "What outside writers say",
+        kind: "commentary",
+        body: [
+          "Brian Dunning (Skeptoid, 2025) writes that water is not a fuel, because it is in a low-energy state with no extractable chemical energy. He says that in a device like this the engine keeps running on its gasoline, and the extra water vapor passes through it.",
+          "Wikipedia’s article on water-fuelled cars says the first law of thermodynamics means the energy needed to split water equals the energy released when the gases recombine (ignoring losses), so a split-and-burn loop cannot make net energy.",
+        ],
+      },
+      {
+        heading: "A quick check for any water-fuel claim",
+        kind: "plain",
+        body: [
+          "Ask three things. Where does the energy come from? Was the fuel in measured, with a baseline run for comparison? Could the gain come from heat recovery, water vapor, or a leaner mix?",
+          "A claim that answers those with a measurement is worth a look. A claim that answers with a theory alone is still a claim.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "US Department of Energy — Hydrogen Production: Electrolysis (reference)", href: "https://www.energy.gov/eere/fuelcells/hydrogen-production-electrolysis" },
+      { label: "Wikipedia — Electrolysis of water, efficiency and energy figures (reference)", href: "https://en.wikipedia.org/wiki/Electrolysis_of_water" },
+      { label: "Wikipedia — Water-fuelled car, energy conservation and water injection (reference)", href: "https://en.wikipedia.org/wiki/Water-fuelled_car" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis; also cites the Strike Foundation document title (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary; quotes the inventor’s summary)", href: "https://skeptoid.com/episodes/1019" },
+    ],
+    related: [
+      { href: "/explainers/protium-hydrogen-path/", label: "Protium and the hydrogen path" },
+      { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/sources/", label: "Sources" },
+    ],
+  },
+  {
+    slug: "strike-foundation-and-thunderstorm-tech",
+    title: "Strike Foundation, Thunderstorm.tech and this site",
+    question: "What is Strike Foundation, what is Thunderstorm.tech, and how is Plasmoid X different?",
+    description:
+      "Who is who: Strike Foundation, Thunderstorm.tech, Plasmoid Power, and Plasmoid X. This site is independent education, sells no kits, and links its Services and Sources pages.",
+    published: "2026-10-15",
+    lede: "Several names appear around the Thunderstorm Generator: Strike Foundation, Thunderstorm.tech, and Plasmoid Power. This page says who each is, in their own words where possible. It also says plainly how Plasmoid X is different from all of them.",
+    blocks: [
+      {
+        heading: "Plasmoid X is independent and sells no kits",
+        kind: "plain",
+        body: [
+          "Plasmoid X is independent education run by Derek Watson. It is not Strike Foundation, Strike Energy, Thunderstorm.tech or Plasmoid Power. It is not a licensee, dealer or partner of any of them.",
+          "This site does not sell Thunderstorm Generator kits or parts. Links to other sites are outbound links only.",
+          "The Services page describes the optional help offered: written estimates for installing a kit you already own. The Sources page lists every outside source this site relies on.",
+        ],
+      },
+      {
+        heading: "Strike Foundation",
+        kind: "claim",
+        body: [
+          "Strike Foundation Guarantee Limited describes itself as a not-for-profit entity formed to hold, manage and commercialize all the intellectual property (IP) of inventor Malcolm Bendall. It says Bendall has asked it to publish all of his IP openly, so it posts his notes and diagrams.",
+          "Its site also hosts an introduction to the inventor, supporting research papers, and the open-source notes behind the Molten Sea Ark Atomic Reconstruction Technology (MSAART). This site calls that material “Strike Foundation material.”",
+        ],
+      },
+      {
+        heading: "Thunderstorm.tech",
+        kind: "claim",
+        body: [
+          "Thunderstorm.tech is a site about the Thunderstorm Generator. It publishes technology pages, test-result summaries, and a kit assembly guide. Its test-results page describes the testing as independent and certified.",
+          "We treat it as the inventor’s side, because it presents the device favorably and hosts material from Plasmoid Power. See our page on other tests for how we handle its numbers.",
+        ],
+      },
+      {
+        heading: "Plasmoid Power",
+        kind: "claim",
+        body: [
+          "Plasmoid Power presents itself as the maker of the Thunderstorm Generator kit. The Embry-Riddle thesis says the main vortex unit, piping and bubbler for its road test were supplied by Plasmoid Power. Skeptoid says the company is based in Thailand.",
+          "Plasmoid Power’s kit assembly guide (updated February 2026) says the kit is provided to customers who want to evaluate the technology. It says no warranties or guarantees are given about emission reductions or fuel savings, and that neither Plasmoid Power Limited nor Alpha Prospects Limited will be liable for losses from using it.",
+        ],
+      },
+      {
+        heading: "What the one university test says about them",
+        kind: "measured",
+        body: [
+          "The Embry-Riddle thesis is the one measured anchor this site uses. It was run by a master’s student, and its hardware was partly supplied by Plasmoid Power. It found a 9.67% lower fuel-use rate on a small generator and about a 34% drop in carbon monoxide in an idle test.",
+          "Those results do not depend on who sells the kit. They also do not confirm the larger claims on the sellers’ sites.",
+        ],
+      },
+      {
+        heading: "How this site uses their material",
+        kind: "plain",
+        body: [
+          "This site reads their pages, labels what they claim, and puts measurements first. It does not copy their marketing, and it does not take their numbers as proven.",
+          "To see what this site has read, open the Sources page. To see what a given page treats as measured, claimed or commentary, look at the label above each block.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Strike Foundation — home page (inventor’s side)", href: "https://strikefoundation.earth/" },
+      { label: "Strike Foundation — Introduction (inventor’s side)", href: "https://www.strikefoundation.earth/introduction" },
+      { label: "Thunderstorm.tech — Test Results (inventor’s side)", href: "https://thunderstorm.tech/technology/test-results" },
+      { label: "Plasmoid Power — Thunderstorm Generator Assembly Instructions, Feb 2026 (inventor’s side)", href: "https://thunderstorm.tech/tsg-kits/Assembly%20Instructions%20-%202026.pdf" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Skeptoid #1019, Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
+    ],
+    related: [
+      { href: "/services/", label: "Services" },
+      { href: "/sources/", label: "Sources" },
+      { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
+      { href: "/explainers/thunderstorm-generator/", label: "The Thunderstorm Generator explained" },
     ],
   },
 ];

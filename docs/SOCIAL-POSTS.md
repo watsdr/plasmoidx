@@ -15,7 +15,7 @@ Platform notes (apply to all five):
 **Link:** https://plasmoidx.com/explainers/embry-riddle-thunderstorm-generator-test/
 
 ```
-Measured: an Embry-Riddle master's (M.S.) thesis tested Malcolm Bendall's Thunderstorm Generator and found about +9–10% fuel efficiency and about −34% average emissions. Real, and smaller than the inventor's 90% claim. Plain-English breakdown:
+Measured: an Embry-Riddle master's (M.S.) thesis tested Malcolm Bendall's Thunderstorm Generator and found about 9–10% lower fuel use on a small generator and about 34% less carbon monoxide in an idle test (carbon dioxide, oxygen and hydrocarbons did not change significantly). Real, and smaller than the inventor's 90% claim. Plain-English breakdown:
 https://plasmoidx.com/explainers/embry-riddle-thunderstorm-generator-test/
 ```
 
@@ -24,7 +24,7 @@ https://plasmoidx.com/explainers/embry-riddle-thunderstorm-generator-test/
 **Link:** https://plasmoidx.com/explainers/does-the-thunderstorm-generator-work/
 
 ```
-Does Malcolm Bendall's Thunderstorm Generator work? Measured: about +9–10% fuel efficiency and about −34% average emissions. Inventor claims (90% or more savings, near-zero exhaust, water as fuel) were not shown by that test. Claim by claim:
+Does Malcolm Bendall's Thunderstorm Generator work? Measured: about 9–10% lower fuel use on a small generator and about 34% less carbon monoxide at idle. Inventor claims (90% or more savings, near-zero exhaust, water as fuel) were not shown by that test. Claim by claim:
 https://plasmoidx.com/explainers/does-the-thunderstorm-generator-work/
 ```
 

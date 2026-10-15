@@ -24,7 +24,7 @@ const glossaryMini = [
   { abbr: "MOE", body: "Model of the Elements — 16 × 8 lattice" },
   {
     abbr: "Meter",
-    body: "Embry-Riddle test: ~+9–10% fuel efficiency · ~−34% average emissions (lead with this)",
+    body: "Embry-Riddle test: ~9–10% lower fuel use (small generator) · ~−34% carbon monoxide (idle test) (lead with this)",
   },
 ];
 
@@ -202,7 +202,7 @@ export default function StudyPackPage() {
             Honest numbers (one line)
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-mist-200">
-            Measured: ~+9–10% fuel efficiency · ~−34% average emissions. Inventor 90%+
+            Measured: ~9–10% lower fuel use (small generator) · ~−34% carbon monoxide (idle test). Inventor 90%+
             / near-zero claims stay labeled — they are not proven by that meter.
           </p>
         </section>

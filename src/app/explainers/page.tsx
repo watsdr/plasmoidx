@@ -7,7 +7,7 @@ export const metadata: Metadata = pageMeta({
   path: "/explainers/",
   title: "Plain-English explainers",
   description:
-    "Short answers to common questions: what a plasmoid is, plasmoid vs plasma, the Thunderstorm Generator, and Bendall’s MSAART — claims and measurements labeled.",
+    "Short answers to common questions: what a plasmoid is, plasmoid vs plasma, the Thunderstorm Generator, Bendall’s MSAART, the critics, and whether water can be a fuel — claims, commentary and measurements labeled.",
   section: "explainers",
 });
 
@@ -19,8 +19,8 @@ export default function ExplainersIndex() {
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">Explainers: quick answers</h1>
         <p className="measure mt-5 text-lg leading-relaxed text-mist-200">
           Each page answers one common question in a few minutes. Every block
-          is labeled Measured, Inventor claim, or Plain definition, so you can
-          see what is proven and what is not. For the full course, open{" "}
+          is labeled Measured, Inventor claim, Outside commentary, or Plain
+          definition, so you can see what is proven and what is not. For the full course, open{" "}
           <Link href="/study/" className="link-aurora">
             Study
           </Link>

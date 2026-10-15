@@ -102,7 +102,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "CO",
     title: "Carbon monoxide",
-    body: "A combustion exhaust gas. The Embry-Riddle test showed carbon monoxide dropping most clearly among the emission cuts.",
+    body: "A combustion exhaust gas. In the Embry-Riddle idle test, carbon monoxide fell by about 34%. It was the one exhaust gas that changed significantly.",
     href: "/study/#honest-numbers",
   },
   {
@@ -138,7 +138,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "ERA",
     title: "Embry-Riddle test",
-    body: "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — the independent meter this site leads with: about +9–10% fuel efficiency and about −34% average emissions. Not a Plasmoid X credential.",
+    body: "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — the independent meter this site leads with: a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide in an idle test. Not a Plasmoid X credential.",
     href: "/study/#honest-numbers",
   },
 ];

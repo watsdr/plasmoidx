@@ -251,11 +251,13 @@ export default function StudyPage() {
             </p>
             <ul className="mt-3 space-y-2 text-sm text-mist-200">
               <li>
-                ~<strong className="text-aurora">+9–10%</strong> fuel efficiency
+                ~<strong className="text-aurora">9–10%</strong> lower fuel use
+                (small generator)
               </li>
               <li>
-                ~<strong className="text-aurora">−34%</strong> average emissions
-                (carbon monoxide (CO) clearest)
+                ~<strong className="text-aurora">−34%</strong> carbon monoxide
+                (CO) in an idle test; carbon dioxide, oxygen and hydrocarbons
+                not significantly changed
               </li>
             </ul>
             <p className="mt-3 text-xs leading-relaxed text-mist-400">

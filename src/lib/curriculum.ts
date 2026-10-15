@@ -80,7 +80,7 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 6,
     title: "Honest numbers",
     framing:
-      "Inventor claim → what the meter showed → what it does not prove. The Embry-Riddle test (about +9–10% fuel efficiency, about −34% average emissions) leads; marketing figures of 90% or more stay labeled claims. Finish with the Study quiz when ready.",
+      "Inventor claim → what the meter showed → what it does not prove. The Embry-Riddle test (about 9–10% lower fuel use on a small generator, about 34% less carbon monoxide in an idle test) leads; marketing figures of 90% or more stay labeled claims. Finish with the Study quiz when ready.",
     doneWhen:
       "You can state the meter figures and name one thing they do not prove.",
     href: "/study/#honest-numbers",

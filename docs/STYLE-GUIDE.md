@@ -15,9 +15,9 @@ Pair with `docs/UI-UX-PLAYBOOK.md` (visual rules) and `AGENTS.md` (scope).
 ## Honesty rules
 
 - Measured results come first. Inventor claims come second and are always labeled.
-- Never strengthen a claim. Never add a fact that is not already in the site's sources.
+- Never strengthen a claim. Never add a fact that is not already in the site's sources. Exception: an explainer may add a fact only if the page lists the source in its own Sources block and the source was opened and read.
 - Model language ("in the inventor's model", "study picture") stays on anything that is not measured.
-- Every block on an explainer carries one label: **Measured**, **Inventor claim**, or **Plain definition**.
+- Every block on an explainer carries one label: **Measured**, **Inventor claim**, **Outside commentary**, or **Plain definition**.
 
 ## Page intro pattern
 
@@ -49,7 +49,8 @@ Every page opens with two beats:
 ## Labels (exact text)
 
 - **Measured** — an independent measurement.
-- **Inventor claim** — the inventor's or seller's statement or model.
+- **Inventor claim** — the inventor's or seller's statement or model (including results reported only on a seller's pages: write "reported by the inventor's side").
+- **Outside commentary** — a critic's, journalist's or reference writer's view. Attribute it by name and date; never repeat personal allegations about a person.
 - **Plain definition** — a definition or site note.
 
 ## Acronyms
@@ -61,8 +62,10 @@ Exceptions that need no expansion: FAQ, PDF, US, DIY.
 ## Numbers
 
 - The two measured numbers, always together and in this form:
-  **about +9–10% fuel efficiency** and **about −34% average emissions**.
-- Use "~" only in tight spaces (chips, tables, social cards): "~+9–10%", "~−34%".
+  **about 9–10% lower fuel use** (small generator; 9.67%) and **about 34% less carbon monoxide (CO) in an idle test**.
+  Where room allows, add: carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly; the one-vehicle road test was about 8.7%.
+- Never write "average emissions" or "−34% emissions" without saying carbon monoxide. The −34% is CO only.
+- Use "~" only in tight spaces (chips, tables, social cards): "~9–10% fuel", "~−34% CO".
 - Inventor figures: "90% or more" in prose (not "≥90%").
 - Use a true minus sign (−) for negative percentages; en dash (–) for ranges (9–10%, Lessons 1–6).
 - Commas in big numbers: 518,400; 129,600; 25,920. Degrees: 51.84°.

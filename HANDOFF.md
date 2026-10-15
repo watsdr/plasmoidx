@@ -52,6 +52,7 @@ Shared skill (Grok Bot): [Plasmoid X Grok handoff](sand-workflow:plasmoidx-grok-
 | Hosting | **Namecheap Stellar only** (Derek: no Cloudflare Pages for live) |
 | DNS | Namecheap Advanced DNS · A `@` and `www` → `162.213.253.56` |
 | Live deploy | **GitHub Actions only** — `.github/workflows/deploy.yml` (manual `workflow_dispatch`). Builds on Actions, uploads with `scripts/sftp-deploy.py` using repo secret **`SFTP_PASSWORD`**. Build gets Search Console token from repo variable **`NEXT_PUBLIC_GSC_VERIFICATION`**. |
+| IndexNow | Last workflow step (`continue-on-error`) runs `scripts/indexnow.mjs`: submits every `out/sitemap.xml` URL to `https://api.indexnow.org/indexnow`. Public key file `public/4a148e972e18ed4c8152bde8b0dc014f.txt` (key is public by design, not a secret). `node scripts/indexnow.mjs --dry-run` to preview. |
 | Fallback upload | Local SFTP from another machine still works (contents of `out/` → `public_html`). The **Grok Bot box cannot reach SFTP port 21098** — do not try deploy from the box. |
 | TLS | Let’s Encrypt / AutoSSL on cPanel (HTTPS verified) |
 | Cache | `public/.htaccess` → copied into `out/`: HTML revalidate; `/_next/static/*` 1y immutable; brotli + ETag; `og.png` ~1d |
@@ -182,7 +183,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 ### 2026-10-12 — Copy cohesion pass (branch `copy-cohesion`, not merged, not deployed)
 - New `docs/STYLE-GUIDE.md`: voice, canonical names, labels, acronyms, number/dash/quote rules, CTA wording, nav = title rule.
 - Applied site-wide: page intros follow "what this page is → why it matters"; H1s and meta titles now match nav labels (e.g. "Sources: method and privacy", "Updates and corrections"); nav "Why" → "Home", footer "Errata" → "Updates", footer headings "Pages" / "Outside sources".
-- Terminology: EVO = Exotic Vacuum Occurrence everywhere (dropped "energetic vacuum object"); "Embry-Riddle test" (not "meter"); "Malcolm Bendall’s Thunderstorm Generator" (not "Bendall Thunderstorm Generator" / "Thunderstorm-style"); "about +9–10% fuel efficiency / about −34% average emissions"; "90% or more" (not ≥90%); explainer label "Inventor claim".
+- Terminology: EVO = Exotic Vacuum Occurrence everywhere (dropped "energetic vacuum object"); "Embry-Riddle test" (not "meter"); "Malcolm Bendall’s Thunderstorm Generator" (not "Bendall Thunderstorm Generator" / "Thunderstorm-style"); "about 9–10% lower fuel use on a small generator" and "about 34% less carbon monoxide in an idle test" (never “average emissions”); "90% or more" (not ≥90%); explainer label "Inventor claim".
 - Acronyms defined on first use per page (checked with a script over `out/`): M.S., MeV, EVO, CTR, PUM, MOE, ATV, MSAART.
 - CTAs unified: Start Lesson 1, See how it works, Read the explainers, Email Derek, Ask about installs.
 - Added a plain 404 page (`src/app/not-found.tsx`) + `ErrorDocument 404 /404.html` in `.htaccess`.
