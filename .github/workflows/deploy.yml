@@ -29,3 +29,7 @@ jobs:
           SFTP_PASSWORD: ${{ secrets.SFTP_PASSWORD }}
           PRUNE_DRY_RUN: ${{ inputs.prune_dry_run }}
           PRUNE_MAX_DELETES: ${{ inputs.prune_max_deletes }}
+      # Post-deploy: tell IndexNow (Bing, Yandex, etc.) about every sitemap URL. Never fails the deploy.
+      - name: Submit URLs to IndexNow
+        continue-on-error: true
+        run: node scripts/indexnow.mjs

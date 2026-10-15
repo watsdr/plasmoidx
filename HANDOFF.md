@@ -52,6 +52,7 @@ Shared skill (Grok Bot): [Plasmoid X Grok handoff](sand-workflow:plasmoidx-grok-
 | Hosting | **Namecheap Stellar only** (Derek: no Cloudflare Pages for live) |
 | DNS | Namecheap Advanced DNS · A `@` and `www` → `162.213.253.56` |
 | Live deploy | **GitHub Actions only** — `.github/workflows/deploy.yml` (manual `workflow_dispatch`). Builds on Actions, uploads with `scripts/sftp-deploy.py` using repo secret **`SFTP_PASSWORD`**. Build gets Search Console token from repo variable **`NEXT_PUBLIC_GSC_VERIFICATION`**. |
+| IndexNow | Last workflow step (`continue-on-error`) runs `scripts/indexnow.mjs`: submits every `out/sitemap.xml` URL to `https://api.indexnow.org/indexnow`. Public key file `public/4a148e972e18ed4c8152bde8b0dc014f.txt` (key is public by design, not a secret). `node scripts/indexnow.mjs --dry-run` to preview. |
 | Fallback upload | Local SFTP from another machine still works (contents of `out/` → `public_html`). The **Grok Bot box cannot reach SFTP port 21098** — do not try deploy from the box. |
 | TLS | Let’s Encrypt / AutoSSL on cPanel (HTTPS verified) |
 | Cache | `public/.htaccess` → copied into `out/`: HTML revalidate; `/_next/static/*` 1y immutable; brotli + ETag; `og.png` ~1d |
