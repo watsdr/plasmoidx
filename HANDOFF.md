@@ -147,6 +147,13 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-15 — Server cleanup of Namecheap leftovers (deployed)
+- `scripts/sftp-deploy.py`: explicit allow-list prune for `ncsitebuilder/`, `nc_assets/`, `privacy/`, `parking-page.shtml`, `web.config`, `index.php.namecheap-bak` (dotfiles prunable only inside those folders; root `.htaccess`, `.well-known/`, `cgi-bin/` never). Also removes emptied legacy folders. Untracked the accidentally committed `scripts/__pycache__`.
+- `public/.htaccess`: `RedirectMatch 301 ^/privacy/?$ /sources/` (the old privacy page was stale: it said no analytics, and its assets were pruned).
+- Dry run 38816678140 listed 130 files (109 legacy + 21 old `_next` chunks). A real run with cap 150 aborted at 151 (the cap works). Real run 38817400908, cap 200: 174 uploaded, 151 deleted (109 legacy + 42 old `_next`).
+- Live: all legacy URLs 404, `/privacy/` → 301 → `/sources/`, root `.htaccess` intact (direct fetch 403, redirect and cache rules work), 25 pages (main + 12 explainers) 200, Device `_next` assets 13/13 200, bad URL gives the new 404 page.
+- Note: two empty legacy folders (`ncsitebuilder/`, `ncsitebuilder/css/`) could not be removed; they serve nothing. A follow-up dry run shows what is left.
+
 ### 2026-10-14 — System-flow redraw + deploy pruning (shipped)
 - `DeviceSystemFlow.tsx`: added an Engine box (“intake after carburetor”) under the bubbler. A red “hot exhaust in” arc runs from the engine into the resonator, and a teal “to intake” arc runs from the resonator back to the engine. The viewBox is now 520×250 and the aria-label is updated. Arcs are static and only the existing flow dot animates, so reduced motion is still respected. Render in both themes: `/workspace/system-flow.png`.
 - `scripts/sftp-deploy.py` now prunes stale site-output files (see AGENTS.md), with a dry-run log and a 50-deletion cap. Workflow inputs: `prune_dry_run`, `prune_max_deletes`.
