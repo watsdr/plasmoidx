@@ -25,7 +25,7 @@ export type Explainer = {
 };
 
 const meterLine =
-  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) using an independent meter — found, under the conditions tested, a 9.67% lower fuel-use rate on a small generator and about 8.7% better fuel economy on a one-vehicle road test. In an idle test, carbon monoxide (CO) fell by about 34%, while carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly.";
+  "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026), with the road-test hardware supplied by the manufacturer, Plasmoid Power — found, under the conditions tested, a 9.67% lower fuel-use rate on a small generator and about 8.7% better fuel economy on a one-vehicle road test. In an idle test, carbon monoxide (CO) fell by about 34%, while carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly.";
 
 export const explainers: Explainer[] = [
   {
@@ -197,14 +197,14 @@ export const explainers: Explainer[] = [
     description:
       "The Embry-Riddle thesis on the Thunderstorm Generator in plain English: a 9.67% lower fuel-use rate on a small generator, about 34% less carbon monoxide at idle, and what that does not prove.",
     published: "2026-10-10",
-    lede: "An Embry-Riddle Aeronautical University master’s (M.S.) thesis put an independent meter on Thunderstorm Generator retrofit hardware. Here is what it found, in plain numbers, and where its reach stops.",
+    lede: "An Embry-Riddle Aeronautical University master’s (M.S.) thesis tested Thunderstorm Generator retrofit hardware. The manufacturer, Plasmoid Power, supplied the hardware for the road test. Here is what it found, in plain numbers, and where its reach stops.",
     blocks: [
       {
         heading: "The headline numbers",
         kind: "measured",
         body: [
           meterLine,
-          "This site leads with these numbers because they come from an independent meter, not from the inventor or a seller.",
+          "This site leads with these numbers because they come from a university thesis test, not from the inventor or a seller. The manufacturer did supply the road-test hardware, so read the road-test result with that in mind.",
         ],
       },
       {
@@ -244,7 +244,7 @@ export const explainers: Explainer[] = [
     description:
       "Does Malcolm Bendall’s Thunderstorm Generator work? Each inventor claim side by side with what the Embry-Riddle test measured, in plain English.",
     published: "2026-10-10",
-    lede: "Short answer: an independent meter saw a real but modest effect. The big claims are a different matter. Here is each claim next to what was measured.",
+    lede: "Short answer: the Embry-Riddle thesis test saw a real but modest effect. The big claims are a different matter. Here is each claim next to what was measured.",
     blocks: [
       {
         heading: "Fuel use",

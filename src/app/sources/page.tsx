@@ -116,7 +116,7 @@ export default function SourcesPage() {
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-mist-300">
               Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) —
-              independent meter this site leads with: a 9.67% lower
+              test this site leads with (the manufacturer supplied the road-test hardware): a 9.67% lower
               fuel-use rate on a small generator, and about 34% less carbon
               monoxide (CO) in an idle test, with carbon dioxide, oxygen and
               hydrocarbons not significantly changed. Not a Plasmoid X credential; cited as used on the site.

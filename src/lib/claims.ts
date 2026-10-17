@@ -13,7 +13,7 @@ export const claimRows: ClaimRow[] = [
     inventor:
       "Large fuel-efficiency gains — often framed as 90% or more in inventor and marketing material (Thunderstorm decks, Perry narrative).",
     meter:
-      "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026, independent meter): a 9.67% lower fuel-use rate on a small generator and about 8.7% better economy on a one-vehicle road test, under the conditions tested.",
+      "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026; the manufacturer supplied the road-test hardware): a 9.67% lower fuel-use rate on a small generator and about 8.7% better economy on a one-vehicle road test, under the conditions tested.",
     doesNotProve:
       "Does not prove inventor-scale fuel cuts, commercial fleet performance, or that 90% figures are realistic for everyday engines.",
   },
@@ -40,7 +40,7 @@ export const claimRows: ClaimRow[] = [
     inventor:
       "Three-beat hardware (ionizer → bubbler → resonator with nested contra-rotating (CTR) spheres) as the path to the claimed energy harvest.",
     meter:
-      "Measured effect appeared with Thunderstorm Generator retrofit hardware in the independent study — enough to take the effect seriously as measured.",
+      "Measured effect appeared with Thunderstorm Generator retrofit hardware in the Embry-Riddle thesis test — enough to take the effect seriously as measured.",
     doesNotProve:
       "Does not prove every ratio or MSAART lock is required for the meter result, or that the model is mainstream consensus physics.",
   },

@@ -14,7 +14,7 @@ export const lectureCompanions: CompanionNote[] = [
       "A hub of Malcolm Bendall lectures on StrikeFoundationEarth and HowTube.",
       "Inventor voice throughout — applications, geometry, and rollout framing.",
       "Series order starts around MSAART intro and builds toward hardware.",
-      "Claims about engines and emissions appear without independent metering.",
+      "Claims about engines and emissions appear without measured test data.",
       "Outbound only: you leave plasmoidx.com when you open these links.",
     ],
     teach: [
@@ -158,7 +158,7 @@ export const watchCompanions: CompanionNote[] = [
     ],
     teach: [
       "Our Lesson 1–6 rail is the finishable path on Study.",
-      "Separate anecdote from the independent meter block.",
+      "Separate anecdote from the measured block.",
       "Print the study pack for locks + three beats offline.",
       "FAQ covers common beginner traps.",
       "We stay polished, not ornamental — diagrams over theater.",

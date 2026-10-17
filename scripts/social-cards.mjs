@@ -21,7 +21,7 @@ const meterEmis = "Carbon monoxide down about 34% in an idle test. Carbon dioxid
 const cards = [
   {
     slug: "embry-riddle-thunderstorm-generator-test",
-    hook: "What did an independent meter actually find?",
+    hook: "What did a university thesis test find?",
     facts: [
       ["Measured", meterFuel],
       ["Measured", meterEmis],
@@ -32,7 +32,7 @@ const cards = [
     hook: "Does the Thunderstorm Generator work?",
     facts: [
       ["Claim", "Inventor material: fuel gains of 90% or more and near-zero exhaust."],
-      ["Measured", "Thesis meter: about 9–10% lower fuel use and about 34% less carbon monoxide at idle."],
+      ["Measured", "Thesis test: about 9–10% lower fuel use and about 34% less carbon monoxide at idle."],
     ],
   },
   {

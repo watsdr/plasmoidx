@@ -138,7 +138,7 @@ export const glossaryTerms: GlossaryTerm[] = [
   {
     abbr: "ERA",
     title: "Embry-Riddle test",
-    body: "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — the independent meter this site leads with: a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide in an idle test. Not a Plasmoid X credential.",
+    body: "Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — the test this site leads with (the manufacturer supplied the road-test hardware): a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide in an idle test. Not a Plasmoid X credential.",
     href: "/study/#honest-numbers",
   },
 ];

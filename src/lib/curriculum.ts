@@ -24,9 +24,9 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 1,
     title: "Why this matters",
     framing:
-      "This site is independent education. It leads with what an independent meter measured, then study the model as a picture — not as a substitute for the meter. MSAART means Molten Sea Ark Atomic Reconstruction Technology on first use; Embry-Riddle before inventor 90% claims.",
+      "This site is independent education. It leads with what a university thesis test measured, then study the model as a picture — not as a substitute for the meter. MSAART means Molten Sea Ark Atomic Reconstruction Technology on first use; Embry-Riddle before inventor 90% claims.",
     doneWhen:
-      "You can name the independent voice, the Embry-Riddle lead, and that inventor figures stay labeled.",
+      "You can name the measured lead (the Embry-Riddle test), and that inventor figures stay labeled.",
     href: "/#why-curriculum",
     labKeys: [],
     softKey: PROGRESS.curriculumWhy,

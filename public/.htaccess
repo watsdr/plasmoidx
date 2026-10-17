@@ -3,6 +3,9 @@
 # routing: trailingSlash: true → /study/ → study/index.html.
 
 DirectoryIndex index.html
+
+# No automatic directory listings (an empty leftover folder would otherwise show a file index).
+Options -Indexes
 ErrorDocument 404 /404.html
 
 # Old privacy page moved into Sources (method and privacy).

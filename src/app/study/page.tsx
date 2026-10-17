@@ -247,7 +247,7 @@ export default function StudyPage() {
               Embry-Riddle Aeronautical University
             </h3>
             <p className="mt-1 text-xs text-mist-400">
-              Master’s (M.S.) thesis · 2026 · independent meter
+              Master’s (M.S.) thesis · 2026 · manufacturer supplied road-test hardware
             </p>
             <ul className="mt-3 space-y-2 text-sm text-mist-200">
               <li>

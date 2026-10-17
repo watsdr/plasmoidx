@@ -20,7 +20,7 @@ export const faqItems: FaqItem[] = [
   {
     id: "meter",
     q: "Should I believe the 90% fuel claims?",
-    a: "This site does not lead with them. Lead with the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) independent meter: about 9–10% lower fuel use on a small generator, and about 34% less carbon monoxide (CO) in an idle test. Large marketing figures stay labeled inventor claims.",
+    a: "This site does not lead with them. Lead with the Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) test: about 9–10% lower fuel use on a small generator, and about 34% less carbon monoxide (CO) in an idle test. The manufacturer, Plasmoid Power, supplied the road-test hardware. Large marketing figures stay labeled inventor claims.",
   },
   {
     id: "official",

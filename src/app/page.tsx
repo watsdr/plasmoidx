@@ -255,7 +255,7 @@ export default function WhyPage() {
               What was measured
             </h2>
             <p className="measure mt-3 text-sm leading-relaxed text-mist-300">
-              One clear distinction: independent meter results versus inventor
+              One clear distinction: measured results versus inventor
               claims. Full compare on{" "}
               <Link href="/sources/" className="link-aurora">
                 Sources
@@ -274,7 +274,7 @@ export default function WhyPage() {
                 Embry-Riddle Aeronautical University
               </h3>
               <p className="mt-1 text-xs text-mist-400">
-                Master’s (M.S.) thesis · 2026 · independent meter
+                Master’s (M.S.) thesis · 2026 · manufacturer supplied road-test hardware
               </p>
               <p className="mt-4 text-sm leading-relaxed text-mist-200">
                 About{" "}

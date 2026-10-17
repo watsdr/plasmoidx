@@ -34,7 +34,7 @@ Every page opens with two beats:
 | plasmoid (lowercase) | Plasmoid (mid-sentence) |
 | EVO — Exotic Vacuum Occurrence (Strike's term for a plasmoid) | energetic vacuum object |
 | the Embry-Riddle test (first mention: "an Embry-Riddle Aeronautical University master's (M.S.) thesis (2026)") | Embry-Riddle meter, Embry-Riddle-style numbers |
-| independent meter / meter (the measurement itself) | university meter reading, meter block |
+| the Embry-Riddle test / thesis test / measurement (never "independent meter": the manufacturer supplied the road-test hardware, so say so where relevant) | independent meter, university meter reading, meter block |
 | ionizer → bubbler → resonator (the three parts, in that order) | three beats (except Device/Study lab names) |
 | bubbler (plasmoid generator) on first mention | plasmoid generator / bubbler |
 | CTR — contra-rotating (spinning in opposite directions) | counter-rotating |

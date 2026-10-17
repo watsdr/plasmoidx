@@ -15,7 +15,7 @@ Every item needs Derek's go-ahead before anyone acts on it.
 
 ## Base blurb (edit per place)
 
-> Plasmoid X is an independent, plain-English explainer site about Malcolm Bendall's Thunderstorm Generator. It puts the one university test first (an Embry-Riddle master's thesis, 2026: a 9.67% lower fuel-use rate on a small generator, and carbon monoxide down about 34% in an idle test, with carbon dioxide, oxygen and hydrocarbons not significantly changed), then labels inventor claims and outside criticism separately. It sells no kits.
+> Plasmoid X is an independent, plain-English explainer site about Malcolm Bendall's Thunderstorm Generator. It puts the one university test first (an Embry-Riddle master's thesis, 2026; the manufacturer supplied the road-test hardware: a 9.67% lower fuel-use rate on a small generator, and carbon monoxide down about 34% in an idle test, with carbon dioxide, oxygen and hydrocarbons not significantly changed), then labels inventor claims and outside criticism separately. It sells no kits.
 
 ## The plan: 13 places
 

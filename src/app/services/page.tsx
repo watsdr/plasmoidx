@@ -341,8 +341,8 @@ export default function ServicesPage() {
           Honest numbers reminder
         </h2>
         <p className="measure mt-4 text-sm leading-relaxed text-mist-200">
-          Independent Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026)
-          meter context on this site is about{" "}
+          Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) context on
+          this site (the manufacturer supplied the road-test hardware) is about{" "}
           <strong className="font-medium text-mist-100">
             9–10% lower fuel use
           </strong>{" "}

@@ -73,7 +73,7 @@ export default function Footer() {
           <p className="mt-2.5 max-w-2xl leading-relaxed">
             Independent education. Not Strike Foundation, Strike Energy, or a
             licensee. Inventor claims are labeled as claims, and measured
-            results name the independent study behind them.
+            results name the study behind them.
           </p>
           <p className="mt-2.5 max-w-2xl leading-relaxed">
             Built for calm study: every lab works by keyboard, motion stays
