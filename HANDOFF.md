@@ -148,12 +148,19 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-17 (afternoon) — Directory listings off, "independent meter" wording softened
+- Commit e8bc891, deploy run 39067158255 (prune cap 50): uploaded 195 files, deleted 29 stale files (all `_next/static/`), IndexNow HTTP 200 (28 URLs).
+- `public/.htaccess` now has `Options -Indexes`. The host accepted it (no 500s): `/ncsitebuilder/` and `/ncsitebuilder/css/` now return 403 instead of a listing; the empty folders still exist on the server (optional: delete in cPanel File Manager).
+- Wording: "independent meter" removed everywhere (Home, Study, Device, Services, Sources, FAQ, claims, glossary, curriculum, companions, Footer, explainers, social cards script, docs). The Embry-Riddle thesis is now described as a master's thesis test, and where relevant the pages say the manufacturer (Plasmoid Power) supplied the road-test hardware. `docs/STYLE-GUIDE.md` canonical-names table updated. Do not reintroduce "independent meter".
+- Live checks passed: pages, all 17 explainers 200; `/privacy/` 301 to `/sources/`; sitemap, IndexNow key file 200; page assets 200.
+- GoatCounter (code `plasmoidx`) only holds data from 2026-10-10 (UTC); 7 pageviews total through 2026-10-17, one of them the `/__test` setup hit.
+
 ### 2026-10-15 (evening) — Batch 2 explainers, CO/fuel figure correction, IndexNow, outside-links plan
 - **Merged `explainers-batch-2` into `main`** (merge commit 2dd9134, no force push). Five new explainers: who-is-malcolm-bendall, thunderstorm-generator-critics, other-thunderstorm-generator-tests, can-water-be-a-fuel, strike-foundation-and-thunderstorm-tech. New "Outside commentary" label, Sources block and table support in `ExplainerArticle`; style guide updated.
 - **Figure correction (site-wide):** the old "about −34% average emissions" was a carbon monoxide-only result from an idle test (CO₂, oxygen, hydrocarbons not significantly changed). Fixed on Home, Study, Study pack, Device, Sources, Services, FAQ, claims, glossary, curriculum, quiz, explainers, README, docs, social-card script and `docs/SOCIAL-POSTS.md`; new errata entry on `/updates/`. Fuel figures now follow the thesis (9.67% lower fuel-use rate on a small generator; about 8.7% on a one-vehicle road test). Style guide: never write "average emissions" without saying carbon monoxide. Social cards regenerated in `/workspace/plasmoidx-social/` (outside the repo).
 - **IndexNow:** `scripts/indexnow.mjs`, public key file `public/4a148e972e18ed4c8152bde8b0dc014f.txt`, last workflow step (`continue-on-error`). First submission (28 URLs) returned HTTP 202 Accepted.
 - **Deploy status (updated 2026-10-17):** cleanup run 39066554934 succeeded with `prune_max_deletes=100`: uploaded 195 files, deleted 74 stale files (all `_next/static/`, confirmed from the log), IndexNow HTTP 200. Live checks passed: home, key pages and all 17 explainers 200; `/privacy/` 301 to `/sources/`; sitemap lists the 5 new pages; IndexNow key file reachable; every script/style/image on the other-tests and Device pages returns 200. Earlier history: run 38820393581 (dry run) uploaded the site; run 38821225123 aborted at the cap (74 > 50).
-- **Still pending:** `https://plasmoidx.com/ncsitebuilder/` returns 200 with an empty server directory listing (the empty folder could not be removed by the prune). Fix options: delete the empty folder in cPanel File Manager, or add `Options -Indexes` to `public/.htaccess` (needs a deploy).
+- **Resolved 2026-10-17 (see newest entry):** `Options -Indexes` now returns 403 for `/ncsitebuilder/`. Earlier note: `https://plasmoidx.com/ncsitebuilder/` returned 200 with an empty server directory listing (the empty folder could not be removed by the prune). Fix options: delete the empty folder in cPanel File Manager, or add `Options -Indexes` to `public/.htaccess` (needs a deploy).
 - **Written, not acted on:** `docs/OUTSIDE-LINKS-PLAN.md` (13 places, rules, blurbs). Nothing posted or sent.
 
 ### 2026-10-15 — Server cleanup of Namecheap leftovers (deployed)
