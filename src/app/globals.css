@@ -1001,3 +1001,11 @@ html[data-theme="light"] {
   }
 }
 
+
+/* Home hero: smaller headline on phones so the three buttons fit the first screen. */
+@media (max-width: 639px) {
+  .hero-title {
+    font-size: 1.75rem;
+    line-height: 1.15;
+  }
+}

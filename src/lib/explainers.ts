@@ -282,7 +282,7 @@ export const explainers: Explainer[] = [
       { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
       { href: "/explainers/thunderstorm-generator/", label: "Thunderstorm Generator explained" },
       { href: "/faq/", label: "FAQ" },
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
       { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
       { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
     ],
@@ -592,7 +592,7 @@ export const explainers: Explainer[] = [
       { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
     ],
     related: [
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
       { href: "/explainers/strike-foundation-and-thunderstorm-tech/", label: "Strike Foundation, Thunderstorm.tech and this site" },
       { href: "/explainers/msaart/", label: "Bendall MSAART explained" },
       { href: "/sources/", label: "Sources" },
@@ -600,12 +600,12 @@ export const explainers: Explainer[] = [
   },
   {
     slug: "thunderstorm-generator-critics",
-    title: "Is the Thunderstorm Generator a hoax?",
-    question: "Is the Thunderstorm Generator a hoax? What do critics and supporters say?",
+    title: "Thunderstorm Generator: scam or not?",
+    question: "Is the Thunderstorm Generator a scam or not? What do critics and supporters say?",
     description:
       "Critics and supporters of the Thunderstorm Generator, side by side and labeled. The Embry-Riddle thesis is the measured anchor; the Skeptoid critique and the inventor’s claims are shown as such.",
     published: "2026-10-15",
-    lede: "People ask whether the Thunderstorm Generator is a hoax. This page lays out what the critics say, what the supporters say, and what a university test measured. Each part is labeled so you can weigh it yourself.",
+    lede: "People ask whether the Thunderstorm Generator is a scam or a hoax. This page lays out what the critics say, what the supporters say, and what a university test measured. Each part is labeled so you can weigh it yourself.",
     blocks: [
       {
         heading: "What “hoax” would mean",
@@ -781,7 +781,7 @@ export const explainers: Explainer[] = [
     ],
     related: [
       { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "The Embry-Riddle test explained" },
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
       { href: "/sources/", label: "Sources" },
     ],
@@ -863,7 +863,7 @@ export const explainers: Explainer[] = [
     related: [
       { href: "/explainers/protium-hydrogen-path/", label: "Protium and the hydrogen path" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Is the Thunderstorm Generator a hoax?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
       { href: "/sources/", label: "Sources" },
     ],
   },

@@ -12,11 +12,11 @@ import JsonLd from "@/components/JsonLd";
 import NewsletterSignup from "@/components/NewsletterSignup";
 
 const homeDescription =
-  "Independent, plain-English lessons on plasmoids and Malcolm Bendall’s Thunderstorm Generator engine retrofit — measured results first, inventor claims labeled.";
+  "Malcolm Bendall’s Thunderstorm Generator in plain English: what an Embry-Riddle master’s thesis measured (about 9.67% lower fuel use on a small generator, carbon monoxide down about 34% at idle) versus the bigger inventor claims.";
 
 export const metadata: Metadata = pageMeta({
   path: "/",
-  title: "Plasmoid X — New energy, explained simply.",
+  title: "Thunderstorm Generator: what was measured vs claimed | Plasmoid X",
   description: homeDescription,
   section: "home",
   absoluteTitle: true,
@@ -97,43 +97,84 @@ const findCards = [
   },
 ] as const;
 
+const commonQuestions = [
+  { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
+  { href: "/explainers/thunderstorm-generator-critics/", label: "Is it a scam or not?" },
+  { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What did the Embry-Riddle test measure?" },
+  { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
+  { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
+] as const;
+
 export default function WhyPage() {
   return (
     <div>
       <JsonLd data={homeJsonLd} />
       {/* Splash hero — motion mark + 5-second hook */}
-      <section className="relative mx-auto w-full min-w-0 max-w-5xl overflow-hidden px-4 pb-10 pt-12 sm:px-6 sm:pb-12 sm:pt-16">
+      <section className="relative mx-auto w-full min-w-0 max-w-5xl overflow-hidden px-4 pb-10 pt-6 sm:px-6 sm:pb-12 sm:pt-16">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12">
           <div className="relative z-[1] min-w-0">
-            <p className="section-label">Home</p>
-            <h1 className="fluid-display mt-4 max-w-3xl text-balance font-semibold text-mist-50">
-              Engines waste fuel and dirty the air. This approach aims to run
-              cleaner.
+            <p className="section-label hidden sm:block">Home</p>
+            <h1 className="fluid-display hero-title mt-0 sm:mt-4 max-w-3xl text-balance font-semibold text-mist-50">
+              Thunderstorm Generator: what was measured, and what is only
+              claimed.
             </h1>
-            <p className="mt-4 text-base font-medium tracking-tight text-aurora sm:text-lg">
+            <p className="mt-4 hidden text-base font-medium tracking-tight text-aurora sm:block sm:text-lg">
               {siteSlogan}
             </p>
-            <p className="measure mt-6 text-lg leading-relaxed text-mist-200">
-              Everyday gas engines burn fuel in a blast — you feel it at the pump
-              and in the air. Malcolm Bendall’s Thunderstorm Generator is designed to
-              use water to form and guide{" "}
-              <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
-              (tiny, self-organized bits of plasma) so engines can run cleaner.
-              This site explains that idea in plain English — measured results
-              first, inventor claims labeled.
+            <p className="measure mt-4 text-base leading-relaxed text-mist-200 sm:hidden">
+              <span className="font-medium text-mist-100">Measured:</span> a 9.67%
+              lower fuel-use rate on a small generator and 34% less carbon
+              monoxide (CO) at idle; bigger claims unverified.
             </p>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-mist-400">
+            <p className="measure mt-6 hidden text-lg leading-relaxed text-mist-200 sm:block">
+              <span className="font-medium text-mist-100">Measured:</span> in an
+              Embry-Riddle Aeronautical University master’s thesis (2026), the
+              retrofit showed about a 9.67% lower fuel-use rate on a small generator
+              and about 34% less carbon monoxide (CO) at idle. Carbon dioxide (CO₂), oxygen and
+              hydrocarbons did not change significantly. The bigger claims are
+              unverified.
+            </p>
+            <p className="measure mt-4 hidden text-base leading-relaxed text-mist-300 sm:block">
+              Malcolm Bendall’s Thunderstorm Generator is an engine add-on that is
+              designed to use water to form and guide{" "}
+              <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
+              (tiny, self-organized bits of plasma). This site explains it in
+              plain English, with inventor claims labeled.
+            </p>
+            <p className="mt-4 hidden max-w-xl text-sm leading-relaxed text-mist-400 sm:block">
               Independent education. Not Strike Foundation, Strike Energy, or a
               licensee.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Link href="/device/" className="btn-primary">
-                See how it works
+            <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-10 sm:gap-3">
+              <Link
+                href="/explainers/does-the-thunderstorm-generator-work/"
+                className="btn-primary"
+              >
+                Does it work?
               </Link>
-              <Link href="/study/#curriculum" className="btn-ghost">
-                Start Lesson 1
+              <Link
+                href="/explainers/thunderstorm-generator-critics/"
+                className="btn-ghost"
+              >
+                Is it a scam?
               </Link>
+              <Link href="/device/" className="btn-ghost">
+                How it’s built
+              </Link>
+            </div>
+            <div className="mt-6 sm:hidden">
+              <p className="measure mt-0 text-base leading-relaxed text-mist-300">
+                Malcolm Bendall’s Thunderstorm Generator is an engine add-on that is
+                designed to use water to form and guide{" "}
+                <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
+                (tiny, self-organized bits of plasma). This site explains it in
+                plain English, with inventor claims labeled.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-mist-400">
+                Independent education. Not Strike Foundation, Strike Energy, or a
+                licensee.
+              </p>
             </div>
             <KeyboardShortcutsTip />
           </div>
@@ -144,6 +185,42 @@ export default function WhyPage() {
             />
             <SplashMark />
           </div>
+        </div>
+      </section>
+
+
+      {/* Common questions — plain links to the explainers people search for */}
+      <section
+        className="border-t border-ink-600/40"
+        aria-labelledby="common-questions-heading"
+      >
+        <div className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6">
+          <h2
+            id="common-questions-heading"
+            className="fluid-title font-semibold text-mist-50"
+          >
+            Common questions
+          </h2>
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {commonQuestions.map((q) => (
+              <li key={q.href}>
+                <Link
+                  href={q.href}
+                  className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-ink-600/45 px-4 py-3 text-base tracking-tight text-mist-100 transition-colors hover:border-aurora/50 hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
+                >
+                  <span>{q.label}</span>
+                  <span aria-hidden className="text-mist-400">→</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-5 text-sm text-mist-400">
+            More answers on{" "}
+            <Link href="/explainers/" className="link-aurora">
+              Explainers
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
@@ -200,17 +277,16 @@ export default function WhyPage() {
               className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
             >
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
-                Chapter 2 · Solution frame
+                Chapter 2 · Inventor model
               </p>
               <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
                 Organize energy with plasmoids
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-mist-200">
-                This device path forms and guides plasmoids so more of the energy
-                story is organized — closer to a “store” than a pure blast. The
-                result people care about is lower fuel use and cleaner exhaust;
-                the measured test found a modest fuel gain and lower carbon
-                monoxide at idle.
+                Inventor model: the device is designed to form and guide plasmoids
+                so more of the energy is organized — closer to a “store” than a
+                pure blast. That is a claim, not a measurement. What was measured
+                is smaller: a modest fuel gain and lower carbon monoxide at idle.
                 The deeper model lives on Study; the hardware path is on Device.
               </p>
             </ScrollyChapter>
