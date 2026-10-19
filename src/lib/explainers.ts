@@ -21,6 +21,8 @@ export type Explainer = {
   blocks: ExplainerBlock[];
   /** Optional cited sources, shown as a Sources block */
   sources?: { label: string; href: string }[];
+  /** Optional interactive graphics, placed after the block at index `after`. */
+  interactives?: { after: number; kind: "measured-vs-claimed" | "fuel-estimator" | "evidence-timeline" }[];
   related: { href: string; label: string }[];
 };
 
@@ -192,6 +194,7 @@ export const explainers: Explainer[] = [
   },
   {
     slug: "embry-riddle-thunderstorm-generator-test",
+    interactives: [{ after: 0, kind: "measured-vs-claimed" }],
     title: "What the Embry-Riddle test actually measured",
     question: "What did the Embry-Riddle Thunderstorm Generator test find?",
     description:
@@ -239,6 +242,10 @@ export const explainers: Explainer[] = [
   },
   {
     slug: "does-the-thunderstorm-generator-work",
+    interactives: [
+      { after: 0, kind: "fuel-estimator" },
+      { after: 1, kind: "measured-vs-claimed" },
+    ],
     title: "Does the Thunderstorm Generator work? Claims vs meter",
     question: "Does the Thunderstorm Generator actually work?",
     description:
@@ -600,6 +607,7 @@ export const explainers: Explainer[] = [
   },
   {
     slug: "thunderstorm-generator-critics",
+    interactives: [{ after: 99, kind: "evidence-timeline" }],
     title: "Thunderstorm Generator: scam or not?",
     question: "Is the Thunderstorm Generator a scam or not? What do critics and supporters say?",
     description:
@@ -675,6 +683,7 @@ export const explainers: Explainer[] = [
   },
   {
     slug: "other-thunderstorm-generator-tests",
+    interactives: [{ after: 2, kind: "evidence-timeline" }],
     title: "Other Thunderstorm Generator tests: who ran each one",
     question: "What other tests of the Thunderstorm Generator exist, and who ran and paid for them?",
     description:
