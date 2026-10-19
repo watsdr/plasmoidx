@@ -122,9 +122,9 @@ export default function WhyPage() {
               {siteSlogan}
             </p>
             <p className="measure mt-4 text-base leading-relaxed text-mist-200 sm:hidden">
-              <span className="font-medium text-mist-100">Measured:</span> about
-              9.67% less fuel on a small generator and 34% less carbon monoxide
-              (CO) at idle; bigger claims unverified.
+              <span className="font-medium text-mist-100">Measured:</span> a 9.67%
+              lower fuel-use rate on a small generator and 34% less carbon
+              monoxide (CO) at idle; bigger claims unverified.
             </p>
             <p className="measure mt-6 hidden text-lg leading-relaxed text-mist-200 sm:block">
               <span className="font-medium text-mist-100">Measured:</span> in an
