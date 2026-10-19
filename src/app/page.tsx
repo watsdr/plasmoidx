@@ -110,18 +110,23 @@ export default function WhyPage() {
     <div>
       <JsonLd data={homeJsonLd} />
       {/* Splash hero — motion mark + 5-second hook */}
-      <section className="relative mx-auto w-full min-w-0 max-w-5xl overflow-hidden px-4 pb-10 pt-12 sm:px-6 sm:pb-12 sm:pt-16">
+      <section className="relative mx-auto w-full min-w-0 max-w-5xl overflow-hidden px-4 pb-10 pt-6 sm:px-6 sm:pb-12 sm:pt-16">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-12">
           <div className="relative z-[1] min-w-0">
-            <p className="section-label">Home</p>
-            <h1 className="fluid-display mt-4 max-w-3xl text-balance font-semibold text-mist-50">
+            <p className="section-label hidden sm:block">Home</p>
+            <h1 className="fluid-display hero-title mt-0 sm:mt-4 max-w-3xl text-balance font-semibold text-mist-50">
               Thunderstorm Generator: what was measured, and what is only
               claimed.
             </h1>
-            <p className="mt-4 text-base font-medium tracking-tight text-aurora sm:text-lg">
+            <p className="mt-4 hidden text-base font-medium tracking-tight text-aurora sm:block sm:text-lg">
               {siteSlogan}
             </p>
-            <p className="measure mt-6 text-lg leading-relaxed text-mist-200">
+            <p className="measure mt-4 text-base leading-relaxed text-mist-200 sm:hidden">
+              <span className="font-medium text-mist-100">Measured:</span> about
+              9.67% less fuel on a small generator and 34% less carbon monoxide
+              (CO) at idle; bigger claims unverified.
+            </p>
+            <p className="measure mt-6 hidden text-lg leading-relaxed text-mist-200 sm:block">
               <span className="font-medium text-mist-100">Measured:</span> in an
               Embry-Riddle Aeronautical University master’s thesis (2026), the
               retrofit showed about a 9.67% lower fuel-use rate on a small generator
@@ -129,19 +134,19 @@ export default function WhyPage() {
               hydrocarbons did not change significantly. The bigger claims are
               unverified.
             </p>
-            <p className="measure mt-4 text-base leading-relaxed text-mist-300">
+            <p className="measure mt-4 hidden text-base leading-relaxed text-mist-300 sm:block">
               Malcolm Bendall’s Thunderstorm Generator is an engine add-on that is
               designed to use water to form and guide{" "}
               <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
               (tiny, self-organized bits of plasma). This site explains it in
               plain English, with inventor claims labeled.
             </p>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-mist-400">
+            <p className="mt-4 hidden max-w-xl text-sm leading-relaxed text-mist-400 sm:block">
               Independent education. Not Strike Foundation, Strike Energy, or a
               licensee.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-5 flex flex-wrap items-center gap-2 sm:mt-10 sm:gap-3">
               <Link
                 href="/explainers/does-the-thunderstorm-generator-work/"
                 className="btn-primary"
@@ -157,6 +162,19 @@ export default function WhyPage() {
               <Link href="/device/" className="btn-ghost">
                 How it’s built
               </Link>
+            </div>
+            <div className="mt-6 sm:hidden">
+              <p className="measure mt-0 text-base leading-relaxed text-mist-300">
+                Malcolm Bendall’s Thunderstorm Generator is an engine add-on that is
+                designed to use water to form and guide{" "}
+                <strong className="font-medium text-mist-100">plasmoids</strong>{" "}
+                (tiny, self-organized bits of plasma). This site explains it in
+                plain English, with inventor claims labeled.
+              </p>
+              <p className="mt-4 max-w-xl text-sm leading-relaxed text-mist-400">
+                Independent education. Not Strike Foundation, Strike Energy, or a
+                licensee.
+              </p>
             </div>
             <KeyboardShortcutsTip />
           </div>
