@@ -165,9 +165,9 @@ export const lectureLinks = [
 ];
 
 export const siteNav = [
-  { href: "/", label: "Home" },
-  { href: "/study/", label: "Study" },
+  { href: "/explainers/", label: "Explainers" },
   { href: "/device/", label: "Device" },
+  { href: "/study/", label: "Study" },
   { href: "/sources/", label: "Sources" },
   { href: "/services/", label: "Services" },
   { href: "/connect/", label: "Connect" },
@@ -175,7 +175,7 @@ export const siteNav = [
 
 /** Secondary paths — footer / in-page, not primary nav. */
 export const secondaryNav = [
-  { href: "/explainers/", label: "Explainers" },
+  { href: "/", label: "Home" },
   { href: "/glossary/", label: "Glossary" },
   { href: "/faq/", label: "FAQ" },
   { href: "/updates/", label: "Updates" },

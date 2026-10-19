@@ -8,6 +8,13 @@ DirectoryIndex index.html
 Options -Indexes
 ErrorDocument 404 /404.html
 
+# One host: send www.plasmoidx.com to the apex (https://plasmoidx.com), keeping the path.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_HOST} ^www\.plasmoidx\.com$ [NC]
+  RewriteRule ^(.*)$ https://plasmoidx.com/$1 [R=301,L]
+</IfModule>
+
 # Old privacy page moved into Sources (method and privacy).
 RedirectMatch 301 ^/privacy/?$ /sources/
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { pageMeta } from "@/lib/seo";
+import { pageMeta, SITE_URL } from "@/lib/seo";
+import JsonLd from "@/components/JsonLd";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import Link from "next/link";
 import VisualPanel from "@/components/VisualPanel";
 import Lock518400Card from "@/components/diagrams/Lock518400Card";
@@ -29,9 +31,36 @@ export const metadata: Metadata = {
   }),
 };
 
+const deviceJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/device/#article`,
+      headline: "How the Thunderstorm Generator works",
+      description:
+        "Malcolm Bendall’s Thunderstorm Generator retrofit in three parts — ionizer, bubbler, resonator — with the inventor’s model labeled and the measured Embry-Riddle numbers.",
+      url: `${SITE_URL}/device/`,
+      image: `${SITE_URL}/og/device.png`,
+      inLanguage: "en-US",
+      author: { "@type": "Person", name: "Derek Watson" },
+      publisher: { "@id": `${SITE_URL}/#org` },
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+        { "@type": "ListItem", position: 2, name: "Device", item: `${SITE_URL}/device/` },
+      ],
+    },
+  ],
+};
+
 export default function DevicePage() {
   return (
     <div className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <JsonLd data={deviceJsonLd} />
       <header className="max-w-2xl">
         <p className="section-label">Device</p>
         <h1 className="fluid-display mt-3 font-semibold text-mist-50">
@@ -46,6 +75,23 @@ export default function DevicePage() {
           kindling and a plasmoid–protium cycle does the real work — that part
           is a claim, not a measurement.
         </p>
+        <div className="mt-6 rounded-xl border border-ink-600/45 px-5 py-4">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+            Measured
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-mist-200">
+            Embry-Riddle master’s thesis (2026): about 9.67% lower fuel-use rate
+            on a small generator and about 34% less carbon monoxide (CO) at idle.
+            Carbon dioxide (CO₂), oxygen and hydrocarbons did not change
+            significantly; the bigger claims are unverified.{" "}
+            <Link
+              href="/explainers/embry-riddle-thunderstorm-generator-test/"
+              className="link-aurora"
+            >
+              What the test measured
+            </Link>
+          </p>
+        </div>
       </header>
 
       <ScrollyChapter className="mt-10" delay={40}>
@@ -102,7 +148,7 @@ export default function DevicePage() {
             className="rounded-xl border border-ink-600/45 px-5 py-5 sm:px-6"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
-              Chapter 2 · Solution
+              Chapter 2 · Inventor model
             </p>
             <h3 className="mt-2 text-base font-medium tracking-tight text-mist-50">
               Three beats that organize
@@ -110,7 +156,8 @@ export default function DevicePage() {
             <p className="mt-3 text-sm leading-relaxed text-mist-200">
               Ionizer prepares the air, bubbler grows plasmoids in water, and
               the resonator, with its nested CTR spheres, guides the flow toward the
-              engine. Fuel is kindling; the plasmoid–protium cycle is the work.
+              engine. In the inventor’s model, fuel is kindling and the
+              plasmoid–protium cycle is the work.
             </p>
           </ScrollyChapter>
         </div>
@@ -156,6 +203,9 @@ export default function DevicePage() {
             <DeviceBeatsLab />
           </ExplainFigure>
         </ScrollyChapter>
+        <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+          Inventor model · how the three parts are designed to work
+        </p>
         <ol className="grid gap-8 sm:grid-cols-3 sm:gap-6">
           {deviceBeats.map((beat, i) => (
             <ScrollyChapter key={beat.n} as="li" delay={60 + i * 50}>
@@ -218,7 +268,8 @@ export default function DevicePage() {
         </div>
 
         <p className="mt-8 text-sm leading-relaxed text-mist-400">
-          Hydrocarbons (fuel molecules made of hydrogen and carbon) act as
+          <span className="font-medium text-mist-300">Inventor claim:</span>{" "}
+          hydrocarbons (fuel molecules made of hydrogen and carbon) act as
           kindling up to about 300 °C plus vacuum. The plasmoid–protium cycle
           is the work.
         </p>
@@ -259,11 +310,15 @@ export default function DevicePage() {
         className="mt-16 scroll-mt-20"
         delay={60}
       >
-        <h2 className="fluid-title font-semibold text-mist-50">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+          Inventor model
+        </p>
+        <h2 className="mt-2 fluid-title font-semibold text-mist-50">
           Design ratios at a glance
         </h2>
         <p className="mt-2 max-w-xl text-sm text-mist-300">
-          What shows up in the metal when the locks are respected. Area–Time–
+          The inventor’s design ratios: what is meant to show up in the metal
+          when the locks are respected. Not tested or measured. Area–Time–
           Volume (ATV) from 3-4-5 is the model calculator.
         </p>
         <ExplainFigure title="Time’s mould card" beats={explainLock518400}>
@@ -318,14 +373,33 @@ export default function DevicePage() {
         </p>
       </ScrollyChapter>
 
-      <div className="mt-16 flex flex-wrap items-center gap-3 border-t border-ink-600/40 pt-10">
-        <Link href="/study/" className="btn-ghost">
-          Back to Study
-        </Link>
-        <Link href="/connect/" className="btn-primary">
-          Connect
-        </Link>
-      </div>
+      <nav
+        aria-label="Keep reading"
+        className="mt-16 max-w-2xl border-t border-ink-600/40 pt-10"
+      >
+        <h2 className="text-lg font-medium tracking-tight text-mist-50">
+          Keep reading
+        </h2>
+        <ul className="mt-4 space-y-2 text-base">
+          <li>
+            <Link href="/explainers/does-the-thunderstorm-generator-work/" className="link-aurora">
+              Does the Thunderstorm Generator work?
+            </Link>
+          </li>
+          <li>
+            <Link href="/explainers/thunderstorm-generator-critics/" className="link-aurora">
+              Thunderstorm Generator: scam or not?
+            </Link>
+          </li>
+          <li>
+            <Link href="/explainers/embry-riddle-thunderstorm-generator-test/" className="link-aurora">
+              What the Embry-Riddle test actually measured
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <NewsletterSignup className="mt-12 max-w-2xl" />
     </div>
   );
 }

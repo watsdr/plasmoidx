@@ -265,29 +265,6 @@ export default function Header() {
             );
           })}
           <div className="mt-2 border-t border-ink-600/40 pt-2">
-            <button
-              type="button"
-              tabIndex={menuOpen ? undefined : -1}
-              className="flex w-full min-h-11 items-center gap-2 rounded-lg px-3 text-base tracking-tight text-mist-200 transition-colors hover:bg-ink-900/40 hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
-              aria-label="Search Study"
-              onClick={onSearchClick}
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.75"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden
-              >
-                <circle cx="11" cy="11" r="7" />
-                <path d="M20 20l-3.5-3.5" />
-              </svg>
-              Search Study
-            </button>
             <GlossaryDrawer
               onOpen={() => setMenuOpen(false)}
               triggerClassName="flex w-full min-h-11 items-center rounded-lg px-3 text-base tracking-tight text-mist-200 transition-colors hover:bg-ink-900/40 hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
