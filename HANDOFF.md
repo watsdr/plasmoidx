@@ -148,6 +148,15 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-19 — Discovery pass shipped (Home hook, Device labels, Explainers nav, www→apex)
+- Merged `discovery-pass` into main (merge 3359dd1). Deploy run 39321290516 (default cap 50): uploaded 195, deleted 27 stale `_next/static` files, IndexNow HTTP 200 (28 URLs).
+- Home: title "Thunderstorm Generator: what was measured vs claimed | Plasmoid X"; new meta description; hero leads with the Measured line (mobile: compact line, buttons fit 390×844 and 360×740); buttons Does it work? / Is it a scam? (critics page) / How it's built; Chapter 2 labeled "Inventor model"; new 5-link "Common questions" block.
+- Device: Measured box at top, "Inventor model" labels on Chapter 2, the three parts and the ratio panel; "Inventor claim:" on the kindling line; Keep reading links, newsletter signup, TechArticle + breadcrumb JSON-LD.
+- Nav: Explainers, Device, Study, Sources, Services, Connect (Home moved to footer; duplicate mobile "Search Study" removed).
+- Critics explainer title/H1: "Thunderstorm Generator: scam or not?" (slug unchanged).
+- `public/.htaccess`: www.plasmoidx.com → https://plasmoidx.com 301 (path kept). Verified live.
+- Next (Derek): Search Console URL Inspection → Request indexing for Home, Device and key explainers; Bing Webmaster.
+
 ### 2026-10-17 (afternoon) — Directory listings off, "independent meter" wording softened
 - Commit e8bc891, deploy run 39067158255 (prune cap 50): uploaded 195 files, deleted 29 stale files (all `_next/static/`), IndexNow HTTP 200 (28 URLs).
 - `public/.htaccess` now has `Options -Indexes`. The host accepted it (no 500s): `/ncsitebuilder/` and `/ncsitebuilder/css/` now return 403 instead of a listing; the empty folders still exist on the server (optional: delete in cPanel File Manager).
