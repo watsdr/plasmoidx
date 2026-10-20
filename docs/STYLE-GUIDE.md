@@ -17,7 +17,7 @@ Pair with `docs/UI-UX-PLAYBOOK.md` (visual rules) and `AGENTS.md` (scope).
 - Measured results come first. Inventor claims come second and are always labeled.
 - Never strengthen a claim. Never add a fact that is not already in the site's sources. Exception: an explainer may add a fact only if the page lists the source in its own Sources block and the source was opened and read.
 - Model language ("in the inventor's model", "study picture") stays on anything that is not measured.
-- Every block on an explainer carries one label: **Measured**, **Inventor claim**, **Outside commentary**, or **Plain definition**.
+- Every block on an explainer carries one label: **Measured**, **Inventor claim**, **Outside commentary**, or **Plain definition** (interactive graphics may also use **Seller claim**).
 
 ## Page intro pattern
 
@@ -50,6 +50,7 @@ Every page opens with two beats:
 
 - **Measured** — an independent measurement.
 - **Inventor claim** — the inventor's or seller's statement or model (including results reported only on a seller's pages: write "reported by the inventor's side").
+- **Seller claim** — a number published by the seller (for example the Thunderstorm.tech test-results page), shown as reported and never as measured. Distinct from **Inventor claim**, which covers the inventor's statements and model. Used in the interactive graphics (`src/lib/evidence.ts`); always name the seller's page as the source.
 - **Outside commentary** — a critic's, journalist's or reference writer's view. Attribute it by name and date; never repeat personal allegations about a person.
 - **Plain definition** — a definition or site note.
 
