@@ -1009,3 +1009,27 @@ html[data-theme="light"] {
     line-height: 1.15;
   }
 }
+
+/* Evidence chart bars: measured = solid aurora; seller claim = hatched outline. */
+.ev-track {
+  background: rgb(var(--mist-400) / 0.12);
+}
+.ev-bar-measured {
+  background: rgb(var(--aurora));
+}
+.ev-bar-seller {
+  background: repeating-linear-gradient(
+    135deg,
+    rgb(var(--mist-400) / 0.55) 0 3px,
+    transparent 3px 7px
+  );
+  box-shadow: inset 0 0 0 1px rgb(var(--mist-400) / 0.7);
+}
+.ev-bar {
+  transition: width 0.35s ease-out;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ev-bar {
+    transition: none;
+  }
+}

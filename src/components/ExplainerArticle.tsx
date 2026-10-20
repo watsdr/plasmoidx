@@ -3,6 +3,15 @@ import JsonLd from "@/components/JsonLd";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import { explainers, type Explainer } from "@/lib/explainers";
 import { absUrl } from "@/lib/seo";
+import MeasuredVsClaimed from "@/components/interactive/MeasuredVsClaimed";
+import FuelEstimator from "@/components/interactive/FuelEstimator";
+import EvidenceTimeline from "@/components/EvidenceTimeline";
+
+const interactive = {
+  "measured-vs-claimed": MeasuredVsClaimed,
+  "fuel-estimator": FuelEstimator,
+  "evidence-timeline": EvidenceTimeline,
+} as const;
 
 const kindLabel = {
   measured: "Measured",
@@ -48,8 +57,9 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
       </header>
 
       <div className="mt-12 max-w-5xl space-y-10 border-t border-ink-600/40 pt-10">
-        {e.blocks.map((b) => (
-          <section key={b.heading} className={b.table ? undefined : "max-w-2xl"}>
+        {e.blocks.map((b, bi) => (
+          <div key={b.heading} className="space-y-10">
+          <section className={b.table ? undefined : "max-w-2xl"}>
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
               {kindLabel[b.kind]}
             </p>
@@ -93,6 +103,17 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
               </div>
             )}
           </section>
+          {e.interactives
+            ?.filter((x) => Math.min(x.after, e.blocks.length - 1) === bi)
+            .map((x) => {
+              const C = interactive[x.kind];
+              return (
+                <div key={x.kind} className="max-w-3xl">
+                  <C />
+                </div>
+              );
+            })}
+          </div>
         ))}
       </div>
 

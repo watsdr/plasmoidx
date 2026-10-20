@@ -11,14 +11,20 @@ const stages = [
   {
     title: "Ionizer",
     body: "The air ionizer (pre-ionization chamber) pretreats incoming air. The teaching art shows this with an ultraviolet (UV) cue.",
+    model: "Ultraviolet (UV) light ionizes the incoming air before it reaches the water.",
+    verified: "Not tested on its own. Skeptoid (outside commentary) argues an ordinary UV bulb is too weak to ionize air.",
   },
   {
     title: "Bubbler",
     body: "Bubbler (plasmoid generator): a water column and cavitation form Exotic Vacuum Occurrences (EVOs).",
+    model: "Bubble collapse (cavitation) in the water forms plasmoids, also called EVOs.",
+    verified: "No test we cite observed plasmoids. The thesis measured fuel use and exhaust only.",
   },
   {
     title: "Resonator",
     body: "Catalytic tornado resonator with nested CTR spheres. Hot exhaust enters one end. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
+    model: "Opposite-spinning flows in the nested spheres organize the plasmoid stream that feeds the engine.",
+    verified: "Only the whole retrofit was measured (about a 9.67% lower fuel-use rate on a small generator; carbon monoxide (CO) about 34% lower at idle). This part was not tested on its own.",
   },
 ] as const;
 
@@ -126,6 +132,20 @@ export default function DeviceSystemFlowLab() {
         <span className="font-medium text-mist-100">{current.title}.</span>{" "}
         {current.body}
       </p>
+      <dl className="mt-3 grid max-w-2xl gap-3 text-sm sm:grid-cols-2">
+        <div className="rounded-lg border border-ink-600/40 px-3 py-2.5">
+          <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+            Inventor model
+          </dt>
+          <dd className="mt-1 leading-relaxed text-mist-200">{current.model}</dd>
+        </div>
+        <div className="rounded-lg border border-ink-600/40 px-3 py-2.5">
+          <dt className="text-[11px] font-semibold uppercase tracking-[0.14em] text-aurora">
+            What’s verified
+          </dt>
+          <dd className="mt-1 leading-relaxed text-mist-200">{current.verified}</dd>
+        </div>
+      </dl>
     </div>
   );
 }

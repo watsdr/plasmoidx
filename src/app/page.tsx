@@ -10,6 +10,7 @@ import type { Metadata } from "next";
 import { pageMeta, SITE_URL } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import MeasuredVsClaimed from "@/components/interactive/MeasuredVsClaimed";
 
 const homeDescription =
   "Malcolm Bendall’s Thunderstorm Generator in plain English: what an Embry-Riddle master’s thesis measured (about 9.67% lower fuel use on a small generator, carbon monoxide down about 34% at idle) versus the bigger inventor claims.";
@@ -379,6 +380,9 @@ export default function WhyPage() {
                 fuller dyno and isotope testing.
               </p>
             </ScrollyChapter>
+          </div>
+          <div className="mt-10 max-w-3xl">
+            <MeasuredVsClaimed />
           </div>
         </div>
       </section>
