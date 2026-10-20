@@ -100,7 +100,7 @@ const findCards = [
 
 const commonQuestions = [
   { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
-  { href: "/explainers/thunderstorm-generator-critics/", label: "Is it a scam or not?" },
+  { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is it a scam?" },
   { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What did the Embry-Riddle test measure?" },
   { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
   { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
@@ -155,7 +155,7 @@ export default function WhyPage() {
                 Does it work?
               </Link>
               <Link
-                href="/explainers/thunderstorm-generator-critics/"
+                href="/explainers/is-the-thunderstorm-generator-a-scam/"
                 className="btn-ghost"
               >
                 Is it a scam?

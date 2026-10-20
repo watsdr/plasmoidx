@@ -16,6 +16,7 @@ const interactive = {
 const kindLabel = {
   measured: "Measured",
   claim: "Inventor claim",
+  seller: "Seller claim",
   commentary: "Outside commentary",
   plain: "Plain definition",
 } as const;
@@ -116,6 +117,33 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
           </div>
         ))}
       </div>
+
+      {e.faq && (
+        <section aria-labelledby="quick-answers-heading" className="mt-14 max-w-2xl border-t border-ink-600/40 pt-8">
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: e.faq.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            }}
+          />
+          <h2 id="quick-answers-heading" className="text-xl font-medium tracking-tight text-mist-50">
+            Quick answers
+          </h2>
+          <dl className="mt-4 space-y-5">
+            {e.faq.map((f) => (
+              <div key={f.q}>
+                <dt className="text-base font-medium text-mist-50">{f.q}</dt>
+                <dd className="mt-1 text-base leading-relaxed text-mist-200">{f.a}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
 
       {e.sources && (
         <section aria-labelledby="sources-heading" className="mt-14 max-w-2xl border-t border-ink-600/40 pt-8">

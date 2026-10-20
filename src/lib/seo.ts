@@ -94,6 +94,7 @@ export const SITEMAP_ROUTES: { path: string; priority: number; changeFrequency: 
   { path: "/explainers/protium-hydrogen-path/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/explainers/518400-number-lock/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/explainers/who-is-malcolm-bendall/", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/explainers/is-the-thunderstorm-generator-a-scam/", priority: 0.8, changeFrequency: "monthly" },
   { path: "/explainers/thunderstorm-generator-critics/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/explainers/other-thunderstorm-generator-tests/", priority: 0.7, changeFrequency: "monthly" },
   { path: "/explainers/can-water-be-a-fuel/", priority: 0.7, changeFrequency: "monthly" },

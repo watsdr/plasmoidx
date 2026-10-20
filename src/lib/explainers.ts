@@ -3,7 +3,7 @@
 export type ExplainerBlock = {
   heading: string;
   /** "measured" = a measurement; "claim" = inventor / seller / model; "commentary" = outside commentary; "plain" = definition or site note */
-  kind: "measured" | "claim" | "commentary" | "plain";
+  kind: "measured" | "claim" | "seller" | "commentary" | "plain";
   body: string[];
   /** Optional data table shown after the paragraphs */
   table?: { caption: string; head: string[]; rows: string[][] };
@@ -22,6 +22,8 @@ export type Explainer = {
   /** Optional cited sources, shown as a Sources block */
   sources?: { label: string; href: string }[];
   /** Optional interactive graphics, placed after the block at index `after`. */
+  /** Optional FAQ: shown as "Quick answers" and emitted as FAQPage JSON-LD (text must match). */
+  faq?: { q: string; a: string }[];
   interactives?: { after: number; kind: "measured-vs-claimed" | "fuel-estimator" | "evidence-timeline" }[];
   related: { href: string; label: string }[];
 };
@@ -286,10 +288,11 @@ export const explainers: Explainer[] = [
       },
     ],
     related: [
+      { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is the Thunderstorm Generator a scam?" },
       { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
       { href: "/explainers/thunderstorm-generator/", label: "Thunderstorm Generator explained" },
       { href: "/faq/", label: "FAQ" },
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
       { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
       { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
     ],
@@ -599,21 +602,145 @@ export const explainers: Explainer[] = [
       { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
     ],
     related: [
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
+      { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is the Thunderstorm Generator a scam?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
       { href: "/explainers/strike-foundation-and-thunderstorm-tech/", label: "Strike Foundation, Thunderstorm.tech and this site" },
       { href: "/explainers/msaart/", label: "Bendall MSAART explained" },
       { href: "/sources/", label: "Sources" },
     ],
   },
   {
+    slug: "is-the-thunderstorm-generator-a-scam",
+    interactives: [
+      { after: 2, kind: "measured-vs-claimed" },
+      { after: 4, kind: "evidence-timeline" },
+    ],
+    title: "Is the Thunderstorm Generator a scam?",
+    question: "Is the Thunderstorm Generator a scam?",
+    description:
+      "A plain-English answer: the Thunderstorm Generator is real hardware sold as a $735 kit with no guarantee of results. One university thesis measured modest effects; the seller’s much bigger numbers are unverified.",
+    published: "2026-10-20",
+    lede: "Short answer: the Thunderstorm Generator is real hardware that is sold today, as a do-it-yourself kit for small gasoline generators listed at $735 plus delivery, with no guarantee of results. One university master’s thesis measured modest effects (a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide (CO) at idle), while the much bigger numbers on the seller’s site have not been confirmed by anyone else we could find.",
+    blocks: [
+      {
+        heading: "What “scam” would mean, and what can be checked",
+        kind: "plain",
+        body: [
+          "A scam means taking people’s money by deceiving them. That is a question about intent, and this site has no evidence about anyone’s intent. It does not call anyone a scammer.",
+          "What can be checked is more useful: whether the product exists and what you get for the money, what a measurement showed, whether the seller’s numbers have been confirmed by anyone else, and what public records say about the companies involved. This page goes through each one.",
+        ],
+      },
+      {
+        heading: "What you get for the money",
+        kind: "seller",
+        body: [
+          "Thunderstorm.tech, the seller’s site, lists the kit at $735 in U.S. dollars plus delivery. It is made in Thailand and is meant for small gasoline generators up to about 12 kilowatts (kW), or 16 horsepower (hp). The kit includes the main retrofit unit, the ionizer and bubbler, fittings, and written instructions. The generator and the labor to fit it are not included.",
+          "The seller’s own assembly instructions (February 2026) say that no warranties or guarantees are given on emission cuts or fuel savings. They say installing the kit means significant changes to the generator, so the generator maker’s warranty “will almost certainly be voided,” and that it should not be attempted without some engineering skill.",
+          "The instructions also warn never to run the generator in an enclosed space, because carbon monoxide (CO) is “odorless and colorless and is deadly to humans and animals,” and to keep a fire extinguisher at hand because the fuel system is modified.",
+        ],
+      },
+      {
+        heading: "What was measured",
+        kind: "measured",
+        body: [
+          "A 2026 master’s (M.S.) thesis at Embry-Riddle Aeronautical University built and tested a Thunderstorm Generator retrofit. On a small generator under load, fuel use fell from 35.27 to 31.86 milliliters per minute, a 9.67% lower fuel-use rate. In an idle test, carbon monoxide (CO) fell by an average of 34%; carbon dioxide (CO₂) and oxygen showed no significant change.",
+          "On a one-vehicle road test, fuel economy was about 8.7% better, but only 4 of 8 cylinders were covered, retrofit runs had high winds, and the manufacturer, Plasmoid Power, supplied the road-test hardware.",
+          "The thesis says it “did not conclusively validate” the inventor’s fuel and emissions claims and that its results fit “a modest positive effect.”",
+        ],
+      },
+      {
+        heading: "What the seller and inventor claim",
+        kind: "seller",
+        body: [
+          "Thunderstorm.tech reports far larger results from tests in the UK, Florida and the United Arab Emirates (UAE): for example, carbon monoxide down 97.1% in a UK test and carbon dioxide down 99.56% in a Florida test. Its kit page says the technology showed up to 98% CO and hydrocarbon reduction in UK testing. We have not seen the full reports or who paid for them, so these stay labeled as the seller’s numbers.",
+          "The university thesis did not reproduce them: it found no significant change in CO₂ or oxygen. Our page on other tests lists who ran each one.",
+          "Inventor claim: Malcolm Bendall describes the device as “a proprietary plasmoid-induced and controlled atomic energy release process which allows water to be used as an atomic fuel,” as quoted by Skeptoid. No test this site cites has shown water acting as a fuel.",
+        ],
+      },
+      {
+        heading: "What critics say",
+        kind: "commentary",
+        body: [
+          "Brian Dunning of the Skeptoid podcast (December 16, 2025) argues that the device is an exhaust heat riser plus water injection, ideas engineers have known about for over 100 years. He says an ordinary ultraviolet (UV) bulb cannot ionize air and that CO₂ is not reduced.",
+          "He also writes that small gains in fuel efficiency or exhaust cleanliness are “probably true,” as long as they are small. Our critics page sets out his points beside the supporters’ view.",
+        ],
+      },
+      {
+        heading: "The business-history question",
+        kind: "plain",
+        body: [
+          "Some people online raise Malcolm Bendall’s earlier role at Empire Energy Corporation International, a U.S.-listed company that explored for oil in Tasmania, Australia. Here is what public filings with the U.S. Securities and Exchange Commission (SEC) show.",
+          "A 2008 company filing says Mr. Bendall was a founding director of Great South Land Minerals Limited, was appointed chief executive officer (CEO) and board chairman of Empire Energy on June 4, 2004, and served in that role until August 2007. The same filing says the board appointed him CEO again in March 2008.",
+          "A company press release filed with the SEC in 2010 says David Villarreal Jr. replaced Mr. Bendall as chairman in September 2010, and that Mr. Bendall kept his role as CEO.",
+          "In September 2019 the SEC revoked the registration of the company’s stock, finding that it had not filed any periodic reports since the period ended September 30, 2010. The company consented to the order without admitting or denying the findings. The order concerns the company and does not name any person.",
+          "These records are about a past oil-exploration company. They do not show whether the Thunderstorm Generator works; only testing can do that.",
+        ],
+      },
+      {
+        heading: "Questions to ask before buying",
+        kind: "plain",
+        body: [
+          "Can I see the full test reports, including who ran each test and who paid for it?",
+          "What, if anything, is guaranteed? The seller’s instructions say emission cuts and fuel savings are not.",
+          "Am I willing to lose my generator’s warranty and modify its fuel system?",
+          "Can I measure the result myself, for example by weighing fuel before and after, and reading carbon monoxide (CO) with an exhaust analyzer?",
+          "Can I run it safely outdoors, away from people, with a fire extinguisher at hand?",
+          "Disclosure: this site sells no kits. Its owner offers install labor by inquiry for kits people already own (see Services).",
+        ],
+      },
+      {
+        heading: "Bottom line",
+        kind: "plain",
+        body: [
+          "The Thunderstorm Generator is a real product, sold with clear disclaimers. One university test found a real but modest effect. The big numbers come from the seller and have not been confirmed by anyone else we could find.",
+          "If you buy one, treat it as an experiment, not a guaranteed saving, and measure it yourself.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "Is the Thunderstorm Generator a scam?",
+        a: "This site has no evidence about anyone’s intent and does not call it a scam. The hardware is real and sold as a $735 kit plus delivery, with no guarantee of results. One university master’s thesis measured modest effects; the seller’s much bigger numbers are unverified.",
+      },
+      {
+        q: "How much does the Thunderstorm Generator kit cost?",
+        a: "Thunderstorm.tech lists the kit at $735 in U.S. dollars plus delivery, for small gasoline generators up to about 12 kilowatts (kW). The generator and fitting labor are not included.",
+      },
+      {
+        q: "What did the university test measure?",
+        a: "An Embry-Riddle Aeronautical University master’s thesis (2026) measured a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide (CO) at idle, with no significant change in carbon dioxide (CO₂) or oxygen.",
+      },
+      {
+        q: "Does the kit come with a warranty?",
+        a: "The seller’s assembly instructions (February 2026) say no warranties or guarantees are given on emission cuts or fuel savings, and that fitting the kit will almost certainly void the generator maker’s warranty.",
+      },
+    ],
+    sources: [
+      { label: "Thunderstorm.tech — TSG Kits (seller’s site: price, contents)", href: "https://thunderstorm.tech/tsg-kits" },
+      { label: "Plasmoid Power — Thunderstorm Generator Assembly Instructions, February 2026 (seller: disclaimer and warnings)", href: "https://thunderstorm.tech/tsg-kits/Assembly%20Instructions%20-%202026.pdf" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Thunderstorm.tech — Test Results (seller claim)", href: "https://thunderstorm.tech/technology/test-results" },
+      { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
+      { label: "SEC filing: Empire Energy Corporation International, Form 8-K, March 26, 2008 (public record)", href: "https://www.sec.gov/Archives/edgar/data/788206/000119312508065827/d8k.htm" },
+      { label: "SEC filing: Empire Energy press release, Exhibit 99.1, 2010 (public record)", href: "https://www.sec.gov/Archives/edgar/data/788206/000107878210002258/empire8k100410ex991.htm" },
+      { label: "SEC order revoking registration of Empire Energy Corporation International, Release No. 86921, Sept 10, 2019 (public record)", href: "https://www.sec.gov/Archives/edgar/data/788206/999999999719006769/filename1.pdf" },
+    ],
+    related: [
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
+      { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
+      { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
+      { href: "/services/", label: "Services: install labor by inquiry" },
+    ],
+  },
+  {
     slug: "thunderstorm-generator-critics",
     interactives: [{ after: 99, kind: "evidence-timeline" }],
-    title: "Thunderstorm Generator: scam or not?",
-    question: "Is the Thunderstorm Generator a scam or not? What do critics and supporters say?",
+    title: "Thunderstorm Generator critics and supporters, side by side",
+    question: "What do critics and supporters of the Thunderstorm Generator say?",
     description:
       "Critics and supporters of the Thunderstorm Generator, side by side and labeled. The Embry-Riddle thesis is the measured anchor; the Skeptoid critique and the inventor’s claims are shown as such.",
     published: "2026-10-15",
-    lede: "People ask whether the Thunderstorm Generator is a scam or a hoax. This page lays out what the critics say, what the supporters say, and what a university test measured. Each part is labeled so you can weigh it yourself.",
+    lede: "This is the deep roundup: what the critics say, what the supporters say, and what a university test measured. For the short answer to “is it a scam?”, see our plain verdict page. This page lays out what the critics say, what the supporters say, and what a university test measured. Each part is labeled so you can weigh it yourself.",
     blocks: [
       {
         heading: "What “hoax” would mean",
@@ -675,6 +802,7 @@ export const explainers: Explainer[] = [
       { label: "Strike Foundation — Introduction (inventor’s side)", href: "https://www.strikefoundation.earth/introduction" },
     ],
     related: [
+      { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is the Thunderstorm Generator a scam?" },
       { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "The Embry-Riddle test explained" },
       { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
@@ -790,7 +918,7 @@ export const explainers: Explainer[] = [
     ],
     related: [
       { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "The Embry-Riddle test explained" },
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
       { href: "/sources/", label: "Sources" },
     ],
@@ -872,7 +1000,7 @@ export const explainers: Explainer[] = [
     related: [
       { href: "/explainers/protium-hydrogen-path/", label: "Protium and the hydrogen path" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
-      { href: "/explainers/thunderstorm-generator-critics/", label: "Thunderstorm Generator: scam or not?" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
       { href: "/sources/", label: "Sources" },
     ],
   },

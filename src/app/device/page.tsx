@@ -387,8 +387,8 @@ export default function DevicePage() {
             </Link>
           </li>
           <li>
-            <Link href="/explainers/thunderstorm-generator-critics/" className="link-aurora">
-              Thunderstorm Generator: scam or not?
+            <Link href="/explainers/is-the-thunderstorm-generator-a-scam/" className="link-aurora">
+              Is the Thunderstorm Generator a scam?
             </Link>
           </li>
           <li>
