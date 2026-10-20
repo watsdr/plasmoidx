@@ -148,6 +148,12 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-19 (evening) — Interactive graphics shipped
+- Merged `interactive-graphics` (merge 97c0567). Deploy run 39353456167 (default cap 50): uploaded 196, deleted 31 stale `_next/static` files, IndexNow HTTP 200 (28 URLs).
+- New: Measured vs claimed chart (`src/components/interactive/MeasuredVsClaimed.tsx`) on Home, Embry-Riddle, Does it work; fuel estimator (`FuelEstimator.tsx`, 9.67% / 0–9.67% range, empty defaults) on Does it work; evidence timeline (`src/components/EvidenceTimeline.tsx`, no JS) on Other tests and Critics; Device system-flow lab now shows "Inventor model" / "What's verified" per part.
+- All numbers live in `src/lib/evidence.ts`; only add a figure there once it is cited on a page. Explainers place graphics via the `interactives` field in `explainers.ts`.
+- STYLE-GUIDE: new **Seller claim** label (numbers published by the seller, e.g. Thunderstorm.tech test results).
+
 ### 2026-10-19 — Discovery pass shipped (Home hook, Device labels, Explainers nav, www→apex)
 - Merged `discovery-pass` into main (merge 3359dd1). Deploy run 39321290516 (default cap 50): uploaded 195, deleted 27 stale `_next/static` files, IndexNow HTTP 200 (28 URLs).
 - Home: title "Thunderstorm Generator: what was measured vs claimed | Plasmoid X"; new meta description; hero leads with the Measured line (mobile: compact line, buttons fit 390×844 and 360×740); buttons Does it work? / Is it a scam? (critics page) / How it's built; Chapter 2 labeled "Inventor model"; new 5-link "Common questions" block.
