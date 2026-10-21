@@ -44,7 +44,7 @@ for (const [key, label] of Object.entries(sections)) {
 // Per-explainer cards: public/og/explainers/<slug>.png with the page title.
 const esc = (t) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/’/g, "’");
 const src = readFileSync(join(process.cwd(), "src/lib/explainers.ts"), "utf8");
-const items = [...src.matchAll(/slug: "([^"]+)",\s*title: "([^"]+)"/g)].map((m) => [m[1], m[2]]);
+const items = [...src.matchAll(/slug: "([^"]+)",[\s\S]*?\n    title: "([^"]+)"/g)].map((m) => [m[1], m[2]]);
 mkdirSync(join(outDir, "explainers"), { recursive: true });
 function wrap(text, max) {
   const lines = [];
