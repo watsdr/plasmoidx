@@ -44,6 +44,14 @@ export default function Reveal({
       return;
     }
 
+    // Modern on + native support: CSS scroll-driven reveal handles it (no JS observer).
+    // Otherwise (default): the original gentle script-based fade/rise below.
+    const modern = document.documentElement.dataset.modern === "on";
+    if (modern && typeof CSS !== "undefined" && CSS.supports("animation-timeline: view()")) {
+      setShown(true);
+      return;
+    }
+
     document.documentElement.classList.add("js-motion");
 
     const rect = el.getBoundingClientRect();

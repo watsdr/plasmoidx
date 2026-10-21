@@ -9,6 +9,16 @@ const OPTIONS: { value: ThemePreference; label: string }[] = [
   { value: "system", label: "System" },
 ];
 
+/** Cross-fade theme swap via View Transitions when supported and motion allowed; instant otherwise. */
+function withTransition(fn: () => void) {
+  const d = document as Document & { startViewTransition?: (cb: () => void) => unknown };
+  if (!d.startViewTransition || document.documentElement.dataset.modern !== "on" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    fn();
+    return;
+  }
+  d.startViewTransition(fn);
+}
+
 const CYCLE: ThemePreference[] = ["dark", "light", "system"];
 
 function ThemeIcon({ preference }: { preference: ThemePreference }) {
@@ -84,7 +94,7 @@ export default function ThemeToggle({ compact = false }: Props) {
         type="button"
         aria-label={`Color theme: ${label}. Activate to switch.`}
         title={`Theme: ${label}`}
-        onClick={() => setPreference(next)}
+        onClick={() => withTransition(() => setPreference(next))}
         className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md text-mist-300 transition-colors hover:text-mist-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora"
       >
         <ThemeIcon preference={preference} />
@@ -105,7 +115,7 @@ export default function ThemeToggle({ compact = false }: Props) {
             key={opt.value}
             type="button"
             aria-pressed={active}
-            onClick={() => setPreference(opt.value)}
+            onClick={() => withTransition(() => setPreference(opt.value))}
             className={`min-h-11 rounded-full px-2.5 text-xs font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora sm:px-3 ${
               active
                 ? "bg-ink-800 text-mist-50"

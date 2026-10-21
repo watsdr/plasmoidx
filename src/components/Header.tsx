@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { siteNav } from "@/lib/content";
 import ThemeToggle from "@/components/ThemeToggle";
+import ModernToggle from "@/components/ModernToggle";
 import { openStudyPalette } from "@/lib/studyPalette";
 
 /** Defer glossary sheet JS; reserve trigger size to avoid header CLS. */
@@ -164,6 +165,7 @@ export default function Header() {
             </kbd>
           </button>
           <ThemeToggle />
+          <ModernToggle />
           <GlossaryDrawer />
         </div>
 
@@ -192,6 +194,7 @@ export default function Header() {
             </svg>
           </button>
           <ThemeToggle compact />
+          <ModernToggle compact />
           <button
             ref={menuButtonRef}
             type="button"
