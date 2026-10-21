@@ -148,6 +148,11 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-21 (later) — Three answer pages shipped (kit, Joe Rogan episode, Thunderstorm.tech test results)
+- Merged `answer-pages` (8474ea5, approved by Derek as drafted, no content edits) into `main` as merge commit 66c436b; deploy run 39619887860 succeeded.
+- Live: /explainers/thunderstorm-generator-kit/, /explainers/joe-rogan-randall-carlson-malcolm-bendall/, /explainers/thunderstorm-tech-test-results/ all 200 with correct titles; sitemap.xml now 32 URLs.
+- Note: JRE episode dated Nov 10 on site (vs Strike's Nov 11 claim); Carlson quotes are taken from the machine-generated transcript, so verify wording against audio before quoting elsewhere.
+
 ### 2026-10-21 — "Is the Thunderstorm Generator a scam?" page shipped
 - Merged `scam-page` (merge 858e07b). Deploy run 39594317800 (default cap 50): uploaded 200, deleted 9 stale `_next/static` files, IndexNow HTTP 200 (29 URLs).
 - New verdict explainer `/explainers/is-the-thunderstorm-generator-a-scam/`: answer up top, Seller claim blocks (kit $735 + delivery, no warranty, CO warning, per thunderstorm.tech kit page + Feb 2026 assembly PDF), measured thesis figures, Skeptoid commentary, SEC-sourced Empire Energy facts (2008 8-K, 2010 Ex. 99.1, 2019 revocation order), buyer questions, disclosure. FAQ JSON-LD via new `faq` field (rendered as "Quick answers"). New block kind `seller` ("Seller claim").
