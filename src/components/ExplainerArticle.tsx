@@ -31,6 +31,7 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
     .slice(0, 3);
   return (
     <article className="mx-auto w-full min-w-0 max-w-5xl px-4 py-12 sm:px-6 sm:py-16">
+      <div className="read-progress" aria-hidden />
       <JsonLd
         data={{
           "@context": "https://schema.org",

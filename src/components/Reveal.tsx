@@ -44,6 +44,12 @@ export default function Reveal({
       return;
     }
 
+    // Native scroll-driven animation (CSS animation-timeline: view()) — no JS observer needed.
+    if (typeof CSS !== "undefined" && CSS.supports("animation-timeline: view()")) {
+      setShown(true);
+      return;
+    }
+
     document.documentElement.classList.add("js-motion");
 
     const rect = el.getBoundingClientRect();

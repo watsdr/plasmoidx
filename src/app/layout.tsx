@@ -93,6 +93,18 @@ export const metadata: Metadata = {
 /** Apply stored / system theme before paint; first visit defaults to light. */
 const themeBootScript = `(function(){var r='light';try{var k='plasmoidx-theme';var t=localStorage.getItem(k)||'light';r=t==='light'||t==='dark'?t:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');}catch(e){}document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;})();`;
 
+const sameSite = {
+  and: [
+    { href_matches: "/*" },
+    { not: { href_matches: "/*.*" } },
+    { not: { selector_matches: "[rel~=nofollow], [target=_blank], [download]" } },
+  ],
+};
+const speculationRules = JSON.stringify({
+  prefetch: [{ where: sameSite, eagerness: "moderate" }],
+  prerender: [{ where: sameSite, eagerness: "conservative" }],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -102,6 +114,11 @@ export default function RootLayout({
     <html lang="en" className="bg-[var(--background)]" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+        {/* Speculation Rules: prerender same-site pages on hover/press intent (Chromium); ignored elsewhere. */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{ __html: speculationRules }}
+        />
       </head>
       <body
         className={`${geistSans.variable} flex min-h-screen flex-col font-sans antialiased`}

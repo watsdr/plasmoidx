@@ -1033,3 +1033,83 @@ html[data-theme="light"] {
     transition: none;
   }
 }
+
+/* ── Modern polish (progressive; every block degrades to the existing look) ── */
+
+/* Cross-document view transitions: gentle cross-fade on full page loads. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.22s;
+    animation-timing-function: ease-out;
+  }
+}
+
+/* Scroll-driven reveal (gentle rise): CSS-only, no IntersectionObserver where supported. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+/* Transform-only: text is never translucent, so contrast and LCP are unaffected. */
+@keyframes reveal-rise {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* Reading progress hairline on long articles (scroll timeline; hidden if unsupported). */
+.read-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .read-progress {
+      display: block;
+      position: fixed;
+      inset: 0 0 auto 0;
+      height: 2px;
+      z-index: 60;
+      background: var(--focus-ring);
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      animation: read-grow linear both;
+      animation-timeline: scroll(root block);
+      pointer-events: none;
+    }
+  }
+}
+@keyframes read-grow {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Typography: balanced headings, no orphans in body copy. */
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+p, li, figcaption, blockquote {
+  text-wrap: pretty;
+}
+
+/* Skip rendering work for far-below-the-fold footer until near. */
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 480px;
+}
+
+/* Form controls & scrollbars follow the theme accent. */
+:root {
+  accent-color: var(--focus-ring);
+}
