@@ -295,6 +295,7 @@ export const explainers: Explainer[] = [
       { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
       { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
       { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
+      { href: "/explainers/thunderstorm-generator-kit/", label: "Thunderstorm Generator kit: price, what’s included and what to know" },
     ],
   },
   {
@@ -607,6 +608,7 @@ export const explainers: Explainer[] = [
       { href: "/explainers/strike-foundation-and-thunderstorm-tech/", label: "Strike Foundation, Thunderstorm.tech and this site" },
       { href: "/explainers/msaart/", label: "Bendall MSAART explained" },
       { href: "/sources/", label: "Sources" },
+      { href: "/explainers/joe-rogan-randall-carlson-malcolm-bendall/", label: "Joe Rogan, Randall Carlson and Malcolm Bendall: what was said" },
     ],
   },
   {
@@ -730,6 +732,288 @@ export const explainers: Explainer[] = [
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
       { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests" },
       { href: "/services/", label: "Services: install labor by inquiry" },
+      { href: "/explainers/thunderstorm-tech-test-results/", label: "Thunderstorm.tech test results, explained" },
+    ],
+  },
+  {
+    slug: "thunderstorm-generator-kit",
+    interactives: [{ after: 5, kind: "measured-vs-claimed" }],
+    title: "Thunderstorm Generator kit: price, what’s included and what to know",
+    question: "How much is the Thunderstorm Generator kit, and what do you get?",
+    description:
+      "The Thunderstorm Generator kit in plain English: $735 plus delivery, what is in the box, what it fits, the seller’s own warnings, what installing it involves, and what measurement shows.",
+    published: "2026-10-21",
+    lede: "The Thunderstorm Generator kit is sold through Thunderstorm.tech for $735 in U.S. dollars plus delivery, for small gasoline generators up to about 12 kilowatts (kW). It comes with no guarantee of fuel or emission results, and the one university test this site cites measured modest effects: a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide (CO) at idle.",
+    blocks: [
+      {
+        heading: "Price and how to order",
+        kind: "seller",
+        body: [
+          "Thunderstorm.tech lists the kit at $735 in U.S. dollars plus a delivery charge. There is no online checkout: you send a quotation request with your full delivery address, the seller sends a formal quote including freight, and the kit ships by courier after payment.",
+          "Kits are made and held in stock in Thailand and shipped worldwide, according to the seller.",
+        ],
+      },
+      {
+        heading: "What is in the box",
+        kind: "seller",
+        body: [
+          "The seller says every part, fitting and instruction needed for the retrofit is included. The generator itself and the labor to fit it are not.",
+        ],
+        table: {
+          caption: "Kit contents, as listed by the seller",
+          head: ["Part", "What the seller says it is"],
+          rows: [
+            ["Retrofit unit (the “Vajra” or vortex)", "The main unit, pre-welded, fitted to the generator’s exhaust. The instructions describe it as two sets of nested spheres joined by a nest of tubes."],
+            ["Ionizer and bubbler", "The air ionizer and the water bubbler (plasmoid generator). The instructions say the bubbler has a diffuser and a steel wool catalyst."],
+            ["Fittings and hardware", "Brackets, seals, connectors, copper tubing and high-temperature sealant. The instructions also list an aluminum sheet used as a shield."],
+            ["Instructions", "A written assembly guide (February 2026) and a video build series."],
+          ],
+        },
+      },
+      {
+        heading: "What it fits",
+        kind: "seller",
+        body: [
+          "The kit page says the kit is purpose-built for small gasoline (petrol) generators up to about 12 kW, or 16 horsepower (hp). It is not sold on that page as a car kit.",
+          "The university thesis did run a one-vehicle road test, on a 1989 Chevrolet Blazer, using hardware the manufacturer, Plasmoid Power, supplied. That was a research setup, not this kit.",
+        ],
+      },
+      {
+        heading: "The seller’s own warnings",
+        kind: "seller",
+        body: [
+          "The assembly instructions say no warranties or guarantees are given on emission cuts or fuel savings, and that neither Plasmoid Power Limited nor Alpha Prospects Limited will be liable.",
+          "They say installation means significant changes to the generator, so the generator maker’s warranty “will almost certainly be voided,” and that it needs some engineering skill.",
+          "They warn never to run the generator in an enclosed space, because carbon monoxide (CO) is “odorless and colorless and is deadly to humans and animals.” They also say to keep a fire extinguisher at hand and that the unit runs at very high temperatures.",
+        ],
+      },
+      {
+        heading: "What installing it involves",
+        kind: "plain",
+        body: [
+          "From the seller’s instructions: drain the fuel, remove the muffler, and raise the fuel tank on threaded rods. Some generators may need a wheel removed or a small piece of frame cut out.",
+          "The main unit bolts to the exhaust port with high-temperature sealant that, the instructions say, cannot be removed after it has been heated. The carburetor comes off so an inlet piece can fit between it and the engine, and you may need to source your own bolts. A plasmoid water-vapor mix is then fed into the intake after the carburetor.",
+          "To run it: fill the bubbler about two-thirds with water, plug in the ionizer bulb, run the engine for about ten minutes, then open the valve very slowly and adjust the throttle.",
+          "One detail differs between the seller’s documents: the instructions say the vapor goes in after the carburetor, while the seller’s test-results page says ahead of it.",
+        ],
+      },
+      {
+        heading: "What measurement shows",
+        kind: "measured",
+        body: [
+          "A 2026 master’s (M.S.) thesis at Embry-Riddle Aeronautical University measured a 9.67% lower fuel-use rate on a small generator under load and about 34% less carbon monoxide (CO) at idle. Carbon dioxide (CO₂) and oxygen showed no significant change.",
+          "The thesis says it “did not conclusively validate” the inventor’s fuel and emissions claims and that its results fit “a modest positive effect.”",
+        ],
+      },
+      {
+        heading: "What the seller says it does",
+        kind: "seller",
+        body: [
+          "The kit page says the same technology has shown up to 98% CO and hydrocarbon reduction in government-certified UK testing, and a fuel-efficiency improvement in an Embry-Riddle study it dates to 2025. The thesis this site cites is dated 2026.",
+          "Our page on the Thunderstorm.tech test results goes through each of the seller’s tests and what is missing from them.",
+        ],
+      },
+      {
+        heading: "Questions to ask before buying",
+        kind: "plain",
+        body: [
+          "Is my generator under about 12 kW, and am I willing to lose its warranty and cut into its fuel and exhaust systems?",
+          "Can I measure it myself before and after, for example by weighing fuel and reading carbon monoxide (CO) with an exhaust analyzer?",
+          "Can I run it safely outdoors, away from people, with a fire extinguisher at hand?",
+          "Can the seller share full test reports, including who ran and paid for each test?",
+        ],
+      },
+      {
+        heading: "Disclosure",
+        kind: "plain",
+        body: [
+          "This site sells no kits and is not a dealer. Its owner offers install and setup labor by inquiry, with a written estimate, for people who already own a kit or buy one themselves (see Services).",
+        ],
+      },
+    ],
+    faq: [
+      { q: "How much does the Thunderstorm Generator kit cost?", a: "Thunderstorm.tech lists it at $735 in U.S. dollars plus delivery. You request a quote, the seller confirms freight, and the kit ships after payment." },
+      { q: "Will the Thunderstorm Generator kit fit my car?", a: "The seller’s kit page says the kit is built for small gasoline generators up to about 12 kilowatts (kW), or 16 horsepower (hp). It is not sold there as a car kit." },
+      { q: "Does the kit come with a warranty?", a: "The seller’s instructions say no warranties or guarantees are given on emission cuts or fuel savings, and that fitting it will almost certainly void the generator maker’s warranty." },
+      { q: "Does the Thunderstorm Generator kit work?", a: "One university master’s thesis measured a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide (CO) at idle. The seller’s much larger numbers have not been confirmed by anyone else we could find." },
+    ],
+    sources: [
+      { label: "Thunderstorm.tech — TSG Kits (seller: price, contents, fit)", href: "https://thunderstorm.tech/tsg-kits" },
+      { label: "Plasmoid Power — Thunderstorm Generator Assembly Instructions, February 2026 (seller: warnings, installation)", href: "https://thunderstorm.tech/tsg-kits/Assembly%20Instructions%20-%202026.pdf" },
+      { label: "Thunderstorm.tech — Test Results (seller claim)", href: "https://thunderstorm.tech/technology/test-results" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+    ],
+    related: [
+      { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is the Thunderstorm Generator a scam?" },
+      { href: "/explainers/thunderstorm-tech-test-results/", label: "Thunderstorm.tech test results, explained" },
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
+      { href: "/services/", label: "Services: install labor by inquiry" },
+    ],
+  },
+  {
+    slug: "joe-rogan-randall-carlson-malcolm-bendall",
+    interactives: [{ after: 3, kind: "evidence-timeline" }],
+    title: "Joe Rogan, Randall Carlson and Malcolm Bendall: what was said",
+    question: "What did Randall Carlson say about Malcolm Bendall on the Joe Rogan Experience?",
+    description:
+      "Episode #1897 of the Joe Rogan Experience (November 10, 2022) is where many people first heard of Malcolm Bendall. What Randall Carlson said, with timestamps, and what has been measured since.",
+    published: "2026-10-21",
+    lede: "Many people first heard of Malcolm Bendall on episode #1897 of the Joe Rogan Experience, released November 10, 2022, when guest Randall Carlson described Bendall’s work in a conversation with Graham Hancock. Bendall was not a guest on that episode; Carlson relayed claims that this site has not verified, and since then one university thesis has measured modest effects from Thunderstorm Generator hardware.",
+    blocks: [
+      {
+        heading: "What the episode was",
+        kind: "plain",
+        body: [
+          "Episode #1897 of the Joe Rogan Experience lists two guests: Graham Hancock, an author, and Randall Carlson, a researcher. It was released on November 10, 2022, and runs 2 hours 53 minutes. Most of it is about ancient history.",
+          "Strike Foundation’s media page lists the episode and says Carlson introduces Malcolm Bendall and his technology in it. Strike Foundation’s home page gives the date as November 11, 2022.",
+        ],
+      },
+      {
+        heading: "What Randall Carlson said",
+        kind: "claim",
+        body: [
+          "These are Carlson’s statements, relayed from Bendall’s side. Times are approximate, from a machine-made transcript of the episode.",
+          "About 1:20:42: he describes Bendall as “the man I’ve been talking to for the last seven years.”",
+          "About 1:21:23: he shows “a generator that has no moving parts” and says “it’s all based on geometry.”",
+          "About 1:21:58: he says he had been asked not to talk about it until patents and licensing were in place.",
+          "About 1:23:34: he says Mazda, the Japanese carmaker, “is getting ready to do a 25 million dollar testing” of prototypes meant to retrofit engines. We could not find any public statement from Mazda about this.",
+          "About 1:24:05: he says over 100 patents had been developed, and reads a description of plasmoids as working like an “atomic battery.”",
+          "About 1:25:08: he says the laboratory is in the Maldives.",
+        ],
+      },
+      {
+        heading: "What a critic says about it",
+        kind: "commentary",
+        body: [
+          "Brian Dunning of the Skeptoid podcast (December 16, 2025) writes that many people learned about the Thunderstorm Generator from Carlson’s appearance on the podcast in November 2022. He argues the device is an exhaust heat riser plus water injection, and that small gains are “probably true” as long as they are small.",
+        ],
+      },
+      {
+        heading: "What has been measured since",
+        kind: "measured",
+        body: [
+          "A 2026 master’s (M.S.) thesis at Embry-Riddle Aeronautical University tested Thunderstorm Generator retrofit hardware. It measured a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide (CO) at idle, with no significant change in carbon dioxide (CO₂) or oxygen. A one-vehicle road test showed about 8.7% better economy, using hardware the manufacturer, Plasmoid Power, supplied.",
+          "The seller, Thunderstorm.tech, reports much larger results. Our page on those test results explains what they show and what is missing.",
+        ],
+      },
+      {
+        heading: "How to read the episode",
+        kind: "plain",
+        body: [
+          "The episode is a conversation, not a test. Patents, the Mazda testing and the laboratory location are claims a guest relayed on air. What can be checked today is the measured fuel and exhaust data, and that points to a real but modest effect.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Which Joe Rogan episode talked about Malcolm Bendall?", a: "Episode #1897, with Graham Hancock and Randall Carlson, released November 10, 2022. Carlson describes Bendall’s work about one hour and twenty minutes in." },
+      { q: "Was Malcolm Bendall a guest on episode #1897?", a: "No. The listed guests were Graham Hancock and Randall Carlson. Carlson described Bendall’s work." },
+      { q: "Has anything Carlson described been measured?", a: "A 2026 Embry-Riddle Aeronautical University master’s thesis measured a 9.67% lower fuel-use rate on a small generator and about 34% less carbon monoxide (CO) at idle from Thunderstorm Generator hardware. The patents, Mazda testing and laboratory claims have not been verified by this site." },
+    ],
+    sources: [
+      { label: "Spotify — The Joe Rogan Experience #1897, Graham Hancock & Randall Carlson (Nov 10, 2022)", href: "https://open.spotify.com/episode/2xvmTo09BFMd6tJfJPmmvT" },
+      { label: "JRE Podcast — episode listing #1897 (date, length, guests)", href: "https://www.jrepodcast.com/episode/joe-rogan-experience-1897-graham-hancock-randall-carlson/" },
+      { label: "Podscripts — machine transcript of #1897 (timestamps)", href: "https://podscripts.co/podcasts/the-joe-rogan-experience/1897-graham-hancock-randall-carlson" },
+      { label: "Strike Foundation — External media (inventor’s side)", href: "https://www.strikefoundation.earth/media" },
+      { label: "Strike Foundation — home page (inventor’s side)", href: "https://strikefoundation.earth/" },
+      { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+    ],
+    related: [
+      { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
+      { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is the Thunderstorm Generator a scam?" },
+      { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
+    ],
+  },
+  {
+    slug: "thunderstorm-tech-test-results",
+    interactives: [{ after: 6, kind: "measured-vs-claimed" }],
+    title: "Thunderstorm.tech test results, explained",
+    question: "What do the Thunderstorm.tech test results show, and can they be trusted?",
+    description:
+      "The seller’s Thunderstorm Generator test results in plain English: Dartford, Clearwater, Star Cement and Test 13, what each reports, what is missing, how to read “+6,833% oxygen,” and how they compare with the university thesis.",
+    published: "2026-10-21",
+    lede: "Thunderstorm.tech, the seller’s site, reports four tests with very large results, such as carbon monoxide (CO) down 97–98% in two of them and oxygen up 6,833% in one. These are the seller’s numbers: the page does not include full reports, who paid, or complete units, and the one university thesis we cite measured much smaller changes.",
+    blocks: [
+      {
+        heading: "What the page claims overall",
+        kind: "seller",
+        body: [
+          "The page is headed “Independently Tested. Independently Verified. Three Continents.” It says carbon monoxide was cut by up to 98% and carbon dioxide (CO₂) by up to 99.9%, and that oxygen rose in every test because pollutants are “converted directly into oxygen.”",
+          "The largest CO₂ figure in its own tables is 99.56% (Clearwater). The 99.9% figure in its tables is for volatile organic compounds (VOCs) at Dartford.",
+        ],
+      },
+      {
+        heading: "The four tests, as reported",
+        kind: "seller",
+        body: [
+          "Selected rows from the seller’s tables, copied as published. “—” means the cell is blank on the seller’s page.",
+        ],
+        table: {
+          caption: "Thunderstorm.tech test results, as reported by the seller",
+          head: ["Test", "Gas or measure", "Without device", "With device", "Reported change"],
+          rows: [
+            ["Dartford, UK, June 28, 2024", "Carbon monoxide (CO)", "12,010 mg/m³", "350 mg/m³", "−97.1%"],
+            ["Dartford, UK", "Oxygen", "0.15% by volume", "10.40% by volume", "+6,833.3%"],
+            ["Dartford, UK", "Water vapor", "4.20% by volume", "2.40% by volume", "−42.85%"],
+            ["Clearwater, Florida, June 24, 2024", "Carbon dioxide (CO₂)", "11.6 (no unit)", "0.05 (no unit)", "−99.56%"],
+            ["Clearwater, Florida", "Oxygen", "—", "20.17 (no unit)", "+1,361.59%"],
+            ["Clearwater, Florida", "Fuel run time", "10 ml / hrs", "264", "+19.45%"],
+            ["Star Cement, United Arab Emirates (UAE), Dec 5–6, 2024", "Carbon dioxide (CO₂)", "8.40% by volume", "1.40% by volume", "−83.33%"],
+            ["Star Cement, UAE", "Carbon monoxide (CO)", "0.10% by volume", "0.10% by volume", "0.00%"],
+            ["Star Cement, UAE", "Oxygen (outside air: 21.07%)", "9.12% by volume", "20.43% by volume", "+124.01%"],
+          ],
+        },
+      },
+      {
+        heading: "Who ran each test, and what is missing",
+        kind: "plain",
+        body: [
+          "Dartford, UK: the page says Element, a testing company, tested a fitted engine at the Land Logical facility, and shows an image it calls the original source document. The engine type and load are not given, and the page does not say who paid.",
+          "Clearwater, Florida: a generator at 60 hertz (Hz) under a 2,400 watt (W) load. The tester is not named. Several cells have no unit or no before value, so some of the percentages cannot be checked from the table.",
+          "Star Cement, UAE: a Honda 5 kW gasoline engine at the company’s Al Nakla Mines Workshop, run in partnership with Strike Foundation (UK), per the page.",
+          "Test 13: Plasmoid Power’s own test on a 5,500 W generator under a 2,200 W load, five runs over four hours. The page says it is self-certified, signed by the company’s chief executive. The first run was left out of the averages, and hydrocarbons went up. The page gives no numbers for this test.",
+        ],
+      },
+      {
+        heading: "How to read “+6,833% oxygen”",
+        kind: "plain",
+        body: [
+          "The number comes from the Dartford table: oxygen went from 0.15% to 10.40% of the exhaust sample. That is a rise of about 10 percentage points. Because the starting value is so small, the same rise works out to a percent change of about 6,833%. The seller’s own Star Cement table lists ordinary outside air at 21.07% oxygen.",
+          "A gas analyzer reports concentration: how much of each gas is in the sample, not how much the engine made. A sample with more oxygen and less of everything else would also look this way if outside air mixed into it. The published summary does not say how that was ruled out, which a full report could show.",
+        ],
+      },
+      {
+        heading: "How the university thesis compares",
+        kind: "measured",
+        body: [
+          "A 2026 master’s (M.S.) thesis at Embry-Riddle Aeronautical University measured carbon monoxide (CO) about 34% lower at idle, with no significant change in carbon dioxide (CO₂) or oxygen, and a 9.67% lower fuel-use rate on a small generator.",
+          "So the thesis agrees that CO fell, but by far less, and it did not see the large CO₂ and oxygen changes the seller reports. Different engines, loads, analyzers and methods may explain part of the gap.",
+        ],
+      },
+      {
+        heading: "What would make these results checkable",
+        kind: "plain",
+        body: [
+          "Full reports for each test, naming the engine, the load, the analyzer, its calibration and who paid. Units on every number, and before values that are not blank. Raw readings, not just averages.",
+          "Most of all, a repeat by a lab with no stake in the result. The thesis author recommends third-party validation by a nationally recognized testing laboratory.",
+        ],
+      },
+    ],
+    faq: [
+      { q: "Are the Thunderstorm.tech test results independent?", a: "The seller calls them independent. We could not check who paid for any of them, the Clearwater tester is not named, and Test 13 is self-certified by Plasmoid Power." },
+      { q: "What does “+6,833% oxygen” mean?", a: "In the Dartford table, oxygen in the exhaust sample went from 0.15% to 10.40%, about 10 percentage points. Because the starting value is tiny, the percent change is about 6,833%." },
+      { q: "Did the university test confirm the seller’s results?", a: "No. The Embry-Riddle master’s thesis (2026) measured carbon monoxide (CO) about 34% lower at idle and no significant change in carbon dioxide (CO₂) or oxygen." },
+    ],
+    sources: [
+      { label: "Thunderstorm.tech — Test Results (seller claim; all tables quoted)", href: "https://thunderstorm.tech/technology/test-results" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+    ],
+    related: [
+      { href: "/explainers/other-thunderstorm-generator-tests/", label: "Other Thunderstorm Generator tests: who ran each one" },
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
+      { href: "/explainers/is-the-thunderstorm-generator-a-scam/", label: "Is the Thunderstorm Generator a scam?" },
+      { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
     ],
   },
   {
@@ -921,6 +1205,7 @@ export const explainers: Explainer[] = [
       { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
       { href: "/sources/", label: "Sources" },
+      { href: "/explainers/thunderstorm-tech-test-results/", label: "Thunderstorm.tech test results, explained" },
     ],
   },
   {
