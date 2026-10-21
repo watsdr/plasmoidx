@@ -148,6 +148,14 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-21 (evening) — "Modern" opt-in motion option shipped
+- New header toggle **Modern** (desktop pill after Dark/Light/System; sparkle icon on phone; aria-pressed, label "Modern motion effects"). Off by default, saved in localStorage `plasmoidx-modern`, applied as `html[data-modern="on"]` by the pre-paint boot script (no flash).
+- Modern gates: theme cross-fade (View Transitions), cross-document page fade (`@view-transition`, injected only when on), CSS scroll-driven reveals (transform-only), reading progress line on explainers.
+- Always on: Speculation Rules (prefetch moderate / prerender on press), text-wrap balance/pretty, footer content-visibility, accent-color.
+- Default (Modern off) keeps the original gentle script-based reveal; reduced motion = no motion either way. Local Lighthouse a11y 100, color-contrast pass (Home, Device, kit explainer; mobile + desktop).
+- Merge commit d665789; deploy run 39688922929 succeeded; live Home + explainer 200, toggle present in layout JS.
+- Pending: `edu-drafts` branch (8549a7f) awaiting Derek review — not merged.
+
 ### 2026-10-21 (later) — Three answer pages shipped (kit, Joe Rogan episode, Thunderstorm.tech test results)
 - Merged `answer-pages` (8474ea5, approved by Derek as drafted, no content edits) into `main` as merge commit 66c436b; deploy run 39619887860 succeeded.
 - Live: /explainers/thunderstorm-generator-kit/, /explainers/joe-rogan-randall-carlson-malcolm-bendall/, /explainers/thunderstorm-tech-test-results/ all 200 with correct titles; sitemap.xml now 32 URLs.
