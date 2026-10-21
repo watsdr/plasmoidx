@@ -148,6 +148,12 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-21 — "Is the Thunderstorm Generator a scam?" page shipped
+- Merged `scam-page` (merge 858e07b). Deploy run 39594317800 (default cap 50): uploaded 200, deleted 9 stale `_next/static` files, IndexNow HTTP 200 (29 URLs).
+- New verdict explainer `/explainers/is-the-thunderstorm-generator-a-scam/`: answer up top, Seller claim blocks (kit $735 + delivery, no warranty, CO warning, per thunderstorm.tech kit page + Feb 2026 assembly PDF), measured thesis figures, Skeptoid commentary, SEC-sourced Empire Energy facts (2008 8-K, 2010 Ex. 99.1, 2019 revocation order), buyer questions, disclosure. FAQ JSON-LD via new `faq` field (rendered as "Quick answers"). New block kind `seller` ("Seller claim").
+- Critics page retitled "Thunderstorm Generator critics and supporters, side by side" (deep roundup, links to the verdict page). Home "Is it a scam?" button, Common questions, Device keep-reading now point to the verdict page.
+- `scripts/og-images.mjs` slug/title regex fixed (pages with `interactives` were skipped).
+
 ### 2026-10-19 (evening) — Interactive graphics shipped
 - Merged `interactive-graphics` (merge 97c0567). Deploy run 39353456167 (default cap 50): uploaded 196, deleted 31 stale `_next/static` files, IndexNow HTTP 200 (28 URLs).
 - New: Measured vs claimed chart (`src/components/interactive/MeasuredVsClaimed.tsx`) on Home, Embry-Riddle, Does it work; fuel estimator (`FuelEstimator.tsx`, 9.67% / 0–9.67% range, empty defaults) on Does it work; evidence timeline (`src/components/EvidenceTimeline.tsx`, no JS) on Other tests and Critics; Device system-flow lab now shows "Inventor model" / "What's verified" per part.
