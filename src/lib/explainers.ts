@@ -1286,6 +1286,7 @@ export const explainers: Explainer[] = [
       { href: "/explainers/protium-hydrogen-path/", label: "Protium and the hydrogen path" },
       { href: "/explainers/does-the-thunderstorm-generator-work/", label: "Does the Thunderstorm Generator work?" },
       { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
+      { href: "/explainers/water-injection-in-engines/", label: "Water injection in engines: what’s known" },
       { href: "/sources/", label: "Sources" },
     ],
   },
@@ -1361,6 +1362,222 @@ export const explainers: Explainer[] = [
       { href: "/sources/", label: "Sources" },
       { href: "/explainers/who-is-malcolm-bendall/", label: "Who is Malcolm Bendall?" },
       { href: "/explainers/thunderstorm-generator/", label: "The Thunderstorm Generator explained" },
+    ],
+  },
+  {
+    slug: "how-to-read-a-fuel-economy-claim",
+    title: "How to read a fuel-economy claim",
+    question: "How can I tell if a fuel-saving or miles-per-gallon claim is trustworthy?",
+    description:
+      "A plain checklist for any fuel-saving claim: what was measured, against what baseline, under what conditions, and who ran the test. Uses this site’s own measured and seller numbers as examples.",
+    published: "2026-10-21",
+    lede: "This page is a short checklist for reading any fuel-saving claim. It matters because a single percentage can hide very different tests, and the same device can show very different numbers depending on who measured it and how.",
+    blocks: [
+      {
+        heading: "What “fuel economy” means",
+        kind: "plain",
+        body: [
+          "Fuel economy is how far a vehicle goes on a set amount of fuel, usually miles per gallon (MPG). A fuel-use rate is the reverse idea: how much fuel an engine burns in a set time, such as milliliters per minute (mL/min).",
+          "A generator test usually reports a fuel-use rate. A road test usually reports fuel economy. They are not the same number, so check which one a claim uses.",
+        ],
+      },
+      {
+        heading: "Even official numbers vary in real life",
+        kind: "plain",
+        body: [
+          "The US Environmental Protection Agency (EPA) rates cars with standardized tests. The government site FuelEconomy.gov says these ratings are useful for comparing vehicles but may not predict the MPG you will get.",
+          "It lists several things that change MPG: how and where you drive, vehicle condition and maintenance, fuel variations, vehicle variations, and engine break-in. Any before-and-after claim has to hold these steady.",
+        ],
+      },
+      {
+        heading: "Four questions to ask",
+        kind: "plain",
+        body: [
+          "1. What exactly was measured, and how? Weighing or timing the fuel is stronger than reading a dashboard estimate.",
+          "2. Was there a baseline — the same engine, same load, same route — run without the device?",
+          "3. How many runs, and under what conditions? Wind, temperature and load all move the number.",
+          "4. Who ran the test, and who supplied the hardware or paid for it?",
+        ],
+      },
+      {
+        heading: "An example that answers most of the questions",
+        kind: "measured",
+        body: [
+          "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — weighed and timed gasoline on each run of a small generator at about 2,760 watts (W) of load. Fuel use fell from 35.27 to 31.86 mL/min, a 9.67% lower fuel-use rate.",
+          "Its one-vehicle road test (a 1989 Chevrolet Blazer, 10 runs each way on a loop of about 20 miles) found about 8.7% better fuel economy. The thesis notes limits: only four of eight cylinders were covered, retrofit runs had high winds, and the manufacturer, Plasmoid Power, supplied the road-test hardware.",
+        ],
+      },
+      {
+        heading: "An example that leaves questions open",
+        kind: "seller",
+        body: [
+          "The seller’s Thunderstorm.tech test-results page reports a Clearwater, Florida generator test (June 24, 2024) with a 19.45% longer fuel run time, under a 2,400 W load. The page does not name the tester, and the units in its table are unclear.",
+          "This is shown as reported by the seller, not as a measurement this site can check.",
+        ],
+      },
+      {
+        heading: "Why the size of the number is not the point",
+        kind: "plain",
+        body: [
+          "A bigger percentage is not more convincing on its own. A modest number with a clear method, a baseline and named limits tells you more than a large number with none of those.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "FuelEconomy.gov (US Department of Energy and EPA) — “Your Mileage Will Vary” (reference)", href: "https://www.fueleconomy.gov/feg/why_differ.shtml" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Thunderstorm.tech — Test Results (seller’s site)", href: "https://thunderstorm.tech/technology/test-results" },
+    ],
+    related: [
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
+      { href: "/explainers/thunderstorm-tech-test-results/", label: "Thunderstorm.tech test results, explained" },
+      { href: "/explainers/water-injection-in-engines/", label: "Water injection in engines: what’s known" },
+      { href: "/sources/", label: "Sources" },
+    ],
+  },
+  {
+    slug: "water-injection-in-engines",
+    title: "Water injection in engines: what’s known",
+    question: "What is water injection in an engine, and what is it known to do?",
+    description:
+      "A plain history of water injection: why engineers spray water into engines, where it has been used, and what it does and does not do. Labeled, with sources.",
+    published: "2026-10-21",
+    lede: "This page explains water injection, an old and well-documented engine technique. It matters because outside writers and the Embry-Riddle thesis both point to water vapor as one likely reason for the Thunderstorm Generator’s modest measured gains.",
+    blocks: [
+      {
+        heading: "What water injection is",
+        kind: "plain",
+        body: [
+          "Water injection sprays water into the air going into an engine, or straight into the combustion chamber. It is also called anti-detonant injection (ADI).",
+          "The water does not burn. It soaks up heat, which cools hot spots that can make fuel ignite too early. That early ignition is called knock, or detonation.",
+        ],
+      },
+      {
+        heading: "Where it has been used",
+        kind: "plain",
+        body: [
+          "World War II–era aircraft engines, such as the BMW 801 and the Pratt & Whitney R-2800, used water-alcohol mixes for short bursts of extra power. Early jet airliners, including early Boeing 707s, used it for extra takeoff thrust.",
+          "In cars, Saab used it on the 1978 Saab 99 Turbo S, and BMW used it on the BMW M4 GTS, introduced in 2015. Bosch, which developed a system with BMW, sells one called WaterBoost.",
+        ],
+      },
+      {
+        heading: "What it is known to do",
+        kind: "plain",
+        body: [
+          "Because it reduces knock, water injection lets an engine use a higher compression ratio or more boost. Wikipedia’s summary says that, depending on the engine, power and fuel efficiency can also improve from water alone, and it may reduce nitrogen oxides (NOx) or carbon monoxide (CO).",
+          "Results depend on the engine. A gain on one design is not a promise for another.",
+        ],
+      },
+      {
+        heading: "A maker’s own figures",
+        kind: "seller",
+        body: [
+          "Bosch claims up to 5% more engine performance, up to 4% less carbon dioxide (CO₂), and up to 13% better fuel economy from its system, as summarized by Wikipedia. These are the maker’s “up to” figures, not independent measurements.",
+        ],
+      },
+      {
+        heading: "How this connects to the Thunderstorm Generator",
+        kind: "commentary",
+        body: [
+          "Brian Dunning (Skeptoid, Dec 16, 2025) argues the device is an exhaust heat riser plus water injection, and that small gains are “probably true” if they stay small.",
+          "The Embry-Riddle thesis says water injection has shown benefits in independent research, and it ties its measured gain to heat recovery and water vapor rather than to water acting as a fuel.",
+        ],
+      },
+      {
+        heading: "What the test measured",
+        kind: "measured",
+        body: [
+          "The Embry-Riddle test found about 9–10% lower fuel use (small generator; 9.67%) and about 34% less carbon monoxide (CO) in an idle test. Carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly; the one-vehicle road test was about 8.7%.",
+        ],
+      },
+      {
+        heading: "The inventor’s view is different",
+        kind: "claim",
+        body: [
+          "Malcolm Bendall describes his device as using plasmoids to let “water be used as an atomic fuel.” That is the inventor’s model. Water injection, by contrast, treats water only as a coolant, and the thesis did not test the inventor’s explanation.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Wikipedia — Water injection (engine) (reference; history, Bosch figures)", href: "https://en.wikipedia.org/wiki/Water_injection_(engine)" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Skeptoid #1019, “Testing the Thunderstorm Generator,” Brian Dunning, Dec 16, 2025 (outside commentary)", href: "https://skeptoid.com/episodes/1019" },
+    ],
+    related: [
+      { href: "/explainers/can-water-be-a-fuel/", label: "Can water be a fuel?" },
+      { href: "/explainers/plasmoid-water-bubbler/", label: "The bubbler (plasmoid generator)" },
+      { href: "/explainers/thunderstorm-generator-critics/", label: "Critics and supporters, side by side" },
+      { href: "/explainers/how-to-read-a-fuel-economy-claim/", label: "How to read a fuel-economy claim" },
+    ],
+  },
+  {
+    slug: "what-is-carbon-monoxide",
+    title: "What is carbon monoxide?",
+    question: "What is carbon monoxide, where does it come from, and what does a lower CO reading mean?",
+    description:
+      "Carbon monoxide (CO) in plain English: what it is, why engines make it, why it is dangerous, and how to read the CO numbers on this site.",
+    published: "2026-10-21",
+    lede: "This page explains carbon monoxide (CO), the one gas where the Embry-Riddle test measured a clear drop. It matters because CO is a real safety hazard, and because CO numbers are easy to misread.",
+    blocks: [
+      {
+        heading: "What carbon monoxide is",
+        kind: "plain",
+        body: [
+          "Carbon monoxide (CO) is a gas with no color and no smell. It forms when fuel burns without enough oxygen to finish the job. Complete burning turns carbon into carbon dioxide (CO₂); incomplete burning leaves some as CO.",
+          "Gasoline engines, generators, furnaces, heaters, grills and wood stoves can all make it.",
+        ],
+      },
+      {
+        heading: "Why it is dangerous",
+        kind: "plain",
+        body: [
+          "CO sticks to the part of your blood that carries oxygen, so less oxygen reaches the body. Early symptoms — headache, dizziness, weakness, nausea — are often mistaken for the flu.",
+          "Poisonings are more common in winter, especially from portable generators used during power outages. Never run a generator or engine indoors or in a closed garage, and keep a CO detector in the home.",
+        ],
+      },
+      {
+        heading: "How CO is measured",
+        kind: "plain",
+        body: [
+          "Concentrations are often given in parts per million (ppm) or as a percent of the gas sample. A gas analyzer on an exhaust pipe reports concentration — how much CO is in each sample — not the total amount the engine made.",
+          "So a percent change in a CO reading is a change in concentration under those test conditions. It is not, by itself, a change in total pollution.",
+        ],
+      },
+      {
+        heading: "What the test measured",
+        kind: "measured",
+        body: [
+          "The Embry-Riddle test — an Embry-Riddle Aeronautical University master’s (M.S.) thesis (2026) — found about 34% less carbon monoxide (CO) in an idle test. Carbon dioxide (CO₂), oxygen and hydrocarbons did not change significantly.",
+          "The −34% is carbon monoxide only. It is not a drop in all emissions.",
+        ],
+      },
+      {
+        heading: "Seller-reported CO numbers",
+        kind: "seller",
+        body: [
+          "The seller’s Thunderstorm.tech page reports CO 97.1% lower in a Dartford, UK test (June 28, 2024), 98.00% lower in a Clearwater, Florida test (June 24, 2024), and unchanged at 0.10% at Star Cement in the United Arab Emirates (UAE) (December 5–6, 2024).",
+          "These are reported by the seller. This site has not seen the full reports, and the conditions differ from test to test.",
+        ],
+      },
+      {
+        heading: "Why engineers watch CO",
+        kind: "commentary",
+        body: [
+          "Wikipedia’s engine water-injection article notes that water injection may reduce carbon monoxide or nitrogen oxides, which is one ordinary explanation outside writers offer for CO changes in devices that add water vapor.",
+        ],
+      },
+    ],
+    sources: [
+      { label: "Wikipedia — Carbon monoxide poisoning (reference; sources, symptoms, prevention)", href: "https://en.wikipedia.org/wiki/Carbon_monoxide_poisoning" },
+      { label: "Wikipedia — Water injection (engine) (reference)", href: "https://en.wikipedia.org/wiki/Water_injection_(engine)" },
+      { label: "Hall, W. (2026), Embry-Riddle Aeronautical University master’s thesis (measured)", href: "https://commons.erau.edu/edt/964/" },
+      { label: "Thunderstorm.tech — Test Results (seller’s site)", href: "https://thunderstorm.tech/technology/test-results" },
+    ],
+    related: [
+      { href: "/explainers/embry-riddle-thunderstorm-generator-test/", label: "What the Embry-Riddle test measured" },
+      { href: "/explainers/other-thunderstorm-generator-tests/", label: "All tests side by side" },
+      { href: "/explainers/water-injection-in-engines/", label: "Water injection in engines: what’s known" },
+      { href: "/glossary/", label: "Glossary" },
     ],
   },
 ];
