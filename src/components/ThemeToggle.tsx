@@ -12,7 +12,7 @@ const OPTIONS: { value: ThemePreference; label: string }[] = [
 /** Cross-fade theme swap via View Transitions when supported and motion allowed; instant otherwise. */
 function withTransition(fn: () => void) {
   const d = document as Document & { startViewTransition?: (cb: () => void) => unknown };
-  if (!d.startViewTransition || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (!d.startViewTransition || document.documentElement.dataset.modern !== "on" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     fn();
     return;
   }

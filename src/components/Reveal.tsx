@@ -45,6 +45,12 @@ export default function Reveal({
     }
 
     // Native scroll-driven animation (CSS animation-timeline: view()) — no JS observer needed.
+    const modern = document.documentElement.dataset.modern === "on";
+    if (!modern) {
+      // Modern effects off: content simply shows, no reveal motion.
+      setShown(true);
+      return;
+    }
     if (typeof CSS !== "undefined" && CSS.supports("animation-timeline: view()")) {
       setShown(true);
       return;
