@@ -1,5 +1,5 @@
 /* PlasmoidX static-export service worker — shell + locks + key assets. */
-const CACHE = "plasmoidx-shell-v15";
+const CACHE = "plasmoidx-shell-v16";
 
 const PRECACHE = [
   "/",
@@ -18,6 +18,7 @@ const PRECACHE = [
   "/logo.png",
   "/favicon.svg",
   "/favicon.png",
+  "/apple-touch-icon.png",
   "/og.png",
   "/visuals/home-problem-solution.webp",
   "/visuals/device-system-accurate.webp",
