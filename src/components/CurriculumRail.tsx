@@ -171,7 +171,7 @@ export default function CurriculumRail({ variant = "study" }: Props) {
                   <span className="font-mono text-[11px] text-aurora">
                     {String(lesson.n).padStart(2, "0")}
                   </span>
-                  <span className="max-w-[9rem] truncate sm:max-w-none">
+                  <span className="max-w-[14rem] whitespace-normal break-words sm:max-w-none">
                     {lesson.title}
                   </span>
                   {got ? (

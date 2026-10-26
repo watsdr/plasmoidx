@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
-import VisualPanel from "@/components/VisualPanel";
+import { InstallFlowVisual } from "@/components/visuals/SiteVisuals";
 import ContactForm from "@/components/ContactForm";
 import ScrollyChapter from "@/components/ScrollyChapter";
 
@@ -84,14 +84,7 @@ export default function ServicesPage() {
       </header>
 
       <ScrollyChapter className="mt-10" delay={40}>
-        <VisualPanel
-          src="/visuals/services-install.webp"
-          priority
-          alt="Icons suggesting a customer-owned kit box, tools, and a written estimate — install labor inquiry"
-          width={960}
-          height={540}
-          caption="Inquiry → written estimate → install labor for kits you already own (or buy yourself). Kits are not sold on this site."
-        />
+        <InstallFlowVisual caption="Inquiry → written estimate → install labor for kits you already own (or buy yourself). Kits are not sold on this site." />
       </ScrollyChapter>
 
       {/* Problem → solution chapters */}

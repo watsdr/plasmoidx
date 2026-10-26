@@ -1,3 +1,4 @@
+import type React from "react";
 /** Donut / toroid cross-section: cavitation birth → self-contained EVO field. */
 
 type Props = {
@@ -24,6 +25,8 @@ export default function PlasmoidEvo({
       }
       aria-labelledby={captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "440px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 440 210"
         className="h-auto w-full max-w-full"
@@ -52,7 +55,7 @@ export default function PlasmoidEvo({
             y="28"
             textAnchor="middle"
             className={activeStep === 0 ? "fill-aurora" : "fill-mist-400"}
-            style={{ fontSize: 10, letterSpacing: "0.1em" }}
+            style={{ fontSize: 12, letterSpacing: "0.1em" }}
           >
             01 · BUBBLE
           </text>
@@ -71,7 +74,7 @@ export default function PlasmoidEvo({
             r="8"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1"
+            strokeWidth={1}
             strokeDasharray="3 2"
             className="text-mist-400"
           />
@@ -80,7 +83,7 @@ export default function PlasmoidEvo({
             y="160"
             textAnchor="middle"
             className="fill-mist-300"
-            style={{ fontSize: 11 }}
+            style={{ fontSize: 12 }}
           >
             Cavitation
           </text>
@@ -90,7 +93,7 @@ export default function PlasmoidEvo({
           d="M 118 100 L 152 100"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth={1.5}
           className="text-mist-400"
           markerEnd="url(#evo-arrow)"
           opacity={activeStep !== null && activeStep < 1 ? 0.25 : 1}
@@ -105,7 +108,7 @@ export default function PlasmoidEvo({
             y="28"
             textAnchor="middle"
             className={activeStep === 1 ? "fill-aurora" : "fill-mist-400"}
-            style={{ fontSize: 10, letterSpacing: "0.1em" }}
+            style={{ fontSize: 12, letterSpacing: "0.1em" }}
           >
             02 · COLLAPSE
           </text>
@@ -122,25 +125,25 @@ export default function PlasmoidEvo({
           <path
             d="M 200 72 L 200 82"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-aurora"
           />
           <path
             d="M 200 118 L 200 128"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-aurora"
           />
           <path
             d="M 172 100 L 182 100"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-aurora"
           />
           <path
             d="M 218 100 L 228 100"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-aurora"
           />
           <text
@@ -148,7 +151,7 @@ export default function PlasmoidEvo({
             y="160"
             textAnchor="middle"
             className="fill-mist-300"
-            style={{ fontSize: 11 }}
+            style={{ fontSize: 12 }}
           >
             Zero-point
           </text>
@@ -158,7 +161,7 @@ export default function PlasmoidEvo({
           d="M 248 100 L 282 100"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth={1.5}
           className="text-mist-400"
           markerEnd="url(#evo-arrow)"
           opacity={activeStep !== null && activeStep < 2 ? 0.25 : 1}
@@ -175,14 +178,14 @@ export default function PlasmoidEvo({
             className={
               activeStep === 2 || chargeOn ? "fill-aurora" : "fill-mist-400"
             }
-            style={{ fontSize: 10, letterSpacing: "0.1em" }}
+            style={{ fontSize: 12, letterSpacing: "0.1em" }}
           >
             {chargeOn ? "04 · FIELD" : "03 · EVO"}
           </text>
           <ellipse
             cx="350"
             cy="100"
-            rx="52"
+            rx={52}
             ry="34"
             fill={
               chargeOn || activeStep === 2
@@ -196,11 +199,11 @@ export default function PlasmoidEvo({
           <ellipse
             cx="350"
             cy="100"
-            rx="18"
+            rx={12}
             ry="12"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-aurora"
           />
           <path
@@ -231,12 +234,13 @@ export default function PlasmoidEvo({
             y="176"
             textAnchor="middle"
             className="fill-mist-400"
-            style={{ fontSize: 11 }}
+            style={{ fontSize: 12 }}
           >
             Self-contained
           </text>
         </g>
       </svg>
+      </div>
       {activeStep === null ? (
         <figcaption
           id={captionId}

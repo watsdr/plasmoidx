@@ -1,3 +1,4 @@
+import type React from "react";
 /** Simple 518,400 / 51.84° lock card. */
 type Props = { captionId?: string };
 
@@ -9,6 +10,8 @@ export default function Lock518400Card({
       className="overflow-x-safe my-6 w-full max-w-md"
       aria-labelledby={captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "360px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 360 210"
         className="h-auto w-full max-w-full"
@@ -20,10 +23,10 @@ export default function Lock518400Card({
           y="12"
           width="336"
           height="186"
-          rx="14"
+          rx={12}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.35"
+          strokeWidth={1.5}
           className="text-ink-600"
         />
         <text
@@ -31,7 +34,7 @@ export default function Lock518400Card({
           y="44"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10, letterSpacing: "0.16em", fontWeight: 600 }}
+          style={{ fontSize: 12, letterSpacing: "0.16em", fontWeight: 600 }}
         >
           {"TIME'S MOULD"}
         </text>
@@ -53,7 +56,7 @@ export default function Lock518400Card({
           y="106"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           1×2×3×4×5×6×8×9×10 (7 left out)
         </text>
@@ -63,7 +66,7 @@ export default function Lock518400Card({
           x2="308"
           y2="122"
           stroke="currentColor"
-          strokeWidth="1"
+          strokeWidth={1}
           className="text-ink-600"
         />
         <text
@@ -84,11 +87,12 @@ export default function Lock518400Card({
           y="178"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           518,400 ÷ 10,000 — cone and pyramid mouth
         </text>
       </svg>
+      </div>
       <figcaption
         id={captionId}
         className="mt-2 text-xs leading-relaxed text-mist-400"

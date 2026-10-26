@@ -22,7 +22,7 @@ const stages = [
   },
   {
     title: "Resonator",
-    body: "Catalytic tornado resonator with nested CTR spheres. Hot exhaust enters one end. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
+    body: "Catalytic tornado resonator with nested contra-rotating (CTR) spheres. Hot exhaust enters one end. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
     model: "Opposite-spinning flows in the nested spheres organize the plasmoid stream that feeds the engine.",
     verified: "Only the whole retrofit was measured (about a 9.67% lower fuel-use rate on a small generator; carbon monoxide (CO) about 34% lower at idle). This part was not tested on its own.",
   },

@@ -1,3 +1,4 @@
+import type React from "react";
 /** Clockwise store vs anticlockwise spend — calm torus + arrows. */
 export default function StoreSpendTorus() {
   return (
@@ -5,6 +6,8 @@ export default function StoreSpendTorus() {
       className="overflow-x-safe my-6 w-full max-w-lg"
       aria-labelledby="store-spend-caption"
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "440px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 440 220"
         className="h-auto w-full max-w-full"
@@ -40,10 +43,10 @@ export default function StoreSpendTorus() {
           y="12"
           width="184"
           height="156"
-          rx="12"
+          rx={12}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1"
+          strokeWidth={1}
           className="text-ink-600/80"
         />
         <rect
@@ -51,10 +54,10 @@ export default function StoreSpendTorus() {
           y="12"
           width="184"
           height="156"
-          rx="12"
+          rx={12}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1"
+          strokeWidth={1}
           className="text-ink-600/80"
         />
 
@@ -62,28 +65,28 @@ export default function StoreSpendTorus() {
         <ellipse
           cx="110"
           cy="78"
-          rx="58"
+          rx={58}
           ry="34"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth={1.5}
           className="text-ink-600"
         />
         <ellipse
           cx="110"
           cy="78"
-          rx="24"
+          rx={24}
           ry="14"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-aurora/80"
         />
         <path
           d="M 110 40 A 42 26 0 0 1 150 74"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.75"
+          strokeWidth={2}
           className="text-aurora"
           markerEnd="url(#arrowHead)"
         />
@@ -101,7 +104,7 @@ export default function StoreSpendTorus() {
           y="148"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Tighten · negative
         </text>
@@ -110,28 +113,28 @@ export default function StoreSpendTorus() {
         <ellipse
           cx="330"
           cy="78"
-          rx="58"
+          rx={58}
           ry="34"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.5"
+          strokeWidth={1.5}
           className="text-ink-600"
         />
         <ellipse
           cx="330"
           cy="78"
-          rx="24"
+          rx={24}
           ry="14"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-mist-300/70"
         />
         <path
           d="M 330 40 A 42 26 0 0 0 290 74"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.75"
+          strokeWidth={2}
           className="text-mist-200"
           markerEnd="url(#arrowHeadMist)"
         />
@@ -149,7 +152,7 @@ export default function StoreSpendTorus() {
           y="148"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Open · positive
         </text>
@@ -159,11 +162,12 @@ export default function StoreSpendTorus() {
           y="198"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Shared shape: torus (donut)
         </text>
       </svg>
+      </div>
       <figcaption
         id="store-spend-caption"
         className="mt-2 text-xs leading-relaxed text-mist-400"

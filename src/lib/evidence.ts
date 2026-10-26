@@ -98,6 +98,23 @@ export const metrics: EvidenceMetric[] = [
   },
 ];
 
+/** One shared set of evidence labels for badges, chips and timelines across the site. */
+export const EVIDENCE_LABELS = {
+  measured: "Measured",
+  seller: "Seller claim",
+  inventor: "Inventor claim",
+  outside: "Outside commentary",
+  inventorSide: "Inventor’s side",
+  definition: "Plain definition",
+} as const;
+
+/** What each bar measures, so different quantities are never read off one unlabeled axis. */
+export const BAR_MEASURE: Record<string, string> = {
+  "fuel-gen": "Fuel-use rate, % lower",
+  "fuel-road": "Fuel economy, % better",
+  "fuel-clearwater": "Fuel run time, % longer",
+};
+
 /** The one measured fuel figure the estimator uses (small generator). */
 export const MEASURED_FUEL_RATE = 9.67;
 
@@ -105,7 +122,7 @@ export type TimelineItem = {
   date: string;
   iso: string;
   title: string;
-  label: "Measured" | "Seller claim" | "Outside commentary" | "Inventor’s side";
+  label: (typeof EVIDENCE_LABELS)[keyof typeof EVIDENCE_LABELS];
   body: string;
   source: keyof typeof SRC;
   more?: { href: string; label: string };

@@ -1,3 +1,4 @@
+import type React from "react";
 /** Three device beats: ionizer chamber → bubbler / plasmoid generator → CTR resonator. */
 
 type Props = {
@@ -21,8 +22,8 @@ export default function DeviceBeats({
 }: Props) {
   const beats = [
     { n: "01", title: "Ionizer", sub: "Air pretreatment" },
-    { n: "02", title: "Bubbler", sub: "Cavitation → EVOs" },
-    { n: "03", title: "Resonator", sub: "Nested CTR spheres" },
+    { n: "02", title: "Bubbler", sub: "Cavitation" },
+    { n: "03", title: "Resonator", sub: "Contra-rotating" },
   ];
   const captionId = `${idPrefix}-caption`;
   const arrowId = `${idPrefix}-arrow`;
@@ -34,11 +35,13 @@ export default function DeviceBeats({
       }
       aria-labelledby={hideCaption ? undefined : captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "520px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 520 168"
         className="h-auto w-full max-w-full"
         role="img"
-        aria-label="Three steps: air ionizer chamber, bubbler plasmoid generator, then catalytic tornado resonator with nested CTR spheres"
+        aria-label="Three steps: air ionizer chamber, bubbler plasmoid generator, then catalytic tornado resonator with nested contra-rotating (CTR) spheres"
       >
         <defs>
           <marker
@@ -60,7 +63,7 @@ export default function DeviceBeats({
               x="14"
               y="76"
               className="fill-mist-400"
-              style={{ fontSize: 9 }}
+              style={{ fontSize: 12 }}
             >
               air
             </text>
@@ -68,7 +71,7 @@ export default function DeviceBeats({
               cx="8"
               cy="68"
               r="2.25"
-              fill="rgb(56 189 248 / 0.75)"
+              fill="rgb(var(--fig-air) / 0.75)"
               className="teach-flow-dot"
               style={{ animationDelay: "0s" }}
             />
@@ -117,12 +120,12 @@ export default function DeviceBeats({
                     rx={4}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.25"
+                    strokeWidth={1}
                     className="text-mist-300"
                   />
-                  <circle cx={cx} cy={36} r={3.5} fill="rgb(167 139 250 / 0.85)" />
-                  <circle cx={cx - 4} cy={44} r={2.5} fill="rgb(167 139 250 / 0.55)" />
-                  <circle cx={cx + 3} cy={48} r={2} fill="rgb(167 139 250 / 0.7)" />
+                  <circle cx={cx} cy={36} r={3.5} fill="rgb(var(--fig-violet) / 0.85)" />
+                  <circle cx={cx - 4} cy={44} r={2.5} fill="rgb(var(--fig-violet) / 0.55)" />
+                  <circle cx={cx + 3} cy={48} r={2} fill="rgb(var(--fig-violet) / 0.7)" />
                 </g>
               )}
               {i === 1 && (
@@ -132,21 +135,21 @@ export default function DeviceBeats({
                     y={30}
                     width={22}
                     height={26}
-                    rx={3}
+                    rx={4}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.25"
+                    strokeWidth={1}
                     className="text-mist-300"
                   />
                   <path
                     d={`M ${cx - 9} 48 Q ${cx} 40 ${cx + 9} 48`}
-                    fill="rgb(56 189 248 / 0.2)"
-                    stroke="rgb(56 189 248 / 0.55)"
-                    strokeWidth="1"
+                    fill="rgb(var(--fig-air) / 0.2)"
+                    stroke="rgb(var(--fig-air) / 0.55)"
+                    strokeWidth={1}
                   />
-                  <circle cx={cx - 4} cy={40} r={2} fill="rgb(186 230 253 / 0.9)" />
-                  <circle cx={cx + 3} cy={36} r={2.5} fill="rgb(186 230 253 / 0.75)" />
-                  <circle cx={cx} cy={44} r={1.75} fill="rgb(186 230 253 / 0.85)" />
+                  <circle cx={cx - 4} cy={40} r={2} fill="rgb(var(--fig-air) / 0.9)" />
+                  <circle cx={cx + 3} cy={36} r={2.5} fill="rgb(var(--fig-air) / 0.75)" />
+                  <circle cx={cx} cy={44} r={1.75} fill="rgb(var(--fig-air) / 0.85)" />
                 </g>
               )}
               {i === 2 && (
@@ -157,7 +160,7 @@ export default function DeviceBeats({
                     r={12}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.25"
+                    strokeWidth={1}
                     className="text-mist-300"
                   />
                   <circle
@@ -165,10 +168,10 @@ export default function DeviceBeats({
                     cy={42}
                     r={7.5}
                     fill="none"
-                    stroke="rgb(196 140 92 / 0.85)"
-                    strokeWidth="1.35"
+                    stroke="rgb(var(--fig-copper) / 0.85)"
+                    strokeWidth={1.5}
                   />
-                  <circle cx={cx} cy={42} r={3} fill="rgb(196 140 92 / 0.9)" />
+                  <circle cx={cx} cy={42} r={3} fill="rgb(var(--fig-copper) / 0.9)" />
                 </g>
               )}
 
@@ -178,7 +181,7 @@ export default function DeviceBeats({
                 textAnchor="middle"
                 className="fill-aurora"
                 style={{
-                  fontSize: 10,
+                  fontSize: 12,
                   fontFamily: "ui-monospace, monospace",
                   letterSpacing: "0.06em",
                 }}
@@ -199,7 +202,7 @@ export default function DeviceBeats({
                 y={108}
                 textAnchor="middle"
                 className="fill-mist-400"
-                style={{ fontSize: 10 }}
+                style={{ fontSize: 12 }}
               >
                 {b.sub}
               </text>
@@ -209,7 +212,7 @@ export default function DeviceBeats({
                     d={`M ${x + 136} 72 L ${x + 160} 72`}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.5"
+                    strokeWidth={1.5}
                     className="text-mist-400"
                     markerEnd={`url(#${arrowId})`}
                   />
@@ -218,7 +221,7 @@ export default function DeviceBeats({
                       cx={x + 138}
                       cy={72}
                       r="2.25"
-                      fill="rgb(94 234 212 / 0.85)"
+                      fill="rgb(var(--aurora) / 0.85)"
                       className="teach-flow-dot"
                       style={{ animationDelay: `${0.4 + i * 0.55}s` }}
                     />
@@ -234,11 +237,12 @@ export default function DeviceBeats({
           y="156"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Inventor-model path in the metal
         </text>
       </svg>
+      </div>
       {!hideCaption ? (
         <figcaption
           id={captionId}

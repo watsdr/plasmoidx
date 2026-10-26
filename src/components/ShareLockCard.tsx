@@ -2,8 +2,6 @@
 
 import { useCallback, useId, useRef, useState } from "react";
 
-const LABEL =
-  "Independent education · Not Strike Foundation, Strike Energy, or a licensee";
 
 /** Downloadable 518,400 → 51.84° card (SVG / PNG). Web Share when available. */
 export default function ShareLockCard() {
@@ -123,6 +121,7 @@ export default function ShareLockCard() {
 
   return (
     <figure className="overflow-x-safe my-6 w-full max-w-md" aria-labelledby={captionId}>
+      {/* Fixed dark palette on purpose: this SVG is exported as a share PNG, so it must look the same in any theme. */}
       <svg
         ref={svgRef}
         viewBox="0 0 360 220"
@@ -139,7 +138,7 @@ export default function ShareLockCard() {
           rx="12"
           fill="none"
           stroke="#243049"
-          strokeWidth="1.25"
+          strokeWidth="1.5"
           data-stroke="#243049"
         />
         <text
@@ -148,9 +147,9 @@ export default function ShareLockCard() {
           textAnchor="middle"
           fill="#6b84a8"
           data-fill="#6b84a8"
-          style={{ fontSize: 10, letterSpacing: "0.14em", fontFamily: "system-ui, sans-serif" }}
+          style={{ fontSize: 13, letterSpacing: "0.14em", fontFamily: "system-ui, sans-serif" }}
         >
-          {"TIME'S MOULD"}
+          {"TIME'S MOULD · INVENTOR CLAIM"}
         </text>
         <text
           x="180"
@@ -172,7 +171,7 @@ export default function ShareLockCard() {
           textAnchor="middle"
           fill="#6b84a8"
           data-fill="#6b84a8"
-          style={{ fontSize: 11, fontFamily: "system-ui, sans-serif" }}
+          style={{ fontSize: 13, fontFamily: "system-ui, sans-serif" }}
         >
           1×2×3×4×5×6×8×9×10 (7 left out)
         </text>
@@ -205,7 +204,7 @@ export default function ShareLockCard() {
           textAnchor="middle"
           fill="#6b84a8"
           data-fill="#6b84a8"
-          style={{ fontSize: 11, fontFamily: "system-ui, sans-serif" }}
+          style={{ fontSize: 13, fontFamily: "system-ui, sans-serif" }}
         >
           518,400 ÷ 10,000 — cone / pyramid mouth
         </text>
@@ -215,9 +214,10 @@ export default function ShareLockCard() {
           textAnchor="middle"
           fill="#9aadc8"
           data-fill="#9aadc8"
-          style={{ fontSize: 9, fontFamily: "system-ui, sans-serif" }}
+          style={{ fontSize: 13, fontFamily: "system-ui, sans-serif" }}
         >
-          {LABEL}
+          <tspan x="180" dy="-6">Independent education</tspan>
+          <tspan x="180" dy="15">Not Strike Foundation, Strike Energy, or a licensee</tspan>
         </text>
       </svg>
       <figcaption

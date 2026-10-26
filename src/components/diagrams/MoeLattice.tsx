@@ -1,3 +1,4 @@
+import type React from "react";
 /** Simplified 16×8 MOE grid with protium seed callout. */
 
 export type MoeFocus = "seed" | "octave" | "mid" | "heavy";
@@ -42,6 +43,8 @@ export default function MoeLattice({
       }
       aria-labelledby={captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "420px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 420 220"
         className="h-auto w-full max-w-full"
@@ -53,7 +56,7 @@ export default function MoeLattice({
           y="22"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10, letterSpacing: "0.12em" }}
+          style={{ fontSize: 12, letterSpacing: "0.12em" }}
         >
           MODEL OF THE ELEMENTS · 16 × 8
         </text>
@@ -91,7 +94,7 @@ export default function MoeLattice({
           y={originY + gridH + 22}
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10 }}
+          style={{ fontSize: 12 }}
         >
           16 octave columns
         </text>
@@ -100,7 +103,7 @@ export default function MoeLattice({
           y={originY + gridH / 2}
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10 }}
+          style={{ fontSize: 12 }}
           transform={`rotate(-90 ${originX - 14} ${originY + gridH / 2})`}
         >
           8 rows
@@ -112,7 +115,7 @@ export default function MoeLattice({
               d={`M ${originX + cell + 4} ${originY + (rows - 1) * (cell + gap) + cell / 2} L ${originX + gridW + 12} ${originY + gridH - 8}`}
               fill="none"
               stroke="currentColor"
-              strokeWidth="1"
+              strokeWidth={1}
               className="text-aurora/50"
             />
             <rect
@@ -120,10 +123,10 @@ export default function MoeLattice({
               y={originY + gridH - 36}
               width="88"
               height="40"
-              rx="6"
+              rx={6}
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.25"
+              strokeWidth={1}
               className="text-aurora/70"
             />
             <text
@@ -131,7 +134,7 @@ export default function MoeLattice({
               y={originY + gridH - 18}
               textAnchor="middle"
               className="fill-mist-100"
-              style={{ fontSize: 11, fontWeight: 500 }}
+              style={{ fontSize: 12, fontWeight: 500 }}
             >
               ¹H protium
             </text>
@@ -140,13 +143,14 @@ export default function MoeLattice({
               y={originY + gridH - 4}
               textAnchor="middle"
               className="fill-mist-400"
-              style={{ fontSize: 10 }}
+              style={{ fontSize: 12 }}
             >
               seed
             </text>
           </>
         )}
       </svg>
+      </div>
       {focus === null ? (
         <figcaption
           id={captionId}

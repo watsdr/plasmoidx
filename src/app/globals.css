@@ -24,9 +24,16 @@ html[data-theme="light"] {
   --mist-300: 58 74 102;
   --mist-400: 76 96 126; /* AA muted text ≥4.5:1 on Daylight Paper */
   --aurora: 15 118 110;
-  --aurora-soft: 14 120 112; /* AA if used as text/link accent on light */
+  --aurora-soft: 15 118 110; /* AA if used as text/link accent on light */
   --aurora-deep: 15 118 110;
   --aurora-glow: 17 94 89;
+  /* Figure tokens (SiteVisuals) */
+  --fig-copper: 154 94 50;
+  --fig-exhaust: 185 28 28;
+  --fig-air: 3 105 161;
+  --fig-gold: 161 98 7;
+  --fig-orange: 194 65 12;
+  --fig-violet: 109 40 217;
   --surface-overlay: rgba(245, 247, 251, 0.72);
   --glossary-bg: #eef2f8;
   --study-sticky-top: rgba(245, 247, 251, 0.96);
@@ -74,6 +81,12 @@ html[data-theme="dark"] {
   --aurora-soft: 45 212 191;
   --aurora-deep: 20 184 166;
   --aurora-glow: 153 246 228;
+  --fig-copper: 214 160 112;
+  --fig-exhaust: 248 113 113;
+  --fig-air: 125 211 252;
+  --fig-gold: 250 204 90;
+  --fig-orange: 251 146 60;
+  --fig-violet: 167 139 250;
   --surface-overlay: rgba(20, 28, 44, 0.62);
   --glossary-bg: #1c263a;
   --study-sticky-top: rgba(20, 28, 44, 0.96);
@@ -1110,4 +1123,52 @@ footer {
 /* Form controls & scrollbars follow the theme accent. */
 :root {
   accent-color: var(--focus-ring);
+}
+
+/* Mobile: keep the search button small and out of the reading column; leave room to scroll past it. */
+@media (max-width: 639px) {
+  .cmd-palette-fab {
+    right: 0.5rem;
+    bottom: 0.5rem;
+    opacity: 0.8;
+  }
+  body {
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Figure chrome shared by every inventor/teaching diagram. */
+.fig-chip {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 0.375rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: rgb(var(--fig-gold));
+}
+@media (max-width: 639px) {
+  .fig-chip {
+    justify-content: space-between;
+  }
+  .fig-chip::before {
+    content: "Swipe sideways ↔";
+    color: rgb(var(--mist-400));
+    font-weight: 400;
+  }
+}
+.fig-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* Keep SVG text >= 12px on phones: never shrink a diagram below 1 CSS px per viewBox unit
+   (all diagram text is >= 12 units); wider diagrams scroll sideways instead. */
+.fig-scroll > svg {
+  min-width: min(var(--fig-minw, 0px), 100vw);
+}
+@media (max-width: 639px) {
+  .fig-scroll > svg {
+    min-width: var(--fig-minw, 0px);
+  }
 }

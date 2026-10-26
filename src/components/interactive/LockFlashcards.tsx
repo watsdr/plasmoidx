@@ -84,6 +84,7 @@ export default function LockFlashcards() {
       role="region"
       aria-labelledby={titleId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <p

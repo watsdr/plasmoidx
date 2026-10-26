@@ -1,3 +1,4 @@
+import type React from "react";
 /** Lightweight SVG system flow mirroring ionizer → bubbler → resonator anatomy. */
 
 type Props = {
@@ -21,8 +22,8 @@ export default function DeviceSystemFlow({
 
   const stages = [
     { n: "1", title: "Ionizer", sub: "Air pretreatment", x: 40 },
-    { n: "2", title: "Bubbler", sub: "Cavitation → EVOs", x: 200 },
-    { n: "3", title: "Resonator", sub: "Nested CTR", x: 360 },
+    { n: "2", title: "Bubbler", sub: "Cavitation", x: 200 },
+    { n: "3", title: "Resonator", sub: "Contra-rotating", x: 360 },
   ] as const;
 
   return (
@@ -30,6 +31,8 @@ export default function DeviceSystemFlow({
       className={className ?? "overflow-x-safe my-6 w-full min-w-0 max-w-3xl"}
       aria-labelledby={hideCaption ? undefined : captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "520px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 520 250"
         className="h-auto w-full max-w-full"
@@ -50,7 +53,7 @@ export default function DeviceSystemFlow({
         </defs>
 
         {/* Air inlet label */}
-        <text x="12" y="78" className="fill-mist-400" style={{ fontSize: 10 }}>
+        <text x="12" y="78" className="fill-mist-400" style={{ fontSize: 12 }}>
           air
         </text>
         {showFlow ? (
@@ -58,7 +61,7 @@ export default function DeviceSystemFlow({
             cx="18"
             cy="88"
             r="2.2"
-            fill="rgb(56 189 248 / 0.8)"
+            fill="rgb(var(--fig-air) / 0.8)"
             className="teach-flow-dot"
           />
         ) : null}
@@ -78,7 +81,7 @@ export default function DeviceSystemFlow({
                 y={36}
                 width={100}
                 height={100}
-                rx={10}
+                rx={8}
                 fill={
                   active && highlight !== null
                     ? "rgb(var(--aurora) / 0.06)"
@@ -98,14 +101,14 @@ export default function DeviceSystemFlow({
                     y={48}
                     width={24}
                     height={36}
-                    rx={5}
+                    rx={6}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.2"
+                    strokeWidth={1}
                     className="text-mist-300"
                   />
-                  <circle cx={cx} cy={58} r={3.5} fill="rgb(167 139 250 / 0.85)" className={showFlow ? "teach-soft-pulse" : undefined} />
-                  <circle cx={cx - 4} cy={68} r={2.5} fill="rgb(167 139 250 / 0.5)" />
+                  <circle cx={cx} cy={58} r={3.5} fill="rgb(var(--fig-violet) / 0.85)" className={showFlow ? "teach-soft-pulse" : undefined} />
+                  <circle cx={cx - 4} cy={68} r={2.5} fill="rgb(var(--fig-violet) / 0.5)" />
                 </g>
               )}
               {i === 1 && (
@@ -115,20 +118,20 @@ export default function DeviceSystemFlow({
                     y={50}
                     width={28}
                     height={34}
-                    rx={3}
+                    rx={4}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.2"
+                    strokeWidth={1}
                     className="text-mist-300"
                   />
                   <path
                     d={`M ${cx - 11} 74 Q ${cx} 64 ${cx + 11} 74`}
-                    fill="rgb(56 189 248 / 0.18)"
-                    stroke="rgb(56 189 248 / 0.5)"
-                    strokeWidth="1"
+                    fill="rgb(var(--fig-air) / 0.18)"
+                    stroke="rgb(var(--fig-air) / 0.5)"
+                    strokeWidth={1}
                   />
-                  <circle cx={cx - 3} cy={60} r={2} fill="rgb(186 230 253 / 0.9)" className={showFlow ? "teach-soft-pulse" : undefined} />
-                  <circle cx={cx + 4} cy={56} r={2.2} fill="rgb(186 230 253 / 0.7)" />
+                  <circle cx={cx - 3} cy={60} r={2} fill="rgb(var(--fig-air) / 0.9)" className={showFlow ? "teach-soft-pulse" : undefined} />
+                  <circle cx={cx + 4} cy={56} r={2.2} fill="rgb(var(--fig-air) / 0.7)" />
                 </g>
               )}
               {i === 2 && (
@@ -139,7 +142,7 @@ export default function DeviceSystemFlow({
                     r={16}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.2"
+                    strokeWidth={1}
                     className="text-mist-300"
                   />
                   <g
@@ -151,15 +154,15 @@ export default function DeviceSystemFlow({
                       cy={64}
                       r={10}
                       fill="none"
-                      stroke="rgb(196 140 92 / 0.85)"
-                      strokeWidth="1.4"
+                      stroke="rgb(var(--fig-copper) / 0.85)"
+                      strokeWidth={1.5}
                     />
                   </g>
                   <g
                     className={showFlow ? "teach-spin-ccw" : undefined}
                     style={{ transformOrigin: `${cx}px 64px` }}
                   >
-                    <circle cx={cx} cy={64} r={4} fill="rgb(196 140 92 / 0.9)" />
+                    <circle cx={cx} cy={64} r={4} fill="rgb(var(--fig-copper) / 0.9)" />
                   </g>
                 </g>
               )}
@@ -169,7 +172,7 @@ export default function DeviceSystemFlow({
                 y={102}
                 textAnchor="middle"
                 className="fill-aurora"
-                style={{ fontSize: 10, fontFamily: "ui-monospace, monospace" }}
+                style={{ fontSize: 12, fontFamily: "ui-monospace, monospace" }}
               >
                 {s.n}
               </text>
@@ -187,7 +190,7 @@ export default function DeviceSystemFlow({
                 y={132}
                 textAnchor="middle"
                 className="fill-mist-400"
-                style={{ fontSize: 9 }}
+                style={{ fontSize: 12 }}
               >
                 {s.sub}
               </text>
@@ -198,7 +201,7 @@ export default function DeviceSystemFlow({
                     d={`M ${s.x + 104} 86 L ${s.x + 156} 86`}
                     fill="none"
                     stroke="currentColor"
-                    strokeWidth="1.4"
+                    strokeWidth={1.5}
                     className="text-mist-400"
                     markerEnd={`url(#${arrowId})`}
                   />
@@ -207,7 +210,7 @@ export default function DeviceSystemFlow({
                       cx={s.x + 108}
                       cy={86}
                       r="2.2"
-                      fill="rgb(94 234 212 / 0.85)"
+                      fill="rgb(var(--aurora) / 0.85)"
                       className="teach-flow-dot"
                       style={{ animationDelay: `${0.35 + i * 0.5}s` }}
                     />
@@ -228,25 +231,25 @@ export default function DeviceSystemFlow({
             rx={8}
             fill="rgb(var(--ink-800) / 0.25)"
             stroke="currentColor"
-            strokeWidth={1.25}
+            strokeWidth={1}
             className="text-ink-600"
           />
           <text x={250} y={182} textAnchor="middle" className="fill-mist-50" style={{ fontSize: 12, fontWeight: 600 }}>
             Engine
           </text>
-          <text x={250} y={196} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 9 }}>
-            intake after carburetor
+          <text x={250} y={196} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
+            after carburetor
           </text>
 
           {/* Hot exhaust: engine → resonator (outer cavity) */}
           <path
             d="M 302 194 Q 432 214 436 142"
             fill="none"
-            stroke="rgb(248 113 113 / 0.7)"
-            strokeWidth="1.5"
+            stroke="rgb(var(--fig-exhaust) / 0.7)"
+            strokeWidth={1.5}
             markerEnd={`url(#${arrowId})`}
           />
-          <text x={474} y={200} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 10 }}>
+          <text x={474} y={200} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
             hot exhaust in
           </text>
 
@@ -254,11 +257,11 @@ export default function DeviceSystemFlow({
           <path
             d="M 384 140 Q 372 174 304 174"
             fill="none"
-            stroke="rgb(45 212 191 / 0.85)"
-            strokeWidth="1.5"
+            stroke="rgb(var(--aurora) / 0.85)"
+            strokeWidth={1.5}
             markerEnd={`url(#${arrowId})`}
           />
-          <text x={342} y={160} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 9 }}>
+          <text x={342} y={160} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
             to intake
           </text>
         </g>
@@ -267,7 +270,7 @@ export default function DeviceSystemFlow({
             cx="306"
             cy="195"
             r="2"
-            fill="rgb(248 113 113 / 0.75)"
+            fill="rgb(var(--fig-exhaust) / 0.75)"
             className="teach-flow-dot"
             style={{ animationDelay: "1.1s", animationDuration: "3.2s" }}
           />
@@ -278,18 +281,19 @@ export default function DeviceSystemFlow({
           y="238"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Thunderstorm Generator — inventor-model flow
         </text>
       </svg>
+      </div>
       {!hideCaption ? (
         <figcaption
           id={captionId}
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
           System flow matching the accurate teaching sketch: air → ionizer →
-          bubbler (plasmoid generator) → nested CTR resonator. Hot exhaust
+          bubbler (plasmoid generator) → nested contra-rotating (CTR) resonator. Hot exhaust
           enters one end of the resonator; the cool plasmoid stream leaves the
           inner sphere by pipe to the engine’s intake, just after the carburetor.
         </figcaption>

@@ -58,7 +58,7 @@ export default function PlasmoidEvoLab() {
     >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p id={labelId} className="text-sm font-medium tracking-tight text-mist-50">
-          Try it: walk EVO birth
+          Try it: walk Exotic Vacuum Occurrence (EVO) birth
         </p>
         <GotItCheck show={finished || persisted} />
       </div>

@@ -1,3 +1,4 @@
+import type React from "react";
 /** Plasmoid gun / vajra quadrature — opposing cone tiers, calm pulse teaching. */
 
 type Props = {
@@ -45,7 +46,7 @@ export default function VajraQuadrature({
           x2={x2}
           y2={y2}
           stroke={color}
-          strokeWidth="10"
+          strokeWidth={10}
           strokeLinecap="round"
         />
         <circle cx={x2} cy={y2} r="7" fill={color} opacity={0.95} />
@@ -61,6 +62,8 @@ export default function VajraQuadrature({
       className={className ?? "overflow-x-safe my-6 w-full min-w-0 max-w-md"}
       aria-labelledby={hideCaption ? undefined : captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "400px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 400 280"
         className="h-auto w-full max-w-full"
@@ -72,10 +75,10 @@ export default function VajraQuadrature({
           y="70"
           width="180"
           height="140"
-          rx="10"
+          rx={8}
           fill="rgb(var(--ink-800) / 0.45)"
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-ink-600"
         />
         <rect
@@ -83,10 +86,10 @@ export default function VajraQuadrature({
           y="84"
           width="152"
           height="112"
-          rx="6"
+          rx={6}
           fill="none"
           stroke="currentColor"
-          strokeWidth="1"
+          strokeWidth={1}
           strokeDasharray="4 4"
           className="text-mist-400/40"
         />
@@ -96,7 +99,7 @@ export default function VajraQuadrature({
             arm(
               a,
               62,
-              "rgb(234 140 70 / 0.9)",
+              "rgb(var(--fig-orange) / 0.9)",
               pulseBoth || pulseBase ? "teach-arm-pulse" : undefined,
               showBase ? 1 : 0.28,
               `base-${a}`
@@ -109,7 +112,7 @@ export default function VajraQuadrature({
             arm(
               a,
               48,
-              "rgb(250 204 90 / 0.92)",
+              "rgb(var(--fig-gold) / 0.92)",
               pulseBoth
                 ? "teach-arm-pulse-delay"
                 : pulseUpper
@@ -129,7 +132,7 @@ export default function VajraQuadrature({
           rx={4}
           fill="rgb(var(--ink-700) / 0.9)"
           stroke="currentColor"
-          strokeWidth="1.2"
+          strokeWidth={1}
           className="text-mist-300"
         />
         <line
@@ -137,8 +140,8 @@ export default function VajraQuadrature({
           y1={cy}
           x2={cx}
           y2={cy - 38}
-          stroke="rgb(250 204 90 / 0.85)"
-          strokeWidth="6"
+          stroke="rgb(var(--fig-gold) / 0.85)"
+          strokeWidth={6}
           strokeLinecap="round"
           opacity={showUpper ? 1 : 0.28}
           className={pulseUpper || pulseBoth ? "teach-soft-pulse" : undefined}
@@ -149,7 +152,7 @@ export default function VajraQuadrature({
           y="36"
           textAnchor="middle"
           className="fill-mist-50"
-          style={{ fontSize: 13, fontWeight: 600 }}
+          style={{ fontSize: 14, fontWeight: 600 }}
         >
           Vajra (plasmoid gun)
         </text>
@@ -158,26 +161,32 @@ export default function VajraQuadrature({
           y="54"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10 }}
+          style={{ fontSize: 12 }}
         >
           Quadrature cross-plus geometry
         </text>
-        <text x="48" y="250" className="fill-mist-300" style={{ fontSize: 10 }}>
-          Base tier
-        </text>
-        <text x="140" y="250" className="fill-mist-300" style={{ fontSize: 10 }}>
-          Upper tier
-        </text>
+        {/* Legend with swatches matching the arm colors */}
+        <g aria-hidden="true">
+          <rect x={112} y={240} width={12} height={12} rx={2} fill="rgb(var(--fig-orange) / 0.9)" />
+          <text x={130} y={250} className="fill-mist-300" style={{ fontSize: 12 }}>
+            Base tier
+          </text>
+          <rect x={210} y={240} width={12} height={12} rx={2} fill="rgb(var(--fig-gold) / 0.92)" />
+          <text x={228} y={250} className="fill-mist-300" style={{ fontSize: 12 }}>
+            Upper tier
+          </text>
+        </g>
         <text
           x="200"
           y="270"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10 }}
+          style={{ fontSize: 12 }}
         >
           Opposing, interlocking cone arms
         </text>
       </svg>
+      </div>
       {!hideCaption ? (
         <figcaption
           id={captionId}
