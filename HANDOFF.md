@@ -148,6 +148,14 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+### 2026-10-26 — Graphics ship: SVG redraw, labels round 2, deterministic builds, chunk cleanup
+- **svg-redraw** `869f321`: the 5 AI raster images replaced with inline SVG (`src/components/visuals/SiteVisuals.tsx`). `7ee860f`: round 2 — "Inventor claim · teaching model" chips on inventor graphics/labs (MeV ladder: "Inventor’s figures · not standard nuclear data"), min 12px SVG text on a 390px phone (wide diagrams scroll sideways with a "Swipe sideways ↔" hint), Fuel bars say what they measure and their scale, theme tokens (`--fig-*`, one teal, strokes 1/1.5/2, radii 2–12), CTR/EVO/ATV spelled out, square 512 favicon + apple-touch-icon, labelled OG cards, "Time’s mould" wraps, splash SVG aria-hidden, Offline toast auto-hides/compact on mobile, "/" button no longer covers content. Labels only; no claims or numbers changed. Audit: `/workspace/graphics-audit/` on the box.
+- **Merge** `c5e49ea` (svg-redraw → main); **sw v16** `c2819c2` (cache bump, precache apple-touch-icon).
+- **Deterministic build** `8d91df0` (merged `0bad44f`). Root cause: Next 14.2.35 merged chunks carried id lists whose order depended on async entry order, so identical sources produced different chunk bytes/hashes and every deploy left stale `_next/static` files (prune counts 65 → 66 → 67 → 95; aborted runs 40329628828, 40331764078, 40332805044). Fix: webpack plugin in `next.config.mjs` sorts merged chunk ids; `generateBuildId` = 12-char git SHA; sitemap `lastModified` = last commit date. Four clean local builds: `out/_next` (94 files) identical.
+- **Dry runs** (upload only, no deletes): 40332340551 (pre-fix, 67 stale), 40334665064 and 40335355011 (post-fix, 99 stale each, identical lists, all `_next/static`).
+- **Cleanup run 40351654913** (one-time `prune_max_deletes=99`, Derek-approved): success, uploaded 225, **deleted 99** stale files. Live check: /, /device/, /study/ and two explainers 200; all referenced `_next/static` assets 200. Default prune cap stays 50; future deploys should leave only the 2 build-manifest files per commit plus chunks for changed code.
+- **Deferred / open:** duplicate diagrams (audit #16, a page-structure change); old `.webp` files kept in `public/`; default theme is still Light (System follows OS only once chosen — one-line change if wanted); Night Shift's draft PR #1 (Dependabot) awaiting Derek.
+
 ### 2026-10-21 (late evening) — Three education pages shipped
 - Merged `edu-drafts` (8549a7f) into `main` as merge commit 21b9bd0 (no conflicts with modern-polish; content unchanged). Own-reasoning sentences approved by Derek as drafted.
 - Live (deploy run 39689546686 succeeded): /explainers/how-to-read-a-fuel-economy-claim/, /explainers/water-injection-in-engines/, /explainers/what-is-carbon-monoxide/ all 200 with correct titles; sitemap.xml now 35 URLs; Modern toggle still present on Home.
