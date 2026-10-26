@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
-import VisualPanel from "@/components/VisualPanel";
+import { InstallFlowVisual } from "@/components/visuals/SiteVisuals";
 import ContactForm from "@/components/ContactForm";
 import { externalLinks } from "@/lib/content";
 
@@ -37,16 +37,7 @@ export default function ConnectPage() {
         </p>
       </header>
 
-      <VisualPanel
-        className="mt-8"
-        size="compact"
-        src="/visuals/services-install.webp"
-          priority
-        alt="Quiet reminder of kit, tools, and estimate — install help is on Services"
-        width={960}
-        height={540}
-        caption="Install labor inquiries live on Services — written estimate before any paid work."
-      />
+      <div className="mt-8"><InstallFlowVisual compact caption="Install labor inquiries live on Services — written estimate before any paid work." /></div>
 
       <section className="mt-10 max-w-2xl rounded-xl border border-ink-600/45 px-4 py-5 sm:px-5">
         <h2 className="text-base font-medium tracking-tight text-mist-50">

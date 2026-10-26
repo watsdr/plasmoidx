@@ -3,7 +3,7 @@ import { pageMeta, SITE_URL } from "@/lib/seo";
 import JsonLd from "@/components/JsonLd";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import Link from "next/link";
-import VisualPanel from "@/components/VisualPanel";
+import { DeviceSystemVisual, NestedSpheresVisual, VajraVisual } from "@/components/visuals/SiteVisuals";
 import Lock518400Card from "@/components/diagrams/Lock518400Card";
 import ExplainFigure from "@/components/ExplainFigure";
 import ScrollyChapter from "@/components/ScrollyChapter";
@@ -95,14 +95,7 @@ export default function DevicePage() {
       </header>
 
       <ScrollyChapter className="mt-10" delay={40}>
-        <VisualPanel
-          src="/visuals/device-system-accurate.webp"
-          alt="Inventor-model teaching sketch: air ionizer with violet interior cue, water-column bubbler with rising cavitation bubbles, and copper-toned resonator showing nested spheres, where hot exhaust enters one end"
-          width={960}
-          height={540}
-          priority
-          caption="Inventor-model teaching sketch of the ionizer → bubbler → resonator path (Draft 518,400 anatomy) — original brochure art, not a product photo or patent reprint."
-        />
+        <DeviceSystemVisual caption="Inventor model of the ionizer → bubbler → resonator path (Draft 518,400 anatomy): engine exhaust enters the resonator, and its output is piped to the intake. A teaching drawing, not a product photo." />
       </ScrollyChapter>
 
       {/* Teach → act scrollytelling */}
@@ -234,14 +227,7 @@ export default function DevicePage() {
               teaching sketch — not a product shot. The interactive companion
               below shows gentle contra-rotation when motion is allowed.
             </p>
-            <VisualPanel
-              className="mt-5"
-              src="/visuals/device-nested-spheres.webp"
-              alt="Cutaway teaching sketch of nested contra-rotating spheres: outer, inner, and tiny central core with opposing flow arrows and exhaust inlet"
-              width={960}
-              height={540}
-              caption="Nested CTR spheres in the resonator — inventor-model teaching sketch summarizing the outer sphere, inner sphere, and core."
-            />
+            <div className="mt-5"><NestedSpheresVisual caption="Nested contra-rotating (CTR) spheres in the resonator: a teaching model of the outer sphere, inner sphere and small core." /></div>
             <NestedSpheresLab />
           </ScrollyChapter>
 
@@ -255,14 +241,7 @@ export default function DevicePage() {
               a simplified model from inventor notes, not a product shot. The soft
               pulse and step-through below highlights opposing tiers.
             </p>
-            <VisualPanel
-              className="mt-5"
-              src="/visuals/device-vajra-gun.webp"
-              alt="Simplified teaching model of plasmoid gun or vajra quadrature: interlocking cone tiers in a cross-plus geometry on a square base"
-              width={960}
-              height={540}
-              caption="Plasmoid gun (vajra quadrature) — simplified teaching model from inventor notes (cone cross geometry), not a product photo."
-            />
+            <div className="mt-5"><VajraVisual caption="Plasmoid gun (vajra quadrature): a simplified teaching model from inventor notes, not a product photo." /></div>
             <VajraLab />
           </ScrollyChapter>
         </div>

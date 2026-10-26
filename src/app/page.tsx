@@ -1,6 +1,6 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import VisualPanel from "@/components/VisualPanel";
+import { MeasuredExhaustVisual } from "@/components/visuals/SiteVisuals";
 import TorusMotif from "@/components/TorusMotif";
 import SplashMark from "@/components/SplashMark";
 import ScrollyChapter from "@/components/ScrollyChapter";
@@ -245,13 +245,7 @@ export default function WhyPage() {
           </ScrollyChapter>
 
           <ScrollyChapter delay={60} className="mt-8">
-            <VisualPanel
-              src="/visuals/home-problem-solution.webp"
-              alt="Side-by-side: ordinary engine exhaust and waste versus a cleaner, organized torus-style energy path"
-              width={960}
-              height={540}
-              caption="Ordinary engines waste fuel and dirty the air. This path aims at a cleaner, more organized process."
-            />
+            <MeasuredExhaustVisual caption="Measured in the Embry-Riddle thesis idle test: CO fell about 34% on average; CO₂ did not change significantly. Exhaust is reduced, not eliminated." />
           </ScrollyChapter>
 
           <div className="mt-8 grid gap-8 sm:grid-cols-2 sm:gap-10">

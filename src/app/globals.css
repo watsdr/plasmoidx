@@ -27,6 +27,11 @@ html[data-theme="light"] {
   --aurora-soft: 14 120 112; /* AA if used as text/link accent on light */
   --aurora-deep: 15 118 110;
   --aurora-glow: 17 94 89;
+  /* Figure tokens (SiteVisuals) */
+  --fig-copper: 154 94 50;
+  --fig-exhaust: 185 28 28;
+  --fig-air: 3 105 161;
+  --fig-gold: 161 98 7;
   --surface-overlay: rgba(245, 247, 251, 0.72);
   --glossary-bg: #eef2f8;
   --study-sticky-top: rgba(245, 247, 251, 0.96);
@@ -74,6 +79,10 @@ html[data-theme="dark"] {
   --aurora-soft: 45 212 191;
   --aurora-deep: 20 184 166;
   --aurora-glow: 153 246 228;
+  --fig-copper: 214 160 112;
+  --fig-exhaust: 248 113 113;
+  --fig-air: 125 211 252;
+  --fig-gold: 250 204 90;
   --surface-overlay: rgba(20, 28, 44, 0.62);
   --glossary-bg: #1c263a;
   --study-sticky-top: rgba(20, 28, 44, 0.96);
