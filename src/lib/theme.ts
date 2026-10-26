@@ -1,4 +1,4 @@
-/** Theme preference: light (default), dark, or follow OS. */
+/** Theme preference: light, dark, or follow OS (default for new visitors). */
 
 export const THEME_STORAGE_KEY = "plasmoidx-theme";
 
@@ -17,15 +17,16 @@ export function readStoredTheme(): ThemePreference {
   } catch {
     /* private mode */
   }
-  return "light";
+  return "system";
 }
 
 export function resolveTheme(pref: ThemePreference): ResolvedTheme {
   if (pref === "light" || pref === "dark") return pref;
   if (typeof window === "undefined") return "light";
-  return window.matchMedia("(prefers-color-scheme: light)").matches
-    ? "light"
-    : "dark";
+  // Dark only when the OS asks for it; no preference falls back to light.
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
 }
 
 export function applyTheme(pref: ThemePreference): ResolvedTheme {

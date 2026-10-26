@@ -124,13 +124,6 @@ const ProtiumPathLabLazy = dynamic(
   }
 );
 
-const DeviceBeatsLabLazy = dynamic(
-  () => import("@/components/interactive/DeviceBeatsLab"),
-  {
-    ssr: false,
-    loading: () => <InteractiveSkeleton label="Loading device beats lab" />,
-  }
-);
 
 const DeviceWalkthroughLazy = dynamic(
   () => import("@/components/interactive/DeviceWalkthrough"),
@@ -196,19 +189,6 @@ const StoreSpendTorusLazy = dynamic(
   }
 );
 
-const AlphaOmegaLadderLazy = dynamic(
-  () => import("@/components/diagrams/AlphaOmegaLadder"),
-  {
-    ssr: true,
-    loading: () => (
-      <div
-        className="my-6 h-56 max-w-md rounded-xl border border-ink-600/40 bg-ink-900/20"
-        aria-busy="true"
-        aria-label="Loading Alpha–Omega ladder"
-      />
-    ),
-  }
-);
 
 const ShareLockCardLazy = dynamic(
   () => import("@/components/ShareLockCard"),
@@ -233,7 +213,6 @@ export const MoeLatticeLab = whenVisible(MoeLatticeLabLazy, () => <InteractiveSk
 export const AtvLab = whenVisible(AtvLabLazy, () => <InteractiveSkeleton />);
 export const AlphaOmegaLab = whenVisible(AlphaOmegaLabLazy, () => <InteractiveSkeleton />);
 export const ProtiumPathLab = whenVisible(ProtiumPathLabLazy, () => <InteractiveSkeleton />);
-export const DeviceBeatsLab = whenVisible(DeviceBeatsLabLazy, () => <InteractiveSkeleton />);
 export const DeviceWalkthrough = whenVisible(DeviceWalkthroughLazy, () => <InteractiveSkeleton />);
 export const NestedSpheresLab = whenVisible(NestedSpheresLabLazy, () => <InteractiveSkeleton />);
 export const DeviceSystemFlowLab = whenVisible(DeviceSystemFlowLabLazy, () => <InteractiveSkeleton />);
@@ -241,5 +220,4 @@ export const VajraLab = whenVisible(VajraLabLazy, () => <InteractiveSkeleton />)
 export const LocksTable = whenVisible(LocksTableLazy, () => <InteractiveSkeleton />);
 export const StudyQuiz = whenVisible(StudyQuizLazy, () => <InteractiveSkeleton />);
 export const StoreSpendTorus = whenVisible(StoreSpendTorusLazy, () => <InteractiveSkeleton />);
-export const AlphaOmegaLadder = whenVisible(AlphaOmegaLadderLazy, () => <InteractiveSkeleton />);
 export const ShareLockCard = whenVisible(ShareLockCardLazy, () => <InteractiveSkeleton />);

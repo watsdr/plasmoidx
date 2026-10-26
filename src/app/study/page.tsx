@@ -18,7 +18,6 @@ import {
   LocksTable,
   StudyQuiz,
   StoreSpendTorus,
-  AlphaOmegaLadder,
   ShareLockCard,
   ImplosiveLab,
   PlasmoidEvoLab,
@@ -448,13 +447,22 @@ export default function StudyPage() {
           <AtvLab />
         </ExplainFigure>
         <ExplainFigure title="Alpha–Omega ladder" beats={explainAlphaOmega}>
-          <AlphaOmegaLadder />
+          <AlphaOmegaLab />
         </ExplainFigure>
-        <AlphaOmegaLab />
         <p className="mt-4 max-w-2xl text-xs leading-relaxed text-mist-400">
           Ladder disclaimer: figures above are an original SVG teaching summary.
           Full inventor Alpha–Omega ladder graphics remain outbound — we do not
-          dump copyrighted Draft 518,400 ladder images onto this site.
+          dump copyrighted Draft 518,400 ladder images onto this site. Full
+          charts stay on{" "}
+          <a
+            href="https://www.strikefoundation.earth"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-aurora"
+          >
+            strikefoundation.earth
+          </a>
+          .
         </p>
       </section>
 

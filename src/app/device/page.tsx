@@ -10,7 +10,6 @@ import ScrollyChapter from "@/components/ScrollyChapter";
 import {
   DeviceWalkthrough,
   AtvLab,
-  DeviceBeatsLab,
   NestedSpheresLab,
   DeviceSystemFlowLab,
   VajraLab,
@@ -191,9 +190,8 @@ export default function DevicePage() {
 
       <section className="mt-12">
         <ScrollyChapter delay={40}>
-          <DeviceWalkthrough />
           <ExplainFigure title="three device beats" beats={explainDeviceBeats}>
-            <DeviceBeatsLab />
+            <DeviceWalkthrough />
           </ExplainFigure>
         </ScrollyChapter>
         <p className="mb-4 text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">

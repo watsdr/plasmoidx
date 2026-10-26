@@ -26,7 +26,7 @@ type ThemeContextValue = {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [preference, setPrefState] = useState<ThemePreference>("light");
+  const [preference, setPrefState] = useState<ThemePreference>("system");
   const [resolved, setResolved] = useState<ResolvedTheme>("light");
 
   useEffect(() => {
@@ -65,7 +65,7 @@ export function useTheme(): ThemeContextValue {
   const ctx = useContext(ThemeContext);
   if (!ctx) {
     return {
-      preference: "light",
+      preference: "system",
       resolved: "light",
       setPreference: () => {},
     };

@@ -92,7 +92,7 @@ export const metadata: Metadata = {
 };
 
 /** Apply stored / system theme before paint; first visit defaults to light. */
-const themeBootScript = `(function(){var r='light';try{var k='plasmoidx-theme';var t=localStorage.getItem(k)||'light';r=t==='light'||t==='dark'?t:(window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');}catch(e){}document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;try{if(localStorage.getItem('plasmoidx-modern')==='on'){document.documentElement.dataset.modern='on';var s=document.createElement('style');s.id='modern-vt';s.textContent='@media (prefers-reduced-motion: no-preference){@view-transition{navigation:auto}}';document.head.appendChild(s);}}catch(e){}})();`;
+const themeBootScript = `(function(){var r='light';try{var k='plasmoidx-theme';var t=localStorage.getItem(k)||'system';r=t==='light'||t==='dark'?t:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');}catch(e){}document.documentElement.dataset.theme=r;document.documentElement.style.colorScheme=r;try{if(localStorage.getItem('plasmoidx-modern')==='on'){document.documentElement.dataset.modern='on';var s=document.createElement('style');s.id='modern-vt';s.textContent='@media (prefers-reduced-motion: no-preference){@view-transition{navigation:auto}}';document.head.appendChild(s);}}catch(e){}})();`;
 
 const sameSite = {
   and: [

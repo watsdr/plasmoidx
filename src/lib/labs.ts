@@ -82,13 +82,6 @@ export const LABS: LabItem[] = [
     page: "device",
   },
   {
-    key: PROGRESS.devicebeats,
-    label: "Device beats lab",
-    short: "Beats",
-    href: "/device/#device-beats-lab",
-    page: "device",
-  },
-  {
     key: PROGRESS.nestedspheres,
     label: "Nested CTR spheres lab",
     short: "Nested spheres",

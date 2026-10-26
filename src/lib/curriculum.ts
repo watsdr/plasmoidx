@@ -69,11 +69,11 @@ export const CURRICULUM: CurriculumLesson[] = [
     n: 5,
     title: "Three device beats",
     framing:
-      "The hardware in three parts: ionizer (air pretreatment) → bubbler (plasmoid generator, cavitation) → resonator (nested CTR spheres). Walk the Device page; clear the beats lab when the sequence sticks.",
+      "The hardware in three parts: ionizer (air pretreatment) → bubbler (plasmoid generator, cavitation) → resonator (nested CTR spheres). Walk the Device page; clear the walkthrough when the sequence sticks.",
     doneWhen:
       "You can list ionizer → bubbler → Vajra/CTR in order.",
     href: "/device/",
-    labKeys: [PROGRESS.walkthrough, PROGRESS.devicebeats],
+    labKeys: [PROGRESS.walkthrough],
   },
   {
     id: "numbers",
