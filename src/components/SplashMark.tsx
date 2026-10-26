@@ -16,6 +16,8 @@ export default function SplashMark({ className = "" }: { className?: string }) {
 
       <svg
         className="splash-svg relative z-[1] h-full w-full"
+        aria-hidden="true"
+        focusable="false"
         viewBox="0 0 320 320"
         width={320}
         height={320}

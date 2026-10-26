@@ -1,3 +1,4 @@
+import type React from "react";
 /** Side-by-side: implosive (inward/store) vs explosive (outward/spend). */
 
 export type ImplosiveSide = "implosive" | "explosive";
@@ -26,6 +27,8 @@ export default function ImplosiveVsExplosive({
       }
       aria-labelledby={captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "480px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 480 220"
         className="h-auto w-full max-w-full motion-safe:transition-[opacity] motion-safe:duration-200 motion-safe:ease-out"
@@ -64,7 +67,7 @@ export default function ImplosiveVsExplosive({
             y="16"
             width="200"
             height="168"
-            rx="12"
+            rx={12}
             fill={leftOn ? "rgb(var(--aurora) / 0.06)" : "none"}
             stroke="currentColor"
             strokeWidth={leftOn ? 1.75 : 1.25}
@@ -75,7 +78,7 @@ export default function ImplosiveVsExplosive({
             y="40"
             textAnchor="middle"
             className="fill-aurora"
-            style={{ fontSize: 11, letterSpacing: "0.12em", fontWeight: 600 }}
+            style={{ fontSize: 12, letterSpacing: "0.12em", fontWeight: 600 }}
           >
             IMPLOSIVE
           </text>
@@ -85,7 +88,7 @@ export default function ImplosiveVsExplosive({
             r="36"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-aurora/80"
           />
           <circle
@@ -94,14 +97,14 @@ export default function ImplosiveVsExplosive({
             r="12"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-aurora"
           />
           <path
             d="M 116 58 A 42 42 0 0 1 158 100"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-aurora"
             markerEnd="url(#imp-arrow)"
           />
@@ -109,7 +112,7 @@ export default function ImplosiveVsExplosive({
             d="M 148 128 L 130 112"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-aurora"
             markerEnd="url(#imp-arrow)"
           />
@@ -117,7 +120,7 @@ export default function ImplosiveVsExplosive({
             d="M 84 128 L 102 112"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-aurora"
             markerEnd="url(#imp-arrow)"
           />
@@ -135,7 +138,7 @@ export default function ImplosiveVsExplosive({
             y="174"
             textAnchor="middle"
             className="fill-mist-400"
-            style={{ fontSize: 11 }}
+            style={{ fontSize: 12 }}
           >
             Store · negative
           </text>
@@ -150,7 +153,7 @@ export default function ImplosiveVsExplosive({
             y="16"
             width="200"
             height="168"
-            rx="12"
+            rx={12}
             fill={rightOn ? "rgb(var(--aurora) / 0.06)" : "none"}
             stroke="currentColor"
             strokeWidth={rightOn ? 1.75 : 1.25}
@@ -161,7 +164,7 @@ export default function ImplosiveVsExplosive({
             y="40"
             textAnchor="middle"
             className="fill-mist-300"
-            style={{ fontSize: 11, letterSpacing: "0.12em", fontWeight: 600 }}
+            style={{ fontSize: 12, letterSpacing: "0.12em", fontWeight: 600 }}
           >
             EXPLOSIVE
           </text>
@@ -171,7 +174,7 @@ export default function ImplosiveVsExplosive({
             r="36"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-mist-300/70"
           />
           <circle
@@ -180,14 +183,14 @@ export default function ImplosiveVsExplosive({
             r="12"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className="text-mist-300"
           />
           <path
             d="M 364 58 A 42 42 0 0 0 322 100"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-mist-300"
             markerEnd="url(#exp-arrow)"
           />
@@ -195,7 +198,7 @@ export default function ImplosiveVsExplosive({
             d="M 390 112 L 408 128"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-mist-300"
             markerEnd="url(#exp-arrow)"
           />
@@ -203,7 +206,7 @@ export default function ImplosiveVsExplosive({
             d="M 338 112 L 320 128"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-mist-300"
             markerEnd="url(#exp-arrow)"
           />
@@ -221,12 +224,13 @@ export default function ImplosiveVsExplosive({
             y="174"
             textAnchor="middle"
             className="fill-mist-400"
-            style={{ fontSize: 11 }}
+            style={{ fontSize: 12 }}
           >
             Spend · positive
           </text>
         </g>
       </svg>
+      </div>
       {!highlight ? (
         <figcaption
           id={captionId}

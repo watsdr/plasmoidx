@@ -1,3 +1,4 @@
+import type React from "react";
 /** 3-4-5 → Area–Time–Volume teaching graphic. */
 
 export type AtvSide = "area" | "time" | "volume";
@@ -23,6 +24,8 @@ export default function AtvTriangle({
       }
       aria-labelledby={captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "360px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 360 240"
         className="h-auto w-full max-w-full"
@@ -34,7 +37,7 @@ export default function AtvTriangle({
           d="M 80 180 L 80 60 L 240 180 Z"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1"
+          strokeWidth={1}
           className="text-ink-700"
         />
 
@@ -82,7 +85,7 @@ export default function AtvTriangle({
           d="M 80 160 L 100 160 L 100 180"
           fill="none"
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-mist-400"
         />
 
@@ -130,7 +133,7 @@ export default function AtvTriangle({
               y={y}
               width="92"
               height="28"
-              rx="6"
+              rx={6}
               fill={edge(key) ? "rgb(var(--aurora) / 0.08)" : "none"}
               stroke="currentColor"
               strokeWidth={edge(key) ? 1.5 : 1.25}
@@ -153,7 +156,7 @@ export default function AtvTriangle({
           y="28"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10, letterSpacing: "0.12em" }}
+          style={{ fontSize: 12, letterSpacing: "0.12em" }}
         >
           3-4-5 → ATV
         </text>
@@ -162,11 +165,12 @@ export default function AtvTriangle({
           y="228"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Area · Time · Volume calculator
         </text>
       </svg>
+      </div>
       {highlight === null ? (
         <figcaption
           id={captionId}

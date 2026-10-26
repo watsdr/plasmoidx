@@ -1,3 +1,4 @@
+import type React from "react";
 /** Alpha–Omega MeV ladder (sample rungs) — inventor-model teaching sketch. */
 
 export type LadderFocus =
@@ -100,6 +101,8 @@ export default function AlphaOmegaLadder({
       }
       aria-labelledby={hideCaption ? undefined : captionId}
     >
+      <p className="fig-chip">Inventor’s figures · not standard nuclear data</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "380px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 380 360"
         className="h-auto w-full max-w-full motion-safe:transition-[opacity] motion-safe:duration-200 motion-safe:ease-out"
@@ -113,7 +116,7 @@ export default function AlphaOmegaLadder({
             y="22"
             textAnchor="middle"
             className="fill-mist-300"
-            style={{ fontSize: 10, letterSpacing: "0.12em", fontWeight: 600 }}
+            style={{ fontSize: 12, letterSpacing: "0.12em", fontWeight: 600 }}
           >
             OMEGA (+)
           </text>
@@ -121,7 +124,7 @@ export default function AlphaOmegaLadder({
             x="100"
             y="40"
             textAnchor="middle"
-            style={{ fontSize: 13, fontWeight: 600, fill: "rgb(251 146 60)" }}
+            style={{ fontSize: 13, fontWeight: 600, fill: "rgb(var(--fig-orange))" }}
           >
             {LADDER_TOTALS.omega} MeV
           </text>
@@ -132,7 +135,7 @@ export default function AlphaOmegaLadder({
             y="22"
             textAnchor="middle"
             className="fill-mist-400"
-            style={{ fontSize: 9, letterSpacing: "0.1em", fontWeight: 600 }}
+            style={{ fontSize: 12, letterSpacing: "0.1em", fontWeight: 600 }}
           >
             TOTAL
           </text>
@@ -152,7 +155,7 @@ export default function AlphaOmegaLadder({
             y="22"
             textAnchor="middle"
             className="fill-mist-300"
-            style={{ fontSize: 10, letterSpacing: "0.12em", fontWeight: 600 }}
+            style={{ fontSize: 12, letterSpacing: "0.12em", fontWeight: 600 }}
           >
             ALPHA (−)
           </text>
@@ -160,7 +163,7 @@ export default function AlphaOmegaLadder({
             x="280"
             y="40"
             textAnchor="middle"
-            style={{ fontSize: 13, fontWeight: 600, fill: "rgb(125 211 252)" }}
+            style={{ fontSize: 13, fontWeight: 600, fill: "rgb(var(--fig-air))" }}
           >
             {LADDER_TOTALS.alpha} MeV
           </text>
@@ -173,17 +176,17 @@ export default function AlphaOmegaLadder({
             y={topY - 8}
             width="18"
             height={ROWS.length * rowH + 16}
-            rx="4"
-            fill="rgb(251 146 60 / 0.12)"
-            stroke="rgb(251 146 60 / 0.35)"
-            strokeWidth="1"
+            rx={4}
+            fill="rgb(var(--fig-orange) / 0.12)"
+            stroke="rgb(var(--fig-orange) / 0.35)"
+            strokeWidth={1}
           />
           <text
             x={bandL + 9}
             y={topY + ROWS.length * rowH * 0.55}
             textAnchor="middle"
             transform={`rotate(-90 ${bandL + 9} ${topY + ROWS.length * rowH * 0.55})`}
-            style={{ fontSize: 8, fill: "rgb(251 146 60 / 0.9)", letterSpacing: "0.06em" }}
+            style={{ fontSize: 12, fill: "rgb(var(--fig-orange) / 0.9)", letterSpacing: "0.06em" }}
           >
             He or +HH
           </text>
@@ -192,17 +195,17 @@ export default function AlphaOmegaLadder({
             y={topY - 8}
             width="18"
             height={ROWS.length * rowH + 16}
-            rx="4"
-            fill="rgb(125 211 252 / 0.1)"
-            stroke="rgb(125 211 252 / 0.35)"
-            strokeWidth="1"
+            rx={4}
+            fill="rgb(var(--fig-air) / 0.1)"
+            stroke="rgb(var(--fig-air) / 0.35)"
+            strokeWidth={1}
           />
           <text
             x={bandR + 9}
             y={topY + ROWS.length * rowH * 0.55}
             textAnchor="middle"
             transform={`rotate(90 ${bandR + 9} ${topY + ROWS.length * rowH * 0.55})`}
-            style={{ fontSize: 8, fill: "rgb(125 211 252 / 0.9)", letterSpacing: "0.06em" }}
+            style={{ fontSize: 12, fill: "rgb(var(--fig-air) / 0.9)", letterSpacing: "0.06em" }}
           >
             He or +HH
           </text>
@@ -216,17 +219,17 @@ export default function AlphaOmegaLadder({
             x2="190"
             y2={topY + ROWS.length * rowH - 8}
             stroke="rgb(var(--aurora) / 0.35)"
-            strokeWidth="1.25"
+            strokeWidth={1}
             strokeLinecap="round"
           />
           <ellipse
             cx="190"
             cy={topY + ROWS.length * rowH * 0.45}
-            rx="7"
+            rx={6}
             ry="28"
             fill="rgb(var(--aurora) / 0.08)"
             stroke="rgb(var(--aurora) / 0.22)"
-            strokeWidth="1"
+            strokeWidth={1}
           />
         </g>
 
@@ -237,7 +240,7 @@ export default function AlphaOmegaLadder({
           x2={colL}
           y2={topY + ROWS.length * rowH}
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-ink-600"
         />
         <line
@@ -246,7 +249,7 @@ export default function AlphaOmegaLadder({
           x2={colR}
           y2={topY + ROWS.length * rowH}
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-ink-600"
         />
 
@@ -269,7 +272,7 @@ export default function AlphaOmegaLadder({
                 x2={colR}
                 y2={y + 14}
                 stroke="currentColor"
-                strokeWidth={isBase ? 1.75 : 1}
+                strokeWidth={isBase ? 2 : 1}
                 className={isBase ? "text-mist-300" : "text-ink-600"}
                 opacity={0.7}
               />
@@ -281,15 +284,15 @@ export default function AlphaOmegaLadder({
                   y={y}
                   width="100"
                   height="28"
-                  rx="6"
+                  rx={6}
                   fill={
                     leftOn
-                      ? "rgb(251 146 60 / 0.14)"
+                      ? "rgb(var(--fig-orange) / 0.14)"
                       : "rgb(var(--ink-800) / 0.35)"
                   }
                   stroke={
                     leftOn
-                      ? "rgb(251 146 60 / 0.55)"
+                      ? "rgb(var(--fig-orange) / 0.55)"
                       : "rgb(var(--mist-400) / 0.2)"
                   }
                   strokeWidth={leftOn ? 1.5 : 1}
@@ -298,38 +301,34 @@ export default function AlphaOmegaLadder({
                   cx={colL - 36}
                   cy={y + 14}
                   r="9"
-                  fill="rgb(251 146 60 / 0.15)"
-                  stroke="rgb(251 146 60 / 0.55)"
-                  strokeWidth="1"
+                  fill="rgb(var(--fig-orange) / 0.15)"
+                  stroke="rgb(var(--fig-orange) / 0.55)"
+                  strokeWidth={1}
                 />
                 <text
                   x={colL - 36}
                   y={y + 17}
                   textAnchor="middle"
                   className="fill-mist-100"
-                  style={{ fontSize: 9, fontWeight: 600 }}
+                  style={{ fontSize: 12, fontWeight: 600 }}
                 >
                   {left.z}
                 </text>
                 <text
                   x={colL - 18}
-                  y={y + 12}
+                  y={y + 18}
                   className="fill-mist-50"
-                  style={{ fontSize: 11, fontWeight: 600 }}
+                  style={{ fontSize: 12, fontWeight: 600 }}
                 >
                   {left.sym}
                 </text>
                 <text
-                  x={colL - 18}
-                  y={y + 23}
+                  x={colL + 2}
+                  y={y + 18}
                   className="fill-mist-400"
-                  style={{ fontSize: 8 }}
+                  style={{ fontSize: 12 }}
                 >
-                  {left.mev != null
-                    ? isBase
-                      ? `${left.mev} base`
-                      : `${left.mev} MeV`
-                    : "—"}
+                  {left.mev != null ? `${left.mev}` : "—"}
                 </text>
               </g>
 
@@ -340,15 +339,15 @@ export default function AlphaOmegaLadder({
                   y={y}
                   width="100"
                   height="28"
-                  rx="6"
+                  rx={6}
                   fill={
                     rightOn
-                      ? "rgb(125 211 252 / 0.12)"
+                      ? "rgb(var(--fig-air) / 0.12)"
                       : "rgb(var(--ink-800) / 0.35)"
                   }
                   stroke={
                     rightOn
-                      ? "rgb(125 211 252 / 0.55)"
+                      ? "rgb(var(--fig-air) / 0.55)"
                       : "rgb(var(--mist-400) / 0.2)"
                   }
                   strokeWidth={rightOn ? 1.5 : 1}
@@ -357,38 +356,34 @@ export default function AlphaOmegaLadder({
                   cx={colR + 36}
                   cy={y + 14}
                   r="9"
-                  fill="rgb(125 211 252 / 0.12)"
-                  stroke="rgb(125 211 252 / 0.55)"
-                  strokeWidth="1"
+                  fill="rgb(var(--fig-air) / 0.12)"
+                  stroke="rgb(var(--fig-air) / 0.55)"
+                  strokeWidth={1}
                 />
                 <text
                   x={colR + 36}
                   y={y + 17}
                   textAnchor="middle"
                   className="fill-mist-100"
-                  style={{ fontSize: 9, fontWeight: 600 }}
+                  style={{ fontSize: 12, fontWeight: 600 }}
                 >
                   {right.z}
                 </text>
                 <text
                   x={colR - 32}
-                  y={y + 12}
+                  y={y + 18}
                   className="fill-mist-50"
-                  style={{ fontSize: 11, fontWeight: 600 }}
+                  style={{ fontSize: 12, fontWeight: 600 }}
                 >
                   {right.sym}
                 </text>
                 <text
-                  x={colR - 32}
-                  y={y + 23}
+                  x={colR - 12}
+                  y={y + 18}
                   className="fill-mist-400"
-                  style={{ fontSize: 8 }}
+                  style={{ fontSize: 12 }}
                 >
-                  {right.mev != null
-                    ? isBase
-                      ? `${right.mev} base`
-                      : `${right.mev} MeV`
-                    : "—"}
+                  {right.mev != null ? `${right.mev}` : "—"}
                 </text>
               </g>
             </g>
@@ -400,11 +395,12 @@ export default function AlphaOmegaLadder({
           y="348"
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 10 }}
+          style={{ fontSize: 12 }}
         >
-          Sample rungs · odd = Omega · even = Alpha
+          Rungs in MeV · odd = Omega · even = Alpha · H, He = base
         </text>
       </svg>
+      </div>
       {!hideCaption && (
         <figcaption
           id={captionId}

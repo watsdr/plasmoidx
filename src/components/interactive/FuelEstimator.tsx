@@ -89,6 +89,9 @@ export default function FuelEstimator() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
               If your engine matched the test
             </p>
+            <p className="mt-1 text-xs text-aurora">
+              Measured basis: {MEASURED_FUEL_RATE}%, small generator only
+            </p>
             <p className="mt-1 text-base text-mist-50">
               {range ? (
                 <>

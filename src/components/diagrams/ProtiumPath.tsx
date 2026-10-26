@@ -1,3 +1,4 @@
+import type React from "react";
 /** Visual flow: Water → Cavitation → Plasmoids → CTR → Harvest ¹H → Work. */
 
 export const protiumSteps = [
@@ -35,6 +36,8 @@ export default function ProtiumPath({
       }
       aria-labelledby={captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: `${totalW}px` } as React.CSSProperties}>
       <svg
         viewBox={`0 0 ${totalW} 130`}
         className="h-auto w-full max-w-full"
@@ -85,7 +88,7 @@ export default function ProtiumPath({
                 y={y + 22}
                 textAnchor="middle"
                 className="fill-mist-50"
-                style={{ fontSize: 11, fontWeight: 500 }}
+                style={{ fontSize: 12, fontWeight: 500 }}
               >
                 {s.label}
               </text>
@@ -94,7 +97,7 @@ export default function ProtiumPath({
                 y={y + 38}
                 textAnchor="middle"
                 className="fill-mist-400"
-                style={{ fontSize: 10 }}
+                style={{ fontSize: 12 }}
               >
                 {s.short}
               </text>
@@ -103,7 +106,7 @@ export default function ProtiumPath({
                   d={`M ${x + boxW + 2} ${y + boxH / 2} L ${x + boxW + gap - 4} ${y + boxH / 2}`}
                   fill="none"
                   stroke="currentColor"
-                  strokeWidth="1.5"
+                  strokeWidth={1.5}
                   className="text-mist-400"
                   markerEnd="url(#path-arrow)"
                 />
@@ -117,17 +120,18 @@ export default function ProtiumPath({
           y={118}
           textAnchor="middle"
           className="fill-mist-400"
-          style={{ fontSize: 11 }}
+          style={{ fontSize: 12 }}
         >
           Inventor narrative path · leftovers trend toward water
         </text>
       </svg>
+      </div>
       {activeStep === null ? (
         <figcaption
           id={captionId}
           className="mt-2 text-xs leading-relaxed text-mist-400"
         >
-          Protium path at a glance: water → cavitation → plasmoid EVOs →
+          Protium path at a glance: water → cavitation → plasmoids (Exotic Vacuum Occurrences, EVOs) →
           contra-rotating (CTR) charge → harvest ¹H → work.
         </figcaption>
       ) : null}

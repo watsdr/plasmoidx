@@ -62,7 +62,7 @@ export default function AtvLab() {
     >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p id={labelId} className="text-sm font-medium tracking-tight text-mist-50">
-          Try it: 3-4-5 → ATV
+          Try it: 3-4-5 → Area–Time–Volume (ATV)
         </p>
         <GotItCheck show={used || persisted} />
       </div>

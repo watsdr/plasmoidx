@@ -7,7 +7,9 @@
     <circle cx="0" cy="0" r="72" stroke="#0f766e" stroke-width="3.5" fill="none"/>
     <path d="M-38 -38 L38 38 M38 -38 L-38 38" stroke="#14b8a6" stroke-width="9" stroke-linecap="round"/>
   </g>
-  <text x="600" y="380" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="42" font-weight="600" fill="#1c1917" letter-spacing="-0.02em">Plasmoid X</text>
-  <text x="600" y="430" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="26" font-weight="500" fill="#0f766e">New energy, explained simply.</text>
-  <text x="600" y="560" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="16" fill="#78716c">plasmoidx.com</text>
+  <text x="600" y="345" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="22" font-weight="500" fill="#78716c" letter-spacing="0.18em">INDEPENDENT EDUCATION</text>
+  <text x="600" y="400" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="42" font-weight="600" fill="#1c1917" letter-spacing="-0.02em">Plasmoid X</text>
+  <text x="600" y="450" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="26" font-weight="500" fill="#0f766e">New energy, explained simply.</text>
+  <text x="600" y="520" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="22" font-weight="500" fill="#57534e">Measured results first. Inventor claims labeled.</text>
+  <text x="600" y="580" text-anchor="middle" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif" font-size="16" fill="#78716c">plasmoidx.com</text>
 </svg>

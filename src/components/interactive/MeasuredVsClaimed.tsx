@@ -1,9 +1,9 @@
 "use client";
 
 import { useId, useRef, useState, type KeyboardEvent } from "react";
-import { metrics, SRC, type EvidenceRow } from "@/lib/evidence";
+import { BAR_MEASURE, EVIDENCE_LABELS, metrics, SRC, type EvidenceRow } from "@/lib/evidence";
 
-const kindText = { measured: "Measured", seller: "Seller claim" } as const;
+const kindText = { measured: EVIDENCE_LABELS.measured, seller: EVIDENCE_LABELS.seller } as const;
 
 function Row({ r }: { r: EvidenceRow }) {
   const measured = r.kind === "measured";
@@ -33,14 +33,20 @@ function Row({ r }: { r: EvidenceRow }) {
               </div>
             </div>
           ))}
+          <p className="text-xs text-mist-400">Bars: oxygen level, 0–25% scale</p>
         </div>
       ) : r.magnitude !== null ? (
+        <>
         <div className="ev-track mt-2 h-2.5 overflow-hidden rounded-full" aria-hidden>
           <div
             className={`ev-bar h-full rounded-full ${measured ? "ev-bar-measured" : "ev-bar-seller"}`}
             style={{ width: `${Math.max(r.magnitude, 0)}%` }}
           />
         </div>
+        <p className="mt-1 text-xs text-mist-400">
+          Bar: {BAR_MEASURE[r.id] ?? "% lower"}, 0–100% scale
+        </p>
+        </>
       ) : null}
 
       <p className="mt-1.5 text-sm text-mist-200">

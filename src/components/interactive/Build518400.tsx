@@ -58,6 +58,7 @@ export default function Build518400() {
       role="region"
       aria-labelledby={titleId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p id={titleId} className="text-sm font-medium tracking-tight text-mist-50">
           Build Time&apos;s mould

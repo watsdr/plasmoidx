@@ -108,21 +108,21 @@ export default function StoreSpendLab() {
           <ellipse
             cx="120"
             cy="72"
-            rx="78"
+            rx={78}
             ry="46"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.5"
+            strokeWidth={1.5}
             className="text-ink-600"
           />
           <ellipse
             cx="120"
             cy="72"
-            rx="32"
+            rx={32}
             ry="18"
             fill="none"
             stroke="currentColor"
-            strokeWidth="1.25"
+            strokeWidth={1}
             className={isStore ? "text-aurora/70" : "text-mist-300/60"}
           />
           {isStore ? (
@@ -130,7 +130,7 @@ export default function StoreSpendLab() {
               d="M 120 24 A 54 34 0 0 1 172 68"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth={2}
               className="text-aurora"
               markerEnd="url(#sslArrow)"
             />
@@ -139,7 +139,7 @@ export default function StoreSpendLab() {
               d="M 120 24 A 54 34 0 0 0 68 68"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth={2}
               className="text-mist-200"
               markerEnd="url(#sslArrowMist)"
             />

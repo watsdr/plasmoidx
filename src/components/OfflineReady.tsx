@@ -57,6 +57,13 @@ export default function OfflineReady() {
     };
   }, []);
 
+  // Auto-hide after a few seconds so the note never sits over content.
+  useEffect(() => {
+    if (!show) return;
+    const t = window.setTimeout(() => setShow(false), 6000);
+    return () => window.clearTimeout(t);
+  }, [show]);
+
   if (!show) return null;
 
   function dismiss() {
@@ -71,11 +78,11 @@ export default function OfflineReady() {
   return (
     <div
       role="status"
-      className="fixed bottom-4 left-4 right-4 z-[60] mx-auto flex max-w-md items-start gap-3 rounded-xl border border-ink-600/60 bg-ink-900/95 px-4 py-3 text-sm text-mist-100 shadow-lg backdrop-blur-sm sm:left-6 sm:right-auto"
+      className="fixed bottom-2 left-2 right-16 z-[60] flex max-w-md items-center gap-2 rounded-lg border border-ink-600/60 bg-ink-900/95 px-3 py-1.5 text-xs sm:bottom-4 sm:left-6 sm:right-auto sm:gap-3 sm:px-4 sm:py-3 sm:text-sm text-mist-100 shadow-lg backdrop-blur-sm sm:left-6 sm:right-auto"
     >
       <p className="flex-1 leading-relaxed text-mist-200">
-        <span className="font-medium text-mist-50">Offline ready.</span> Shell
-        pages and locks data can load without a network after the first visit.
+        <span className="font-medium text-mist-50">Offline ready.</span>{" "}
+        <span className="hidden sm:inline">Shell pages and locks data can load without a network after the first visit.</span>
       </p>
       <button
         type="button"

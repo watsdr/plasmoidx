@@ -58,7 +58,7 @@ export default function NestedSpheresLab() {
     >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <p id={labelId} className="text-sm font-medium tracking-tight text-mist-50">
-          Try it: nested CTR spheres
+          Try it: nested contra-rotating (CTR) spheres
         </p>
         <GotItCheck show={used || persisted} />
       </div>

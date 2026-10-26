@@ -1,3 +1,4 @@
+import type React from "react";
 /** Nested CTR spheres (outer, inner, core) with exhaust inlet, intake outlet pipe, and gentle contra-rotation cues. */
 
 type Props = {
@@ -24,6 +25,8 @@ export default function NestedSpheres({
       className={className ?? "overflow-x-safe my-6 w-full min-w-0 max-w-xl"}
       aria-labelledby={hideCaption ? undefined : captionId}
     >
+      <p className="fig-chip">Inventor claim · teaching model</p>
+      <div className="fig-scroll" style={{ ["--fig-minw" as string]: "360px" } as React.CSSProperties}>
       <svg
         viewBox="0 0 360 300"
         className="h-auto w-full max-w-full"
@@ -37,7 +40,7 @@ export default function NestedSpheres({
           r="118"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth={2}
           className="text-mist-300/70"
         />
         <circle
@@ -46,7 +49,7 @@ export default function NestedSpheres({
           r="112"
           fill="rgb(var(--ink-800) / 0.35)"
           stroke="currentColor"
-          strokeWidth="1.25"
+          strokeWidth={1}
           className="text-ink-600"
         />
 
@@ -57,23 +60,23 @@ export default function NestedSpheres({
             cy="150"
             r="78"
             fill="none"
-            stroke="rgb(196 140 92 / 0.9)"
-            strokeWidth="2"
+            stroke="rgb(var(--fig-copper) / 0.9)"
+            strokeWidth={2}
           />
           <circle
             cx="170"
             cy="150"
             r="72"
-            fill="rgb(196 140 92 / 0.08)"
-            stroke="rgb(196 140 92 / 0.45)"
-            strokeWidth="1"
+            fill="rgb(var(--fig-copper) / 0.08)"
+            stroke="rgb(var(--fig-copper) / 0.45)"
+            strokeWidth={1}
           />
           {/* Direction tick — clockwise cue */}
           <path
             d="M 170 78 A 72 72 0 0 1 238 130"
             fill="none"
-            stroke="rgb(56 189 248 / 0.7)"
-            strokeWidth="2"
+            stroke="rgb(var(--fig-air) / 0.7)"
+            strokeWidth={2}
             strokeLinecap="round"
             markerEnd={`url(#${idPrefix}-cw)`}
           />
@@ -84,16 +87,16 @@ export default function NestedSpheres({
           <circle
             cx="170"
             cy="150"
-            r="28"
-            fill="rgb(196 140 92 / 0.85)"
-            stroke="rgb(232 180 120 / 0.9)"
-            strokeWidth="1.25"
+            r="12"
+            fill="rgb(var(--fig-copper) / 0.85)"
+            stroke="rgb(var(--fig-copper) / 0.9)"
+            strokeWidth={1}
           />
           <path
-            d="M 170 118 A 32 32 0 0 0 138 150"
+            d="M 170 130 A 20 20 0 0 0 150 150"
             fill="none"
-            stroke="rgb(45 212 191 / 0.75)"
-            strokeWidth="2"
+            stroke="rgb(var(--aurora) / 0.75)"
+            strokeWidth={2}
             strokeLinecap="round"
             markerEnd={`url(#${idPrefix}-ccw)`}
           />
@@ -106,7 +109,7 @@ export default function NestedSpheres({
           x2="242"
           y2="150"
           stroke="currentColor"
-          strokeWidth="1"
+          strokeWidth={1}
           strokeDasharray="4 5"
           className="text-mist-400/50"
         />
@@ -115,22 +118,22 @@ export default function NestedSpheres({
         <g aria-hidden="true">
           <path
             d="M 288 118 L 248 138 L 252 148 L 292 128 Z"
-            fill="rgb(196 140 92 / 0.55)"
-            stroke="rgb(196 140 92 / 0.9)"
-            strokeWidth="1.1"
+            fill="rgb(var(--fig-copper) / 0.55)"
+            stroke="rgb(var(--fig-copper) / 0.9)"
+            strokeWidth={1}
           />
           <circle
             cx="262"
             cy="140"
             r="2.5"
-            fill="rgb(94 234 212 / 0.85)"
+            fill="rgb(var(--aurora) / 0.85)"
             className={exhaust}
           />
           <text
             x="300"
             y="122"
             className="fill-mist-300"
-            style={{ fontSize: 10 }}
+            style={{ fontSize: 12 }}
           >
             Exhaust in
           </text>
@@ -143,8 +146,8 @@ export default function NestedSpheres({
             y1="197"
             x2="24"
             y2="240"
-            stroke="rgb(196 140 92 / 0.75)"
-            strokeWidth="7"
+            stroke="rgb(var(--fig-copper) / 0.75)"
+            strokeWidth={7}
             strokeLinecap="round"
           />
           <line
@@ -152,33 +155,33 @@ export default function NestedSpheres({
             y1="199"
             x2="30"
             y2="237"
-            stroke="rgb(45 212 191 / 0.85)"
-            strokeWidth="2"
+            stroke="rgb(var(--aurora) / 0.85)"
+            strokeWidth={2}
             strokeLinecap="round"
             markerEnd={`url(#${idPrefix}-out)`}
           />
-          <text x="4" y="256" className="fill-mist-300" style={{ fontSize: 10 }}>
+          <text x="4" y="256" className="fill-mist-300" style={{ fontSize: 12 }}>
             To intake
           </text>
-          <text x="4" y="267" className="fill-mist-400" style={{ fontSize: 9 }}>
+          <text x="4" y="267" className="fill-mist-400" style={{ fontSize: 12 }}>
             (after carburetor)
           </text>
         </g>
 
         {/* Labels */}
-        <text x="170" y="42" textAnchor="middle" className="fill-mist-300" style={{ fontSize: 11 }}>
+        <text x="170" y="42" textAnchor="middle" className="fill-mist-300" style={{ fontSize: 12 }}>
           Outer
         </text>
-        <text x="170" y="98" textAnchor="middle" className="fill-aurora" style={{ fontSize: 10 }}>
+        <text x="170" y="98" textAnchor="middle" className="fill-aurora" style={{ fontSize: 12 }}>
           Inner · CW
         </text>
-        <text x="170" y="156" textAnchor="middle" className="fill-ink-950" style={{ fontSize: 9, fontWeight: 600 }}>
+        <text x="170" y="178" textAnchor="middle" className="fill-mist-200" style={{ fontSize: 12, fontWeight: 600 }}>
           Core
         </text>
-        <text x="170" y="188" textAnchor="middle" className="fill-mist-400" style={{ fontSize: 10 }}>
+        <text x="170" y="194" textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
           CCW opposing
         </text>
-        <text x="170" y="278" textAnchor="middle" className="fill-mist-400" style={{ fontSize: 11 }}>
+        <text x="170" y="278" textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
           Nested CTR — contra-rotating spheres
         </text>
 
@@ -191,7 +194,7 @@ export default function NestedSpheres({
             refY="3"
             orient="auto"
           >
-            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(56 189 248 / 0.85)" />
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(var(--fig-air) / 0.85)" />
           </marker>
           <marker
             id={`${idPrefix}-ccw`}
@@ -201,7 +204,7 @@ export default function NestedSpheres({
             refY="3"
             orient="auto"
           >
-            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(45 212 191 / 0.85)" />
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(var(--aurora) / 0.85)" />
           </marker>
           <marker
             id={`${idPrefix}-out`}
@@ -211,10 +214,11 @@ export default function NestedSpheres({
             refY="3"
             orient="auto"
           >
-            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(45 212 191 / 0.9)" />
+            <path d="M0,0 L6,3 L0,6 Z" fill="rgb(var(--aurora) / 0.9)" />
           </marker>
         </defs>
       </svg>
+      </div>
       {!hideCaption ? (
         <figcaption
           id={captionId}
