@@ -323,3 +323,8 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ### 2026-10-11 (evening) — Newsletter signup live
 - Buttondown username `plasmoidx`; repo variable NEXT_PUBLIC_NEWSLETTER_ACTION passed to build in deploy.yml. Signup block live on explainers + Home. Social cards/videos in /workspace/plasmoidx-social (not in repo; regenerate with scripts/social-cards.mjs). Cloudflare setup steps sent to Derek; awaiting "Active".
+
+## Ship note — 2026-10-27
+- Shipped b02dcae (theme-dedupe): the default theme now follows System (prefers-color-scheme) for new visitors; duplicate diagrams removed (DeviceBeatsLab gone, a single Alpha–Omega ladder on Study). Deployed via run 40620353977; 13 stale files pruned.
+- PR #1 merged (a1f9b43): Dependabot config added.
+- PR #2 is still open, waiting for Derek's review. Do not merge it without his approval.
