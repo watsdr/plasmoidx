@@ -77,6 +77,16 @@ FileETag MTime Size
   </IfModule>
 </IfModule>
 
+<IfModule mod_headers.c>
+  # Security headers (calm, static-site safe). CSP is REPORT-ONLY: browsers log
+  # violations in the console but block nothing. Flip to enforcing later.
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Content-Security-Policy-Report-Only "default-src 'self'; script-src 'self' 'unsafe-inline' https://gc.zgo.at; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://plasmoidx.goatcounter.com; font-src 'self'; connect-src 'self' https://plasmoidx.goatcounter.com; form-action 'self' https://buttondown.com https://buttondown.email; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; worker-src 'self'; manifest-src 'self'"
+</IfModule>
+
 # MIME types for common static assets
 <IfModule mod_mime.c>
   AddType text/html .html
