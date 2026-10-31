@@ -328,3 +328,8 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 - Shipped b02dcae (theme-dedupe): the default theme now follows System (prefers-color-scheme) for new visitors; duplicate diagrams removed (DeviceBeatsLab gone, a single Alpha–Omega ladder on Study). Deployed via run 40620353977; 13 stale files pruned.
 - PR #1 merged (a1f9b43): Dependabot config added.
 - PR #2 is still open, waiting for Derek's review. Do not merge it without his approval.
+
+## 2026-10-31 — Security headers shipped
+- PR #8 squash-merged as 1511d70; deployed via deploy.yml run 41201064281 (success, default prune limit 50, 2 stale _next files deleted).
+- Live: X-Content-Type-Options, Referrer-Policy, X-Frame-Options, Permissions-Policy, CSP-Report-Only. /, /device/, /study/ and _next assets 200.
+- Next: watch CSP report-only for violations before enforcing.
