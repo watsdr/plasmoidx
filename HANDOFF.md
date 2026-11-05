@@ -138,15 +138,18 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Suggested next (Derek picks)
 
-1. **Facebook Scrape Again** for explainer URLs (Derek) — new per-page OG cards at `/og/explainers/<slug>.png`.
-2. **Optional Cloudflare CDN** in front for TLS/TTFB (Derek’s decision).
-3. **`docs/SOCIAL-POSTS.md`** — 5 drafts ready; not posted yet.
-4. Weekly **GoatCounter** summary routine runs Mondays **8:04 AM ET** in PlasmoidX (Grok Bot); no action unless it fails.
-5. Home mobile Performance is **88–96** (host TTFB-bound); further wins need a hero-reveal rethink, not more image compression.
+1. **Review the Device “Next read” draft PR** (not merged, not deployed). Link goes to “Thunderstorm Generator explained”.
+2. **Facebook Scrape Again** for explainer URLs (Derek) — new per-page OG cards at `/og/explainers/<slug>.png`.
+3. **Optional Cloudflare CDN** in front for TLS/TTFB (Derek’s decision).
+4. **`docs/SOCIAL-POSTS.md`** — 5 drafts ready; not posted yet.
+5. Weekly **GoatCounter** summary routine runs Mondays **8:04 AM ET** in PlasmoidX (Grok Bot); no action unless it fails. Home mobile Performance is **88–96** (host TTFB-bound).
 
 ---
 
 ## Session log (append, newest first)
+
+### 2026-11-05 — Draft only: Device “Next read” (not merged, not deployed)
+- Branch `cursor/device-next-read-99b3`. One small “Next read” block at the end of Device main content, before the signup, linking to the existing explainer **Thunderstorm Generator explained** (`/explainers/thunderstorm-generator/`). That page is the plain-English overview of the same three-part unit and already links back to Device. Label is the explainer title from `src/lib/explainers.ts`. No claim wording changed. Draft PR only.
 
 ### 2026-10-26 — Graphics ship: SVG redraw, labels round 2, deterministic builds, chunk cleanup
 - **svg-redraw** `869f321`: the 5 AI raster images replaced with inline SVG (`src/components/visuals/SiteVisuals.tsx`). `7ee860f`: round 2 — "Inventor claim · teaching model" chips on inventor graphics/labs (MeV ladder: "Inventor’s figures · not standard nuclear data"), min 12px SVG text on a 390px phone (wide diagrams scroll sideways with a "Swipe sideways ↔" hint), Fuel bars say what they measure and their scale, theme tokens (`--fig-*`, one teal, strokes 1/1.5/2, radii 2–12), CTR/EVO/ATV spelled out, square 512 favicon + apple-touch-icon, labelled OG cards, "Time’s mould" wraps, splash SVG aria-hidden, Offline toast auto-hides/compact on mobile, "/" button no longer covers content. Labels only; no claims or numbers changed. Audit: `/workspace/graphics-audit/` on the box.
