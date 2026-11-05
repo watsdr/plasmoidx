@@ -138,7 +138,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Suggested next (Derek picks)
 
-1. **Review the Device “Next read” draft PR** (not merged, not deployed). Link goes to “Thunderstorm Generator explained”.
+1. **Review draft PR #11** (https://github.com/watsdr/plasmoidx/pull/11) — Device “Next read” to “Thunderstorm Generator explained”. Not merged, not deployed.
 2. **Facebook Scrape Again** for explainer URLs (Derek) — new per-page OG cards at `/og/explainers/<slug>.png`.
 3. **Optional Cloudflare CDN** in front for TLS/TTFB (Derek’s decision).
 4. **`docs/SOCIAL-POSTS.md`** — 5 drafts ready; not posted yet.
