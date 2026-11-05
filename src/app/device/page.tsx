@@ -20,6 +20,10 @@ import {
   explainAtvTriangle,
 } from "@/lib/explain";
 import { deviceBeats, ratios } from "@/lib/content";
+import { getExplainer } from "@/lib/explainers";
+
+/** Whole-unit explainer that already pairs with this walkthrough. */
+const nextRead = getExplainer("thunderstorm-generator");
 
 export const metadata: Metadata = {
   ...pageMeta({
@@ -371,6 +375,17 @@ export default function DevicePage() {
           <li>
             <Link href="/explainers/embry-riddle-thunderstorm-generator-test/" className="link-aurora">
               What the Embry-Riddle test actually measured
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Next read" className="mt-10 max-w-2xl">
+        <h2 className="text-sm font-medium text-mist-50">Next read</h2>
+        <ul className="mt-2 text-sm">
+          <li>
+            <Link href={`/explainers/${nextRead.slug}/`} className="link-aurora">
+              {nextRead.title}
             </Link>
           </li>
         </ul>
