@@ -59,8 +59,10 @@ html[data-theme="light"] {
   --zebra: rgba(34, 46, 68, 0.05);
   --row-hover: rgba(15, 118, 110, 0.06);
   --focus-ring: rgba(15, 118, 110, 0.7);
-  /* Interactive control borders (inputs, outline buttons, chips) — ≥3:1 on field white */
-  --border-strong: #8193b0;
+  /* Interactive control borders (inputs, outline buttons, chips) — ≥3:1 on field + page bg */
+  --border-strong: #7e90ad;
+  /* Small claim captions/labels (12px) — darker than fig-gold for AA text */
+  --claimed-label: #8a5205;
 }
 
 /* Soft Lift (dark) — softly lifted ink surfaces */
@@ -106,6 +108,8 @@ html[data-theme="dark"] {
   --focus-ring: rgba(94, 234, 212, 0.65);
   /* Interactive control borders — ≥3:1 on Soft Lift background */
   --border-strong: #5a6e90;
+  /* Small claim captions/labels — Soft Lift gold (matches fig-gold) */
+  --claimed-label: #facc5a;
 }
 
 html {
@@ -1160,7 +1164,7 @@ footer {
   line-height: 1rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: rgb(var(--fig-gold));
+  color: var(--claimed-label);
   background: transparent;
 }
 /* Swipe hint lives on the scroll region so the claim chip stays a single dashed pill. */
@@ -1211,7 +1215,7 @@ footer {
   padding-bottom: 1px;
 }
 .evidence-label--claimed {
-  color: rgb(var(--fig-gold));
+  color: var(--claimed-label);
   border-bottom: 2px dashed rgb(var(--fig-gold));
   padding-bottom: 1px;
 }
@@ -1232,6 +1236,6 @@ footer {
 }
 .evidence-chip--claimed {
   border: 1px dashed rgb(var(--fig-gold));
-  color: rgb(var(--fig-gold));
+  color: var(--claimed-label);
   background: transparent;
 }
