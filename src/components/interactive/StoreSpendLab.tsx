@@ -75,7 +75,7 @@ export default function StoreSpendLab() {
           className={`inline-flex min-h-11 min-w-0 sm:min-w-[9.5rem] flex-1 items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium tracking-tight transition-colors duration-200 ease-out sm:flex-none ${
             isStore
               ? "bg-aurora text-ink-950"
-              : "border border-mist-300/25 text-mist-100 hover:border-aurora/45 hover:text-aurora"
+              : "border border-strong text-mist-100 hover:border-aurora/45 hover:text-aurora"
           }`}
         >
           Clockwise · store
@@ -87,7 +87,7 @@ export default function StoreSpendLab() {
           className={`inline-flex min-h-11 min-w-0 sm:min-w-[9.5rem] flex-1 items-center justify-center rounded-full px-4 py-2.5 text-sm font-medium tracking-tight transition-colors duration-200 ease-out sm:flex-none ${
             !isStore
               ? "bg-aurora text-ink-950"
-              : "border border-mist-300/25 text-mist-100 hover:border-aurora/45 hover:text-aurora"
+              : "border border-strong text-mist-100 hover:border-aurora/45 hover:text-aurora"
           }`}
         >
           Anticlockwise · spend

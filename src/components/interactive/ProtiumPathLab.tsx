@@ -70,7 +70,7 @@ export default function ProtiumPathLab() {
             className={`inline-flex min-h-11 min-w-0 flex-1 items-center justify-center rounded-full px-3 py-2.5 text-xs font-medium tracking-tight transition-colors duration-200 ease-out sm:flex-none sm:px-3.5 sm:text-sm ${
               step === i
                 ? "bg-aurora text-ink-950"
-                : "border border-mist-300/25 text-mist-100 hover:border-aurora/45 hover:text-aurora"
+                : "border border-strong text-mist-100 hover:border-aurora/45 hover:text-aurora"
             }`}
           >
             {s.label}
@@ -101,7 +101,7 @@ export default function ProtiumPathLab() {
           type="button"
           disabled={step === 0}
           onClick={() => go(Math.max(0, step - 1))}
-          className="inline-flex min-h-11 items-center justify-center rounded-full border border-mist-300/25 px-4 text-sm text-mist-100 transition-colors duration-200 ease-out hover:border-aurora/45 hover:text-aurora disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex min-h-11 items-center justify-center rounded-full border border-strong px-4 text-sm text-mist-100 transition-colors duration-200 ease-out hover:border-aurora/45 hover:text-aurora disabled:cursor-not-allowed disabled:opacity-40"
         >
           Previous
         </button>

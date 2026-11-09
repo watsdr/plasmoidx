@@ -22,7 +22,7 @@ export default function ClaimsCompare({ className = "" }: Props) {
           >
             <div className="grid gap-5 sm:grid-cols-3 sm:gap-6">
               <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+                <h3 className="evidence-label evidence-label--claimed">
                   Inventor claim
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist-200">
@@ -30,7 +30,7 @@ export default function ClaimsCompare({ className = "" }: Props) {
                 </p>
               </div>
               <div>
-                <h3 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+                <h3 className="evidence-label evidence-label--measured">
                   What the meter showed
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist-200">

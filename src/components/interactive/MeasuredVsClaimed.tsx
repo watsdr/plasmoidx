@@ -12,9 +12,11 @@ function Row({ r }: { r: EvidenceRow }) {
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
         <p className="text-sm font-medium tracking-tight text-mist-50">{r.test}</p>
         <span
-          className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${
-            measured ? "text-aurora" : "text-mist-400"
-          }`}
+          className={
+            measured
+              ? "evidence-label evidence-label--measured"
+              : "evidence-label evidence-label--claimed"
+          }
         >
           {kindText[r.kind]}
         </span>
@@ -125,7 +127,7 @@ export default function MeasuredVsClaimed() {
             className={`inline-flex min-h-11 items-center rounded-full px-4 text-sm font-medium tracking-tight transition-colors duration-200 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora ${
               active === i
                 ? "bg-aurora text-ink-950"
-                : "border border-mist-300/25 text-mist-100 hover:border-aurora/45 hover:text-aurora"
+                : "border border-strong text-mist-100 hover:border-aurora/45 hover:text-aurora"
             }`}
           >
             {t.tab}
