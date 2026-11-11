@@ -101,7 +101,7 @@ export default function Build518400() {
                   ? "cursor-not-allowed border border-dashed border-ink-600/80 text-mist-400/50 line-through"
                   : selected
                     ? "bg-aurora text-ink-950"
-                    : "border border-mist-300/25 text-mist-100 hover:border-aurora/45 hover:text-aurora"
+                    : "border border-strong text-mist-100 hover:border-aurora/45 hover:text-aurora"
               }`}
             >
               {f}

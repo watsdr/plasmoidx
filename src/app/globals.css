@@ -59,6 +59,10 @@ html[data-theme="light"] {
   --zebra: rgba(34, 46, 68, 0.05);
   --row-hover: rgba(15, 118, 110, 0.06);
   --focus-ring: rgba(15, 118, 110, 0.7);
+  /* Interactive control borders (inputs, outline buttons, chips) — ≥3:1 on field + page bg */
+  --border-strong: #7e90ad;
+  /* Small claim captions/labels (12px) — darker than fig-gold for AA text */
+  --claimed-label: #8a5205;
 }
 
 /* Soft Lift (dark) — softly lifted ink surfaces */
@@ -102,6 +106,10 @@ html[data-theme="dark"] {
   --zebra: rgba(34, 46, 68, 0.4);
   --row-hover: rgba(94, 234, 212, 0.05);
   --focus-ring: rgba(94, 234, 212, 0.65);
+  /* Interactive control borders — ≥3:1 on Soft Lift background */
+  --border-strong: #5a6e90;
+  /* Small claim captions/labels — Soft Lift gold (matches fig-gold) */
+  --claimed-label: #facc5a;
 }
 
 html {
@@ -280,6 +288,10 @@ html.js-motion .reveal.reveal-in {
 }
 
 @layer utilities {
+  .border-strong {
+    border-color: var(--border-strong);
+  }
+
   .text-balance {
     text-wrap: balance;
   }
@@ -353,7 +365,8 @@ html.js-motion .reveal.reveal-in {
   }
 
   .btn-ghost {
-    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-ink-600/60 bg-transparent px-5 py-2.5 text-sm font-medium text-mist-100;
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border bg-transparent px-5 py-2.5 text-sm font-medium text-mist-100;
+    border-color: var(--border-strong);
     letter-spacing: -0.01em;
     transition:
       border-color 0.22s ease,
@@ -434,7 +447,8 @@ html.js-motion .reveal.reveal-in {
   }
 
   .field-input {
-    @apply w-full rounded-lg border border-ink-600/90 px-3.5 py-2.5 text-sm text-mist-50 placeholder:text-mist-400;
+    @apply w-full rounded-lg border px-3.5 py-2.5 text-sm text-mist-50 placeholder:text-mist-400;
+    border-color: var(--border-strong);
     background: var(--field-bg);
     letter-spacing: -0.01em;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -459,7 +473,8 @@ html.js-motion .reveal.reveal-in {
   }
 
   .chip {
-    @apply inline-flex min-h-11 items-center rounded-full border border-ink-600/70 bg-ink-900/40 px-3.5 py-2 text-xs text-mist-300;
+    @apply inline-flex min-h-11 items-center rounded-full border bg-ink-900/40 px-3.5 py-2 text-xs text-mist-300;
+    border-color: var(--border-strong);
     transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
   }
 
@@ -1031,12 +1046,10 @@ html[data-theme="light"] {
   background: rgb(var(--aurora));
 }
 .ev-bar-seller {
-  background: repeating-linear-gradient(
-    135deg,
-    rgb(var(--mist-400) / 0.55) 0 3px,
-    transparent 3px 7px
-  );
-  box-shadow: inset 0 0 0 1px rgb(var(--mist-400) / 0.7);
+  /* Claimed / seller: dashed fig-gold outline (not solid fill). */
+  background: transparent;
+  box-sizing: border-box;
+  border: 1.5px dashed rgb(var(--fig-gold));
 }
 .ev-bar {
   transition: width 0.35s ease-out;
@@ -1137,25 +1150,37 @@ footer {
   }
 }
 
-/* Figure chrome shared by every inventor/teaching diagram. */
+/* Figure chrome shared by every inventor/teaching diagram.
+ * Claimed cue = dashed fig-gold chip (shape, not color alone). */
 .fig-chip {
-  display: flex;
-  justify-content: flex-end;
-  margin: 0 0 0.375rem;
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.375rem auto;
+  padding: 0.25rem 0.65rem;
+  border: 1px dashed rgb(var(--fig-gold));
+  border-radius: 999px;
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: rgb(var(--fig-gold));
+  color: var(--claimed-label);
+  background: transparent;
 }
+/* Swipe hint lives on the scroll region so the claim chip stays a single dashed pill. */
 @media (max-width: 639px) {
-  .fig-chip {
-    justify-content: space-between;
+  .fig-scroll {
+    position: relative;
   }
-  .fig-chip::before {
+  .fig-scroll::before {
     content: "Swipe sideways ↔";
-    color: rgb(var(--mist-400));
+    display: block;
+    margin: 0 0 0.25rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
     font-weight: 400;
+    letter-spacing: 0.02em;
+    color: rgb(var(--mist-400));
   }
 }
 .fig-scroll {
@@ -1171,4 +1196,46 @@ footer {
   .fig-scroll > svg {
     min-width: var(--fig-minw, 0px);
   }
+}
+
+/* Evidence markers — measured = solid aurora; claimed = dashed fig-gold.
+ * Shape differs (solid vs dashed), not color alone. Wording unchanged. */
+.evidence-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.evidence-label--measured {
+  color: rgb(var(--aurora));
+  border-bottom: 2px solid rgb(var(--aurora));
+  padding-bottom: 1px;
+}
+.evidence-label--claimed {
+  color: var(--claimed-label);
+  border-bottom: 2px dashed rgb(var(--fig-gold));
+  padding-bottom: 1px;
+}
+.evidence-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.evidence-chip--measured {
+  border: 1px solid rgb(var(--aurora));
+  color: var(--chip-active-fg);
+  background: var(--chip-active-bg);
+}
+.evidence-chip--claimed {
+  border: 1px dashed rgb(var(--fig-gold));
+  color: var(--claimed-label);
+  background: transparent;
 }

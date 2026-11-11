@@ -21,8 +21,15 @@ export default function EvidenceTimeline() {
             <span
               aria-hidden
               className={`absolute -left-[1.3rem] top-[1.05rem] h-2 w-2 rounded-full ${
-                t.label === "Measured" ? "bg-aurora" : "border border-mist-400 bg-transparent"
+                t.label === "Measured"
+                  ? "bg-aurora"
+                  : "border border-dashed bg-transparent"
               }`}
+              style={
+                t.label === "Measured"
+                  ? undefined
+                  : { borderColor: "rgb(var(--fig-gold))" }
+              }
             />
             <details>
               <summary className="flex min-h-11 cursor-pointer flex-wrap items-baseline gap-x-3 gap-y-0.5 py-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora">
@@ -31,9 +38,11 @@ export default function EvidenceTimeline() {
                 </time>
                 <span className="text-sm font-medium tracking-tight text-mist-50">{t.title}</span>
                 <span
-                  className={`text-[11px] font-semibold uppercase tracking-[0.14em] ${
-                    t.label === "Measured" ? "text-aurora" : "text-mist-400"
-                  }`}
+                  className={
+                    t.label === "Measured"
+                      ? "evidence-label evidence-label--measured"
+                      : "evidence-label evidence-label--claimed"
+                  }
                 >
                   {t.label}
                 </span>

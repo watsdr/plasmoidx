@@ -138,7 +138,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Suggested next (Derek picks)
 
-1. **Review draft PR #11** (https://github.com/watsdr/plasmoidx/pull/11) — Device “Next read” to “Thunderstorm Generator explained”. Not merged, not deployed.
+1. **Review draft PR #12** (https://github.com/watsdr/plasmoidx/pull/12) — visual-spec-v2 control borders + measured/claimed style. Draft only; not merged, not deployed.
 2. **Facebook Scrape Again** for explainer URLs (Derek) — new per-page OG cards at `/og/explainers/<slug>.png`.
 3. **Optional Cloudflare CDN** in front for TLS/TTFB (Derek’s decision).
 4. **`docs/SOCIAL-POSTS.md`** — 5 drafts ready; not posted yet.
@@ -147,6 +147,9 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 ---
 
 ## Session log (append, newest first)
+
+### 2026-11-09 — Draft only: visual-spec-v2 control borders + measured/claimed style (not merged, not deployed)
+- Draft PR https://github.com/watsdr/plasmoidx/pull/12 on `cursor/visual-spec-v2-borders-evidence` (Asset Smith visual-spec-v2). `--border-strong` light `#7e90ad` (≥3:1 on page `#f5f7fb` and field `#ffffff`) / dark `#5a6e90`; `--claimed-label` light `#8a5205` / dark `#facc5a` on 12px claim captions (fig-chip, evidence claim labels/chips). Measured = solid aurora; claimed = dashed fig-gold. No claim wording/numbers changed. No new motion; type-scale + P0–P3 assets still parked. Screenshots: `/workspace/plasmoidx-spec-v2-shots/` (`after2/` for follow-up). **Draft only — not merged. Not deployed.**
 
 ### 2026-11-05 — Draft only: Device “Next read” (not merged, not deployed)
 - Draft PR https://github.com/watsdr/plasmoidx/pull/11 on `cursor/device-next-read-99b3`. One small “Next read” block at the end of Device main content, before the signup, linking to the existing explainer **Thunderstorm Generator explained** (`/explainers/thunderstorm-generator/`). That page is the plain-English overview of the same three-part unit and already links back to Device. Label is the explainer title from `src/lib/explainers.ts`. No claim wording changed. Not merged. Not deployed.

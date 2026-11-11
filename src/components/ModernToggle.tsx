@@ -71,7 +71,7 @@ export default function ModernToggle({ compact = false }: { compact?: boolean })
       aria-pressed={on}
       title={`${title}. Gentle fades, scroll reveals and a reading progress line.`}
       onClick={toggle}
-      className={`min-h-11 rounded-full border border-ink-600/50 px-3 text-xs font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora ${
+      className={`min-h-11 rounded-full border border-strong px-3 text-xs font-medium tracking-tight transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora ${
         on ? "bg-ink-800 text-mist-50" : "text-mist-400 hover:text-mist-100"
       }`}
     >

@@ -104,7 +104,7 @@ export default function ThemeToggle({ compact = false }: Props) {
 
   return (
     <div
-      className="flex items-center rounded-full border border-ink-600/50 p-0.5"
+      className="flex items-center rounded-full border border-strong p-0.5"
       role="group"
       aria-label="Color theme"
     >

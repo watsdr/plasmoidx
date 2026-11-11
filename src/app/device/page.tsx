@@ -249,7 +249,7 @@ export default function DevicePage() {
         </div>
 
         <p className="mt-8 text-sm leading-relaxed text-mist-400">
-          <span className="font-medium text-mist-300">Inventor claim:</span>{" "}
+          <span className="evidence-chip evidence-chip--claimed">Inventor claim:</span>{" "}
           hydrocarbons (fuel molecules made of hydrogen and carbon) act as
           kindling up to about 300 °C plus vacuum. The plasmoid–protium cycle
           is the work.

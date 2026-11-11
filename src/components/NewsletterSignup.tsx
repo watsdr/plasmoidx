@@ -28,7 +28,7 @@ export default function NewsletterSignup({ className = "" }: { className?: strin
             required
             autoComplete="email"
             inputMode="email"
-            className="mt-1 min-h-11 w-full rounded-lg border border-ink-600/60 bg-transparent px-3 text-base text-mist-50"
+            className="field-input mt-1"
           />
         </div>
         <input type="hidden" name="embed" value="1" />

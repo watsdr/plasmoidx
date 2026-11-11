@@ -62,7 +62,15 @@ export default function ExplainerArticle({ e }: { e: Explainer }) {
         {e.blocks.map((b, bi) => (
           <div key={b.heading} className="space-y-10">
           <section className={b.table ? undefined : "max-w-2xl"}>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400">
+            <p
+              className={
+                b.kind === "measured"
+                  ? "evidence-label evidence-label--measured"
+                  : b.kind === "claim" || b.kind === "seller"
+                    ? "evidence-label evidence-label--claimed"
+                    : "text-[11px] font-semibold uppercase tracking-[0.14em] text-mist-400"
+              }
+            >
               {kindLabel[b.kind]}
             </p>
             <h2 className="mt-2 max-w-2xl text-xl font-medium tracking-tight text-mist-50">{b.heading}</h2>

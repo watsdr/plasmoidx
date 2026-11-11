@@ -93,7 +93,7 @@ export default function VajraLab() {
             className={`inline-flex min-h-11 min-w-0 flex-1 items-center justify-center rounded-full px-3.5 py-2.5 text-sm font-medium tracking-tight transition-colors duration-200 ease-out sm:flex-none ${
               tier === i
                 ? "bg-aurora text-ink-950"
-                : "border border-mist-300/25 text-mist-100 hover:border-aurora/45 hover:text-aurora"
+                : "border border-strong text-mist-100 hover:border-aurora/45 hover:text-aurora"
             }`}
           >
             {t.title}
@@ -107,7 +107,7 @@ export default function VajraLab() {
               setUsed(true);
             }}
             aria-pressed={playing}
-            className="inline-flex min-h-11 items-center justify-center rounded-full border border-mist-300/25 px-4 text-sm text-mist-100 transition-colors duration-200 ease-out hover:border-aurora/45 hover:text-aurora"
+            className="inline-flex min-h-11 items-center justify-center rounded-full border border-strong px-4 text-sm text-mist-100 transition-colors duration-200 ease-out hover:border-aurora/45 hover:text-aurora"
           >
             {playing ? "Pause" : "Play steps"}
           </button>
