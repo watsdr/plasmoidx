@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "og": "node scripts/og-images.mjs",
-    "indexnow": "node scripts/indexnow.mjs"
+    "indexnow": "node scripts/indexnow.mjs",
+    "test": "node scripts/test-contrast.mjs",
+    "test:contrast": "node scripts/test-contrast.mjs"
   },
   "dependencies": {
     "react": "^18",
