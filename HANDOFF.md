@@ -138,7 +138,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Suggested next (Derek picks)
 
-1. **Review draft PR (contrast token tests)** — CI regression for `--border-strong` (≥3:1) and `--claimed-label` (≥4.5:1). Draft only; not merged, not deployed.
+1. **Review draft PR #14** (https://github.com/watsdr/plasmoidx/pull/14) — CI contrast regression for `--border-strong` (≥3:1) and `--claimed-label` (≥4.5:1). Draft only; not merged, not deployed.
 2. **Facebook Scrape Again** for explainer URLs (Derek) — new per-page OG cards at `/og/explainers/<slug>.png`.
 3. **Optional Cloudflare CDN** in front for TLS/TTFB (Derek’s decision).
 4. **`docs/SOCIAL-POSTS.md`** — 5 drafts ready; not posted yet.
@@ -149,7 +149,7 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 ## Session log (append, newest first)
 
 ### 2026-11-11 — Draft only: contrast token regression tests (not merged, not deployed)
-- Branch `cursor/contrast-token-regression`, from `main` at e929df9 (PR #12 and #13 merged and live). Adds `scripts/test-contrast.mjs` (`npm test` / `npm run test:contrast`) plus a new `Contrast tokens` workflow (`.github/workflows/test.yml`) on pull_request and push to main. Parses `src/app/globals.css` and enforces `--border-strong` ≥3:1 and `--claimed-label` ≥4.5:1 against theme background tokens (`--background`, `--field-bg`, `--glossary-bg`). `deploy.yml` unchanged. No SVGs, motion, or type-scale changes. **Draft only — not merged. Not deployed.**
+- Draft PR https://github.com/watsdr/plasmoidx/pull/14 on `cursor/contrast-token-regression`, from `main` at e929df9 (PR #12 and #13 merged and live). Adds `scripts/test-contrast.mjs` (`npm test` / `npm run test:contrast`) plus a new `Contrast tokens` workflow (`.github/workflows/test.yml`) on pull_request and push to main. Parses `src/app/globals.css` and enforces `--border-strong` ≥3:1 and `--claimed-label` ≥4.5:1 against theme background tokens (`--background`, `--field-bg`, `--glossary-bg`). `deploy.yml` unchanged. No SVGs, motion, or type-scale changes. **Draft only — not merged. Not deployed.**
 
 - **2026-11-11** — Image accuracy v3 (DRAFT, branch `cursor/image-accuracy-v3`, stacked on draft PR #12; not merged, not deployed). Checked 28 figures/figure groups against the Hall 2026 thesis (full text), WO2025158126A1 and Thunderstorm.tech test results. Fixed 8: resonator spheres redrawn to 4∶3∶2 with exhaust anticlockwise in the outer cavity, cool stream clockwise in the inner cavity, intake outlet at the exhaust end (NestedSpheres, SiteVisuals, DeviceSystemFlow, DeviceBeats glyphs + lab text); claim chips on SiteVisuals now dashed gold; chart legend "Hatched" → "Dashed-outline"; no stub bar at 0%; old AI rasters dropped from sw.js precache (v17). 4 unverified (Alpha–Omega MeV values, Vajra cone geometry, RFEU sign, MOE 16×8). No measured numbers changed. Report: /workspace/plasmoidx-image-audit/findings.md (not in git).
 
