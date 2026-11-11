@@ -221,15 +221,18 @@ export default function DevicePage() {
               Nested CTR spheres (resonator detail)
             </h2>
             <p className="mt-2 max-w-2xl text-sm leading-relaxed text-mist-300">
-              Cutaway of the catalytic tornado resonator: outer sphere, inner
-              sphere, and tiny central core, with opposing tornadoes in the
-              cavity. Hot exhaust comes in at one end. At the other end, a pipe
-              carries the cool plasmoid stream to the engine’s intake, just after
-              the carburetor. Inventor-model
+              Cutaway of the catalytic tornado resonator, showing one of its two
+              nested-sphere sets: an outer sphere, a middle sphere and a central
+              core, sized 4∶3∶2. Hot exhaust enters the outer cavity and spins
+              anticlockwise. The cool stream from the bubbler, arriving from the
+              other sphere set, spins clockwise in the inner cavity; the middle
+              sphere’s metal keeps the two streams apart. At the exhaust end, a
+              pipe carries the cool plasmoid stream to the engine’s intake, just
+              after the carburetor. Inventor-model
               teaching sketch — not a product shot. The interactive companion
               below shows gentle contra-rotation when motion is allowed.
             </p>
-            <div className="mt-5"><NestedSpheresVisual caption="Nested contra-rotating (CTR) spheres in the resonator: a teaching model of the outer sphere, inner sphere and small core." /></div>
+            <div className="mt-5"><NestedSpheresVisual caption="Nested contra-rotating (CTR) spheres in the resonator: a teaching model of one sphere set (outer sphere, middle sphere and core, sized 4∶3∶2)." /></div>
             <NestedSpheresLab />
           </ScrollyChapter>
 

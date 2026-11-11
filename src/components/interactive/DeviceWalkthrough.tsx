@@ -18,7 +18,7 @@ const steps = [
   },
   {
     title: "Resonator",
-    body: "Catalytic tornado resonator: nested contra-rotating (CTR) spheres — outer, inner, and a tiny central core. Hot exhaust enters one end, and the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. The two streams spin opposite ways; a calm zero-plane sits between them so charge can separate and feed the swarm. Not a vague gyroscope.",
+    body: "Catalytic tornado resonator: nested contra-rotating (CTR) spheres — outer, middle, and a central core, sized 4∶3∶2. Hot exhaust enters the outer cavity, and at that same end the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor. The two streams spin opposite ways; a calm zero-plane sits between them so charge can separate and feed the swarm. Not a vague gyroscope.",
   },
 ] as const;
 

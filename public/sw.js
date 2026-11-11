@@ -1,5 +1,5 @@
 /* PlasmoidX static-export service worker — shell + locks + key assets. */
-const CACHE = "plasmoidx-shell-v16";
+const CACHE = "plasmoidx-shell-v17";
 
 const PRECACHE = [
   "/",
@@ -20,11 +20,6 @@ const PRECACHE = [
   "/favicon.png",
   "/apple-touch-icon.png",
   "/og.png",
-  "/visuals/home-problem-solution.webp",
-  "/visuals/device-system-accurate.webp",
-  "/visuals/device-nested-spheres.webp",
-  "/visuals/device-vajra-gun.webp",
-  "/visuals/services-install.webp",
 ];
 
 self.addEventListener("install", (event) => {

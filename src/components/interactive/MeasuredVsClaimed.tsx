@@ -40,10 +40,12 @@ function Row({ r }: { r: EvidenceRow }) {
       ) : r.magnitude !== null ? (
         <>
         <div className="ev-track mt-2 h-2.5 overflow-hidden rounded-full" aria-hidden>
-          <div
-            className={`ev-bar h-full rounded-full ${measured ? "ev-bar-measured" : "ev-bar-seller"}`}
-            style={{ width: `${Math.max(r.magnitude, 0)}%` }}
-          />
+          {r.magnitude > 0 ? (
+            <div
+              className={`ev-bar h-full rounded-full ${measured ? "ev-bar-measured" : "ev-bar-seller"}`}
+              style={{ width: `${r.magnitude}%` }}
+            />
+          ) : null}
         </div>
         <p className="mt-1 text-xs text-mist-400">
           Bar: {BAR_MEASURE[r.id] ?? "% lower"}, 0–100% scale
@@ -104,8 +106,8 @@ export default function MeasuredVsClaimed() {
         Measured vs claimed
       </p>
       <p className="mt-1 max-w-2xl text-xs leading-relaxed text-mist-400">
-        Solid bars are measured in the university thesis. Hatched bars are
-        numbers the seller reports on Thunderstorm.tech; we have not seen the
+        Solid bars are measured in the university thesis. Dashed-outline bars
+        are numbers the seller reports on Thunderstorm.tech; we have not seen the
         full reports. Pick a result:
       </p>
 

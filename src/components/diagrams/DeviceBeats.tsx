@@ -166,12 +166,13 @@ export default function DeviceBeats({
                   <circle
                     cx={cx}
                     cy={42}
-                    r={7.5}
+                    r={9}
                     fill="none"
                     stroke="rgb(var(--fig-copper) / 0.85)"
                     strokeWidth={1.5}
                   />
-                  <circle cx={cx} cy={42} r={3} fill="rgb(var(--fig-copper) / 0.9)" />
+                  {/* Sizes 4:3:2 (outer 12, middle 9, core 6) per Hall 2026 p.19 and WO2025158126A1 */}
+                  <circle cx={cx} cy={42} r={6} fill="rgb(var(--fig-copper) / 0.35)" stroke="rgb(var(--fig-copper) / 0.9)" strokeWidth={1} />
                 </g>
               )}
 

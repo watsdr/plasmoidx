@@ -37,7 +37,7 @@ export default function DeviceSystemFlow({
         viewBox="0 0 520 250"
         className="h-auto w-full max-w-full"
         role="img"
-        aria-label="System flow: air into the ionizer, then the bubbler (plasmoid generator), then the nested-sphere resonator. Hot exhaust from the engine enters one end of the resonator. The cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor."
+        aria-label="System flow: air into the ionizer, then the bubbler (plasmoid generator), then the nested-sphere resonator (sizes 4∶3∶2). Hot exhaust from the engine enters the resonator’s outer cavity. At that same end, the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor."
       >
         <defs>
           <marker
@@ -136,15 +136,21 @@ export default function DeviceSystemFlow({
               )}
               {i === 2 && (
                 <g aria-hidden="true">
-                  <circle
-                    cx={cx}
-                    cy={64}
-                    r={16}
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1}
-                    className="text-mist-300"
-                  />
+                  {/* Sizes 4:3:2. Outer cavity = exhaust (anticlockwise); inner cavity = cool stream (clockwise); core = flow guide. */}
+                  <g
+                    className={showFlow ? "teach-spin-ccw" : undefined}
+                    style={{ transformOrigin: `${cx}px 64px` }}
+                  >
+                    <circle
+                      cx={cx}
+                      cy={64}
+                      r={16}
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth={1}
+                      className="text-mist-300"
+                    />
+                  </g>
                   <g
                     className={showFlow ? "teach-spin-cw" : undefined}
                     style={{ transformOrigin: `${cx}px 64px` }}
@@ -152,21 +158,15 @@ export default function DeviceSystemFlow({
                     <circle
                       cx={cx}
                       cy={64}
-                      r={10}
+                      r={12}
                       fill="none"
                       stroke="rgb(var(--fig-copper) / 0.85)"
                       strokeWidth={1.5}
                     />
                   </g>
-                  <g
-                    className={showFlow ? "teach-spin-ccw" : undefined}
-                    style={{ transformOrigin: `${cx}px 64px` }}
-                  >
-                    <circle cx={cx} cy={64} r={4} fill="rgb(var(--fig-copper) / 0.9)" />
-                  </g>
+                  <circle cx={cx} cy={64} r={8} fill="rgb(var(--fig-copper) / 0.35)" stroke="rgb(var(--fig-copper) / 0.9)" strokeWidth={1} />
                 </g>
               )}
-
               <text
                 x={cx}
                 y={102}
@@ -234,22 +234,19 @@ export default function DeviceSystemFlow({
             strokeWidth={1}
             className="text-ink-600"
           />
-          <text x={250} y={182} textAnchor="middle" className="fill-mist-50" style={{ fontSize: 12, fontWeight: 600 }}>
+          <text x={250} y={189} textAnchor="middle" className="fill-mist-50" style={{ fontSize: 12, fontWeight: 600 }}>
             Engine
-          </text>
-          <text x={250} y={196} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
-            after carburetor
           </text>
 
           {/* Hot exhaust: engine → resonator (outer cavity) */}
           <path
-            d="M 302 194 Q 432 214 436 142"
+            d="M 302 194 Q 412 206 418 142"
             fill="none"
             stroke="rgb(var(--fig-exhaust) / 0.7)"
             strokeWidth={1.5}
             markerEnd={`url(#${arrowId})`}
           />
-          <text x={474} y={200} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
+          <text x={472} y={192} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
             hot exhaust in
           </text>
 
@@ -261,8 +258,8 @@ export default function DeviceSystemFlow({
             strokeWidth={1.5}
             markerEnd={`url(#${arrowId})`}
           />
-          <text x={342} y={160} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
-            to intake
+          <text x={262} y={156} textAnchor="middle" className="fill-mist-400" style={{ fontSize: 12 }}>
+            to intake (after carburetor)
           </text>
         </g>
         {showFlow ? (
@@ -294,8 +291,9 @@ export default function DeviceSystemFlow({
         >
           System flow matching the accurate teaching sketch: air → ionizer →
           bubbler (plasmoid generator) → nested contra-rotating (CTR) resonator. Hot exhaust
-          enters one end of the resonator; the cool plasmoid stream leaves the
-          inner sphere by pipe to the engine’s intake, just after the carburetor.
+          enters the resonator’s outer cavity; at that same end, the cool plasmoid
+          stream leaves the inner sphere by pipe to the engine’s intake, just after
+          the carburetor.
         </figcaption>
       ) : null}
     </figure>
