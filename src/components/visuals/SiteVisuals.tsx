@@ -29,12 +29,20 @@ function row(metric: string, id: string) {
   return r;
 }
 
-function Chip({ x = 16, y = 14, text }: { x?: number; y?: number; text: string }) {
+/** Evidence chip. Measured = solid aurora outline; claim = dashed fig-gold outline (shape, not color alone). */
+function Chip({ x = 16, y = 14, text, kind = "claim" }: { x?: number; y?: number; text: string; kind?: "measured" | "claim" }) {
   const w = text.length * 8 + 24;
+  const measured = kind === "measured";
   return (
     <g>
-      <rect x={x} y={y} width={w} height={26} rx={13} fill="rgb(var(--aurora) / 0.12)" stroke={C.aurora} strokeWidth={SW.hair} />
-      <text x={x + w / 2} y={y + 18} textAnchor="middle" fill={C.aurora} style={{ fontSize: T.label, fontWeight: 600 }}>
+      <rect
+        x={x} y={y} width={w} height={26} rx={13}
+        fill={measured ? "rgb(var(--aurora) / 0.12)" : "none"}
+        stroke={measured ? C.aurora : C.gold}
+        strokeWidth={measured ? SW.hair : SW.main}
+        strokeDasharray={measured ? undefined : "4 3"}
+      />
+      <text x={x + w / 2} y={y + 18} textAnchor="middle" fill={measured ? C.aurora : "var(--claimed-label)"} style={{ fontSize: T.label, fontWeight: 600 }}>
         {text}
       </text>
     </g>
@@ -87,7 +95,7 @@ export function MeasuredExhaustVisual({ caption }: { caption?: ReactNode }) {
       desc={`Measured in the Embry-Riddle thesis idle test: carbon monoxide ${co.value}; carbon dioxide ${co2.value}. Bars show the after level as a share of the before level, drawn to scale. Exhaust is reduced in CO, not eliminated.`}
       caption={caption}
     >
-      <Chip text="Measured" />
+      <Chip text="Measured" kind="measured" />
       <text x={16} y={66} fill={C.text} style={{ fontSize: T.title, fontWeight: 600 }}>Exhaust at idle: before vs after</text>
       <text x={16} y={96} fill={C.text} style={{ fontSize: T.label, fontWeight: 600 }}>Carbon monoxide (CO)</text>
       {bar(106, full, "Before", "rgb(var(--mist-400) / 0.55)")}
@@ -126,7 +134,7 @@ export function DeviceSystemVisual({ caption }: { caption?: ReactNode }) {
         <Arrow id={e} color={C.exhaust} />
         <Arrow id={f} color={C.aurora} />
       </defs>
-      <Chip text="Inventor model" />
+      <Chip text="Inventor claim · teaching model" />
       <text x={16} y={70} fill={C.air} style={{ fontSize: T.label }}>Air in</text>
       <line x1={96} y1={66} x2={96} y2={80} stroke={C.air} strokeWidth={SW.main} markerEnd={`url(#${a})`} />
       {box(86, "1", "Ionizer", "air pretreatment", C.ink)}
@@ -149,45 +157,51 @@ export function DeviceSystemVisual({ caption }: { caption?: ReactNode }) {
   );
 }
 
-/* 3. Nested spheres cutaway (replaces device-nested-spheres.webp) */
+/* 3. Nested spheres cutaway (replaces device-nested-spheres.webp).
+ * Layout per Hall (2026) thesis pp.13-14, 19, 21 and WO2025158126A1: sizes 4:3:2,
+ * exhaust in the outer cavity (anticlockwise), bubbler stream in the inner cavity
+ * (clockwise), inner pipe to the intake at the exhaust end. One of two sphere sets. */
 export function NestedSpheresVisual({ caption }: { caption?: ReactNode }) {
-  const cx = 180, cy = 205;
-  const sp = "vis-ns-s", sc = "vis-ns-c", ex = "vis-ns-e", out = "vis-ns-o";
+  const cx = 180, cy = 200;
+  const ro = 96, rm = 72, ri = 48; // 4 : 3 : 2
+  const sp = "vis-ns-s", ex = "vis-ns-e", out = "vis-ns-o";
   return (
     <Frame
       id="vis-ns"
-      viewH={400}
-      title="Nested contra-rotating spheres, teaching model"
-      desc="Teaching model of the resonator: a large outer sphere, a smaller inner sphere spinning clockwise, and a small core spinning counter-clockwise. Hot exhaust enters at one side; a pipe from the inner sphere carries the stream to the engine intake."
+      viewH={420}
+      title="Nested contra-rotating spheres, inventor claim, teaching model"
+      desc="Teaching model of one of the resonator’s two nested-sphere sets, drawn to the inventor’s 4:3:2 size ratio. Hot exhaust enters the outer cavity, between the outer and middle spheres, and spins anticlockwise. The cool stream from the bubbler arrives through the nested pipe from the other sphere set and spins clockwise in the inner cavity, between the middle sphere and the core, which acts as a flow guide. The middle sphere keeps the streams apart. At the exhaust end, the inner pipe carries the cool stream to the engine intake."
       caption={caption}
     >
       <defs>
         <Arrow id={sp} color={C.air} />
-        <Arrow id={sc} color={C.aurora} />
         <Arrow id={ex} color={C.exhaust} />
         <Arrow id={out} color={C.aurora} />
       </defs>
-      <Chip text="Teaching model" />
-      <circle cx={cx} cy={cy} r={100} fill={C.panel} stroke={C.sub} strokeWidth={SW.main} />
-      <circle cx={cx} cy={cy} r={62} fill="none" stroke={C.copper} strokeWidth={SW.main} />
-      <circle cx={cx} cy={cy} r={12} fill={C.copper} />
-      {/* spins */}
-      <path d={`M${cx - 44},${cy - 26} A51,51 0 0 1 ${cx + 44},${cy - 26}`} fill="none" stroke={C.air} strokeWidth={SW.main} markerEnd={`url(#${sp})`} />
-      <path d={`M${cx + 22},${cy + 8} A24,24 0 0 0 ${cx - 22},${cy + 8}`} fill="none" stroke={C.aurora} strokeWidth={SW.main} markerEnd={`url(#${sc})`} />
-      {/* exhaust inlet from left */}
-      <line x1={16} y1={cy} x2={74} y2={cy} stroke={C.exhaust} strokeWidth={SW.main} markerEnd={`url(#${ex})`} />
-      <text x={16} y={cy - 10} fill={C.exhaust} style={{ fontSize: T.label }}>Hot exhaust in</text>
-      {/* outlet from inner sphere */}
-      <line x1={cx + 44} y1={cy + 44} x2={326} y2={350} stroke={C.aurora} strokeWidth={SW.main} markerEnd={`url(#${out})`} />
-      <text x={344} y={372} textAnchor="end" fill={C.aurora} style={{ fontSize: T.label }}>To intake</text>
-      {/* labels with leaders to the right parts */}
-      <text x={16} y={74} fill={C.text} style={{ fontSize: T.label, fontWeight: 600 }}>Outer sphere</text>
-      <line x1={60} y1={80} x2={cx - 70} y2={cy - 71} stroke={C.muted} strokeWidth={SW.hair} />
-      <text x={344} y={74} textAnchor="end" fill={C.text} style={{ fontSize: T.label, fontWeight: 600 }}>Inner sphere</text>
-      <line x1={300} y1={80} x2={cx + 44} y2={cy - 44} stroke={C.muted} strokeWidth={SW.hair} />
-      <text x={16} y={350} fill={C.text} style={{ fontSize: T.label, fontWeight: 600 }}>Small core</text>
-      <line x1={50} y1={338} x2={cx - 9} y2={cy + 9} stroke={C.muted} strokeWidth={SW.hair} />
-      <text x={16} y={390} fill={C.muted} style={{ fontSize: T.label }}>Inner: clockwise · Core: counter-clockwise</text>
+      <Chip text="Inventor claim · teaching model" />
+      <circle cx={cx} cy={cy} r={ro} fill={C.panel} stroke={C.sub} strokeWidth={SW.main} />
+      <circle cx={cx} cy={cy} r={rm} fill="none" stroke={C.copper} strokeWidth={SW.main} />
+      <circle cx={cx} cy={cy} r={ri} fill="none" stroke={C.copper} strokeWidth={SW.main} strokeDasharray="2 3" />
+      {/* outer cavity: exhaust, anticlockwise (top arc, right to left) */}
+      <path d={`M${cx + 84},${cy - 12} A84,84 0 0 0 ${cx - 84},${cy - 12}`} fill="none" stroke={C.exhaust} strokeWidth={SW.main} markerEnd={`url(#${ex})`} />
+      {/* inner cavity: cool stream, clockwise (bottom arc, right to left) */}
+      <path d={`M${cx + 58},${cy + 14} A60,60 0 0 1 ${cx - 58},${cy + 14}`} fill="none" stroke={C.air} strokeWidth={SW.main} markerEnd={`url(#${sp})`} />
+      {/* exhaust inlet, angled, at the right-hand (exhaust) end */}
+      <line x1={340} y1={92} x2={cx + 70} y2={cy - 58} stroke={C.exhaust} strokeWidth={SW.main} markerEnd={`url(#${ex})`} />
+      <text x={344} y={82} textAnchor="end" fill={C.exhaust} style={{ fontSize: T.label }}>Hot exhaust in</text>
+      {/* inner pipe out at the same end, to the intake */}
+      <line x1={cx + ri - 4} y1={cy} x2={340} y2={cy} stroke={C.aurora} strokeWidth={SW.main} markerEnd={`url(#${out})`} />
+      <text x={344} y={cy + 22} textAnchor="end" fill={C.aurora} style={{ fontSize: T.label }}>To intake</text>
+      {/* nested pipe from the other sphere set: bubbler stream in */}
+      <line x1={16} y1={cy} x2={cx - rm + 6} y2={cy} stroke={C.air} strokeWidth={SW.main} markerEnd={`url(#${sp})`} />
+      <text x={16} y={cy - 30} fill={C.air} style={{ fontSize: T.label }}>From</text>
+      <text x={16} y={cy - 12} fill={C.air} style={{ fontSize: T.label }}>bubbler</text>
+      {/* labels */}
+      <text x={16} y={60} fill={C.text} style={{ fontSize: T.label, fontWeight: 600 }}>Outer cavity: hot exhaust, anticlockwise</text>
+      <text x={16} y={344} fill={C.text} style={{ fontSize: T.label, fontWeight: 600 }}>Inner cavity: cool stream, clockwise</text>
+      <text x={cx} y={cy + 5} textAnchor="middle" fill={C.sub} style={{ fontSize: T.label }}>Core (2)</text>
+      <text x={16} y={372} fill={C.muted} style={{ fontSize: T.label }}>Outer, middle, core sizes 4∶3∶2. One of two sets.</text>
+      <text x={16} y={398} fill={C.muted} style={{ fontSize: T.label }}>Streams are kept apart by metal.</text>
     </Frame>
   );
 }
@@ -216,7 +230,7 @@ export function VajraVisual({ caption }: { caption?: ReactNode }) {
       desc="Simplified teaching model from inventor notes: four cones on a base tier point outward in a plus shape. Four more cones on an upper tier sit above them in the same plus layout. Connectors hold the tiers in line on a square base."
       caption={caption}
     >
-      <Chip text="Teaching model" />
+      <Chip text="Inventor claim · teaching model" />
       {tier(16, C.copper, "Base tier (lower)")}
       {tier(188, C.gold, "Upper tier (above)")}
       <text x={16} y={296} fill={C.sub} style={{ fontSize: T.label }}>Four cones per tier, in a plus (+) shape.</text>

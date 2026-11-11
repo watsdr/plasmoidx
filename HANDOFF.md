@@ -148,6 +148,8 @@ Note: Perf swings with Namecheap TTFB/TLS (~200 ms handshake). Prefer two runs i
 
 ## Session log (append, newest first)
 
+- **2026-11-11** — Image accuracy v3 (DRAFT, branch `cursor/image-accuracy-v3`, stacked on draft PR #12; not merged, not deployed). Checked 28 figures/figure groups against the Hall 2026 thesis (full text), WO2025158126A1 and Thunderstorm.tech test results. Fixed 8: resonator spheres redrawn to 4∶3∶2 with exhaust anticlockwise in the outer cavity, cool stream clockwise in the inner cavity, intake outlet at the exhaust end (NestedSpheres, SiteVisuals, DeviceSystemFlow, DeviceBeats glyphs + lab text); claim chips on SiteVisuals now dashed gold; chart legend "Hatched" → "Dashed-outline"; no stub bar at 0%; old AI rasters dropped from sw.js precache (v17). 4 unverified (Alpha–Omega MeV values, Vajra cone geometry, RFEU sign, MOE 16×8). No measured numbers changed. Report: /workspace/plasmoidx-image-audit/findings.md (not in git).
+
 ### 2026-11-09 — Draft only: visual-spec-v2 control borders + measured/claimed style (not merged, not deployed)
 - Draft PR https://github.com/watsdr/plasmoidx/pull/12 on `cursor/visual-spec-v2-borders-evidence` (Asset Smith visual-spec-v2). `--border-strong` light `#7e90ad` (≥3:1 on page `#f5f7fb` and field `#ffffff`) / dark `#5a6e90`; `--claimed-label` light `#8a5205` / dark `#facc5a` on 12px claim captions (fig-chip, evidence claim labels/chips). Measured = solid aurora; claimed = dashed fig-gold. No claim wording/numbers changed. No new motion; type-scale + P0–P3 assets still parked. Screenshots: `/workspace/plasmoidx-spec-v2-shots/` (`after2/` for follow-up). **Draft only — not merged. Not deployed.**
 

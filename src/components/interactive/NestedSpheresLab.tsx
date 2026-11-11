@@ -10,15 +10,15 @@ import { useReducedMotion } from "@/lib/useReducedMotion";
 const layers = [
   {
     title: "Outer",
-    body: "Large outer sphere (cutaway shell) — the resonator cavity wall.",
+    body: "Outer sphere (size 4 in the inventor’s 4∶3∶2 ratio). Hot exhaust spins anticlockwise in the cavity between it and the middle sphere.",
   },
   {
-    title: "Inner",
-    body: "Smaller inner sphere — one tornado spin (clockwise cue in the teaching model).",
+    title: "Middle",
+    body: "Middle sphere (size 3). The cool stream from the bubbler spins clockwise in the cavity inside it. Its metal keeps the two streams apart.",
   },
   {
     title: "Core",
-    body: "Tiny central core — opposing spin (counter-clockwise) with a calm zero-plane between.",
+    body: "Inner core (size 2, half the outer sphere’s width): a flow guide for the clockwise cool stream.",
   },
   {
     title: "Exhaust in",
@@ -26,7 +26,7 @@ const layers = [
   },
   {
     title: "To intake",
-    body: "At the opposite end, the cool plasmoid stream leaves the inner sphere by pipe to the engine’s intake, just after the carburetor.",
+    body: "At that same exhaust end, the inner pipe carries the cool stream to the engine’s intake, just after the carburetor. The stream from the bubbler enters at the other end, through the second sphere set.",
   },
 ] as const;
 
@@ -63,7 +63,7 @@ export default function NestedSpheresLab() {
         <GotItCheck show={used || persisted} />
       </div>
       <p className="mt-1 text-xs text-mist-400">
-        Tap a layer. When motion is allowed, outer and inner rings turn opposite
+        Tap a layer. When motion is allowed, the outer and inner spin cues turn opposite
         ways and the exhaust inlet glows softly. Reduced motion freezes to the final frame —
         steps still work.
       </p>

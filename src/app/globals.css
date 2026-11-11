@@ -1038,7 +1038,7 @@ html[data-theme="light"] {
   }
 }
 
-/* Evidence chart bars: measured = solid aurora; seller claim = hatched outline. */
+/* Evidence chart bars: measured = solid aurora; seller claim = dashed outline. */
 .ev-track {
   background: rgb(var(--mist-400) / 0.12);
 }
